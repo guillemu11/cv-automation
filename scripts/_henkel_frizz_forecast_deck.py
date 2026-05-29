@@ -51,7 +51,6 @@ body{font-family:'Inter',system-ui,sans-serif;color:#0a0a0a}
 .lead{font-size:18px;line-height:1.5;color:#333;max-width:760px}
 .lead.on-dark{color:#cfcfcf}
 .pagenum{position:absolute;bottom:38px;right:60px;font-family:'Archivo',sans-serif;font-weight:900;font-size:40px;color:#C41E3A}
-.foot{position:absolute;bottom:34px;left:88px;font-size:10.5px;color:#9a9a9a;letter-spacing:.4px}
 ul.bullets{list-style:none;margin-top:8px}
 ul.bullets li{position:relative;padding-left:24px;margin:15px 0;font-size:16px;line-height:1.45;color:#262626;max-width:560px}
 ul.bullets li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;background:#C41E3A;border-radius:50%}
