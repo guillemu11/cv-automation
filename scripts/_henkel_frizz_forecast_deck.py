@@ -138,17 +138,240 @@ def stage_assets() -> None:
     shutil.copyfile(PAULA_PHOTO, BUILD_ASSETS / "paula.jpg")
 
 
-def slide_cover() -> str: return '<section class="slide dark"><div class="pad">cover</div></section>'
-def slide_agenda() -> str: return '<section class="slide"><div class="pad">agenda</div></section>'
-def slide_insight() -> str: return '<section class="slide"><div class="pad">insight</div></section>'
-def slide_big_idea() -> str: return '<section class="slide dark"><div class="pad">big idea</div></section>'
-def slide_how() -> str: return '<section class="slide"><div class="pad">how</div></section>'
-def slide_channels() -> str: return '<section class="slide"><div class="pad">channels</div></section>'
-def slide_perfect_store() -> str: return '<section class="slide"><div class="pad">perfect store</div></section>'
-def slide_calendar() -> str: return '<section class="slide"><div class="pad">calendar</div></section>'
-def slide_kpis() -> str: return '<section class="slide"><div class="pad">kpis</div></section>'
-def slide_why_paula() -> str: return '<section class="slide dark"><div class="pad">why paula</div></section>'
-def slide_contact() -> str: return '<section class="slide dark"><div class="pad">contact</div></section>'
+def slide_cover() -> str:
+    return f"""<section class="slide dark">
+  <img class="cover-img" src="assets/hero.jpg" loading="eager" alt="">
+  <div class="cover-fade"></div>
+  <div class="pad">
+    <div class="wordmark">SCHWARZKOPF</div>
+    <div class="eyebrow" style="margin-top:54px">Trade &amp; Shopper Marketing Plan · Hair Care — GCC</div>
+    <div class="cover-title" style="margin-top:18px">FRIZZ<br>FORECAST</div>
+    <div class="cover-tag">When the humidity spikes, Schwarzkopf is already on the shelf.</div>
+  </div>
+  <div class="cover-lockup">
+    Prepared by {P['name']} &nbsp;·&nbsp; 29 May 2026<br>
+    For: Trade &amp; Shopper Marketing Manager – GCC, Henkel
+  </div>
+</section>"""
+
+
+def slide_agenda() -> str:
+    rows = [
+        ("01", "Shopper insight — GCC"),
+        ("02", "The big idea — Frizz Forecast"),
+        ("03", "Perfect Store by channel"),
+        ("04", "90-day activation calendar"),
+        ("05", "KPIs, ROI &amp; cadence"),
+        ("06", "Why Paula"),
+    ]
+    body = "".join(
+        f'<div class="agenda-row"><div class="agenda-num">{n}</div><div class="agenda-txt">{t}</div></div>'
+        for n, t in rows
+    )
+    return f"""<section class="slide">
+  <div class="pad">
+    <div class="kicker">Agenda</div>
+    <div class="h2" style="margin:6px 0 28px">The plan, end&nbsp;to&nbsp;end.</div>
+    {body}
+  </div>
+  <div class="pagenum">01</div>
+</section>"""
+
+
+def slide_insight() -> str:
+    return f"""<section class="slide">
+  <img src="assets/creator.jpg" loading="eager" alt=""
+       style="position:absolute;right:0;top:0;width:430px;height:720px;object-fit:cover">
+  <div class="pad" style="padding-right:480px">
+    <div class="kicker">01 · Shopper &amp; category insight — GCC</div>
+    <div class="h2" style="margin:6px 0 18px">Hair damage here is<br>a daily, weather event.</div>
+    <ul class="bullets">
+      <li><b>Climate-driven need:</b> heat, sun &amp; humidity 8+ months/year make damage, frizz and scalp care year-round needs — Schwarzkopf can own "repair &amp; protect" (Gliss) and premium care (BC Bonacure).</li>
+      <li><b>Two shoppers, two missions:</b> high-frequency replenishment in grocery/hyper vs. advice-led discovery in pharmacy.</li>
+      <li><b>Premium + value polarity:</b> a premium expat segment and a value mass segment coexist — the range must serve both without trading down.</li>
+      <li><b>Channels that matter:</b> Modern Trade (Carrefour/MAF, Lulu, Union Coop, Spinneys), pharmacy (BinSina, Aster, Life), e-tail (Noon, Amazon.ae), quick-commerce (Noon Minutes, Talabat).</li>
+      <li><b>Seasonal peaks:</b> summer anti-frizz, Ramadan &amp; Eid gifting, back-to-school, DSF/GITEX.</li>
+    </ul>
+  </div>
+  <div class="pagenum">02</div>
+</section>"""
+
+
+def slide_big_idea() -> str:
+    return f"""<section class="slide dark">
+  <div class="pad">
+    <div class="eyebrow">02 · The big idea</div>
+    <div class="cover-title" style="font-size:84px;margin-top:10px">FRIZZ FORECAST</div>
+    <div class="lead on-dark" style="margin-top:18px;max-width:540px">
+      Co-opt the one number every GCC shopper already checks — the weather — and turn it into a
+      live <b style="color:#fff">FRIZZ INDEX (0–100)</b>. When it spikes, Schwarzkopf's repair block
+      (Gliss) and premium care (BC Bonacure) become the category's pre-merchandised answer, in-store and online.
+    </div>
+  </div>
+  <div class="kv-card">
+    <div class="lbl">FRIZZ INDEX</div>
+    <div class="val">87</div>
+    <div class="state">HIGH</div>
+    <div class="bar"></div>
+  </div>
+  <div class="kv-bottle"></div>
+  <div class="kv-shelf"></div>
+  <div class="kv-talker">FRIZZ INDEX · 87 HIGH</div>
+  <div class="kv-lockup">"When the humidity spikes,<br>Schwarzkopf is already on the shelf."</div>
+</section>"""
+
+
+def slide_how() -> str:
+    return f"""<section class="slide">
+  <div class="pad">
+    <div class="kicker">02 · How it works</div>
+    <div class="h2" style="margin:6px 0 4px">One index. Two layers.</div>
+    <div class="flow">
+      <div class="node"><h4>Weather</h4><p>Humidity + UV, the number every GCC shopper already checks daily.</p></div>
+      <div class="node"><h4>Frizz Index 0–100</h4><p>Published weekly threshold → LOW / MED / HIGH.</p></div>
+      <div class="node"><h4>Pre-merchandised answer</h4><p>Repair &amp; protect block becomes the obvious fix.</p></div>
+    </div>
+    <div class="two">
+      <div class="col">
+        <div class="tagcol">In-store · KAM-sellable</div>
+        <h4>A weekly swap, not a gimmick</h4>
+        <ul class="bullets">
+          <li>Repair endcap ships with 3 pre-printed headers — <b>LOW / MED / HIGH</b>. Each Monday the published index says which is live.</li>
+          <li>On HIGH weeks: swap to the HIGH header + a humidity price-pack bundle (Gliss shampoo+mask).</li>
+          <li>New Perfect Store audit line: <b>"Frizz block compliance"</b> (header + correct tier + bundle faced).</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="tagcol">Online · genuinely live</div>
+        <h4>Automated where it can be</h4>
+        <ul class="bullets">
+          <li>E-tail "Today's Frizz Index" badge + search bids that scale on HIGH days.</li>
+          <li>Q-commerce weather-triggered tiles + one-tap "Frizz Rescue" bundle.</li>
+          <li>Retail-media display bids up on HIGH days — ROAS measurable against the index.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pagenum">03</div>
+</section>"""
+
+
+def slide_channels() -> str:
+    cards = [
+        ("instore", "Modern Trade", "Repair &amp; protect endcap, LOW/MED/HIGH swap headers, HIGH-week bundle, Frizz block compliance."),
+        ("pharmacy", "Pharmacy", "\"Frizz Index clinic\": humidity-damage diagnostic → BC Bonacure tiers, advisor sampling, travel-mask GWP at till on HIGH weeks."),
+        ("marketplace", "E-tail", "A+ content led by the Frizz Index, auto-updating \"Today's Frizz Index\" badge, search bids on frizz/repair, review seeding."),
+        ("qcommerce", "Quick-commerce", "Weather-triggered \"Frizz Index High today\" tiles, one-tap \"Frizz Rescue\" bundle, creator codes on worst-humidity days."),
+        ("retailmedia", "Retail media", "Always-on Noon/Amazon/Carrefour sponsored + weather-API display bidding up on HIGH days. ROAS vs the index."),
+    ]
+    cc = "".join(
+        f'<div class="cc"><img src="assets/{img}.jpg" loading="eager" alt=""><div class="body"><h4>{title}</h4><p>{body}</p></div></div>'
+        for img, title, body in cards
+    )
+    return f"""<section class="slide">
+  <div class="pad">
+    <div class="kicker">02 · Across the shelf</div>
+    <div class="h2" style="margin:6px 0 0">The same index, every channel.</div>
+    <div class="cards5">{cc}</div>
+  </div>
+  <div class="pagenum">04</div>
+</section>"""
+
+
+def _table(headers: list[str], rows: list[list[str]]) -> str:
+    head = "".join(f"<th>{h}</th>" for h in headers)
+    body = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
+    return f'<table class="ps"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>'
+
+
+def slide_perfect_store() -> str:
+    rows = [
+        ["Hypermarket / Modern Trade", "Hero SKU 100% availability · planogrammed block by benefit · <b>Frizz block compliance</b> (header + tier + bundle) · price-pack compliance · promo ROI tracked"],
+        ["Pharmacy", "Advice fixture for premium care · trained staff/sampling · BC Bonacure &amp; repair range visible · GWP at till"],
+        ["E-tail (Noon / Amazon.ae)", 'A+ content on hero SKUs · 4.3★+ review health · <b>"Today\'s Frizz Index" badge</b> · search share on "shampoo/hair repair" · pack-shot &amp; title compliance'],
+        ["Quick-commerce (Talabat / Noon Minutes)", '<b>"Frizz Rescue" bundle</b> · hero-SKU availability · weather-triggered discovery tiles · impulse pricing'],
+    ]
+    return f"""<section class="slide">
+  <div class="pad">
+    <div class="kicker">03 · Perfect Store standards by channel</div>
+    <div class="h2" style="margin:6px 0 2px">One measurable picture per channel.</div>
+    <div class="lead" style="font-size:15px;margin-top:8px">Availability, visibility, pricing and activation — audited monthly and tied to KAM scorecards.</div>
+    {_table(["Channel", "Perfect Store priorities"], rows)}
+  </div>
+  <div class="pagenum">05</div>
+</section>"""
+
+
+def slide_calendar() -> str:
+    rows = [
+        ["Wk 1–2", "Onboarding &amp; Perfect Store audit", "All", "Baseline scorecard + KAM 1:1s", "Diagnose gaps"],
+        ["Wk 3–4", "Hero-SKU fix + Frizz block set-up", "MT + e-tail", "Must-stock list, A+ refresh, swap-header kit ship", "Distribution +X pts"],
+        ["Month 2", "Summer HIGH-Frizz burst", "MT + pharmacy", "HIGH header + GWP + sampling + bundle", "Sell-out uplift"],
+        ["Month 2", "Weather-triggered q-commerce push", "Talabat/Noon Min.", '"Frizz Rescue" tiles + creator codes', "Trial &amp; basket size"],
+        ["Month 3", "Ramadan/premium gifting pre-build", "MT + pharmacy", "Gift packs + premium endcap", "Premium mix up"],
+        ["Month 3", "Business review &amp; scale", "All", "Promo ROI readout, scale winners", "Lock Q4 plan"],
+    ]
+    return f"""<section class="slide">
+  <div class="pad">
+    <div class="kicker">04 · 90-day trade activation calendar</div>
+    <div class="h2" style="margin:6px 0 2px">From audit to scale in 90 days.</div>
+    {_table(["Window", "Activation", "Channel", "Mechanic", "Objective"], rows)}
+  </div>
+  <div class="pagenum">06</div>
+</section>"""
+
+
+def slide_kpis() -> str:
+    rows = [
+        ['<b>Sell-out uplift vs baseline (HIGH-Frizz weeks)</b>', "Activation effectiveness — the hero KPI", "Per activity"],
+        ["Numeric &amp; weighted distribution (hero SKUs)", "Availability foundation", "Monthly"],
+        ["Perfect Store / Frizz block compliance %", "Execution quality", "Monthly audit"],
+        ["Promo ROI / ROAS", "Spend efficiency", "Per activity + QBR"],
+        ['E-tail search share ("anti-frizz/repair") &amp; review health', "Digital shelf strength (leading indicator)", "Bi-weekly"],
+        ["Premium mix %", "Value growth, not just volume", "Monthly"],
+    ]
+    return f"""<section class="slide">
+  <div class="pad">
+    <div class="kicker">05 · KPIs, ROI &amp; cadence</div>
+    <div class="h2" style="margin:6px 0 2px">Prove it moves the number.</div>
+    {_table(["KPI", "What it proves", "Cadence"], rows)}
+    <div class="lead" style="font-size:14px;margin-top:18px"><b class="red">Cadence:</b> monthly business reviews with Sales, Supply Chain, Finance &amp; Marketing; quarterly JBP checkpoints with key accounts; A&amp;P managed to ROI throughout.</div>
+  </div>
+  <div class="pagenum">07</div>
+</section>"""
+
+
+def slide_why_paula() -> str:
+    return f"""<section class="slide">
+  <img class="why-photo" src="assets/paula.jpg" loading="eager" alt="">
+  <div class="pad" style="padding-right:500px">
+    <div class="kicker">06 · Why Paula</div>
+    <div class="why-quote">"Frizz Forecast is exactly how I think — take a real shopper truth, turn it into a mechanic the field can sell and audit, and prove it with ROI."</div>
+    <ul class="bullets" style="margin-top:22px">
+      <li>Builds trade &amp; shopper plans by channel across <b>50+ markets</b> at DoFreeze.</li>
+      <li>Ran <b>42 key accounts to +30% GMV QoQ</b> at Alibaba's Miravia.</li>
+      <li>Integrates brands into UAE modern trade &amp; quick-commerce (Noon, Talabat, Careem, Deliveroo).</li>
+    </ul>
+    <div class="skillrow">
+      <span>Shopper &amp; category insight</span><span>Perfect Store &amp; JBP</span>
+      <span>e-/quick-commerce</span><span>KPI &amp; ROI discipline</span>
+    </div>
+  </div>
+  <div class="pagenum">08</div>
+</section>"""
+
+
+def slide_contact() -> str:
+    linkedin = P.get("linkedin", "").replace("https://", "").replace("http://", "")
+    return f"""<section class="slide dark">
+  <div class="pad">
+    <div class="wordmark">SCHWARZKOPF</div>
+    <div class="contact-big" style="margin-top:150px">CONTACT</div>
+    <div class="contact-line" style="margin-top:30px">{P['email']}</div>
+    <div class="contact-line">{P['phone']}</div>
+    <div class="contact-line">{linkedin}</div>
+  </div>
+</section>"""
 
 
 def build_html() -> str:
