@@ -29,6 +29,7 @@ DECK_PDF = HENKEL_DIR / "Deliverable_Paula_Henkel_Frizz-Forecast_Deck.pdf"
 FULL_PDF = HENKEL_DIR / "Deliverable_Paula_Henkel_Frizz-Forecast_FULL.pdf"
 APPENDIX_PDF = HENKEL_DIR / "Deliverable_Paula_Henkel_Trade-Shopper-Plan_Schwarzkopf.pdf"
 
+# Consumed by slide_why_paula() and slide_contact() (added in later tasks)
 P = settings.profile["personal"]
 CHANNEL_IMAGES = ["hero", "creator", "instore", "pharmacy", "marketplace", "qcommerce", "retailmedia"]
 
@@ -123,7 +124,14 @@ def html_doc(slides: str) -> str:
 
 
 def stage_assets() -> None:
-    """Copy the 7 reusable channel images + Paula's photo into the build dir."""
+    """Copy the channel images and Paula's photo into the build dir."""
+    if not LANDING_ASSETS.is_dir():
+        raise FileNotFoundError(
+            f"Landing assets not found: {LANDING_ASSETS}\n"
+            "Run the Schwarzkopf landing build first."
+        )
+    if not PAULA_PHOTO.exists():
+        raise FileNotFoundError(f"Paula's photo not found: {PAULA_PHOTO}")
     BUILD_ASSETS.mkdir(parents=True, exist_ok=True)
     for name in CHANNEL_IMAGES:
         shutil.copyfile(LANDING_ASSETS / f"{name}.jpg", BUILD_ASSETS / f"{name}.jpg")
@@ -174,6 +182,7 @@ def main() -> None:
     args = ap.parse_args()
 
     stage_assets()
+    HTML_PATH.parent.mkdir(parents=True, exist_ok=True)
     HTML_PATH.write_text(build_html(), encoding="utf-8")
     print(f"HTML: {HTML_PATH}")
     if args.html_only:
