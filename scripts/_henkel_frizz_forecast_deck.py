@@ -72,15 +72,19 @@ table.ps b{color:#C41E3A}
 .agenda-num{font-family:'Archivo',sans-serif;font-weight:900;font-size:24px;color:#C41E3A;width:48px}
 .agenda-txt{font-family:'Archivo',sans-serif;font-weight:800;font-size:26px;color:#0a0a0a;letter-spacing:-.5px}
 /* big idea key visual */
-.kv-card{position:absolute;left:88px;top:150px;width:330px;background:#fff;border-radius:14px;padding:26px 30px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.bigidea{display:flex;gap:54px;align-items:center;height:100%;padding:74px 88px}
+.bigidea-left{flex:1;max-width:560px}
+.bigidea-left .t{font-family:'Archivo',sans-serif;font-weight:900;font-size:78px;line-height:.85;letter-spacing:-3px;color:#fff;margin:14px 0 22px}
+.bigidea-left .lockup{margin-top:26px;color:#fff;font-size:19px;line-height:1.35;font-weight:600}
+.kv{position:relative;flex:0 0 420px;height:480px}
+.kv-card{position:absolute;left:10px;top:0;width:300px;background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 28px 70px rgba(0,0,0,.55);z-index:2}
 .kv-card .lbl{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;letter-spacing:2px;color:#444}
-.kv-card .val{font-family:'Archivo',sans-serif;font-weight:900;font-size:104px;line-height:.9;color:#C41E3A}
+.kv-card .val{font-family:'Archivo',sans-serif;font-weight:900;font-size:96px;line-height:.9;color:#C41E3A}
 .kv-card .state{font-family:'Archivo',sans-serif;font-weight:900;font-size:22px;letter-spacing:3px;color:#0a0a0a}
 .kv-card .bar{margin-top:14px;height:8px;border-radius:6px;background:linear-gradient(90deg,#f5c518,#C41E3A)}
-.kv-bottle{position:absolute;right:150px;bottom:150px;width:96px;height:300px;border-radius:14px 14px 6px 6px;background:linear-gradient(180deg,#efefef,#c8c8c8)}
-.kv-shelf{position:absolute;right:96px;bottom:138px;width:240px;height:14px;background:#fff}
-.kv-talker{position:absolute;right:96px;bottom:118px;width:240px;height:22px;background:#C41E3A;color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;letter-spacing:2px;display:flex;align-items:center;justify-content:center}
-.kv-lockup{position:absolute;left:88px;bottom:70px;color:#fff;font-size:20px;line-height:1.3;max-width:480px}
+.kv-bottle{position:absolute;right:75px;bottom:46px;width:84px;height:210px;border-radius:12px 12px 5px 5px;background:linear-gradient(180deg,#efefef,#c8c8c8);z-index:1}
+.kv-shelf{position:absolute;right:10px;bottom:34px;width:250px;height:12px;background:#fff;z-index:1}
+.kv-talker{position:absolute;right:10px;bottom:8px;width:250px;height:24px;background:#C41E3A;color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;letter-spacing:2px;display:flex;align-items:center;justify-content:center;z-index:1}
 /* how-it-works flow */
 .flow{display:flex;align-items:stretch;gap:18px;margin-top:30px}
 .flow .node{flex:1;background:#f6f6f6;border-left:5px solid #C41E3A;border-radius:8px;padding:20px}
@@ -199,25 +203,29 @@ def slide_insight() -> str:
 
 def slide_big_idea() -> str:
     return f"""<section class="slide dark">
-  <div class="pad">
-    <div class="eyebrow">02 · The big idea</div>
-    <div class="cover-title" style="font-size:84px;margin-top:10px">FRIZZ FORECAST</div>
-    <div class="lead on-dark" style="margin-top:18px;max-width:540px">
-      Co-opt the one number every GCC shopper already checks — the weather — and turn it into a
-      live <b style="color:#fff">FRIZZ INDEX (0–100)</b>. When it spikes, Schwarzkopf's repair block
-      (Gliss) and premium care (BC Bonacure) become the category's pre-merchandised answer, in-store and online.
+  <div class="bigidea">
+    <div class="bigidea-left">
+      <div class="eyebrow">02 · The big idea</div>
+      <div class="t">FRIZZ<br>FORECAST</div>
+      <div class="lead on-dark" style="max-width:520px">
+        Co-opt the one number every GCC shopper already checks — the weather — and turn it into a
+        live <b style="color:#fff">FRIZZ INDEX (0–100)</b>. When it spikes, Schwarzkopf's repair block
+        (Gliss) and premium care (BC Bonacure) become the category's pre-merchandised answer, in-store and online.
+      </div>
+      <div class="lockup">"When the humidity spikes,<br>Schwarzkopf is already on the shelf."</div>
+    </div>
+    <div class="kv">
+      <div class="kv-card">
+        <div class="lbl">FRIZZ INDEX</div>
+        <div class="val">87</div>
+        <div class="state">HIGH</div>
+        <div class="bar"></div>
+      </div>
+      <div class="kv-bottle"></div>
+      <div class="kv-shelf"></div>
+      <div class="kv-talker">FRIZZ INDEX · 87 HIGH</div>
     </div>
   </div>
-  <div class="kv-card">
-    <div class="lbl">FRIZZ INDEX</div>
-    <div class="val">87</div>
-    <div class="state">HIGH</div>
-    <div class="bar"></div>
-  </div>
-  <div class="kv-bottle"></div>
-  <div class="kv-shelf"></div>
-  <div class="kv-talker">FRIZZ INDEX · 87 HIGH</div>
-  <div class="kv-lockup">"When the humidity spikes,<br>Schwarzkopf is already on the shelf."</div>
 </section>"""
 
 
