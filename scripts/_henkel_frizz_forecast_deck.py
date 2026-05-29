@@ -419,8 +419,18 @@ def render_pdf(html_path: Path, pdf_path: Path) -> None:
             browser.close()
 
 
-def merge_pdfs(deck_pdf: Path, appendix_pdf: Path, out_pdf: Path) -> None:  # replaced in Task 9
-    raise NotImplementedError
+def merge_pdfs(deck_pdf: Path, appendix_pdf: Path, out_pdf: Path) -> None:
+    """Deck PDF followed by the existing 2-page trade plan as an appendix."""
+    from pypdf import PdfWriter
+
+    writer = PdfWriter()
+    writer.append(str(deck_pdf))
+    if appendix_pdf.exists():
+        writer.append(str(appendix_pdf))
+    else:
+        print(f"WARNING: appendix not found, writing deck only: {appendix_pdf}")
+    with open(out_pdf, "wb") as f:
+        writer.write(f)
 
 
 def main() -> None:
