@@ -1,0 +1,110 @@
+# Hard filters applied BEFORE scoring. Jobs matching any of these are rejected.
+
+# Companies Paula doesn't want to be contacted by or work for.
+# Format: exact match (case-insensitive) on the company name.
+companies: []
+
+# If any of these keywords appear in the job title or description, reject.
+keywords_reject:
+  - "commission only"
+  - "100% commission"
+  - "unpaid"
+  - "internship"
+  - "intern"
+  - "volunteer"
+  - "MLM"
+  - "multi-level marketing"
+  - "pyramid"
+  - "network marketing"
+  - "door to door"
+  - "door-to-door"
+  # Sectors / role types Paula does not want — added 2026-04-28 after Cold audit
+  # showed 168/259 Cold jobs were sector_fit=none, mostly tech/sales/automotive/etc.
+  - "outside sales"
+  - "field sales"
+  - "telesales"
+  - "tele-sales"
+  - "door sales"
+  - "real estate agent"
+  - "property consultant"
+  - "automotive sales"
+  - "car sales"
+  - "insurance sales"
+
+# Seniority levels to reject outright.
+seniority_reject:
+  - Intern
+  - Trainee
+  - Junior
+  - Entry Level
+  - Graduate
+
+# Title-only reject patterns. Matched as case-insensitive whole-word(ish) on TITLE only
+# (not description) to avoid false positives where a JD merely mentions tech.
+# Added 2026-04-28 after Cold audit showed 89 hits on tech/engineering titles
+# leaking through because the title contained "Manager".
+title_reject_patterns:
+  - "software engineer"
+  - "data engineer"
+  - "devops"
+  - "developer"
+  - "architect"  # solution architect, software architect — never her domain
+  - "qa engineer"
+  - "test engineer"
+  - "site reliability"
+  - "it manager"
+  - "it specialist"
+  - "technical project manager"
+  - "construction manager"
+  - "project manager - construction"
+  - "site manager"
+  - "civil engineer"
+  - "mechanical engineer"
+  - "electrical engineer"
+  - "automotive technician"
+
+# Salary floor. If the job has a visible salary range and max < this value → reject.
+# If no salary is visible the job passes this filter (scorer handles it).
+min_salary_aed_month: 20000
+
+# Currency conversion rates to AED (approximate, for salary normalization)
+currency_to_aed:
+  USD: 3.67
+  EUR: 4.00
+  GBP: 4.65
+  SAR: 0.98
+  QAR: 1.01
+  KWD: 11.95
+  BHD: 9.74
+  OMR: 9.54
+
+# Locations Paula will consider. Anything outside these is rejected.
+allowed_locations:
+  - Dubai
+  - Abu Dhabi
+  - Sharjah
+  - Ajman
+  - Ras Al Khaimah
+  - Umm Al Quwain
+  - Fujairah
+  - UAE
+  - United Arab Emirates
+  - Remote UAE
+  # Indeed/jobspy location codes for UAE emirates
+  - ", DU,"        # Dubai
+  - ", AZ,"        # Abu Dhabi
+  - ", SH,"        # Sharjah
+  - "DU, AE"       # Dubai, AE
+  - "AZ, AE"       # Abu Dhabi, AE
+  - "SH, AE"       # Sharjah, AE
+  - ", AE"         # any UAE (country code)
+  - "Jebel Ali"
+  - "Jumeirah"
+  - "DIFC"
+  - "DMCC"
+  - "JLT"
+  - "Media City"
+  - "Internet City"
+  - "Silicon Oasis"
+  - "Free Zone"
+  - "Freezone"

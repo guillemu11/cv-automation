@@ -1,0 +1,11 @@
+{
+  "id": "28737e04a393",
+  "kind": "text",
+  "tier": "haiku",
+  "system": "Pick the single best deliverable type for this job application. Options: digital_audit, ecommerce_teardown, brand_analysis, action_plan. Reply with ONLY the type name, nothing else.\n\nGuidelines:\n- E-Commerce / Key Account / Trade Marketing roles → ecommerce_teardown\n- Brand Manager / Category Manager roles → brand_analysis\n- Digital Marketing roles → digital_audit\n- If unsure or generic role → action_plan (always works)\n",
+  "user": "Job: Product/Brand Manager at Topgear Consultants\nSector: exact",
+  "tool_schema": null,
+  "tool_name": null,
+  "caller": "career_ops.generators.deliverables",
+  "created_at": "2026-05-19T09:06:18.289188+00:00"
+}

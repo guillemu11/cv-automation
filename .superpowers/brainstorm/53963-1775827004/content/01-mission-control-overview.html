@@ -1,0 +1,145 @@
+<h2>Career Ops — Mission Control Layout</h2>
+<p class="subtitle">El dashboard principal que ve el usuario al abrir la app. Elige la estructura general.</p>
+
+<div class="cards">
+
+  <!-- Option A: Kanban + Side Panel -->
+  <div class="card" data-choice="kanban-sidepanel" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:16px;background:#0f172a;">
+      <div style="font-family:monospace;font-size:11px;color:#94a3b8;line-height:1.6;">
+        <div style="background:#1e293b;padding:8px 12px;border-radius:6px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:#f8fafc;font-weight:bold;">Career Ops</span>
+          <span style="color:#94a3b8;font-size:10px;">3 Hot | 7 Warm | 12 Cold | <span style="color:#22c55e;">Pipeline OK</span></span>
+        </div>
+        <div style="display:flex;gap:8px;height:180px;">
+          <!-- Kanban columns -->
+          <div style="flex:1;background:#1e293b;border-radius:6px;padding:8px;">
+            <div style="color:#f59e0b;font-size:10px;font-weight:bold;margin-bottom:6px;">INBOX (12)</div>
+            <div style="background:#0f172a;border-radius:4px;padding:4px 6px;margin-bottom:4px;border-left:3px solid #ef4444;font-size:9px;">
+              <div style="color:#f8fafc;">Trade Marketing Mgr</div>
+              <div style="color:#64748b;">Choithrams · 88</div>
+            </div>
+            <div style="background:#0f172a;border-radius:4px;padding:4px 6px;margin-bottom:4px;border-left:3px solid #ef4444;font-size:9px;">
+              <div style="color:#f8fafc;">Brand Manager</div>
+              <div style="color:#64748b;">AWPRO · 88</div>
+            </div>
+            <div style="background:#0f172a;border-radius:4px;padding:4px 6px;margin-bottom:4px;border-left:3px solid #f59e0b;font-size:9px;">
+              <div style="color:#f8fafc;">E-Commerce Mgr</div>
+              <div style="color:#64748b;">MTM Groups · 78</div>
+            </div>
+            <div style="color:#475569;font-size:9px;text-align:center;">+9 more</div>
+          </div>
+          <div style="flex:1;background:#1e293b;border-radius:6px;padding:8px;">
+            <div style="color:#a78bfa;font-size:10px;font-weight:bold;margin-bottom:6px;">CV READY (2)</div>
+            <div style="background:#0f172a;border-radius:4px;padding:4px 6px;margin-bottom:4px;border-left:3px solid #a78bfa;font-size:9px;">
+              <div style="color:#f8fafc;">Shopper Mktg Mgr</div>
+              <div style="color:#64748b;">Reckitt · 88</div>
+            </div>
+          </div>
+          <div style="flex:1;background:#1e293b;border-radius:6px;padding:8px;">
+            <div style="color:#3b82f6;font-size:10px;font-weight:bold;margin-bottom:6px;">APPLIED (0)</div>
+            <div style="color:#475569;font-size:9px;text-align:center;margin-top:40px;">Drag jobs here<br>after applying</div>
+          </div>
+          <div style="flex:1;background:#1e293b;border-radius:6px;padding:8px;">
+            <div style="color:#22c55e;font-size:10px;font-weight:bold;margin-bottom:6px;">INTERVIEW (0)</div>
+            <div style="color:#475569;font-size:9px;text-align:center;margin-top:40px;">Your interviews<br>will appear here</div>
+          </div>
+          <!-- Side Panel -->
+          <div style="flex:1.5;background:#1e293b;border-radius:6px;padding:8px;border-left:2px solid #3b82f6;">
+            <div style="color:#f8fafc;font-size:10px;font-weight:bold;margin-bottom:4px;">Trade Marketing Manager</div>
+            <div style="color:#64748b;font-size:9px;margin-bottom:6px;">CHOITHRAMS · Dubai · Score: 88</div>
+            <div style="display:flex;gap:4px;margin-bottom:6px;">
+              <span style="background:#22c55e;color:#000;padding:1px 4px;border-radius:3px;font-size:8px;">trade marketing</span>
+              <span style="background:#22c55e;color:#000;padding:1px 4px;border-radius:3px;font-size:8px;">FMCG</span>
+              <span style="background:#ef4444;color:#fff;padding:1px 4px;border-radius:3px;font-size:8px;">-planogram</span>
+            </div>
+            <div style="color:#94a3b8;font-size:8px;margin-bottom:8px;">Excellent match. Direct trade marketing experience...</div>
+            <div style="display:flex;gap:4px;">
+              <div style="background:#8b5cf6;color:#fff;padding:3px 8px;border-radius:4px;font-size:8px;font-weight:bold;">Generate CV + CL</div>
+              <div style="background:#0f172a;color:#94a3b8;padding:3px 8px;border-radius:4px;font-size:8px;">Download PDF</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Kanban + Side Panel</h3>
+      <p>Columnas de status a la izquierda, panel de detalle a la derecha. Click en un job = panel se actualiza. Drag & drop entre columnas para cambiar status.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Table + Expandable Rows -->
+  <div class="card" data-choice="table-expandable" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:16px;background:#0f172a;">
+      <div style="font-family:monospace;font-size:11px;color:#94a3b8;line-height:1.6;">
+        <div style="background:#1e293b;padding:8px 12px;border-radius:6px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:#f8fafc;font-weight:bold;">Career Ops</span>
+          <span style="color:#94a3b8;font-size:10px;">Filters: <span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:10px;font-size:9px;">Hot</span> <span style="background:#f59e0b;color:#000;padding:1px 6px;border-radius:10px;font-size:9px;">Warm</span></span>
+        </div>
+        <!-- Table header -->
+        <div style="background:#1e293b;padding:6px 8px;border-radius:6px 6px 0 0;display:flex;gap:8px;font-size:9px;color:#64748b;font-weight:bold;">
+          <div style="width:25%;">TITLE</div>
+          <div style="width:15%;">COMPANY</div>
+          <div style="width:8%;text-align:center;">SCORE</div>
+          <div style="width:12%;">STATUS</div>
+          <div style="width:15%;">MATCH</div>
+          <div style="width:25%;">ACTIONS</div>
+        </div>
+        <!-- Row 1 - expanded -->
+        <div style="background:#1a2332;padding:6px 8px;display:flex;gap:8px;font-size:9px;border-left:3px solid #ef4444;">
+          <div style="width:25%;color:#f8fafc;">Trade Marketing Mgr</div>
+          <div style="width:15%;color:#94a3b8;">Choithrams</div>
+          <div style="width:8%;text-align:center;"><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:10px;">88</span></div>
+          <div style="width:12%;"><span style="color:#a78bfa;">CV Ready</span></div>
+          <div style="width:15%;color:#22c55e;">exact fit</div>
+          <div style="width:25%;display:flex;gap:3px;">
+            <span style="background:#8b5cf6;color:#fff;padding:1px 5px;border-radius:3px;font-size:8px;">PDF</span>
+            <span style="background:#3b82f6;color:#fff;padding:1px 5px;border-radius:3px;font-size:8px;">Email</span>
+            <span style="background:#0f172a;color:#94a3b8;padding:1px 5px;border-radius:3px;font-size:8px;">LinkedIn</span>
+          </div>
+        </div>
+        <!-- Expanded detail -->
+        <div style="background:#0f172a;padding:8px 12px;border-left:3px solid #ef4444;margin-bottom:2px;">
+          <div style="display:flex;gap:12px;font-size:8px;">
+            <div>
+              <div style="color:#64748b;margin-bottom:2px;">SKILLS MATCH</div>
+              <div style="display:flex;gap:3px;flex-wrap:wrap;">
+                <span style="background:#22c55e20;color:#22c55e;padding:1px 4px;border-radius:2px;">trade marketing</span>
+                <span style="background:#22c55e20;color:#22c55e;padding:1px 4px;border-radius:2px;">FMCG</span>
+                <span style="background:#22c55e20;color:#22c55e;padding:1px 4px;border-radius:2px;">KAM</span>
+              </div>
+            </div>
+            <div>
+              <div style="color:#64748b;margin-bottom:2px;">GENERATED</div>
+              <div style="color:#a78bfa;">CV + CL ready</div>
+              <div style="color:#64748b;margin-top:2px;">10 Apr 2026</div>
+            </div>
+          </div>
+        </div>
+        <!-- Row 2 -->
+        <div style="background:#1e293b;padding:6px 8px;display:flex;gap:8px;font-size:9px;border-left:3px solid #ef4444;">
+          <div style="width:25%;color:#f8fafc;">Brand Manager</div>
+          <div style="width:15%;color:#94a3b8;">AWPRO</div>
+          <div style="width:8%;text-align:center;"><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:10px;">88</span></div>
+          <div style="width:12%;"><span style="color:#f59e0b;">Analyzed</span></div>
+          <div style="width:15%;color:#22c55e;">exact fit</div>
+          <div style="width:25%;"><span style="background:#8b5cf6;color:#fff;padding:2px 8px;border-radius:3px;font-size:8px;">Generate CV</span></div>
+        </div>
+        <!-- Row 3 -->
+        <div style="background:#1a2332;padding:6px 8px;display:flex;gap:8px;font-size:9px;border-left:3px solid #f59e0b;">
+          <div style="width:25%;color:#f8fafc;">Marketing & Brand Mgr</div>
+          <div style="width:15%;color:#94a3b8;">Tiger Recruit</div>
+          <div style="width:8%;text-align:center;"><span style="background:#f59e0b;color:#000;padding:1px 6px;border-radius:10px;">78</span></div>
+          <div style="width:12%;"><span style="color:#94a3b8;">Inbox</span></div>
+          <div style="width:15%;color:#f59e0b;">adjacent</div>
+          <div style="width:25%;"><span style="background:#0f172a;color:#94a3b8;padding:2px 8px;border-radius:3px;font-size:8px;">Review</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Table + Expandable Rows</h3>
+      <p>Lista tipo spreadsheet con filas expandibles. Click en una fila = se expande mostrando detalles, skills, acciones. Denso en informacion, escaneo rapido. Familiar para usuarios de Excel/Sheets.</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,86 @@
+{
+  "id": "0d4fa9b535f3",
+  "kind": "structured",
+  "tier": "sonnet",
+  "system": "You generate pre-computed application form responses for Paula De Francisco,\na Brand & Marketing Manager applying to roles in Dubai's FMCG, Beauty, and\nE-Commerce sectors. Your answers will be copy-pasted into ATS application\nforms (Workday, Lever, Greenhouse, etc.).\n\nRules:\n1. Answer as Paula — first person, professional but warm tone.\n2. Use REAL metrics from her profile: +30% GMV QoQ, 42 key accounts, 6 NPD\n   launches end-to-end, 50+ countries, 25-50 influencers per campaign.\n3. For \"why interested\" — reference something SPECIFIC about the company or\n   role from the job description. Never be generic.\n4. For salary — state a range in AED/month. Paula's floor is 20,000 AED/month.\n   Suggest a range appropriate to the role seniority (e.g., 20,000-25,000 for\n   mid-level, 25,000-35,000 for senior).\n5. For years of experience — Paula has 4+ years (since Aug 2021).\n6. Narrative answers: 2-4 sentences each. Concise, specific, metric-driven.\n7. NEVER invent achievements not listed in the profile.\n8. Generate 5-8 additional Q&A pairs tailored to the ATS platform and role.\n9. Output via the submit_form_responses tool.\n",
+  "user": "Generate form responses for this job application.\n\n## Target Job\n- Title: Trade & Shopper Marketing Manager - GCC\n- Company: Henkel\n- Location: Dubai, UAE\n- URL: https://to.indeed.com/aalbww9d8jcp\n- ATS Platform: generic\n\n### Job Description\nDevelop and execute GCC trade and shopper marketing strategies aligned with brand and commercial objectives. Translate category and shopper insights into channel and customer plans. Drive Perfect Store execution. Lead annual trade activation-calendar planning. Work closely with Key Account Managers and Sales. Design shopper activation programs and promotions. Support NPD launches via go-to-market planning. Manage trade marketing budgets with focus on ROI. 4-6 years in Trade/Shopper/Category/Sales within FMCG. Strong understanding of GCC Modern Trade and Traditional Trade channels.\n\n### Scorer Notes\n- Score: 95/100 (Hot)\n- Skills match: trade marketing, shopper marketing, category management, key account management, NPD, modern trade, ROI\n- Missing skills: \n- Key ATS terms: trade marketing, shopper marketing, GCC, modern trade, Perfect Store, key account, NPD, ROI, category\n\n## Candidate Profile\nPaula De Francisco Pérez — Brand Manager · E-Commerce · Key Account Management · Trade Marketing\nResults-driven Brand, E-Commerce and Commercial professional with 4+ years of experience across FMCG, Beauty, Fashion and E-Commerce. Currently leading Brand & Marketing for DoFreeze (Befit, Eurocake, Flair) in Dubai, managing multi-market strategy across 50+ countries in GCC, MENA, Asia, Europe, USA and Africa. Inditex-trained at the start of her career (Massimo Dutti, Las Rozas Village factory store). Proven track record: +30% GMV growth QoQ, 42 key accounts managed, 6 NPD launches end-to-end, and influencer programmes scaled from zero to 25–50 creators per campaign. Hands-on experience integrating brands into UAE quick-commerce platforms (Noon, Talabat, Careem, Deliveroo) and managing modern trade, distributor networks and A&P budgets across global markets. Business Administration graduate (CUNEF, 9.5/10 thesis with E-Commerce & Fashion Industry specialisation) with a data-driven, omnichannel approach to brand growth.\n\n\nCurrent role: Brand & Marketing Manager at DoFreeze LLC (Oct 2025 – Present)\nPrevious: Key Account Manager – Beauty, Fragrances & Fashion at Miravia / AliExpress (Alibaba Group) (Nov 2023 – Oct 2025)\n\nKey metrics:\n- +30% GMV growth QoQ managing 42 key accounts at Alibaba (Miravia/AliExpress)\n- 6 NPD launches end-to-end across 50+ countries at DoFreeze\n- Scaled influencer programme from zero to 25-50 creators per campaign\n- UAE quick-commerce platforms: Noon, Talabat, Careem, Deliveroo\n- Already in Dubai with UAE residence visa — no sponsorship needed\n\nEducation: Bachelor's in Business Administration — CUNEF Universidad (2016 – 2020)\nLanguages: Spanish (Native), English (Professional C1)\nSalary floor: 20000 AED/month\nWork model: Hybrid OK\n\n## Previous answers (maintain consistency across applications):\n\n- AWPRO / Brand Manager:\n  Years of experience: 4+ years\n  Salary expectation: 22,000 - 28,000 AED per month\n  Notice period: 30 days\n  Availability: Available to start within 30 days\n\n- Deliveroo / Senior Marketing Manager, Deliveroo Plus - Apply:\n  Years of experience: 4+ years\n  Salary expectation: 25,000 - 32,000 AED per month\n  Notice period: 30 days\n  Availability: Available to start within 30 days\n\n- META advisory partners / brand Manager FMCG:\n  Years of experience: 4+ years\n  Salary expectation: 25,000 - 35,000 AED per month\n  Notice period: 30 days\n  Availability: Available to start within 30 days\n\n\n## ATS Platform Typical Questions (generic)\nGenerate additional Q&A for these common questions:\n- How did you hear about this position?\n- Are you legally authorized to work in the UAE?\n- Do you require visa sponsorship now or in the future?\n- What is your expected salary range?\n- What is your earliest available start date?\n- What is your current notice period?\n- Do you have experience in this industry?\n- Describe a professional achievement you are most proud of.\n\nUse the submit_form_responses tool to return all answers.",
+  "tool_schema": {
+    "name": "submit_form_responses",
+    "description": "Submit pre-computed form responses for a job application",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "current_title": {
+          "type": "string",
+          "description": "Paula's current job title, adapted if needed for the application"
+        },
+        "years_of_experience": {
+          "type": "string",
+          "description": "Total years of professional experience (e.g., '4+ years')"
+        },
+        "current_company": {
+          "type": "string",
+          "description": "Current employer name"
+        },
+        "notice_period": {
+          "type": "string",
+          "description": "Current notice period (e.g., '30 days', '2 weeks', 'Immediately available')"
+        },
+        "why_interested": {
+          "type": "string",
+          "description": "Answer to 'Why are you interested in this role/company?' — 2-4 sentences, company-specific"
+        },
+        "why_good_fit": {
+          "type": "string",
+          "description": "Answer to 'What makes you a good fit?' — 2-4 sentences with metrics"
+        },
+        "greatest_achievement": {
+          "type": "string",
+          "description": "Answer to 'Describe your greatest professional achievement' — 2-4 sentences"
+        },
+        "salary_expectation": {
+          "type": "string",
+          "description": "Salary expectation as a range in AED/month"
+        },
+        "availability": {
+          "type": "string",
+          "description": "Answer to 'When can you start?' (e.g., 'Available to start within 30 days')"
+        },
+        "additional_qa": {
+          "type": "array",
+          "description": "5-8 additional Q&A pairs for common ATS questions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "answer": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "question",
+              "answer"
+            ]
+          }
+        }
+      },
+      "required": [
+        "current_title",
+        "years_of_experience",
+        "current_company",
+        "notice_period",
+        "why_interested",
+        "why_good_fit",
+        "greatest_achievement",
+        "salary_expectation",
+        "availability",
+        "additional_qa"
+      ]
+    }
+  },
+  "tool_name": "submit_form_responses",
+  "caller": "career_ops.generators.form_responses",
+  "created_at": "2026-05-29T15:55:27.180786+00:00"
+}

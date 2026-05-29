@@ -1,0 +1,28 @@
+{
+  "Gloria Jeans": {
+    "company": "Gloria Jeans",
+    "job_id": "acfd6b135aaed081",
+    "cv": "C:\\Users\\gmunoz02\\Desktop\\CV_Automation\\output\\CV_Paula_Gloria_Jeans_Brand__Marketing_Manager_(Speculative).pdf",
+    "cl": "C:\\Users\\gmunoz02\\Desktop\\CV_Automation\\output\\CL_Paula_Gloria_Jeans_Brand__Marketing_Manager_(Speculative).pdf",
+    "outreach": {
+      "email_subject": "Inditex-trained Brand Manager | Dubai-based for MENA expansion",
+      "email_body_chars": 779,
+      "linkedin_connection": "Fascinated by Gloria Jeans' MENA expansion and recruitment of Inditex talent. Inditex-trained Brand Manager in Dubai with +30% GMV growth across fashion accounts and proven UAE market expertise ready to discuss regional opportunities.",
+      "linkedin_inmail_chars": 398
+    },
+    "deliverable": "C:\\Users\\gmunoz02\\Desktop\\CV_Automation\\output\\Deliverable_Paula_Gloria_Jeans_Brand__Marketing_Manager_(Speculative)_action-plan.docx"
+  },
+  "Azadea": {
+    "company": "Azadea",
+    "job_id": "a1969563804a8468",
+    "cv_error": "(-2147221008, 'CoInitialize has not been called.', None, None)",
+    "cl_error": "(-2147221008, 'CoInitialize has not been called.', None, None)",
+    "outreach": {
+      "email_subject": "Fashion-Commerce expertise for Azadea's growth",
+      "email_body_chars": 856,
+      "linkedin_connection": "Hi! Connecting as I've been impressed by Azadea's multibrand expansion strategy across MENA. I bring 42 multibrand key account experience from Alibaba/Miravia plus fashion foundations from Inditex, based in Dubai.",
+      "linkedin_inmail_chars": 458
+    },
+    "deliverable": "C:\\Users\\gmunoz02\\Desktop\\CV_Automation\\output\\Deliverable_Paula_Azadea_Marketing_Manager_(Speculative)_brand-analysis.docx"
+  }
+}

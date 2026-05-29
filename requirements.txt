@@ -1,0 +1,46 @@
+# Core
+anthropic>=0.40.0
+python-dotenv>=1.0.1
+pyyaml>=6.0.2
+pydantic>=2.9.0
+
+# Discovery
+python-jobspy>=1.1.80
+google-search-results>=2.4.2      # SerpAPI
+apify-client>=1.8.0
+firecrawl-py>=1.6.0
+
+# Contacts
+# Apollo.io has no official Python SDK; we call REST directly via httpx
+httpx>=0.27.0
+
+# CRM / Notion
+notion-client>=2.2.1
+
+# Email (Outlook preferred, Gmail fallback)
+msal>=1.31.0                       # Microsoft Graph OAuth
+google-auth>=2.35.0
+google-auth-oauthlib>=1.2.1
+google-api-python-client>=2.149.0
+
+# Document generation
+python-docx>=1.1.2
+docx2pdf>=0.1.8                    # DOCX → PDF via Word
+weasyprint>=62.0                   # HTML → PDF for deliverables
+
+# Web dashboard
+fastapi>=0.115.0
+uvicorn>=0.32.0
+watchfiles>=0.24.0                 # required for uvicorn reload=True to detect file changes on Windows
+
+# Utilities
+tenacity>=9.0.0                    # retry with backoff
+tqdm>=4.66.5
+click>=8.1.7                       # CLI for scripts
+rich>=13.9.0                       # pretty terminal output for calibrate_scorer
+
+# PDF reading (to parse JDs that link to PDFs and to re-read the CV)
+pypdf>=5.0.0
+
+# Browser automation (autofill of ATS application forms)
+playwright>=1.48.0

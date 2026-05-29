@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="{{BRAND_PRIMARY}}">
+  <title>{{CAMPAIGN_NAME}} — {{BRAND_NAME}}</title>
+  <meta name="description" content="{{CAMPAIGN_TAGLINE}}">
+  <meta property="og:title" content="{{CAMPAIGN_NAME}} — {{BRAND_NAME}}">
+  <meta property="og:description" content="{{CAMPAIGN_TAGLINE}}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family={{FONT_DISPLAY_URL}}&family={{FONT_BODY_URL}}&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="brand-mark">{{BRAND_NAME}}</div>
+    <div class="campaign-chip">{{CAMPAIGN_NAME}}</div>
+  </nav>
+
+  <!-- Hero: archetype A (scroll frame sequence) or B (video loop). Swap the section below. -->
+  <section class="hero hero--video" data-hero>
+    <video autoplay muted loop playsinline preload="auto" class="hero-video" aria-hidden="true">
+      <source src="assets/hero-loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-copy">
+      <h1 class="hero-tagline">{{HERO_TAGLINE}}</h1>
+      <p class="hero-subhead">{{HERO_SUBHEAD}}</p>
+    </div>
+    <div class="hero-scrollhint" aria-hidden="true">scroll</div>
+  </section>
+
+  <section class="insight" data-reveal>
+    <div class="insight-stat">{{INSIGHT_STAT}}</div>
+    <p class="insight-body">{{INSIGHT_BODY}}</p>
+  </section>
+
+  <section class="manifesto" data-reveal>
+    <h2 class="section-heading">The manifesto</h2>
+    <div class="manifesto-body">
+      {{MANIFESTO_PARAGRAPHS}}
+    </div>
+  </section>
+
+  <section class="executions" data-reveal>
+    <h2 class="section-heading">Campaign executions</h2>
+    <div class="executions-grid">
+      {{EXECUTION_CARDS}}
+    </div>
+  </section>
+
+  <section class="kpis" data-reveal>
+    <h2 class="section-heading">How we'd measure it</h2>
+    <div class="kpis-grid">
+      {{KPI_CARDS}}
+    </div>
+  </section>
+
+  <footer class="credits">
+    <p class="credits-line">Proposed by <strong>Paula De Francisco</strong> — application for <em>{{ROLE_TITLE}}</em> at {{BRAND_PARENT}}.</p>
+    <p class="credits-disclaimer">Fictional campaign concept. Not affiliated with or endorsed by {{BRAND_NAME}}.</p>
+  </footer>
+
+  <script src="scroll.js"></script>
+</body>
+</html>

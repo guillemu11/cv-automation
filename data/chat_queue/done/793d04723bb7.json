@@ -1,0 +1,95 @@
+{
+  "id": "793d04723bb7",
+  "kind": "structured",
+  "tier": "sonnet",
+  "system": "You are an expert ATS-optimized CV writer specializing in FMCG, Beauty, and\nE-Commerce roles in the GCC/Dubai market. You adapt existing CV content to\nmaximize relevance for a specific job posting.\n\nRules:\n1. NEVER invent experience, metrics, or skills the candidate doesn't have.\n2. Reorder and emphasize bullets that match the job requirements.\n3. Mirror exact keywords from the job description (ATS optimization).\n4. Keep the professional summary to 3-4 lines.\n5. Adapt the headline to match the target role title when appropriate.\n6. For each company, select and reorder the 4-6 most relevant bullets.\n7. Reorder skills within each category by relevance to the job.\n8. Output via the submit_cv_content tool.\n",
+  "user": "Adapt this candidate's CV for the following job posting.\n\n## Target Job\n- Title: brand Manager FMCG\n- Company: META advisory partners\n- Location: Dubai - United Arab Emirates\n\n### Job Description\nRole Purpose\n\n\nThe Marketing Manager will lead the strategic development and execution of brand plans to drive market share, brand awareness, and revenue growth in the UAE and wider GCC markets. You will be responsible for translating consumer insights into winning 360-degree marketing campaigns, managing substantial budgets, and ensuring flawless execution across traditional and digital channels.\n\n\nKey Responsibilities\n\n\n\n Brand Strategy: Develop and implement the annual marketing plan, defining the brand's positioning, pricing strategy, and communication pillars.\n Consumer Insights: Analyze market trends, competitor activity, and data to identify white-space opportunities within the Dubai and GCC retail landscape.\n NPD (New Product Development): Lead the go-to-market (GTM) strategy for new launches, coordinating with Supply Chain and Sales to ensure product availability and maximum visibility.\n Channel Marketing: Collaborate with the Trade Marketing team to design high-impact POSM (Point of Sale Materials) and in-store activations for key accounts like Carrefour, Lulu, and Spinneys.\n Digital & Social Media: Oversee the digital ecosystem, including social media content strategy, influencer partnerships (localized for the region), and performance marketing (E-commerce/Quick-commerce).\n Agency Management: Lead and evaluate external creative, media-buying, and PR agencies to ensure ROI on all spend.\n Budget Management: Full P&L responsibility for the marketing budget, ensuring optimized spend and financial discipline.\n\nRequired Experience & Qualifications\n\n\n\n Experience: Minimum 6–8 years of marketing experience, with at least 3–4 years specifically within the FMCG sector (Food, Beverage, or Personal Care preferred).\n Education: Bachelor’s degree in Marketing, Business, or a related field. An MBA is a plus.\n Market Knowledge: Deep understanding of the GCC retail environment and cultural nuances of the diverse Dubai consumer base.\n Data Driven: Proven ability to turn data (Nielsen, Kantar, or internal sales data) into actionable marketing strategies.\n Soft Skills: Strong leadership, negotiation skills, and the ability to work in a fast-paced, high-pressure environment.\n\nPreferred Skills\n\n\n\n Fluency in English is mandatory; Arabic is a significant advantage for localized content and stakeholder management.\n\nNOTE: Candidates without UAE or FMCG experience will NOT be shortlisted.\n\n\nJob Type: Full-time\n\n\nPay: AED15,000.00 - AED25,000.00 per month\n\n\nApplication Question(s):\n\n\n\n Is your work experience based in the UAE?\n Do you have FMCG experience?\n what is your current salary? (monthly salary - Mandatory)\n What is your notice period? ( Days - Mandatory)\n which brands have you managed earlier in FMCG in UAE?\n\nExperience:\n\n\n\n Marketing: 8 years (Required)\n\n### Scorer notes\n- Score: 92/100 (Hot)\n- Skills match: brand strategy, NPD end-to-end, go-to-market strategy, trade marketing, A&P budget management, key account management, modern trade, P&L management, Nielsen, Kantar, consumer insights, pricing strategy, channel marketing, digital marketing, e-commerce, quick-commerce platforms, influencer marketing, data analytics, KPI tracking, retail execution\n- Missing skills: Arabic language skills, PR agency management, creative agency management\n- ATS keywords to weave in: Brand Manager, FMCG, marketing experience, UAE, brand strategy, NPD, consumer insights, channel marketing, digital, social media, budget management, P&L, Nielsen, Kantar, trade marketing, go-to-market, Dubai, GCC, retail, data driven, English, marketing plan, brand positioning, pricing strategy\n\n## Candidate's Current CV Data\nName: Paula De Francisco Pérez\nCurrent headline: Brand Manager · E-Commerce · Key Account Management · Trade Marketing\nCurrent summary: Results-driven Brand, E-Commerce and Commercial professional with 4+ years of experience across FMCG, Beauty and Fragrances. Currently leading Brand & Marketing for DoFreeze (Befit, Eurocake, Flair) in Dubai, managing multi-market strategy across 50+ countries in GCC, MENA, Asia, Europe, USA and Africa. Proven track record: +30% GMV growth QoQ, 42 key accounts managed, 6 NPD launches end-to-end, and influencer programmes scaled from zero to 25–50 creators per campaign. Hands-on experience integrating brands into UAE quick-commerce platforms (Noon, Talabat, Careem, Deliveroo) and managing modern trade, distributor networks and A&P budgets across global markets. Business Administration graduate (CUNEF, 9.5/10 thesis) with a data-driven, omnichannel approach to brand growth.\n\n\n\nBrand & Marketing Manager @ DoFreeze LLC (Oct 2025 – Present, Dubai, UAE)\n  Context: Global FMCG distributor | Brands: Befit, Eurocake, Flair | 50+ countries\n  - Lead NPD end-to-end for 6 product launches (brief, packaging, pricing, go-to-market) across GCC, MENA, Asia, Europe, USA and Africa\n  - Built and scaled the influencer marketing programme from zero, managing 25–50 influencers per campaign to drive brand awareness and sell-out\n  - Integrated brands into key UAE quick-commerce platforms (Noon, Careem, Talabat, Deliveroo), managing onboarding, product listings, promotional mechanics and retail execution across modern trade channels\n  - Manage and optimise the e-commerce store — improving content, UX, conversion rate and promotional mechanics; own A&P budget allocation and commercial planning\n  - Represented the brand at international trade fairs (Germany, Thailand, Japan, Philippines), opening new distributor relationships and expanding market coverage\n  - Develop trade marketing and shopper marketing plans by channel, supporting key account strategy and category management across 50+ markets\n  - Led digital transformation of operations: automated marketing and commercial workflows, reducing manual workload and enabling scalable growth across the business\n  - Analyse e-commerce KPIs, ROI and ROAS across paid media, social and EDM to drive continuous performance improvement\n\nKey Account Manager – Beauty & Fragrances @ Miravia / AliExpress (Alibaba Group) (Nov 2023 – Oct 2025, Madrid, Spain)\n  Context: Top 5 global e-commerce | 100K+ employees\n  - Managed 42 key accounts in beauty and fragrances, achieving +30% GMV growth QoQ through pricing strategy, assortment optimisation and targeted promotions\n  - Owned the Flash Sales channel for Beauty & Home, reporting directly to the CEO and executing strategic commercial plans aligned with P&L targets\n  - Led category expansion as PIC Fragrances, onboarding 30+ new stores in two months via strategic promotions and trend-driven products, including Arabian Fragrances\n  - Created and led the Beauty Club and Hot on Social projects, boosting brand visibility, customer loyalty and positioning Miravia as a beauty destination\n  - Continuously analysed ROI, ROAS, conversion, traffic and retention to optimise channel performance and forecasting accuracy\n\nAccount Manager – XL Accounts @ Glovo (Sep 2022 – Nov 2023, Madrid, Spain)\n  Context: Quick-commerce leader | €500M+ revenue | 10K+ employees\n  - Managed strategic key accounts (KFC, Taco Bell, La Tagliatella, Sushi Shop), driving GMV growth through data-led planning and bespoke marketing activations\n  - Led cross-functional teams across marketing, logistics and customer support to deliver seamless campaigns and increase order volume\n  - Negotiated and closed high-impact commercial deals maximising profitability for both Glovo and partners\n\nTrainee – Category Planning @ Mondelez International (Aug 2021 – Aug 2022, Madrid, Spain)\n  Context: Global FMCG | €36B annual revenue | 90K+ employees\n  - Conducted sell-in/sell-out analysis, evaluated promotional effectiveness and built performance reports for the chocolate category\n  - Identified growth opportunities and contributed to successful NPD launches including Milka Spread and Mini Suchard\n\nAll skills by category:\n  brand_marketing: brand strategy, NPD end-to-end, influencer marketing, shopper marketing, trade marketing, A&P budget management, omnichannel campaigns, go-to-market\n  ecommerce_digital: e-store management, quick-commerce, Noon, Talabat, Careem, Deliveroo, UX optimisation, Google Ads, Instagram, TikTok, Facebook, Pinterest, EDM, process automation\n  commercial: key account management, distributor management, modern trade, general trade, negotiation, pricing strategy, assortment planning, category management, planogram, forecasting\n  data_analytics: P&L management, KPI tracking, sell-in/sell-out, ROI, ROAS, retail execution, Nielsen, Looker, Kantar, Salesforce, SAP, Planorama\n  tools: Microsoft Office (Expert), Google Ads, Salesforce, SAP, Looker, Kantar, Nielsen, Planorama, Foxy, Canva\n\n## Instructions\nReorder bullets and adapt headline/summary to maximize relevance for this job.\nReorder skills within each category so the most relevant ones come first.\nInclude the context line for each experience entry.\nUse the submit_cv_content tool to return the adapted content.",
+  "tool_schema": {
+    "name": "submit_cv_content",
+    "description": "Submit the adapted CV content for this job posting",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "description": "Adapted headline (e.g. 'Brand Manager · E-Commerce · Key Account Management · Trade Marketing')"
+        },
+        "professional_summary": {
+          "type": "string",
+          "description": "3-4 line summary adapted for this job. Keep real metrics."
+        },
+        "experience": {
+          "type": "array",
+          "description": "One entry per company, with reordered/selected bullets",
+          "items": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "dates": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              },
+              "context": {
+                "type": "string",
+                "description": "Company context line (e.g. 'Global FMCG distributor | Brands: Befit, Eurocake, Flair | 50+ countries')"
+              },
+              "bullets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "4-6 most relevant bullets, reordered by relevance to the job"
+              }
+            },
+            "required": [
+              "company",
+              "role",
+              "dates",
+              "bullets"
+            ]
+          }
+        },
+        "skills_brand": {
+          "type": "string",
+          "description": "Brand & Marketing skills, comma-separated, reordered by relevance"
+        },
+        "skills_ecommerce": {
+          "type": "string",
+          "description": "E-Commerce & Digital skills, comma-separated, reordered by relevance"
+        },
+        "skills_commercial": {
+          "type": "string",
+          "description": "Commercial skills, comma-separated, reordered by relevance"
+        },
+        "skills_data": {
+          "type": "string",
+          "description": "Data & Analytics skills, comma-separated, reordered by relevance"
+        },
+        "skills_tools": {
+          "type": "string",
+          "description": "Tools, comma-separated, reordered by relevance"
+        }
+      },
+      "required": [
+        "headline",
+        "professional_summary",
+        "experience",
+        "skills_brand",
+        "skills_ecommerce",
+        "skills_commercial",
+        "skills_data",
+        "skills_tools"
+      ]
+    }
+  },
+  "tool_name": "submit_cv_content",
+  "caller": "career_ops.generators.cv_generator",
+  "created_at": "2026-05-12T11:27:54.218778+00:00"
+}

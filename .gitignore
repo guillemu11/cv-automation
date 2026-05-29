@@ -1,0 +1,54 @@
+# Secrets
+.env
+.env.local
+*.token.json
+token.json
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Data (runtime state — seen_jobs and cache are committed by the bot via CI)
+# But local scratch output is ignored
+data/generated/
+data/tmp/
+logs/*.log
+logs/*.json
+
+# Firecrawl cache
+.firecrawl/
+
+# Playwright persistent profile (login cookies, localStorage — never commit)
+data/playwright_profile/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Generated artifacts (per-job CVs and cover letters)
+output/
+*.docx.bak
+
+# Personal CV (keep local, do not publish to a public repo)
+# Comment the next line out if you want to version the source CV PDF
+Paula_De_Francisco_CV_Dubai.pdf
+Plan_Sistema_Busqueda_Empleo_Dubai.md
+
+# LLM Wiki — raw sources (copyright-sensitive, heavy)
+wiki/raw/
+# Obsidian local state (but NOT the whole .obsidian/ — plugins/config are versioned)
+wiki/.obsidian/workspace*
+wiki/.obsidian/cache
+wiki/.obsidian/graph.json

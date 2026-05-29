@@ -1,0 +1,2242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Ops</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<nav class="topbar" role="navigation" aria-label="Primary">
+  <div class="topbar-logo" aria-hidden="true">career<span>ops</span></div>
+  <span class="sr-only">Career Ops dashboard</span>
+
+  <div class="view-toggle" id="viewToggle" role="tablist" aria-label="View mode">
+    <button class="active" data-view="home" role="tab" aria-selected="true" aria-controls="homeView">Home</button>
+    <button data-view="board" role="tab" aria-selected="false" aria-controls="boardView">Board</button>
+    <button data-view="table" role="tab" aria-selected="false" aria-controls="tableView">Table</button>
+  </div>
+
+  <div class="topbar-stats" id="statsBar" aria-label="Pipeline statistics"></div>
+
+  <button class="btn-pipeline" id="speculativeBtn" type="button" aria-label="Add a speculative outreach target" title="Add a company you want to reach out to even without a public posting" onclick="openSpeculativeModal()" style="margin-right:8px;">
+    <span aria-hidden="true">＋</span>
+    <span>Speculative target</span>
+  </button>
+  <button class="btn-pipeline" id="pipelineBtn" type="button" aria-label="Run discovery pipeline">
+    <span class="dot" aria-hidden="true"></span>
+    <span id="pipelineBtnLabel">Run Pipeline</span>
+  </button>
+  <button class="btn-restart" id="restartBtn" type="button" aria-label="Restart dashboard server" title="Restart server (applies code changes without leaving the dashboard)" onclick="restartServer()">⟳</button>
+</nav>
+
+<!-- Speculative target modal -->
+<div class="shortcuts-backdrop" id="speculativeModal" role="dialog" aria-modal="true" aria-labelledby="speculativeModalTitle">
+  <div class="shortcuts-panel deliverable-panel">
+    <h2 class="shortcuts-title" id="speculativeModalTitle">Add a speculative target</h2>
+    <p class="deliverable-sub">Cold-outreach a company you want to work for, even if they have no posting that fits. Paula gets a tailored CV, cover letter, outreach email and a differentiating deliverable — all as drafts.</p>
+    <form id="speculativeForm" onsubmit="event.preventDefault(); submitSpeculativeTarget();" style="display:flex;flex-direction:column;gap:10px;">
+      <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+        <span><strong>Company</strong> <span style="color:#c00;">*</span></span>
+        <input name="company" required placeholder="e.g. Azadea" style="padding:8px;font-size:14px;">
+      </label>
+      <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+        <span><strong>Campaign angle</strong> <span style="color:#c00;">*</span></span>
+        <select name="angle" id="speculativeAngle" required style="padding:8px;font-size:14px;"></select>
+        <span style="color:#666;font-size:12px;">The angle determines which slice of Paula's profile gets emphasized (CV, email, deliverable all tilt to match).</span>
+      </label>
+      <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+        <span>Target role title</span>
+        <input name="title" placeholder="default: Marketing Manager (Speculative)" style="padding:8px;font-size:14px;">
+      </label>
+      <fieldset style="border:1px solid #ddd;border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:8px;">
+        <legend style="font-size:13px;padding:0 6px;"><strong>Contact</strong> (optional — paste an email Paula already has)</legend>
+        <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+          <span>Contact email</span>
+          <input name="contact_email" type="email" placeholder="hiring@company.com" style="padding:8px;font-size:14px;">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+          <span>Contact name</span>
+          <input name="contact_name" placeholder="default: Hiring Team" style="padding:8px;font-size:14px;">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+          <span>Contact title</span>
+          <input name="contact_title" placeholder="default: Hiring Manager" style="padding:8px;font-size:14px;">
+        </label>
+      </fieldset>
+      <label style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+        <span>Context / notes for the generators</span>
+        <textarea name="notes" rows="3" placeholder="e.g. Gloria Jeans just opened HQ in Dubai and is actively hiring ex-Inditex talent." style="padding:8px;font-size:14px;font-family:inherit;"></textarea>
+      </label>
+      <div class="deliverable-actions" style="margin-top:6px;">
+        <button class="btn btn-ghost" type="button" onclick="closeSpeculativeModal()">Cancel</button>
+        <button class="btn btn-purple" type="submit" id="speculativeSubmit">Create target →</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Views -->
+<main id="homeView" class="home" role="tabpanel" aria-label="Home view"></main>
+<main id="boardView" class="board" style="display:none;" role="tabpanel" aria-label="Board view"></main>
+<main id="tableView" class="table-container" style="display:none;" role="tabpanel" aria-label="Table view"></main>
+<main id="detailView" style="display:none;" role="main" aria-label="Job detail"></main>
+
+<!-- Live region for screen readers -->
+<div id="liveRegion" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Deliverable type picker modal -->
+<div class="shortcuts-backdrop" id="deliverableModal" role="dialog" aria-modal="true" aria-labelledby="deliverableModalTitle">
+  <div class="shortcuts-panel deliverable-panel">
+    <h2 class="shortcuts-title" id="deliverableModalTitle">Choose deliverable type</h2>
+    <p class="deliverable-sub">A 1-2 page branded PDF tailored to the role. Pick a type or let Claude decide.</p>
+    <div class="deliverable-options" id="deliverableOptions" role="radiogroup" aria-label="Deliverable type">
+      <button class="deliverable-card selected" type="button" role="radio" aria-checked="true" data-type="auto">
+        <div class="deliverable-card-icon">⚡</div>
+        <div class="deliverable-card-body">
+          <div class="deliverable-card-title">Auto · Claude picks</div>
+          <div class="deliverable-card-desc">Recommended. Selects the best type based on role and sector.</div>
+        </div>
+      </button>
+      <button class="deliverable-card" type="button" role="radio" aria-checked="false" data-type="ecommerce_teardown">
+        <div class="deliverable-card-icon">🛒</div>
+        <div class="deliverable-card-body">
+          <div class="deliverable-card-title">E-Commerce Teardown</div>
+          <div class="deliverable-card-desc">Best for: Key Account, E-Commerce, Trade Marketing. Listings, q-commerce, pricing.</div>
+        </div>
+      </button>
+      <button class="deliverable-card" type="button" role="radio" aria-checked="false" data-type="brand_analysis">
+        <div class="deliverable-card-icon">🎯</div>
+        <div class="deliverable-card-body">
+          <div class="deliverable-card-title">Brand &amp; Competitive Analysis</div>
+          <div class="deliverable-card-desc">Best for: Brand Manager, Category Manager. Positioning + 2-3 GCC competitors.</div>
+        </div>
+      </button>
+      <button class="deliverable-card" type="button" role="radio" aria-checked="false" data-type="digital_audit">
+        <div class="deliverable-card-icon">🖥️</div>
+        <div class="deliverable-card-body">
+          <div class="deliverable-card-title">Digital Presence Audit</div>
+          <div class="deliverable-card-desc">Best for: Digital Marketing roles. UX, SEO basics, brand consistency.</div>
+        </div>
+      </button>
+      <button class="deliverable-card" type="button" role="radio" aria-checked="false" data-type="action_plan">
+        <div class="deliverable-card-icon">📅</div>
+        <div class="deliverable-card-body">
+          <div class="deliverable-card-title">90-Day Action Plan</div>
+          <div class="deliverable-card-desc">Generic fallback. Onboarding, quick wins, strategic initiatives.</div>
+        </div>
+      </button>
+    </div>
+    <div class="deliverable-actions">
+      <button class="btn btn-ghost" type="button" onclick="closeDeliverableModal()">Cancel</button>
+      <button class="btn btn-purple" type="button" id="deliverableSubmit" onclick="submitDeliverable()">Generate →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Keyboard shortcuts overlay -->
+<div class="shortcuts-backdrop" id="shortcutsOverlay" role="dialog" aria-modal="true" aria-labelledby="shortcutsTitle">
+  <div class="shortcuts-panel">
+    <h2 class="shortcuts-title" id="shortcutsTitle">Keyboard Shortcuts</h2>
+    <div class="shortcut-row"><span>Next card</span><span class="keys"><kbd>J</kbd><kbd>↓</kbd></span></div>
+    <div class="shortcut-row"><span>Previous card</span><span class="keys"><kbd>K</kbd><kbd>↑</kbd></span></div>
+    <div class="shortcut-row"><span>Open selected job</span><span class="keys"><kbd>Enter</kbd></span></div>
+    <div class="shortcut-row"><span>Back to board</span><span class="keys"><kbd>Esc</kbd></span></div>
+    <div class="shortcut-row"><span>Go to Home</span><span class="keys"><kbd>G</kbd><kbd>H</kbd></span></div>
+    <div class="shortcut-row"><span>Go to Board</span><span class="keys"><kbd>G</kbd><kbd>B</kbd></span></div>
+    <div class="shortcut-row"><span>Go to Table</span><span class="keys"><kbd>G</kbd><kbd>T</kbd></span></div>
+    <div class="shortcut-row"><span>Search (table view)</span><span class="keys"><kbd>/</kbd></span></div>
+    <div class="shortcut-row"><span>Run pipeline</span><span class="keys"><kbd>R</kbd></span></div>
+    <div class="shortcut-row"><span>Show this help</span><span class="keys"><kbd>?</kbd></span></div>
+    <div class="shortcut-row"><span>Close overlay</span><span class="keys"><kbd>Esc</kbd></span></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+// ═══════════════════════════════════════════
+// SVG ICON LIBRARY (Lucide-style, 24x24 viewBox)
+// ═══════════════════════════════════════════
+const ICONS = {
+  download: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+  fileText: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  mail: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>',
+  clipboard: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>',
+  gift: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>',
+  search: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+  refresh: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>',
+  check: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>',
+  x: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+  arrowLeft: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>',
+  external: '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>',
+  sparkles: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L13.6 8.4L19 10L13.6 11.6L12 17L10.4 11.6L5 10L10.4 8.4L12 3z"/><path d="M19 3v4M21 5h-4M5 17v4M7 19H3"/></svg>',
+  alertTriangle: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  chevron: '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>',
+  users: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>',
+  copy: '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>',
+  zap: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+  send: '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',
+};
+function icon(name) { return ICONS[name] || ''; }
+
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+const STATE = {
+  jobs: [],
+  stats: {},
+  view: 'home',
+  activeFilter: 'Shortlist',
+  searchQuery: '',
+  sortCol: 'ai_score',
+  sortDir: 'desc',
+  filteredCache: null,
+  cacheKey: '',
+  focusedCardId: null,
+};
+
+const COLUMNS = [
+  { key: 'Inbox', label: 'Inbox' },
+  { key: 'Analyzed', label: 'Analyzed' },
+  { key: 'CV Ready', label: 'CV Ready' },
+  { key: 'Applied', label: 'Applied' },
+  { key: 'Followed Up', label: 'Followed Up' },
+  { key: 'Interview', label: 'Interview' },
+  { key: 'Offer', label: 'Offer' },
+];
+
+// ═══════════════════════════════════════════
+// UTILITIES
+// ═══════════════════════════════════════════
+function esc(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function debounce(fn, ms) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn(...args), ms);
+  };
+}
+
+function announce(msg) {
+  document.getElementById('liveRegion').textContent = msg;
+}
+
+function toast(msg, variant = '') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast visible ' + variant;
+  clearTimeout(t._timeout);
+  t._timeout = setTimeout(() => t.classList.remove('visible'), 3500);
+}
+
+// Error-safe fetch wrapper
+async function api(url, opts = {}) {
+  // Auto-set JSON content-type when body is a string. Without it, FastAPI
+  // rejects requests as 422 ("Input should be a valid dictionary") because
+  // it doesn't know how to parse the body for endpoints that declare
+  // `body: dict`. Caller can still override headers explicitly.
+  if (opts.body && typeof opts.body === 'string') {
+    opts.headers = { 'Content-Type': 'application/json', ...(opts.headers || {}) };
+  }
+  try {
+    const res = await fetch(url, opts);
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      throw new Error(`${res.status} ${res.statusText}${text ? ': ' + text.slice(0, 100) : ''}`);
+    }
+    return await res.json();
+  } catch (err) {
+    toast(`Error: ${err.message}`, 'error');
+    console.error(url, err);
+    throw err;
+  }
+}
+
+function updateDocumentTitle(suffix) {
+  document.title = suffix ? `${suffix} — Career Ops` : 'Career Ops';
+}
+
+function getTier(j) { return (j.ai_tier || j.tier || 'cold').toLowerCase(); }
+function getScore(j) { return j.ai_score ?? j.score ?? '?'; }
+
+// ═══════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════
+async function init() {
+  await loadJobs();
+  renderView();
+  pollPipelineStatus();
+
+  // Client-side routing
+  const m = location.pathname.match(/^\/job\/(.+)/);
+  if (m) showDetail(m[1]);
+
+  // Global event wiring
+  setupViewToggle();
+  setupKeyboardShortcuts();
+  setupDragLeaveCleanup();
+  document.getElementById('pipelineBtn').addEventListener('click', runPipeline);
+}
+
+async function loadJobs() {
+  try {
+    const data = await api('/api/jobs');
+    STATE.jobs = data.jobs || [];
+    STATE.stats = data.stats || {};
+    STATE.jobs.forEach(j => { if (!j.status) j.status = 'Inbox'; });
+    STATE.filteredCache = null;
+    renderStats();
+  } catch {
+    // toast already shown by api()
+  }
+}
+
+// ═══════════════════════════════════════════
+// VIEW TOGGLE
+// ═══════════════════════════════════════════
+function setupViewToggle() {
+  document.querySelectorAll('#viewToggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchView(btn.dataset.view);
+    });
+  });
+}
+
+function switchView(view) {
+  STATE.view = view;
+  document.querySelectorAll('#viewToggle button').forEach(b => {
+    const active = b.dataset.view === view;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+  renderView();
+}
+
+function renderView() {
+  document.getElementById('homeView').style.display = STATE.view === 'home' ? 'block' : 'none';
+  document.getElementById('boardView').style.display = STATE.view === 'board' ? 'flex' : 'none';
+  document.getElementById('tableView').style.display = STATE.view === 'table' ? 'block' : 'none';
+  document.getElementById('detailView').style.display = 'none';
+  delete document.body.dataset.detailJobId;
+  const titleMap = { home: 'Home', board: 'Board', table: 'Table' };
+  updateDocumentTitle(titleMap[STATE.view]);
+
+  if (STATE.view === 'home') renderHome();
+  else if (STATE.view === 'board') renderBoard();
+  else renderTable();
+}
+
+// Re-render the active board/table without closing the detail panel.
+// Use this after optimistic STATE.jobs mutations (status change, etc.).
+function softRefreshView() {
+  if (STATE.view === 'home') { renderHome(); return; }
+  if (STATE.view === 'board') { renderBoard(); return; }
+  if (STATE.view === 'table') { renderTable(); return; }
+}
+
+// ═══════════════════════════════════════════
+// STATS BAR
+// ═══════════════════════════════════════════
+function renderStats() {
+  const s = STATE.stats;
+  const byStatus = s.by_status || {};
+  const bar = document.getElementById('statsBar');
+  bar.innerHTML = `
+    <div class="stat"><span class="stat-dot hot" aria-hidden="true"></span><span class="stat-count">${s.hot || 0}</span><span class="stat-label">Hot</span></div>
+    <div class="stat"><span class="stat-dot warm" aria-hidden="true"></span><span class="stat-count">${s.warm || 0}</span><span class="stat-label">Warm</span></div>
+    <div class="stat"><span class="stat-dot cold" aria-hidden="true"></span><span class="stat-count">${s.cold || 0}</span><span class="stat-label">Cold</span></div>
+    <div class="stat stat-divider"><span class="stat-count">${byStatus['Applied'] || 0}</span><span class="stat-label">Applied</span></div>
+    <div class="stat"><span class="stat-count">${byStatus['Interview'] || 0}</span><span class="stat-label">Interview</span></div>
+  `;
+}
+
+// ═══════════════════════════════════════════
+// HOME VIEW — overview, pipeline diagram, capabilities
+// ═══════════════════════════════════════════
+const PIPELINE_STAGES = [
+  { key: 'discovery', label: 'Discovery', icon: 'search',
+    sources: ['Indeed (free)'],
+    body: 'Pulls UAE openings from Indeed only — free, no paid APIs. Dedup happens downstream, so the source returns its raw catch.' },
+  { key: 'filters', label: 'Filters', icon: 'x',
+    sources: ['dedupe', 'blacklist', 'salary AED', 'UAE-only'],
+    body: 'Hard rules kick out the obvious rejects before Claude ever sees them. Salary normalized to AED/month, non-UAE locations dropped.' },
+  { key: 'analyzer', label: 'Analyzer', icon: 'sparkles',
+    sources: ['Claude scoring', 'SQLite cache', 'golden set'],
+    body: 'Each JD gets a fit score from Claude, calibrated against Paula\'s labeled examples. Re-runs hit the cache — never pay twice.' },
+  { key: 'contacts', label: 'Contacts', icon: 'users',
+    sources: ['Apollo.io', 'hiring managers'],
+    body: 'For top matches, enriches the company with a real person to address. No cold guessing.' },
+  { key: 'notion', label: 'Notion CRM', icon: 'clipboard',
+    sources: ['status', 'score', 'deadline', 'link'],
+    body: 'Every shortlisted job lands in Notion with tier, score, and a link back to this dashboard.' },
+  { key: 'digest', label: 'Digest', icon: 'mail',
+    sources: ['Outlook drafts', 'cover letter', 'CV docx'],
+    body: 'Generates a personalized CV, cover letter, and outreach email per job — all as drafts. Nothing sends itself.' },
+];
+
+const HOME_CAPABILITIES = [
+  { icon: 'search', title: 'Indeed discovery (free)',
+    body: 'Pulls UAE openings from Indeed only — no paid APIs — normalizes and dedups them into the pipeline.',
+    how: 'career_ops/discovery/' },
+  { icon: 'x', title: 'Hard-rule filter',
+    body: 'Blacklist, seniority floor, salary in AED, UAE-only locations — applied before paying a single Claude token.',
+    how: 'career_ops/filters/ · blacklist.yaml' },
+  { icon: 'sparkles', title: 'Claude scoring, cached',
+    body: 'Every JD scored against Paula\'s profile. SQLite cache means re-runs are free.',
+    how: 'career_ops/analyzer.py' },
+  { icon: 'fileText', title: 'Per-job CV generation',
+    body: 'Your real template, populated from the JD. No generic "tailored" copy-paste.',
+    how: 'career_ops/generators/ · templates/' },
+  { icon: 'mail', title: 'Outreach drafts',
+    body: 'Email + cover letter written for that company, that hiring manager, that role. Draft-only.',
+    how: 'career_ops/outlook_client.py' },
+  { icon: 'clipboard', title: 'Notion CRM sync',
+    body: 'Shortlist, status, score, deadline — kept in sync so nothing slips through the cracks.',
+    how: 'career_ops/notion_sync.py' },
+  { icon: 'users', title: 'Contact enrichment',
+    body: 'Apollo finds the hiring manager for your top matches so you address a person, not a void.',
+    how: 'career_ops/contact_finder.py' },
+  { icon: 'check', title: 'Dry-run mode',
+    body: 'PIPELINE_DRY_RUN=true short-circuits every external write. Rehearse safely.',
+    how: 'career_ops/config.py' },
+];
+
+const HOME_COMPARISON = [
+  { before: '2 hrs/day scrolling LinkedIn', after: '15 min reviewing a scored shortlist', delta: '−87%' },
+  { before: 'One generic CV for every role',  after: 'Per-company CV from your real template', delta: '1:1' },
+  { before: 'Follow-ups forgotten in threads', after: 'Notion CRM with deadlines & status',     delta: '0 lost' },
+  { before: 'Read 80 JDs by hand',             after: 'Claude ranks top-10 by fit',             delta: '8×' },
+  { before: 'Copy-paste outreach emails',      after: 'Personalized drafts in Outlook',         delta: '1 click' },
+];
+
+function renderHome() {
+  const s = STATE.stats || {};
+  const byStatus = s.by_status || {};
+  const totalJobs = STATE.jobs.length;
+  const hot = s.hot || 0;
+  const drafts = (byStatus['CV Ready'] || 0);
+  const applied = (byStatus['Applied'] || 0);
+
+  const home = document.getElementById('homeView');
+  home.innerHTML = `
+    <div class="home-grain" aria-hidden="true"></div>
+
+    <!-- ─────── HERO ─────── -->
+    <section class="home-hero" data-reveal>
+      <div class="home-hero-eyebrow">
+        <span class="home-eyebrow-dot"></span>
+        Career Ops · Dubai pipeline
+      </div>
+      <h1 class="home-hero-title">
+        Your Dubai job search,<br>
+        <span class="home-hero-accent">on autopilot.</span>
+      </h1>
+      <p class="home-hero-sub">
+        Discover, filter, score and draft — you only approve.
+        Every CV, every email, every application lands as a draft for human review.
+      </p>
+      <div class="home-hero-cta">
+        <button class="btn btn-purple home-cta-primary" type="button" onclick="runPipeline()">
+          ${icon('refresh')} Run pipeline
+        </button>
+        <button class="btn home-cta-secondary" type="button" onclick="switchView('board')">
+          Open board ${icon('chevron')}
+        </button>
+      </div>
+      <div class="home-kpis">
+        <div class="home-kpi"><div class="home-kpi-value" data-count="${totalJobs}">${totalJobs}</div><div class="home-kpi-label">Jobs in pipeline</div></div>
+        <div class="home-kpi"><div class="home-kpi-value" data-count="${hot}">${hot}</div><div class="home-kpi-label">Hot matches</div></div>
+        <div class="home-kpi"><div class="home-kpi-value" data-count="${drafts}">${drafts}</div><div class="home-kpi-label">CVs ready</div></div>
+        <div class="home-kpi"><div class="home-kpi-value" data-count="${applied}">${applied}</div><div class="home-kpi-label">Applied</div></div>
+      </div>
+    </section>
+
+    <!-- ─────── WHAT IT DOES ─────── -->
+    <section class="home-section" data-reveal>
+      <div class="home-section-head">
+        <div class="home-section-label">01 · What it does</div>
+        <h2 class="home-section-title">One command replaces a full day of job hunting.</h2>
+        <p class="home-section-body">
+          Career Ops is a daily pipeline built around a single principle: the human decides, the machine does the grunt work.
+          It crawls the market, throws out the noise, ranks what\'s left against Paula\'s profile, and prepares everything needed to apply —
+          without sending a single email on its own.
+        </p>
+      </div>
+      <div class="home-pillars">
+        <div class="home-pillar">
+          <div class="home-pillar-num">I</div>
+          <div class="home-pillar-title">Find</div>
+          <div class="home-pillar-body">Indeed only, free, cross-run dedup, UAE-only.</div>
+        </div>
+        <div class="home-pillar">
+          <div class="home-pillar-num">II</div>
+          <div class="home-pillar-title">Rank</div>
+          <div class="home-pillar-body">Hard filters first, then Claude scoring against your profile.</div>
+        </div>
+        <div class="home-pillar">
+          <div class="home-pillar-num">III</div>
+          <div class="home-pillar-title">Draft</div>
+          <div class="home-pillar-body">CV, cover letter, and outreach — personalized, draft-only.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────── PIPELINE DIAGRAM ─────── -->
+    <section class="home-section home-section-pipeline" data-reveal>
+      <div class="home-section-head">
+        <div class="home-section-label">02 · How it flows</div>
+        <h2 class="home-section-title">Six stages. One command.</h2>
+        <p class="home-section-body">
+          Each stage is a module under <code>career_ops/</code>. Every step honors <code>PIPELINE_DRY_RUN</code>, caches aggressively,
+          and passes normalized jobs to the next.
+        </p>
+      </div>
+      <div class="home-flow" role="img" aria-label="Pipeline flow diagram">
+        <div class="home-flow-track">
+          ${PIPELINE_STAGES.map((stage, i) => `
+            <div class="home-flow-stage" data-stage="${stage.key}" style="--i:${i}">
+              <div class="home-flow-node">
+                <div class="home-flow-node-icon">${icon(stage.icon)}</div>
+                <div class="home-flow-node-index">0${i + 1}</div>
+              </div>
+              <div class="home-flow-stage-label">${stage.label}</div>
+              <div class="home-flow-stage-sources">
+                ${stage.sources.map(src => `<span>${esc(src)}</span>`).join('')}
+              </div>
+              <div class="home-flow-stage-body">${esc(stage.body)}</div>
+              ${i < PIPELINE_STAGES.length - 1 ? `
+                <div class="home-flow-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 80 24" preserveAspectRatio="none">
+                    <line x1="0" y1="12" x2="72" y2="12" />
+                    <polyline points="64 6 72 12 64 18" />
+                    <circle class="home-flow-particle" cx="0" cy="12" r="2.5" />
+                  </svg>
+                </div>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────── CAPABILITIES ─────── -->
+    <section class="home-section" data-reveal>
+      <div class="home-section-head">
+        <div class="home-section-label">03 · What you get</div>
+        <h2 class="home-section-title">Everything the pipeline can do for you.</h2>
+      </div>
+      <div class="home-caps">
+        ${HOME_CAPABILITIES.map((c, i) => `
+          <div class="home-cap" style="--i:${i}">
+            <div class="home-cap-icon">${icon(c.icon)}</div>
+            <div class="home-cap-title">${esc(c.title)}</div>
+            <div class="home-cap-body">${esc(c.body)}</div>
+            <div class="home-cap-how"><span>→</span> ${esc(c.how)}</div>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+
+    <!-- ─────── BEFORE / AFTER ─────── -->
+    <section class="home-section home-section-compare" data-reveal>
+      <div class="home-section-head">
+        <div class="home-section-label">04 · Why it wins</div>
+        <h2 class="home-section-title">Before Career Ops, vs. after.</h2>
+        <p class="home-section-body">A week of manual hunting compressed into a run you can trigger with one key.</p>
+      </div>
+      <div class="home-compare">
+        <div class="home-compare-col home-compare-before">
+          <div class="home-compare-head">Manual</div>
+          ${HOME_COMPARISON.map(r => `<div class="home-compare-row">${esc(r.before)}</div>`).join('')}
+        </div>
+        <div class="home-compare-divider" aria-hidden="true">
+          <div class="home-compare-divider-line"></div>
+          <div class="home-compare-divider-arrow">${icon('chevron')}</div>
+        </div>
+        <div class="home-compare-col home-compare-after">
+          <div class="home-compare-head">Automated</div>
+          ${HOME_COMPARISON.map(r => `
+            <div class="home-compare-row">
+              <span>${esc(r.after)}</span>
+              <span class="home-compare-delta">${esc(r.delta)}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────── GUARANTEES ─────── -->
+    <section class="home-section home-section-guarantees" data-reveal>
+      <div class="home-section-head">
+        <div class="home-section-label">05 · The red line</div>
+        <h2 class="home-section-title">Guarantees baked into the system.</h2>
+      </div>
+      <div class="home-guarantees">
+        <div class="home-guarantee">
+          <div class="home-guarantee-icon">${icon('fileText')}</div>
+          <div class="home-guarantee-title">Draft-only</div>
+          <div class="home-guarantee-body">Nothing is sent automatically. Every email, every CV lands as a draft you approve.</div>
+        </div>
+        <div class="home-guarantee">
+          <div class="home-guarantee-icon">${icon('check')}</div>
+          <div class="home-guarantee-title">Local-first</div>
+          <div class="home-guarantee-body">Seen-jobs cache and analysis results live on your machine. No telemetry, no cloud DB.</div>
+        </div>
+        <div class="home-guarantee">
+          <div class="home-guarantee-icon">${icon('alertTriangle')}</div>
+          <div class="home-guarantee-title">Dry-run</div>
+          <div class="home-guarantee-body">Flip <code>PIPELINE_DRY_RUN=true</code> to rehearse the whole run without touching Notion or email.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────── FOOTER / SHORTCUTS ─────── -->
+    <section class="home-footer" data-reveal>
+      <div class="home-footer-title">Ready when you are.</div>
+      <div class="home-footer-keys">
+        <span><kbd>R</kbd> run pipeline</span>
+        <span><kbd>G</kbd><kbd>B</kbd> board</span>
+        <span><kbd>G</kbd><kbd>T</kbd> table</span>
+        <span><kbd>?</kbd> all shortcuts</span>
+      </div>
+    </section>
+  `;
+
+  // Scroll-triggered reveal animations
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    home.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  } else {
+    home.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-revealed'));
+  }
+}
+
+// ═══════════════════════════════════════════
+// BOARD VIEW — incremental updates for drag/drop
+// ═══════════════════════════════════════════
+function renderBoard() {
+  const board = document.getElementById('boardView');
+
+  // Zero jobs total — welcome / empty state
+  if (!STATE.jobs.length) {
+    board.innerHTML = `
+      <div class="board-empty">
+        ${icon('search').replace('class="icon"', 'class="icon icon-lg"')}
+        <div class="board-empty-title">No jobs yet</div>
+        <div class="board-empty-body">Run the pipeline to discover new job matches. We'll analyze, score, and prepare everything you need to apply.</div>
+        <button class="btn btn-purple" type="button" onclick="runPipeline()">
+          ${icon('refresh')} Run Pipeline
+        </button>
+      </div>`;
+    return;
+  }
+
+  board.innerHTML = COLUMNS.map(col => {
+    const jobs = STATE.jobs.filter(j => j.status === col.key);
+    return `
+      <section class="column" aria-label="${col.label} column">
+        <header class="column-header">
+          <span>${col.label}</span>
+          <span class="column-count" aria-label="${jobs.length} jobs">${jobs.length}</span>
+        </header>
+        <div class="column-body" data-status="${col.key}"
+             ondragover="onDragOver(event)" ondrop="onDrop(event, '${col.key}')">
+          ${jobs.length ? jobs.map(cardHTML).join('') : '<div class="empty-state empty-column">Drop here</div>'}
+        </div>
+      </section>
+    `;
+  }).join('');
+
+  // Wire card events
+  board.querySelectorAll('.job-card').forEach(card => {
+    card.addEventListener('click', () => showDetail(card.dataset.id));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showDetail(card.dataset.id);
+      }
+    });
+    card.addEventListener('dragstart', (e) => onDragStart(e, card.dataset.id));
+  });
+}
+
+function cardHTML(j) {
+  const tier = getTier(j);
+  const score = getScore(j);
+  const company = j.company || '';
+  const title = j.title || '';
+  const source = j.source || '';
+  const status = j.status || 'Inbox';
+  const statusClass = status.toLowerCase().replace(/\s+/g, '-');
+  const tierLabel = tier[0].toUpperCase() + tier.slice(1);
+  const label = `${title} at ${company}, score ${score}, ${tierLabel} tier, ${status}`;
+
+  return `
+    <button type="button" class="job-card ${tier}" draggable="true"
+         data-id="${esc(j.id)}"
+         title="${esc(title)} — ${esc(company)}"
+         aria-label="${esc(label)}">
+      <div class="job-card-top">
+        <span class="job-card-score ${tier}" aria-hidden="true">${score}</span>
+        <span class="job-card-source" aria-hidden="true">${esc(source)}</span>
+      </div>
+      <div class="job-card-title">${esc(title)}</div>
+      <div class="job-card-company">${esc(company)}</div>
+      ${status !== 'Inbox' ? `<div class="job-card-status"><span class="status-badge ${statusClass}">${esc(status)}</span></div>` : ''}
+    </button>
+  `;
+}
+
+// Incremental card move — no full re-render
+function moveCardInDOM(jobId, newStatus) {
+  const card = document.querySelector(`.job-card[data-id="${CSS.escape(jobId)}"]`);
+  const targetColumn = document.querySelector(`.column-body[data-status="${CSS.escape(newStatus)}"]`);
+  if (!card || !targetColumn) return;
+
+  // Find origin column to update counter
+  const originColumn = card.closest('.column-body');
+  const originSection = originColumn?.closest('.column');
+  const targetSection = targetColumn.closest('.column');
+
+  // Clear empty state if it exists in target
+  const empty = targetColumn.querySelector('.empty-state');
+  if (empty) empty.remove();
+
+  targetColumn.appendChild(card);
+
+  // Update counters
+  if (originSection) {
+    const count = originColumn.querySelectorAll('.job-card').length;
+    const counter = originSection.querySelector('.column-count');
+    if (counter) { counter.textContent = count; counter.setAttribute('aria-label', `${count} jobs`); }
+    if (count === 0) originColumn.innerHTML = '<div class="empty-state empty-column">Drop here</div>';
+  }
+  if (targetSection) {
+    const count = targetColumn.querySelectorAll('.job-card').length;
+    const counter = targetSection.querySelector('.column-count');
+    if (counter) { counter.textContent = count; counter.setAttribute('aria-label', `${count} jobs`); }
+  }
+}
+
+// ═══════════════════════════════════════════
+// DRAG & DROP
+// ═══════════════════════════════════════════
+let dragJobId = null;
+
+function onDragStart(e, jobId) {
+  dragJobId = jobId;
+  e.target.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+
+function onDragOver(e) {
+  e.preventDefault();
+  e.currentTarget.classList.add('dragover');
+}
+
+function onDrop(e, newStatus) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('dragover');
+  if (!dragJobId) return;
+
+  const job = STATE.jobs.find(j => j.id === dragJobId);
+  if (!job || job.status === newStatus) { dragJobId = null; return; }
+
+  job.status = newStatus;
+  moveCardInDOM(dragJobId, newStatus);
+
+  api(`/api/jobs/${dragJobId}/status`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ status: newStatus }),
+  }).catch(() => {}); // error already toasted
+
+  announce(`Moved ${job.title} to ${newStatus}`);
+  toast(`Moved to ${newStatus}`, 'success');
+  dragJobId = null;
+}
+
+function setupDragLeaveCleanup() {
+  document.addEventListener('dragleave', e => {
+    if (e.target.classList) e.target.classList.remove('dragover');
+  });
+  document.addEventListener('dragend', () => {
+    document.querySelectorAll('.dragging').forEach(el => el.classList.remove('dragging'));
+    document.querySelectorAll('.dragover').forEach(el => el.classList.remove('dragover'));
+    dragJobId = null;
+  });
+}
+
+// ═══════════════════════════════════════════
+// TABLE VIEW — memoized filter/sort + stable shell
+// ═══════════════════════════════════════════
+function getFilteredSortedJobs() {
+  const key = `${STATE.activeFilter}|${STATE.searchQuery}|${STATE.sortCol}|${STATE.sortDir}|${STATE.jobs.length}`;
+  if (STATE.cacheKey === key && STATE.filteredCache) return STATE.filteredCache;
+
+  let out = [...STATE.jobs];
+  if (STATE.activeFilter) {
+    const f = STATE.activeFilter.toLowerCase();
+    if (f === 'shortlist') {
+      out = out.filter(j => {
+        const t = (j.ai_tier || j.tier || '').toLowerCase();
+        return t === 'hot' || t === 'warm';
+      });
+    } else {
+      out = out.filter(j => (j.ai_tier || j.tier || '').toLowerCase() === f);
+    }
+  }
+  if (STATE.searchQuery) {
+    const q = STATE.searchQuery.toLowerCase();
+    out = out.filter(j =>
+      (j.title || '').toLowerCase().includes(q) ||
+      (j.company || '').toLowerCase().includes(q)
+    );
+  }
+  out.sort((a, b) => {
+    let va, vb;
+    if (STATE.sortCol === 'ai_score') { va = a.ai_score || a.score || 0; vb = b.ai_score || b.score || 0; }
+    else { va = a[STATE.sortCol] ?? ''; vb = b[STATE.sortCol] ?? ''; }
+    if (typeof va === 'number') return STATE.sortDir === 'desc' ? vb - va : va - vb;
+    return STATE.sortDir === 'desc'
+      ? String(vb).localeCompare(String(va))
+      : String(va).localeCompare(String(vb));
+  });
+
+  STATE.filteredCache = out;
+  STATE.cacheKey = key;
+  return out;
+}
+
+function renderTable() {
+  const container = document.getElementById('tableView');
+  // Render shell once (so search input doesn't lose focus)
+  if (!container.querySelector('.jobs-table')) {
+    container.innerHTML = `
+      <div class="table-filters">
+        <button class="filter-btn" type="button" data-filter="Shortlist" title="Hot + Warm only (default)">Shortlist</button>
+        <button class="filter-btn hot" type="button" data-filter="Hot">Hot</button>
+        <button class="filter-btn warm" type="button" data-filter="Warm">Warm</button>
+        <button class="filter-btn cold" type="button" data-filter="Cold">Cold</button>
+        <button class="filter-btn" type="button" data-filter="">All</button>
+        <input class="search-input" id="searchInput" type="search" placeholder="Search title or company…" aria-label="Search jobs">
+      </div>
+      <table class="jobs-table" role="grid">
+        <thead>
+          <tr>
+            <th data-sort="title" scope="col" tabindex="0" role="columnheader button" aria-sort="none">Title</th>
+            <th data-sort="company" scope="col" tabindex="0" role="columnheader button" aria-sort="none">Company</th>
+            <th data-sort="ai_score" scope="col" tabindex="0" role="columnheader button" aria-sort="none">Score</th>
+            <th scope="col">Tier</th>
+            <th scope="col">Status</th>
+            <th scope="col">Fit</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    `;
+
+    // Wire filters
+    container.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        STATE.activeFilter = btn.dataset.filter || null;
+        updateFilterButtons();
+        updateTableBody();
+      });
+    });
+
+    // Wire sort (click + keyboard)
+    const doSort = (col) => {
+      if (STATE.sortCol === col) STATE.sortDir = STATE.sortDir === 'desc' ? 'asc' : 'desc';
+      else { STATE.sortCol = col; STATE.sortDir = 'desc'; }
+      updateSortHeaders();
+      updateTableBody();
+      announce(`Sorted by ${col}, ${STATE.sortDir === 'desc' ? 'descending' : 'ascending'}`);
+    };
+    container.querySelectorAll('th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => doSort(th.dataset.sort));
+      th.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          doSort(th.dataset.sort);
+        }
+      });
+    });
+
+    // Debounced search — stable input
+    const debouncedSearch = debounce(() => updateTableBody(), 150);
+    container.querySelector('#searchInput').addEventListener('input', (e) => {
+      STATE.searchQuery = e.target.value;
+      debouncedSearch();
+    });
+  }
+
+  updateFilterButtons();
+  updateSortHeaders();
+  updateTableBody();
+}
+
+function updateFilterButtons() {
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    const active = (b.dataset.filter || null) === STATE.activeFilter;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+}
+
+function updateSortHeaders() {
+  document.querySelectorAll('.jobs-table th[data-sort]').forEach(th => {
+    const col = th.dataset.sort;
+    const labelMap = { title: 'Title', company: 'Company', ai_score: 'Score' };
+    const arrow = STATE.sortCol === col ? (STATE.sortDir === 'desc' ? ' ↓' : ' ↑') : '';
+    th.textContent = labelMap[col] + arrow;
+    if (STATE.sortCol === col) {
+      th.setAttribute('aria-sort', STATE.sortDir === 'desc' ? 'descending' : 'ascending');
+    } else {
+      th.removeAttribute('aria-sort');
+    }
+  });
+}
+
+function updateTableBody() {
+  const tbody = document.getElementById('tableBody');
+  if (!tbody) return;
+  STATE.filteredCache = null; // invalidate
+  const filtered = getFilteredSortedJobs();
+  if (!filtered.length) {
+    tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No jobs match your filters.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = filtered.map(tableRowHTML).join('');
+  // Wire rows
+  tbody.querySelectorAll('tr.table-row').forEach(tr => {
+    tr.addEventListener('click', () => showDetail(tr.dataset.id));
+    tr.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showDetail(tr.dataset.id);
+      }
+    });
+  });
+}
+
+function tableRowHTML(j) {
+  const tier = getTier(j);
+  const score = getScore(j);
+  const status = j.status || 'Inbox';
+  const statusClass = status.toLowerCase().replace(/\s+/g, '-');
+  const sectorFit = j.sector_fit || '';
+  const sectorClass = sectorFit === 'exact' ? 'green' : sectorFit === 'adjacent' ? 'warm' : 'muted';
+  const hasCV = j._files && j._files.cv;
+  const pendingLLM = Array.isArray(j._pending_llm) ? j._pending_llm.length : 0;
+  const label = `${j.title} at ${j.company}, score ${score}`;
+
+  const actionHTML = hasCV
+    ? `<a class="btn btn-sm btn-purple" href="/api/jobs/${j.id}/cv" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Download CV for ${esc(j.title)}">${icon('download')}PDF</a>`
+    : pendingLLM
+      ? `<span class="status-badge chat-pending" title="${pendingLLM} request${pendingLLM>1?'s':''} waiting for chat reply">⏳ chat (${pendingLLM})</span>`
+      : `<button class="btn btn-sm btn-ghost" type="button" onclick="event.stopPropagation();generateDocs('${j.id}')" aria-label="Generate documents for ${esc(j.title)}">${icon('sparkles')}Generate</button>`;
+
+  return `
+    <tr class="table-row" tabindex="0" role="button" data-id="${esc(j.id)}" aria-label="${esc(label)}">
+      <td class="col-title" title="${esc(j.title || '')}">${esc(j.title || '')}</td>
+      <td class="col-company" title="${esc(j.company || '')}">${esc(j.company || '')}</td>
+      <td><span class="tier-badge ${tier}">${score}</span></td>
+      <td><span class="tier-badge ${tier}">${tier[0].toUpperCase() + tier.slice(1)}</span></td>
+      <td><span class="status-badge ${statusClass}">${status}</span></td>
+      <td class="sector-${sectorClass}">${sectorFit || '—'}</td>
+      <td>${actionHTML}</td>
+    </tr>
+  `;
+}
+
+// ═══════════════════════════════════════════
+// DETAIL PAGE
+// ═══════════════════════════════════════════
+async function showDetail(jobId) {
+  const detail = document.getElementById('detailView');
+  document.getElementById('boardView').style.display = 'none';
+  document.getElementById('tableView').style.display = 'none';
+  detail.style.display = 'block';
+  // Track which job's detail is currently open so async tasks (find_contacts,
+  // generate_cv) know whether their pending render still applies.
+  document.body.dataset.detailJobId = jobId;
+
+  // Show skeleton first
+  detail.innerHTML = `
+    <div class="detail-page">
+      <div class="detail-content">
+        <div class="skeleton skel-breadcrumb"></div>
+        <div class="skeleton skel-title"></div>
+        <div class="skeleton skel-subtitle"></div>
+        <div class="skeleton skel-block-lg"></div>
+        <div class="skeleton skel-block-md"></div>
+      </div>
+      <aside class="detail-sidebar">
+        <div class="skeleton skel-select"></div>
+        <div class="skeleton skel-block-xl"></div>
+      </aside>
+    </div>`;
+
+  let j;
+  try {
+    j = await api(`/api/jobs/${jobId}`);
+  } catch {
+    detail.innerHTML = '<div class="empty-state">Could not load job. <button class="btn btn-ghost" type="button" onclick="backToBoard(new Event(\'click\'))">Back to board</button></div>';
+    return;
+  }
+
+  history.pushState(null, '', `/job/${jobId}`);
+  updateDocumentTitle(j.title);
+  announce(`Loaded ${j.title} at ${j.company}`);
+
+  renderDetailPage(j);
+}
+
+function renderDetailPage(j) {
+  const detail = document.getElementById('detailView');
+  const tier = getTier(j);
+  const score = getScore(j);
+  const status = j.status || 'Inbox';
+  const statusClass = status.toLowerCase().replace(/\s+/g, '-');
+  const files = j._files || {};
+  const skillsMatch = j.skills_match || [];
+  const missingSkills = j.missing_skills || [];
+  const atsKeywords = j.ats_keywords || [];
+  const redFlags = j.red_flags || [];
+  const reasoning = j.reasoning || '';
+  const sectorFit = j.sector_fit || '—';
+  const seniorityFit = j.seniority_fit || '—';
+  const source = j.source || '—';
+  const description = j.description || '';
+
+  detail.innerHTML = `
+    <div class="detail-page">
+      <div class="detail-content">
+        <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+          <button type="button" class="breadcrumb-link" onclick="backToBoard(event)" aria-label="Back to board">
+            ${icon('arrowLeft')} Board
+          </button>
+          <span aria-hidden="true"> / </span>
+          ${esc(j.title || '')}
+        </nav>
+
+        <header class="detail-header">
+          <h1 class="detail-title">${esc(j.title || '')}</h1>
+          <div class="detail-company">
+            ${esc(j.company || '')} · ${esc(j.location || '')}
+            ${j.url ? ` · <a href="${esc(j.url)}" target="_blank" rel="noopener" aria-label="View original posting">View original ${icon('external')}</a>` : ''}
+          </div>
+          <div class="detail-badges">
+            <span class="tier-badge ${tier}" aria-label="Score ${score}, ${tier} tier">${score} · ${tier[0].toUpperCase() + tier.slice(1)}</span>
+            <span class="status-badge ${statusClass}">${status}</span>
+            ${(j._pending_llm && j._pending_llm.length) ? `<span class="status-badge chat-pending">⏳ chat (${j._pending_llm.length})</span>` : ''}
+          </div>
+        </header>
+
+        ${(j._pending_llm && j._pending_llm.length) ? `
+        <section class="detail-section" aria-labelledby="chat-pending-title">
+          <h2 id="chat-pending-title" class="detail-section-title neutral">Waiting on chat (${j._pending_llm.length})</h2>
+          <p class="detail-reasoning">These prompts are parked for a human-in-chat (Claude Code / Cowork) to answer. The dashboard button stays disabled until the reply lands.</p>
+          <ul class="chat-pending-list">
+            ${j._pending_llm.map(req => `
+              <li class="chat-pending-item">
+                <code>${esc(req.tool || req.kind || 'request')}</code>
+                <small>${esc(req.id || '')} · ${esc(req.caller || '')}</small>
+                <button type="button" class="btn btn-sm btn-ghost" onclick="copyChatRequest('${esc(req.id)}')">${icon('copy') || ''}Copy prompt</button>
+              </li>
+            `).join('')}
+          </ul>
+        </section>` : ''}
+
+        <section class="detail-section" aria-labelledby="analysis-title">
+          <h2 id="analysis-title" class="detail-section-title neutral">AI Analysis</h2>
+          <p class="detail-reasoning">${esc(reasoning)}</p>
+          <div class="detail-fit-grid">
+            <div class="detail-fit-item"><label>Sector Fit</label><span>${esc(sectorFit)}</span></div>
+            <div class="detail-fit-item"><label>Seniority Fit</label><span>${esc(seniorityFit)}</span></div>
+            <div class="detail-fit-item"><label>Source</label><span class="fit-source">${esc(source)}</span></div>
+          </div>
+        </section>
+
+        ${skillsMatch.length ? `
+        <section class="detail-section" aria-labelledby="skills-match-title">
+          <h2 id="skills-match-title" class="detail-section-title green">Skills Match (${skillsMatch.length})</h2>
+          <div class="skill-badges">${skillsMatch.map(s => `<span class="skill-badge match">${esc(s)}</span>`).join('')}</div>
+        </section>` : ''}
+
+        ${missingSkills.length ? `
+        <section class="detail-section" aria-labelledby="skills-missing-title">
+          <h2 id="skills-missing-title" class="detail-section-title red">Missing Skills (${missingSkills.length})</h2>
+          <div class="skill-badges">${missingSkills.map(s => `<span class="skill-badge missing">${esc(s)}</span>`).join('')}</div>
+        </section>` : ''}
+
+        ${atsKeywords.length ? `
+        <section class="detail-section" aria-labelledby="ats-title">
+          <h2 id="ats-title" class="detail-section-title blue">ATS Keywords</h2>
+          <div class="skill-badges">${atsKeywords.map(s => `<span class="skill-badge ats">${esc(s)}</span>`).join('')}</div>
+        </section>` : ''}
+
+        ${redFlags.length ? `
+        <section class="detail-section" aria-labelledby="flags-title">
+          <h2 id="flags-title" class="detail-section-title yellow">${icon('alertTriangle')} Red Flags</h2>
+          ${redFlags.map(f => `<div class="red-flag">${esc(f)}</div>`).join('')}
+        </section>` : ''}
+
+        <section class="detail-section" id="outreachSection" aria-labelledby="outreach-title">
+          <div class="outreach-header">
+            <h2 id="outreach-title" class="detail-section-title neutral">${icon('mail')} Outreach</h2>
+            <div class="outreach-toolbar" id="outreachToolbar" hidden>
+              <span class="outreach-counter" id="outreachCounter"></span>
+              <select id="outreachVariant" class="outreach-variant" aria-label="Message variant">
+                <option value="linkedin_connection">LinkedIn note (≤300)</option>
+                <option value="linkedin_inmail">LinkedIn InMail</option>
+                <option value="email">Email</option>
+              </select>
+              <button class="btn btn-sm btn-purple" type="button" onclick="generateAllOutreach('${j.id}', false)">
+                ${icon('zap')} Generate all
+              </button>
+              <button class="btn btn-sm btn-ghost" type="button" onclick="generateAllOutreach('${j.id}', true)" title="Regenerate every contact, even if they already have a message">
+                ${icon('refresh')} Regenerate all
+              </button>
+            </div>
+          </div>
+          <div id="outreachGrid" class="outreach-grid empty-inline">Run "Find Contacts" first.</div>
+        </section>
+
+        ${description ? `
+        <section class="detail-section">
+          <button type="button" class="jd-toggle" aria-expanded="false" onclick="toggleJD(this)">
+            Job Description ${icon('chevron')}
+          </button>
+          <div class="jd-content" style="display:none;">${esc(description)}</div>
+        </section>` : ''}
+      </div>
+
+      <aside class="detail-sidebar" aria-label="Job actions">
+        <button type="button" class="detail-sidebar-handle" onclick="toggleMobileSidebar(this)" aria-label="Toggle actions panel">
+          Actions ${icon('chevron')}
+        </button>
+
+        <div class="sidebar-section">
+          <label for="statusSelect" class="sidebar-section-title">Status</label>
+          <select id="statusSelect" class="sidebar-select" onchange="updateStatus('${j.id}', this.value)">
+            ${COLUMNS.map(c => `<option ${c.key === status ? 'selected' : ''} value="${c.key}">${c.label}</option>`).join('')}
+            <option ${status === 'Rejected' ? 'selected' : ''} value="Rejected">Rejected</option>
+          </select>
+        </div>
+
+        <div class="sidebar-section" id="docsSection">
+          <h3 class="sidebar-section-title">Documents</h3>
+          ${renderDocsSection(j.id, files)}
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-section-title">Contacts</h3>
+          <div id="contactsList" class="empty-inline">Loading…</div>
+          <button class="btn btn-ghost btn-block mt-8" type="button" onclick="findContacts('${j.id}')">
+            ${icon('search')} Find Contacts on LinkedIn
+          </button>
+        </div>
+
+        <div class="sidebar-section quick-actions">
+          <button class="btn btn-green btn-block" type="button" onclick="quickAction('${j.id}','Applied')">
+            ${icon('check')} Mark as Applied
+          </button>
+          <button class="btn btn-red btn-block" type="button" onclick="quickAction('${j.id}','Rejected')">
+            ${icon('x')} Reject
+          </button>
+        </div>
+      </aside>
+    </div>
+  `;
+
+  loadContacts(j.id);
+}
+
+function renderDocsSection(jobId, files) {
+  files = files || {};
+  let html = '';
+
+  if (files.cv) html += `
+    <div class="doc-card">
+      <div class="doc-card-info">
+        <div class="name">${icon('fileText')} Tailored CV</div>
+        <div class="date" title="${esc(files.cv)}">${esc(files.cv)}</div>
+      </div>
+      <a class="btn btn-sm btn-purple" href="/api/jobs/${jobId}/cv" target="_blank" rel="noopener" aria-label="Download tailored CV">${icon('download')}</a>
+    </div>`;
+
+  if (files.cl) html += `
+    <div class="doc-card">
+      <div class="doc-card-info">
+        <div class="name">${icon('mail')} Cover Letter</div>
+        <div class="date" title="${esc(files.cl)}">${esc(files.cl)}</div>
+      </div>
+      <a class="btn btn-sm btn-purple" href="/api/jobs/${jobId}/cl" target="_blank" rel="noopener" aria-label="Download cover letter">${icon('download')}</a>
+    </div>`;
+
+  if (files.form) html += `
+    <div class="doc-card">
+      <div class="doc-card-info">
+        <div class="name">${icon('clipboard')} Form Responses</div>
+        <div class="date" title="${esc(files.form)}">${esc(files.form)}</div>
+      </div>
+      <div class="docs-actions">
+        <a class="btn btn-sm btn-purple" href="/api/jobs/${jobId}/form" target="_blank" rel="noopener" aria-label="Download form responses as PDF">PDF</a>
+        ${files.form_json ? `<a class="btn btn-sm btn-ghost" href="/api/jobs/${jobId}/form-json" target="_blank" rel="noopener" aria-label="Download form responses as JSON">JSON</a>` : ''}
+      </div>
+    </div>`;
+
+  if (files.deliverable) html += `
+    <div class="doc-card">
+      <div class="doc-card-info">
+        <div class="name">${icon('gift')} Value-add Deliverable</div>
+        <div class="date" title="${esc(files.deliverable)}">${esc(files.deliverable)}</div>
+      </div>
+      <a class="btn btn-sm btn-purple" href="/api/jobs/${jobId}/deliverable" target="_blank" rel="noopener" aria-label="Download value-add deliverable">${icon('download')}</a>
+    </div>`;
+
+  if (files.landing) html += `
+    <div class="doc-card">
+      <div class="doc-card-info">
+        <div class="name">${icon('external') || ''} Campaign landing</div>
+        <div class="date" title="${esc(files.landing)}">${esc(files.landing)}</div>
+      </div>
+      <a class="btn btn-sm btn-purple" href="${files.landing}" target="_blank" rel="noopener" aria-label="Open campaign landing page">Open landing ↗</a>
+    </div>`;
+
+  html += `
+    <button class="generate-btn mt-8" id="genBtn-${jobId}" type="button" onclick="generateDocs('${jobId}')">
+      ${files.cv ? icon('refresh') + ' Regenerate CV + cover letter' : icon('sparkles') + ' Generate CV + cover letter'}
+    </button>`;
+
+  if (!files.form) html += `
+    <button class="btn btn-ghost btn-block mt-6" type="button" onclick="generateForm('${jobId}')">
+      ${icon('clipboard')} Generate form responses
+    </button>`;
+
+  // Autofill: opens a Chromium window and fills the ATS form. Generates
+  // form responses on the fly if missing — one click does everything.
+  html += `
+    <button class="btn btn-purple btn-block mt-6" id="autofillBtn-${jobId}" type="button" onclick="autofillJob('${jobId}')">
+      ${icon('sparkles')} Autofill application in browser
+    </button>
+    <div class="autofill-status" id="autofillStatus-${jobId}" style="display:none;font-size:12px;color:var(--text-dim);margin-top:8px;line-height:1.5;"></div>`;
+
+  if (!files.deliverable) html += `
+    <button class="btn btn-ghost btn-block mt-6" type="button" onclick="generateDeliverable('${jobId}')">
+      ${icon('gift')} Generate value-add deliverable
+    </button>`;
+
+  return html;
+}
+
+// Toggle JD expand — accessible
+function toggleJD(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen = content.style.display !== 'none';
+  content.style.display = isOpen ? 'none' : 'block';
+  btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+}
+
+// Mobile sidebar toggle
+function toggleMobileSidebar(btn) {
+  const sidebar = btn.closest('.detail-sidebar');
+  sidebar.classList.toggle('expanded');
+}
+
+function backToBoard(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  history.pushState(null, '', '/');
+  document.getElementById('detailView').style.display = 'none';
+  renderView();
+}
+
+window.addEventListener('popstate', () => {
+  const m = location.pathname.match(/^\/job\/(.+)/);
+  if (m) showDetail(m[1]);
+  else {
+    document.getElementById('detailView').style.display = 'none';
+    renderView();
+  }
+});
+
+// ═══════════════════════════════════════════
+// ACTIONS
+// ═══════════════════════════════════════════
+async function updateStatus(jobId, newStatus) {
+  try {
+    await api(`/api/jobs/${jobId}/status`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: newStatus }),
+    });
+    const job = STATE.jobs.find(j => j.id === jobId);
+    if (job) job.status = newStatus;
+    softRefreshView();
+    toast(`Status → ${newStatus}`, 'success');
+    announce(`Status updated to ${newStatus}`);
+  } catch {}
+}
+
+async function quickAction(jobId, status) {
+  await updateStatus(jobId, status);
+  backToBoard();
+  await loadJobs();
+  renderView();
+}
+
+async function copyChatRequest(reqId) {
+  try {
+    const r = await fetch(`/api/llm/requests/${reqId}`);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const data = await r.json();
+    await navigator.clipboard.writeText(data.markdown || '');
+    toast('Prompt copied — paste in chat and reply with a ```json``` block');
+  } catch (err) {
+    console.error('copyChatRequest failed:', err);
+    toast('Could not copy prompt: ' + (err.message || err));
+  }
+}
+
+async function generateDocs(jobId) {
+  const btn = document.getElementById(`genBtn-${jobId}`);
+  if (btn) {
+    btn.disabled = true;
+    btn.classList.add('btn-loading');
+  }
+  toast('Generating CV + Cover Letter…');
+
+  // Capture the previous status for rollback if generation never produces a CV.
+  const job = STATE.jobs.find(x => x.id === jobId);
+  const prevStatus = job ? (job.status || 'Inbox') : null;
+
+  const setStatusOptimistic = (newStatus) => {
+    if (!job) return;
+    job.status = newStatus;
+    softRefreshView();
+    const sel = document.getElementById('statusSelect');
+    if (sel) sel.value = newStatus;
+    const detailBadge = document.querySelector('#detailView .status-badge');
+    if (detailBadge) {
+      detailBadge.className = 'status-badge ' + newStatus.toLowerCase().replace(/\s+/g, '-');
+      detailBadge.textContent = newStatus;
+    }
+  };
+
+  try {
+    await api(`/api/jobs/${jobId}/generate`, { method: 'POST' });
+    // Optimistic: flip to "CV Ready" right away so the UI feels responsive.
+    setStatusOptimistic('CV Ready');
+
+    pollFiles(jobId, 'cv', 'CV + CL ready', () => {
+      // Rollback: poll timed out without the CV appearing on disk → backend
+      // generation failed (likely Anthropic credits exhausted). Revert UI so
+      // the user sees the truth.
+      setStatusOptimistic(prevStatus || 'Inbox');
+      if (btn) { btn.disabled = false; btn.classList.remove('btn-loading'); }
+      toast('CV generation failed — status reverted', 'error');
+    });
+  } catch {
+    if (btn) { btn.disabled = false; btn.classList.remove('btn-loading'); }
+  }
+}
+
+async function generateForm(jobId) {
+  toast('Generating form responses…');
+  try {
+    await api(`/api/jobs/${jobId}/form-responses`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: '{}',
+    });
+    pollFiles(jobId, 'form', 'Form responses ready');
+  } catch {}
+}
+
+// Autofill: launches Chromium and fills the application form. Polls the
+// status endpoint to surface progress in the sidebar; the user keeps control
+// of the browser window and submits the form manually.
+const _autofillStageMessages = {
+  starting: 'Starting…',
+  generating_responses: 'Generating personalized answers (Claude)…',
+  installing_chromium: 'First-time setup: downloading Chromium (~150MB)…',
+  opening_browser: 'Opening Chromium and navigating to the job page…',
+  extracting_fields: 'Reading form fields from the page…',
+  mapping_fields: 'Mapping fields to your answers (Claude)…',
+  filling: 'Filling fields…',
+  uploading_files: 'Attaching CV / cover letter…',
+  awaiting_human: '✅ Form filled — review the browser, fix anything Claude got wrong, then submit. The window stays open until you close it.',
+  done: 'Done — browser closed.',
+  error: '⚠️ Error',
+};
+
+async function autofillJob(jobId) {
+  const btn = document.getElementById(`autofillBtn-${jobId}`);
+  const statusEl = document.getElementById(`autofillStatus-${jobId}`);
+  if (btn) { btn.disabled = true; btn.classList.add('btn-loading'); }
+  if (statusEl) {
+    statusEl.style.display = 'block';
+    statusEl.textContent = 'Launching…';
+  }
+
+  try {
+    await api(`/api/jobs/${jobId}/autofill`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: '{}',
+    });
+    toast('Browser opening — this may take a few seconds');
+  } catch (err) {
+    if (btn) { btn.disabled = false; btn.classList.remove('btn-loading'); }
+    if (statusEl) statusEl.textContent = '⚠️ Failed to launch';
+    return;
+  }
+
+  // Poll status every 1.5s until 'awaiting_human', 'done', or 'error'
+  let consecutiveErrors = 0;
+  const poll = async () => {
+    try {
+      const s = await api(`/api/jobs/${jobId}/autofill/status`);
+      consecutiveErrors = 0;
+      const stage = s.stage || 'starting';
+      const msg = s.message || _autofillStageMessages[stage] || stage;
+      const err = s.error ? ` — ${s.error}` : '';
+
+      if (statusEl) {
+        let extra = '';
+        if (s.report) {
+          const r = s.report;
+          extra = `<br><span style="color:var(--text-dim)">${r.filled} filled · ${r.skipped} skipped · ${r.failed} failed${r.uploaded && r.uploaded.length ? ' · ' + r.uploaded.length + ' uploaded' : ''}</span>`;
+        }
+        statusEl.innerHTML = esc(msg + err) + extra;
+      }
+
+      if (stage === 'awaiting_human' || stage === 'done' || stage === 'error') {
+        if (btn) {
+          btn.disabled = false;
+          btn.classList.remove('btn-loading');
+          if (stage === 'done') btn.innerHTML = `${icon('refresh')} Autofill again`;
+        }
+        if (stage !== 'awaiting_human') return; // stop polling
+        // For awaiting_human, keep polling slowly so we catch 'done' when window closes
+        setTimeout(poll, 3000);
+        return;
+      }
+      setTimeout(poll, 1500);
+    } catch (err) {
+      consecutiveErrors++;
+      if (consecutiveErrors >= 3) {
+        if (statusEl) statusEl.textContent = '⚠️ Lost connection to status endpoint';
+        if (btn) { btn.disabled = false; btn.classList.remove('btn-loading'); }
+        return;
+      }
+      setTimeout(poll, 2000);
+    }
+  };
+  setTimeout(poll, 800);
+}
+
+// Deliverable type picker — see #deliverableModal
+let _deliverableJobId = null;
+let _deliverableType = 'auto';
+
+function generateDeliverable(jobId) {
+  _deliverableJobId = jobId;
+  _deliverableType = 'auto';
+  // Reset selection to Auto
+  document.querySelectorAll('#deliverableOptions .deliverable-card').forEach(card => {
+    const isAuto = card.dataset.type === 'auto';
+    card.classList.toggle('selected', isAuto);
+    card.setAttribute('aria-checked', isAuto ? 'true' : 'false');
+  });
+  document.getElementById('deliverableModal').classList.add('visible');
+}
+
+function closeDeliverableModal() {
+  document.getElementById('deliverableModal').classList.remove('visible');
+  _deliverableJobId = null;
+}
+
+// Wire up card selection
+document.addEventListener('click', (e) => {
+  const card = e.target.closest('#deliverableOptions .deliverable-card');
+  if (!card) return;
+  document.querySelectorAll('#deliverableOptions .deliverable-card').forEach(c => {
+    c.classList.remove('selected');
+    c.setAttribute('aria-checked', 'false');
+  });
+  card.classList.add('selected');
+  card.setAttribute('aria-checked', 'true');
+  _deliverableType = card.dataset.type;
+});
+
+// Close modal on backdrop click or Escape
+document.getElementById('deliverableModal').addEventListener('click', (e) => {
+  if (e.target.id === 'deliverableModal') closeDeliverableModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('deliverableModal').classList.contains('visible')) {
+    closeDeliverableModal();
+  }
+});
+
+async function submitDeliverable() {
+  const jobId = _deliverableJobId;
+  if (!jobId) return;
+  const body = _deliverableType === 'auto' ? {} : { deliverable_type: _deliverableType };
+  closeDeliverableModal();
+  toast('Generating deliverable…');
+  try {
+    await api(`/api/jobs/${jobId}/deliverable`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body),
+    });
+    pollFiles(jobId, 'deliverable', 'Deliverable ready');
+  } catch {}
+}
+
+// Speculative target modal — see #speculativeModal
+let _speculativeAnglesLoaded = false;
+
+async function openSpeculativeModal() {
+  // Lazy-load angles once. /api/angles is cheap (no LLM), safe to await.
+  if (!_speculativeAnglesLoaded) {
+    try {
+      const data = await api('/api/angles');
+      const sel = document.getElementById('speculativeAngle');
+      sel.innerHTML = (data.angles || []).map(a =>
+        `<option value="${a.key}">${a.name}</option>`
+      ).join('');
+      _speculativeAnglesLoaded = true;
+    } catch {
+      return;
+    }
+  }
+  document.getElementById('speculativeForm').reset();
+  document.getElementById('speculativeModal').classList.add('visible');
+}
+
+function closeSpeculativeModal() {
+  document.getElementById('speculativeModal').classList.remove('visible');
+}
+
+document.getElementById('speculativeModal').addEventListener('click', (e) => {
+  if (e.target.id === 'speculativeModal') closeSpeculativeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('speculativeModal').classList.contains('visible')) {
+    closeSpeculativeModal();
+  }
+});
+
+async function submitSpeculativeTarget() {
+  const form = document.getElementById('speculativeForm');
+  const fd = new FormData(form);
+  const body = {};
+  for (const [k, v] of fd.entries()) {
+    const trimmed = (v || '').toString().trim();
+    if (trimmed) body[k] = trimmed;
+  }
+  if (!body.company || !body.angle) return;
+  const submitBtn = document.getElementById('speculativeSubmit');
+  submitBtn.disabled = true;
+  try {
+    const result = await api('/api/targets/speculative', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body),
+    });
+    closeSpeculativeModal();
+    toast(`Speculative target ${result.created === false ? 'updated' : 'created'} — opening…`);
+    // Navigate to the new job's detail page. Reload first so the jobs list
+    // refresh picks up the new entry from scored_jobs.json.
+    setTimeout(() => {
+      window.location.href = `/job/${result.job_id}`;
+    }, 400);
+  } catch {
+    // api() already toasted
+  } finally {
+    submitBtn.disabled = false;
+  }
+}
+
+// Poll for a specific file to appear, then refresh docs section.
+// onTimeout: optional callback invoked when maxAttempts is reached without
+//   the file showing up. Use it to roll back optimistic UI changes.
+async function pollFiles(jobId, fileKey, successMsg, onTimeout) {
+  let attempts = 0;
+  let delay = 2000;
+  const maxDelay = 15000;
+  const maxAttempts = 20;
+
+  const tick = async () => {
+    attempts++;
+    try {
+      const j = await api(`/api/jobs/${jobId}`);
+      const files = j._files || {};
+      if (files[fileKey]) {
+        toast(successMsg, 'success');
+        // Only re-render the docs section, not the whole page
+        const docsSection = document.getElementById('docsSection');
+        if (docsSection) {
+          docsSection.innerHTML = `<h3 class="sidebar-section-title">Documents</h3>${renderDocsSection(jobId, files)}`;
+        }
+        await loadJobs();
+        return;
+      }
+    } catch {}
+    if (attempts >= maxAttempts) {
+      if (typeof onTimeout === 'function') {
+        onTimeout();
+      } else {
+        toast('Still working… check back in a minute', 'error');
+      }
+      return;
+    }
+    delay = Math.min(delay * 1.3, maxDelay);
+    setTimeout(tick, delay);
+  };
+  setTimeout(tick, delay);
+}
+
+// ═══════════════════════════════════════════
+// PIPELINE
+// ═══════════════════════════════════════════
+// SERVER LIFECYCLE
+// ═══════════════════════════════════════════
+async function restartServer() {
+  if (!confirm('Restart the dashboard server? Takes ~3 seconds.')) return;
+  const btn = document.getElementById('restartBtn');
+  if (btn) { btn.classList.add('spinning'); btn.disabled = true; }
+  toast('Restarting server…', 'info');
+
+  // Fire-and-forget: the server kills itself mid-response, so the request
+  // may error — that's expected. We just need it to receive the call.
+  fetch('/api/_admin/restart', { method: 'POST', headers: { 'Content-Type': 'application/json' } }).catch(() => {});
+
+  // Poll /api/stats until the server answers again, then reload.
+  const start = Date.now();
+  const tryReconnect = async () => {
+    try {
+      const res = await fetch('/api/stats', { cache: 'no-store' });
+      if (res.ok) {
+        toast('Server back. Reloading…', 'success');
+        setTimeout(() => location.reload(), 400);
+        return;
+      }
+    } catch { /* still down */ }
+    if (Date.now() - start > 15000) {
+      toast('Server did not come back in 15s. Check the terminal.', 'error');
+      if (btn) { btn.classList.remove('spinning'); btn.disabled = false; }
+      return;
+    }
+    setTimeout(tryReconnect, 600);
+  };
+  setTimeout(tryReconnect, 1500);
+}
+
+// ═══════════════════════════════════════════
+async function runPipeline() {
+  const btn = document.getElementById('pipelineBtn');
+  const label = document.getElementById('pipelineBtnLabel');
+  btn.classList.add('running');
+  label.textContent = 'Running…';
+
+  try {
+    const data = await api('/api/pipeline/run', { method: 'POST' });
+    if (data.ok) {
+      toast('Pipeline started');
+      pollPipelineStatus();
+    } else {
+      toast(data.message || 'Pipeline already running');
+    }
+  } catch {
+    btn.classList.remove('running');
+    label.textContent = 'Run Pipeline';
+  }
+}
+
+// Exponential backoff polling for pipeline
+let pipelinePollDelay = 3000;
+let pipelinePollAttempts = 0;
+async function pollPipelineStatus() {
+  try {
+    const state = await api('/api/pipeline/status');
+    const btn = document.getElementById('pipelineBtn');
+    const label = document.getElementById('pipelineBtnLabel');
+
+    if (state.running) {
+      btn.classList.add('running');
+      label.textContent = 'Running…';
+      pipelinePollAttempts++;
+      if (pipelinePollAttempts >= 60) return; // ~3 min cap on polling
+      pipelinePollDelay = Math.min(pipelinePollDelay * 1.15, 15000);
+      setTimeout(pollPipelineStatus, pipelinePollDelay);
+    } else {
+      btn.classList.remove('running');
+      label.textContent = 'Run Pipeline';
+      pipelinePollDelay = 3000;
+      pipelinePollAttempts = 0;
+      if (state.last_result && !state.last_result.error) {
+        await loadJobs();
+        renderView();
+      }
+    }
+  } catch {}
+}
+
+// ═══════════════════════════════════════════
+// CONTACTS
+// ═══════════════════════════════════════════
+async function findContacts(jobId) {
+  toast('Searching LinkedIn via Google…');
+  // Show inline loading state so the user knows the search is in progress.
+  const el = document.getElementById('contactsList');
+  if (el) {
+    el.innerHTML = `
+      <div class="contacts-loading" role="status" aria-live="polite">
+        <span class="spinner" aria-hidden="true"></span>
+        <span>Searching LinkedIn…</span>
+        <span class="contacts-loading-hint">Up to 13 Google queries · ~30–60s</span>
+      </div>`;
+  }
+  try {
+    await api(`/api/jobs/${jobId}/contacts`, { method: 'POST' });
+  } catch {
+    if (el) el.innerHTML = '<div class="empty-inline">Search failed. Try again.</div>';
+    return;
+  }
+
+  let attempts = 0;
+  const poll = async () => {
+    attempts++;
+    try {
+      const data = await api(`/api/jobs/${jobId}/contacts`);
+      // Ready when meta exists (search completed) or after 10 polling attempts
+      if (data.meta || attempts > 10) {
+        // Only render if the detail panel is still showing the same job.
+        // Otherwise the user navigated away — they'll see fresh data on reopen.
+        if (document.body.dataset.detailJobId === jobId) {
+          renderContacts(data.contacts, data.meta);
+        }
+        if (data.contacts.length) toast(`Found ${data.contacts.length} contacts`, 'success');
+        else toast('No public LinkedIn profiles found');
+        return;
+      }
+    } catch { return; }
+    setTimeout(poll, 3000);
+  };
+  setTimeout(poll, 3000);
+}
+
+// Cache the contact list for the currently-open job so the modal can find a
+// contact by id without re-fetching.
+let _currentJobId = null;
+let _currentContacts = [];
+
+function renderContacts(contacts, meta) {
+  const sidebar = document.getElementById('contactsList');
+  const grid = document.getElementById('outreachGrid');
+  const toolbar = document.getElementById('outreachToolbar');
+  const searched = !!meta;
+
+  // Sidebar: compact summary only — full UI lives in the main column now.
+  if (sidebar) {
+    if (!contacts || !contacts.length) {
+      sidebar.innerHTML = searched
+        ? `<div class="empty-inline">No public LinkedIn profiles found.</div>`
+        : '<div class="empty-inline">No contacts yet.</div>';
+    } else {
+      const withMsg = contacts.filter(c => c.outreach_status && c.outreach_status !== 'pending').length;
+      sidebar.innerHTML = `<div class="contacts-summary">
+        <strong>${contacts.length}</strong> contacts · <strong>${withMsg}</strong> with message
+        <a href="#outreachSection" class="contacts-summary-link">Open outreach ↓</a>
+      </div>`;
+    }
+  }
+
+  if (!grid) return;
+  if (!contacts || !contacts.length) {
+    if (searched) {
+      const when = meta.searched_at ? new Date(meta.searched_at).toLocaleString() : '';
+      grid.classList.add('empty-inline');
+      grid.classList.remove('outreach-grid');
+      grid.innerHTML = `No public LinkedIn profiles found for <strong>${esc(meta.company || '')}</strong>. Last searched: ${esc(when)}.`;
+    } else {
+      grid.classList.add('empty-inline');
+      grid.classList.remove('outreach-grid');
+      grid.innerHTML = 'Run "Find Contacts" first.';
+    }
+    if (toolbar) toolbar.hidden = true;
+    return;
+  }
+
+  grid.classList.remove('empty-inline');
+  grid.classList.add('outreach-grid');
+
+  if (toolbar) {
+    toolbar.hidden = false;
+    const withMsg = contacts.filter(c => c.outreach_versions > 0).length;
+    document.getElementById('outreachCounter').textContent = `${withMsg}/${contacts.length} with message`;
+  }
+
+  grid.innerHTML = contacts.map(c => renderContactCard(c)).join('');
+}
+
+function renderContactCard(c) {
+  const status = c.outreach_status || 'pending';
+  const hasMsg = c.outreach_versions > 0;
+  const preview = c.outreach_preview ? esc(c.outreach_preview) + (c.outreach_preview.length >= 140 ? '…' : '') : '';
+  const variantLabel = {
+    linkedin_connection: 'LinkedIn note',
+    linkedin_inmail: 'InMail',
+    email: 'Email',
+  }[c.outreach_variant] || '';
+  const cidSafe = esc(c.id);
+  return `
+    <div class="oc-card oc-status-${status}" data-cid="${cidSafe}">
+      <div class="oc-card-head">
+        <div>
+          <div class="oc-name">${esc(c.name)}</div>
+          <div class="oc-title">${esc(c.title)}</div>
+        </div>
+        <span class="oc-role-chip">${esc(c.role_type)}</span>
+      </div>
+      <div class="oc-status-row">
+        <span class="oc-status-badge oc-status-${status}">${status}</span>
+        ${variantLabel ? `<span class="oc-variant">${variantLabel}</span>` : ''}
+        ${c.outreach_versions > 1 ? `<span class="oc-versions">v${c.outreach_versions}</span>` : ''}
+      </div>
+      <div class="oc-preview" onclick="openOutreachModal('${cidSafe}')">
+        ${hasMsg ? preview : '<span class="oc-empty">No message yet — click to generate</span>'}
+      </div>
+      <div class="oc-actions">
+        ${hasMsg
+          ? `<button class="btn btn-sm btn-ghost" type="button" onclick="regenerateOutreach('${cidSafe}', this)" title="Regenerate">${icon('refresh')}</button>
+             <button class="btn btn-sm btn-ghost" type="button" onclick="copyOutreach('${cidSafe}', this)" title="Copy message">${icon('copy')}</button>`
+          : `<button class="btn btn-sm btn-purple" type="button" onclick="regenerateOutreach('${cidSafe}', this)">${icon('zap')} Generate</button>`}
+        ${c.linkedin_url
+          ? `<a class="btn btn-sm btn-ghost" href="${esc(c.linkedin_url)}" target="_blank" rel="noopener" title="Open LinkedIn">${icon('external')}</a>`
+          : ''}
+        <button class="btn btn-sm btn-ghost oc-expand" type="button" onclick="openOutreachModal('${cidSafe}')" title="Expand">${icon('chevron')}</button>
+      </div>
+    </div>`;
+}
+
+async function loadContacts(jobId) {
+  _currentJobId = jobId;
+  try {
+    const data = await api(`/api/jobs/${jobId}/contacts`);
+    _currentContacts = data.contacts || [];
+    renderContacts(_currentContacts, data.meta);
+  } catch {
+    const sidebar = document.getElementById('contactsList');
+    if (sidebar) sidebar.innerHTML = '<div class="empty-inline">Could not load contacts.</div>';
+    const grid = document.getElementById('outreachGrid');
+    if (grid) grid.innerHTML = 'Could not load contacts.';
+  }
+}
+
+// ═══════════════════════════════════════════
+// OUTREACH GENERATION
+// ═══════════════════════════════════════════
+
+function _selectedVariant() {
+  const sel = document.getElementById('outreachVariant');
+  return sel ? sel.value : 'linkedin_connection';
+}
+
+async function regenerateOutreach(cid, btnEl) {
+  if (!_currentJobId) return;
+  if (btnEl) { btnEl.disabled = true; btnEl.dataset._html = btnEl.innerHTML; btnEl.innerHTML = '…'; }
+  try {
+    await api(`/api/jobs/${_currentJobId}/outreach/${cid}`, {
+      method: 'POST',
+      body: JSON.stringify({ variant: _selectedVariant() }),
+    });
+    toast('Message generated', 'success');
+    await loadContacts(_currentJobId);
+  } catch (e) {
+    toast('Generation failed: ' + (e.message || e), 'error');
+    if (btnEl) { btnEl.disabled = false; if (btnEl.dataset._html) btnEl.innerHTML = btnEl.dataset._html; }
+  }
+}
+
+async function generateAllOutreach(jobId, force) {
+  const variant = _selectedVariant();
+  const label = force ? 'Regenerating all' : 'Generating pending';
+  toast(`${label}…`, 'info');
+  try {
+    const res = await api(`/api/jobs/${jobId}/outreach/generate-all`, {
+      method: 'POST',
+      body: JSON.stringify({ variant, force }),
+    });
+    if (res.ok === false) { toast(res.message || 'Already running', 'warning'); return; }
+    pollBatch(jobId);
+  } catch (e) {
+    toast('Batch failed: ' + (e.message || e), 'error');
+  }
+}
+
+async function pollBatch(jobId) {
+  const counter = document.getElementById('outreachCounter');
+  const poll = async () => {
+    try {
+      const s = await api(`/api/jobs/${jobId}/outreach/batch-status`);
+      if (counter && s.total) counter.textContent = `Generating ${s.done}/${s.total}…`;
+      if (!s.running) {
+        await loadContacts(jobId);
+        if (s.failed) toast(`Done. ${s.failed} failed.`, 'warning');
+        else toast('All messages generated', 'success');
+        return;
+      }
+      // Refresh grid mid-batch so cards light up as they finish.
+      await loadContacts(jobId);
+      setTimeout(poll, 2000);
+    } catch { setTimeout(poll, 4000); }
+  };
+  setTimeout(poll, 1500);
+}
+
+async function copyOutreach(cid, btnEl) {
+  if (!_currentJobId) return;
+  try {
+    const all = await api(`/api/jobs/${_currentJobId}/outreach`);
+    const co = all[cid];
+    if (!co || !co.versions.length) { toast('No message to copy', 'warning'); return; }
+    const cur = co.versions.find(v => v.v === co.current_version) || co.versions[co.versions.length - 1];
+    await navigator.clipboard.writeText(cur.body);
+    toast('Copied to clipboard', 'success');
+    if (btnEl) { btnEl.classList.add('btn-success-flash'); setTimeout(() => btnEl.classList.remove('btn-success-flash'), 800); }
+  } catch (e) { toast('Copy failed', 'error'); }
+}
+
+// ═══════════════════════════════════════════
+// OUTREACH MODAL
+// ═══════════════════════════════════════════
+
+async function openOutreachModal(cid) {
+  if (!_currentJobId) return;
+  const contact = _currentContacts.find(c => c.id === cid);
+  if (!contact) return;
+
+  const all = await api(`/api/jobs/${_currentJobId}/outreach`).catch(() => ({}));
+  const co = all[cid] || { versions: [], current_version: 0, status: 'pending' };
+  const cur = co.versions.find(v => v.v === co.current_version) || co.versions[co.versions.length - 1];
+
+  const modal = document.getElementById('outreachModal') || _createOutreachModal();
+  modal.dataset.cid = cid;
+  modal.querySelector('.om-name').textContent = contact.name;
+  modal.querySelector('.om-title').textContent = contact.title + ' · ' + contact.role_type;
+  modal.querySelector('.om-linkedin').href = contact.linkedin_url || '#';
+  modal.querySelector('.om-linkedin').style.display = contact.linkedin_url ? 'inline-flex' : 'none';
+
+  const ta = modal.querySelector('.om-body');
+  ta.value = cur ? cur.body : '';
+  ta.dataset.dirty = '0';
+
+  // Variant selector reflects current message variant if any.
+  const vsel = modal.querySelector('.om-variant');
+  vsel.value = cur ? cur.variant : _selectedVariant();
+
+  // Version dropdown.
+  const vdrop = modal.querySelector('.om-versions');
+  if (co.versions.length > 1) {
+    vdrop.style.display = '';
+    vdrop.innerHTML = co.versions.slice().reverse().map(v =>
+      `<option value="${v.v}" ${v.v === co.current_version ? 'selected' : ''}>v${v.v} · ${v.variant} · ${new Date(v.generated_at).toLocaleString()}</option>`
+    ).join('');
+  } else {
+    vdrop.style.display = 'none';
+  }
+
+  // Status pill + sent button.
+  modal.querySelector('.om-status').textContent = co.status;
+  modal.querySelector('.om-status').className = 'om-status oc-status-badge oc-status-' + co.status;
+
+  modal.hidden = false;
+  document.body.classList.add('modal-open');
+  setTimeout(() => ta.focus(), 50);
+}
+
+function closeOutreachModal() {
+  const m = document.getElementById('outreachModal');
+  if (m) m.hidden = true;
+  document.body.classList.remove('modal-open');
+}
+
+function _createOutreachModal() {
+  const m = document.createElement('div');
+  m.id = 'outreachModal';
+  m.className = 'om-overlay';
+  m.hidden = true;
+  m.innerHTML = `
+    <div class="om-dialog" role="dialog" aria-labelledby="omName" aria-modal="true">
+      <header class="om-head">
+        <div>
+          <h3 id="omName" class="om-name"></h3>
+          <div class="om-title"></div>
+        </div>
+        <div class="om-head-actions">
+          <a class="btn btn-sm btn-ghost om-linkedin" target="_blank" rel="noopener">LinkedIn ${icon('external')}</a>
+          <button class="om-close" type="button" onclick="closeOutreachModal()" aria-label="Close">${icon('x')}</button>
+        </div>
+      </header>
+      <div class="om-controls">
+        <select class="om-variant" aria-label="Variant">
+          <option value="linkedin_connection">LinkedIn note (≤300)</option>
+          <option value="linkedin_inmail">LinkedIn InMail</option>
+          <option value="email">Email</option>
+        </select>
+        <select class="om-versions" aria-label="Version" onchange="switchOutreachVersion(this.value)" style="display:none;"></select>
+        <span class="om-status oc-status-badge"></span>
+      </div>
+      <textarea class="om-body" rows="10" oninput="this.dataset.dirty='1'"></textarea>
+      <footer class="om-foot">
+        <div class="om-foot-left">
+          <button class="btn btn-sm btn-ghost" type="button" onclick="modalRegenerate()">${icon('refresh')} Regenerate</button>
+          <button class="btn btn-sm btn-ghost" type="button" onclick="modalSaveEdit()">${icon('check')} Save edit</button>
+        </div>
+        <div class="om-foot-right">
+          <button class="btn btn-sm btn-purple" type="button" onclick="modalCopy()">${icon('copy')} Copy</button>
+          <button class="btn btn-sm btn-green" type="button" onclick="modalMarkSent()">${icon('send')} Mark sent</button>
+        </div>
+      </footer>
+    </div>`;
+  document.body.appendChild(m);
+  m.addEventListener('click', (e) => { if (e.target === m) closeOutreachModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !m.hidden) closeOutreachModal();
+  });
+  return m;
+}
+
+async function switchOutreachVersion(versionStr) {
+  const m = document.getElementById('outreachModal');
+  if (!m || !_currentJobId) return;
+  const cid = m.dataset.cid;
+  const v = parseInt(versionStr, 10);
+  try {
+    await api(`/api/jobs/${_currentJobId}/outreach/${cid}/version`, {
+      method: 'POST', body: JSON.stringify({ version: v }),
+    });
+    openOutreachModal(cid);
+    loadContacts(_currentJobId);
+  } catch (e) { toast('Could not switch version', 'error'); }
+}
+
+async function modalRegenerate() {
+  const m = document.getElementById('outreachModal');
+  const cid = m.dataset.cid;
+  const variant = m.querySelector('.om-variant').value;
+  try {
+    await api(`/api/jobs/${_currentJobId}/outreach/${cid}`, {
+      method: 'POST', body: JSON.stringify({ variant }),
+    });
+    toast('Regenerated', 'success');
+    openOutreachModal(cid);
+    loadContacts(_currentJobId);
+  } catch (e) { toast('Regenerate failed', 'error'); }
+}
+
+async function modalSaveEdit() {
+  const m = document.getElementById('outreachModal');
+  const cid = m.dataset.cid;
+  const body = m.querySelector('.om-body').value;
+  try {
+    await api(`/api/jobs/${_currentJobId}/outreach/${cid}/edit`, {
+      method: 'POST', body: JSON.stringify({ body }),
+    });
+    toast('Edit saved', 'success');
+    m.querySelector('.om-body').dataset.dirty = '0';
+    loadContacts(_currentJobId);
+  } catch (e) { toast('Save failed', 'error'); }
+}
+
+async function modalCopy() {
+  const m = document.getElementById('outreachModal');
+  const body = m.querySelector('.om-body').value;
+  try { await navigator.clipboard.writeText(body); toast('Copied', 'success'); }
+  catch { toast('Copy failed', 'error'); }
+}
+
+async function modalMarkSent() {
+  const m = document.getElementById('outreachModal');
+  const cid = m.dataset.cid;
+  try {
+    await api(`/api/jobs/${_currentJobId}/outreach/${cid}/status`, {
+      method: 'POST', body: JSON.stringify({ status: 'sent' }),
+    });
+    toast('Marked as sent', 'success');
+    closeOutreachModal();
+    loadContacts(_currentJobId);
+  } catch (e) { toast('Update failed', 'error'); }
+}
+
+async function copyText(text, btnEl) {
+  try {
+    await navigator.clipboard.writeText(text);
+    if (btnEl) {
+      const original = btnEl.textContent;
+      btnEl.classList.add('copied');
+      btnEl.textContent = 'Copied!';
+      setTimeout(() => {
+        btnEl.classList.remove('copied');
+        btnEl.textContent = original;
+      }, 1500);
+    }
+    announce('Copied to clipboard');
+  } catch {
+    toast('Could not copy', 'error');
+  }
+}
+
+// ═══════════════════════════════════════════
+// KEYBOARD SHORTCUTS
+// ═══════════════════════════════════════════
+function setupKeyboardShortcuts() {
+  let gPrefix = false;
+  let gTimer = null;
+
+  document.addEventListener('keydown', (e) => {
+    const target = e.target;
+    const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT';
+
+    // Esc always works — close overlay or go back
+    if (e.key === 'Escape') {
+      const overlay = document.getElementById('shortcutsOverlay');
+      if (overlay.classList.contains('visible')) {
+        overlay.classList.remove('visible');
+        return;
+      }
+      if (document.getElementById('detailView').style.display === 'block') {
+        backToBoard();
+        return;
+      }
+      if (isInput) target.blur();
+      return;
+    }
+
+    if (isInput && e.key !== 'Escape') return;
+
+    // ? — help overlay
+    if (e.key === '?') {
+      e.preventDefault();
+      document.getElementById('shortcutsOverlay').classList.toggle('visible');
+      return;
+    }
+
+    // g prefix
+    if (e.key === 'g' && !gPrefix) {
+      gPrefix = true;
+      clearTimeout(gTimer);
+      gTimer = setTimeout(() => { gPrefix = false; }, 800);
+      return;
+    }
+    if (gPrefix) {
+      gPrefix = false;
+      clearTimeout(gTimer);
+      if (e.key === 'h') { switchView('home'); return; }
+      if (e.key === 'b') { switchView('board'); return; }
+      if (e.key === 't') { switchView('table'); return; }
+      return;
+    }
+
+    // r — run pipeline
+    if (e.key === 'r') {
+      e.preventDefault();
+      runPipeline();
+      return;
+    }
+
+    // / — focus search (only in table view)
+    if (e.key === '/') {
+      if (STATE.view !== 'table') switchView('table');
+      setTimeout(() => {
+        const search = document.getElementById('searchInput');
+        if (search) { search.focus(); search.select(); }
+      }, 50);
+      e.preventDefault();
+      return;
+    }
+
+    // Board navigation: j/k or arrow keys
+    if (STATE.view === 'board' && document.getElementById('detailView').style.display !== 'block') {
+      if (e.key === 'j' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        focusNextCard(1);
+        return;
+      }
+      if (e.key === 'k' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        focusNextCard(-1);
+        return;
+      }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        focusNextColumn(e.key === 'ArrowRight' ? 1 : -1);
+        return;
+      }
+    }
+  });
+
+  // Close overlay on backdrop click
+  document.getElementById('shortcutsOverlay').addEventListener('click', (e) => {
+    if (e.target.id === 'shortcutsOverlay') {
+      e.currentTarget.classList.remove('visible');
+    }
+  });
+}
+
+function focusNextCard(delta) {
+  const cards = Array.from(document.querySelectorAll('.job-card'));
+  if (!cards.length) return;
+  const current = document.activeElement;
+  let idx = cards.indexOf(current);
+  if (idx === -1) idx = delta > 0 ? -1 : cards.length;
+  const nextIdx = Math.max(0, Math.min(cards.length - 1, idx + delta));
+  cards[nextIdx].focus();
+}
+
+function focusNextColumn(delta) {
+  const current = document.activeElement;
+  if (!current || !current.classList.contains('job-card')) {
+    const first = document.querySelector('.job-card');
+    if (first) first.focus();
+    return;
+  }
+  const currentColumn = current.closest('.column');
+  const columns = Array.from(document.querySelectorAll('.column'));
+  const idx = columns.indexOf(currentColumn);
+  const nextIdx = Math.max(0, Math.min(columns.length - 1, idx + delta));
+  const nextCard = columns[nextIdx]?.querySelector('.job-card');
+  if (nextCard) nextCard.focus();
+}
+
+// ═══════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════
+init();
+</script>
+</body>
+</html>
