@@ -265,8 +265,8 @@ def slide_channels() -> str:
         ("retailmedia", "Retail media", "Always-on Noon/Amazon/Carrefour sponsored + weather-API display bidding up on HIGH days. ROAS vs the index."),
     ]
     cc = "".join(
-        f'<div class="cc"><img src="assets/{img}.jpg" loading="eager" alt=""><div class="body"><h4>{title}</h4><p>{body}</p></div></div>'
-        for img, title, body in cards
+        f'<div class="cc"><img src="assets/{img}.jpg" loading="eager" alt=""><div class="body"><h4>{title}</h4><p>{desc}</p></div></div>'
+        for img, title, desc in cards
     )
     return f"""<section class="slide">
   <div class="pad">
@@ -362,14 +362,16 @@ def slide_why_paula() -> str:
 
 
 def slide_contact() -> str:
-    linkedin = P.get("linkedin", "").replace("https://", "").replace("http://", "")
+    raw = P.get("linkedin", "")
+    linkedin = raw.replace("https://", "").replace("http://", "")
+    linkedin_line = f'<div class="contact-line">{linkedin}</div>' if linkedin else ""
     return f"""<section class="slide dark">
   <div class="pad">
     <div class="wordmark">SCHWARZKOPF</div>
     <div class="contact-big" style="margin-top:150px">CONTACT</div>
     <div class="contact-line" style="margin-top:30px">{P['email']}</div>
     <div class="contact-line">{P['phone']}</div>
-    <div class="contact-line">{linkedin}</div>
+    {linkedin_line}
   </div>
 </section>"""
 
