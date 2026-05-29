@@ -393,8 +393,30 @@ def build_html() -> str:
     return html_doc(slides)
 
 
-def render_pdf(html_path: Path, pdf_path: Path) -> None:  # replaced in Task 8
-    raise NotImplementedError
+def render_pdf(html_path: Path, pdf_path: Path) -> None:
+    """HTML -> multi-page PDF (one .slide = one 1280x720 page) via headless Chromium."""
+    from playwright.sync_api import sync_playwright
+
+    url = html_path.resolve().as_uri()
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        try:
+            page = browser.new_page()
+            page.goto(url, wait_until="networkidle", timeout=60_000)
+            page.evaluate("() => document.fonts.ready")
+            page.wait_for_load_state("networkidle")
+            page.wait_for_timeout(300)  # let webfonts paint
+            page.emulate_media(media="print")
+            page.pdf(
+                path=str(pdf_path),
+                width="1280px",
+                height="720px",
+                print_background=True,
+                prefer_css_page_size=True,
+                margin={"top": "0", "bottom": "0", "left": "0", "right": "0"},
+            )
+        finally:
+            browser.close()
 
 
 def merge_pdfs(deck_pdf: Path, appendix_pdf: Path, out_pdf: Path) -> None:  # replaced in Task 9
