@@ -41,6 +41,9 @@ desktop.ini
 output/
 *.docx.bak
 
+# Brainstorming visual-companion scratch
+.superpowers/
+
 # Personal CV (keep local, do not publish to a public repo)
 # Comment the next line out if you want to version the source CV PDF
 Paula_De_Francisco_CV_Dubai.pdf
