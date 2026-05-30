@@ -26,6 +26,21 @@ paula_repo_extras.tgz   →  contains:  .env  ·  output/  ·  Paula_De_Francisc
 - **Git** — https://git-scm.com
 - **Python 3.12** — https://www.python.org (tick "Add to PATH")
 - **Node 20+** (only if she'll deploy landings / use vercel) — https://nodejs.org
+- **The `paula_repo_extras.tgz` archive already copied onto the machine** (USB / private
+  cloud). Nothing can fetch it for you — carry it over by hand before step 2.
+
+### 0. GitHub access (the repo is PRIVATE)
+
+`git clone` of a private repo needs an authenticated GitHub account **that has access
+to `guillemu11/cv-automation`**. Pick one:
+
+- **Git Credential Manager (simplest):** just run the clone in step 1 — Git for Windows
+  pops a browser login. Sign in with an account that can see the repo (e.g. guillemu11).
+- **GitHub CLI:** `gh auth login` once, then clone.
+- **Collaborator:** add Paula's own GitHub account as a collaborator on the repo
+  (GitHub → repo → Settings → Collaborators), then she signs in with hers.
+
+Without this, step 1 fails with "Authentication failed" / "repository not found".
 
 ## Steps
 
