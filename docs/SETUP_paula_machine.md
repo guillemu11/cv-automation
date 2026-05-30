@@ -1,33 +1,28 @@
 # Setting up the repo on Paula's machine
 
-Goal: reproduce the working setup **exactly as it is on Guille's machine**. The code
-lives on GitHub (private), but a lot of the value is **not** in git — it's
-gitignored: the deliverables under `output/`, the API keys in `.env`, Paula's source
-CV, and the master plan doc. So setup = **clone the code, then drop in the ignored
-extras**.
+Goal: reproduce the working setup **exactly as it is on Guille's machine**. Almost
+everything now lives in the (private) GitHub repo — code **and** all deliverables
+under `output/`, Paula's source CV, and the master plan. The **only** thing not in git
+is `.env` (it holds real API keys), so setup = **clone, drop in one `.env` file,
+rebuild the Python environment**.
 
 These are developer/setup steps (Guille runs them once). Paula never needs a terminal
 afterwards — she uses the dashboard.
 
-## What you need to move by hand
+## The one file you move by hand: `.env`
 
-The clone gives you all tracked code. From Guille's machine you also carry over the
-gitignored extras, bundled into one archive:
+`git clone` brings down everything except `.env`. Copy `.env` (≈1.6 KB) from Guille's
+repo root to Paula's repo root after cloning.
 
-```
-paula_repo_extras.tgz   →  contains:  .env  ·  output/  ·  Paula_De_Francisco_CV_Dubai.pdf  ·  Plan_Sistema_Busqueda_Empleo_Dubai.md
-```
-
-⚠️ This archive contains **real API keys** (`.env`). Move it over a trusted channel
-(USB stick or a private cloud folder) — not email, not a public link.
+⚠️ `.env` contains **real API keys**. Move it over a trusted channel (USB stick, a
+private message, or a private cloud folder) — **not email, not a public link**. If it
+ever travels over a dubious channel, rotate the keys afterwards.
 
 ## Prerequisites on Paula's machine
 
 - **Git** — https://git-scm.com
 - **Python 3.12** — https://www.python.org (tick "Add to PATH")
 - **Node 20+** (only if she'll deploy landings / use vercel) — https://nodejs.org
-- **The `paula_repo_extras.tgz` archive already copied onto the machine** (USB / private
-  cloud). Nothing can fetch it for you — carry it over by hand before step 2.
 
 ### 0. GitHub access (the repo is PRIVATE)
 
@@ -53,23 +48,29 @@ cd CV_Automation
 git checkout henkel-frizz-forecast-deck   # the branch with all the latest work
 ```
 
-### 2. Drop in the gitignored extras
+This already includes `output/` (~294 MB — every deliverable, landing and outreach
+pack), so the clone takes a minute. No separate archive to unpack anymore.
 
-Copy `paula_repo_extras.tgz` into the repo root, then unpack it (it expands into
-`.env`, `output/`, and the two root files, exactly where they belong):
+### 2. Drop in `.env`
+
+Copy the `.env` file from Guille's repo root into this folder (`CV_Automation\`). That
+is the only piece not in git. Verify it's there:
 
 ```powershell
-# from inside CV_Automation\
-tar -xzf paula_repo_extras.tgz
-Remove-Item paula_repo_extras.tgz
+Test-Path .env   # must print True
 ```
-
-`tar` ships with Windows 10/11. If for some reason it's missing, 7-Zip opens `.tgz`
-too (extract here, twice — once for gzip, once for tar).
 
 ### 3. Recreate the Python environment
 
-The virtualenv is machine-specific and is **not** transferred — rebuild it:
+The virtualenv is machine-specific and is **not** in git — rebuild it. The helper
+script does it in one go (creates `.venv`, installs requirements, installs Playwright
+Chromium):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\setup_paula.ps1
+```
+
+Manual equivalent if you prefer:
 
 ```powershell
 python -m venv .venv
@@ -77,8 +78,6 @@ python -m venv .venv
 pip install -r requirements.txt
 playwright install chromium      # for PDF/deck rendering + autofill
 ```
-
-`scripts/setup_paula.ps1` does steps 3 for you in one go (see below).
 
 ### 4. (Optional) Node tooling for landings
 
@@ -104,15 +103,17 @@ deliverable, outreach pack and landing link is on the job cards.
 - Dashboard starts and lists jobs.
 - Opella + Henkel cards show CV, CL, deliverables, outreach pack, and the
   `paula-pitch-*` links.
-- `output/` is ~294 MB (the landings carry hundreds of frame images — that's normal).
+- `output/` is present and ~294 MB (the landings carry hundreds of frame images —
+  that's normal).
 
 ## Keeping it in sync later
 
-Paula's clone is a real git clone, so future changes pull cleanly:
+Paula's clone is a real git clone, so future changes pull cleanly — and because
+`output/` is versioned now, new deliverables arrive with a plain pull:
 
 ```powershell
 git pull
 ```
 
-The deliverables in `output/` are local-only (gitignored); regenerate them from the
-dashboard or carry a fresh `paula_repo_extras.tgz` when there's new work.
+The only thing that never comes through git is `.env`; it only changes if Guille adds
+or rotates a key, in which case re-copy it by a trusted channel.
