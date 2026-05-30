@@ -1,0 +1,1270 @@
+[
+  {
+    "contact": {
+      "name": "Murali Rao",
+      "title": "Head of Brand & Innovation, AMET (Africa, Middle East, Turkey) — Opella",
+      "linkedin_url": "https://tr.linkedin.com/in/murali-rao",
+      "role_type": "Hiring Manager",
+      "tier": "A",
+      "notes": "Direct decision-maker for AMET brand roles. Stepped into role Apr 2026 (succeeded Rashmi Gupta). 22+ years FMCG/CHC, prior at Reckitt and FrieslandCampina. Based in Istanbul, covers UAE.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "murali.rao@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mrao@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "murali@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "muralirao@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "murali_rao@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "murali-rao@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rao.murali@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "m.rao@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "muralir@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "raom@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "murali.rao@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two Opella AMET campaign concepts",
+      "email_body": "<p>Hi Murali,</p>\n\n<p>Opella's AMET expansion into quick-commerce and diaspora markets presents distinct opportunities that most CHC brands haven't fully captured yet. I've built two campaign concepts specifically for your portfolio: a late-night quick-commerce strategy for <a href=\"https://paula-pitch-a.vercel.app\">Buscopan targeting pharmacy-closed hours</a>, and a MENA Francophone diaspora launch approach for <a href=\"https://paula-pitch-b.vercel.app\">Doliprane leveraging its iconic French heritage</a>.</p>\n\n<p>Both concepts draw from my experience scaling +30% GMV across UAE quick-commerce platforms and understanding how diaspora communities connect with heritage brands in new markets. The strategic frameworks could apply across your broader AMET portfolio beyond these two products.</p>\n\n<p>Would you have 15 minutes this week to discuss how these angles might fit Opella's regional priorities? I'd value your perspective on the commercial potential.</p>\n\n<p>Best regards,<br>Paula</p>",
+      "linkedin_connection": "Paula here - built two campaign concepts for Opella AMET (Buscopan q-comm + Doliprane diaspora). 4 years FMCG + UAE quick-commerce scaling experience. https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Murali, I've developed two campaign concepts specifically for Opella AMET: a late-night quick-commerce strategy for Buscopan and a MENA Francophone approach for Doliprane. Both leverage insights from my experience scaling UAE quick-commerce platforms and understanding diaspora market dynamics. The concepts are live at https://paula-pitch-a.vercel.app and https://paula-pitch-b.vercel.app. Would you have 15 minutes to discuss how these strategic angles might align with your regional expansion priorities?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Duygu Cetin",
+      "title": "Head of Brand & Innovation / Regional Marketing Director — AMET — Opella",
+      "linkedin_url": "https://www.linkedin.com/in/duygu-%C3%A7etin-abbbbb227/",
+      "role_type": "Hiring Manager",
+      "tier": "A",
+      "notes": "Senior brand & innovation lead in the AMET zone alongside Murali Rao (Turkey-based). Strong second touch if Murali doesn't bite — same circle, same authority level.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "duygu.cetin@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "dcetin@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "duygu@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "duygucetin@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "duygu_cetin@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "duygu-cetin@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "cetin.duygu@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "d.cetin@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "duyguc@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "cetind@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "duygu.cetin@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two Opella AMET campaign concepts",
+      "email_body": "<p>Hi Duygu,</p>\n\n<p>Opella's AMET expansion into quick-commerce and diaspora markets presents distinct consumer healthcare opportunities that most brands haven't cracked yet. I built two speculative campaign concepts targeting these gaps: a late-night quick-commerce angle for Buscopan addressing <a href=\"https://paula-pitch-a.vercel.app\">\"Pharmacy closed. Relief isn't.\"</a> in UAE, and a MENA Francophone diaspora launch for Doliprane around <a href=\"https://paula-pitch-b.vercel.app\">\"The word still means paracetamol.\"</a></p>\n\n<p>Both leverage my 4 years executing FMCG campaigns across UAE's quick-commerce ecosystem (Noon, Talabat, Careem) and understanding of regional consumer behavior patterns.</p>\n\n<p>Would you have 15 minutes to share your perspective on these strategic angles for AMET's consumer healthcare portfolio?</p>\n\n<p>Best,<br>Paula</p>",
+      "linkedin_connection": "Hi Duygu, I'd like to connect as I've built speculative campaign concepts for Opella AMET's consumer healthcare expansion. Here's a quick-commerce angle for Buscopan: https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Duygu,\n\nOpella's AMET expansion into quick-commerce and diaspora markets presents opportunities most consumer healthcare brands haven't addressed effectively. I built two speculative campaign concepts: a late-night quick-commerce play for Buscopan (https://paula-pitch-a.vercel.app) and a MENA Francophone launch for Doliprane (https://paula-pitch-b.vercel.app).\n\nBoth draw from my 4 years executing FMCG across UAE's quick-commerce ecosystem. Would you have 15 minutes to discuss these strategic angles for AMET?\n\nBest,\nPaula"
+    }
+  },
+  {
+    "contact": {
+      "name": "Hossam Abo Ouf",
+      "title": "Country Head, KSA & UAE — Opella",
+      "linkedin_url": "https://sa.linkedin.com/in/hossam-abo-ouf-75102b11",
+      "role_type": "Hiring Manager",
+      "tier": "B",
+      "notes": "Country lead for the UAE geography. Likely co-signs local marketing hires. Prior: Sanofi Head of Operations KSA & UAE, Boehringer Ingelheim, Pfizer. Based in Riyadh; oversees Dubai office.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "hossam.ouf@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "houf@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "hossam@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "hossamouf@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "hossam_ouf@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "hossam-ouf@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ouf.hossam@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "h.ouf@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "hossamo@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "oufh@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "hossam.ouf@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two Opella UAE market concepts",
+      "email_body": "<p>Hi Hossam,</p>\n\n<p>UAE quick-commerce has shifted consumer OTC purchasing patterns significantly — midnight pharmacy runs are now app taps, and cultural touchpoints matter more in digital activation than traditional retail.</p>\n\n<p>I've prototyped two campaign concepts for Opella UAE: a <a href=\"https://paula-pitch-a.vercel.app\">late-night quick-commerce play for Buscopan</a> that capitalizes on the \"pharmacy closed, relief isn't\" moment, and a <a href=\"https://paula-pitch-b.vercel.app\">MENA Francophone diaspora launch for Doliprane</a> that leverages the brand's French heritage in multicultural Dubai.</p>\n\n<p>Both address specific UAE market dynamics I've observed through 4 years executing across Noon, Talabat, and Careem — the quick-commerce ecosystem here creates unique brand moment opportunities that traditional pharma marketing often misses.</p>\n\n<p>Would you have 15 minutes to review these angles and share your perspective on their commercial viability for the UAE market?</p>\n\n<p>Best regards,<br>Paula</p>",
+      "linkedin_connection": "Country Head for UAE — exactly who I need to speak with about the two Opella campaign concepts I built for this market. 4 years UAE quick-commerce execution, currently exploring OTC brand opportunities. https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Hossam, UAE's quick-commerce shift has created new OTC brand moment opportunities that traditional pharma marketing often overlooks. I've built two campaign concepts specifically for Opella UAE market dynamics — one targeting late-night relief needs through q-comm channels, another leveraging multicultural touchpoints. Both address real consumer behavior patterns I've observed through 4 years executing across Noon, Talabat, and Careem. Would you have 15 minutes to review these concepts and share your perspective on their commercial viability?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Pelit Duman",
+      "title": "Country General Manager, Turkiye — Opella",
+      "linkedin_url": "https://tr.linkedin.com/in/pelit-duman",
+      "role_type": "Peer",
+      "tier": "B",
+      "notes": "GM Türkiye, appointed 2025 (per PharmaWorld Dergisi). Strategic context but not the UAE hirer. Useful for understanding the AMET operating model + cross-country pollination.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "pelit.duman@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "pduman@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "pelit@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "pelitduman@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "pelit_duman@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "pelit-duman@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "duman.pelit@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "p.duman@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "pelitd@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "dumanp@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "pelit.duman@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two AMET campaign concepts for cross-country review",
+      "email_body": "<p>Hi Pelit,</p>\n\n<p>Your recent appointment as GM Türkiye puts you at the center of Opella's AMET expansion, where local market nuances drive commercial success across very different consumer landscapes.</p>\n\n<p>I've been working on speculative campaign concepts for the region and built two strategic angles that might interest you: a <a href=\"https://paula-pitch-a.vercel.app\">late-night quick-commerce play for Buscopan in UAE markets</a> targeting the pharmacy-closed gap, and a <a href=\"https://paula-pitch-b.vercel.app\">MENA Francophone diaspora launch for Doliprane</a> leveraging the brand's French heritage across North African communities.</p>\n\n<p>Both tackle the challenge of adapting global OTC brands to hyperlocal consumer behaviors. Given your cross-country perspective, I'd value 15 minutes of your time to discuss how these approaches might translate across AMET markets.</p>\n\n<p>Best regards,<br>Paula</p>",
+      "linkedin_connection": "GM Türkiye with deep AMET market insight. I've built speculative OTC campaign concepts for the region, including a UAE quick-commerce angle: https://paula-pitch-a.vercel.app. Would value your perspective on cross-country brand adaptation strategies.",
+      "linkedin_inmail": "Hi Pelit,\n\nYour role as GM Türkiye gives you unique insight into how global OTC brands adapt across AMET's diverse markets. I've been developing speculative campaign concepts for the region, including a late-night quick-commerce play for UAE and a Francophone diaspora approach for North African communities.\n\nBoth tackle the challenge of hyperlocal consumer behavior in OTC. Given your cross-country perspective, I'd appreciate 15 minutes to discuss how these strategies might work across different AMET markets.\n\nBest regards,\nPaula"
+    }
+  },
+  {
+    "contact": {
+      "name": "Marianne Abou Elkheir",
+      "title": "Head Africa Middle Markets Partner — Opella",
+      "linkedin_url": "https://www.linkedin.com/in/marianne-abou-elkheir-57826028",
+      "role_type": "Hiring Manager",
+      "tier": "B",
+      "notes": "Paris-based but covers Africa+Middle East commercial. ZoomInfo confirmed @opella.com email. Prior at Boehringer Ingelheim, Medtronic, Janssen and J&J — Paula's FMCG track will resonate.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "marianne.elkheir@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "melkheir@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "marianne@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "marianneelkheir@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "marianne_elkheir@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "marianne-elkheir@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "elkheir.marianne@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "m.elkheir@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mariannee@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "elkheirm@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "marianne.elkheir@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two Opella AMET campaign concepts",
+      "email_body": "<p>Hi Marianne,</p>\n\n<p>Opella's AMET footprint sits at the intersection of fragmented healthcare infrastructure and explosive quick-commerce growth — a rare combination that demands different playbooks per market.</p>\n\n<p>I've been developing campaign concepts for this region and prototyped two distinct angles: a <a href=\"https://paula-pitch-a.vercel.app\">late-night quick-commerce strategy for Buscopan targeting UAE's 24/7 delivery ecosystem</a>, and a <a href=\"https://paula-pitch-b.vercel.app\">MENA Francophone diaspora launch for Doliprane that builds on cultural trust</a>.</p>\n\n<p>Both leverage my four years executing FMCG campaigns across UAE's quick-commerce platforms (Noon, Talabat, Careem) where I drove +30% GMV growth across key accounts at Alibaba/Miravia.</p>\n\n<p>Would you have 15 minutes to share your perspective on these approaches for AMET's commercial priorities?</p>\n\n<p>Best regards,<br>Paula</p>",
+      "linkedin_connection": "Head of Africa+ME at Opella — I've developed campaign concepts for AMET's quick-commerce opportunity. My FMCG background (Mondelez, Alibaba) + UAE execution could add value. https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Marianne, Opella's AMET presence intersects with my specialty: FMCG campaigns across UAE's quick-commerce ecosystem. I've prototyped two concepts — a late-night Buscopan strategy and a MENA Francophone Doliprane launch. My four years executing on Noon, Talabat, and Careem (driving +30% GMV at Alibaba/Miravia) could translate well to OTC. Would you have 15 minutes to review the approaches?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Olivia Stefanelli",
+      "title": "Senior Brand Manager — Opella (NY Metro)",
+      "linkedin_url": "https://www.linkedin.com/in/olivia-stefanelli-68369159/",
+      "role_type": "Peer",
+      "tier": "C",
+      "notes": "NOT in AMET — based in NYC, U-Michigan Ross MBA. Doing the exact role Paula wants, one geo away. Excellent peer-to-peer warm intro source: 'Hi Olivia, applying to the AMET version of your role and would value 15 min'.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "olivia.stefanelli@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ostefanelli@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "olivia@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "oliviastefanelli@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "olivia_stefanelli@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "olivia-stefanelli@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "stefanelli.olivia@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "o.stefanelli@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "olivias@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "stefanellio@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "olivia.stefanelli@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Peer check: Two AMET campaign concepts",
+      "email_body": "<p>Hi Olivia,</p>\n\n<p>Opella's AMET expansion into quick-commerce and diaspora targeting caught my attention — two underexplored channels that could drive significant incremental volume in that region. I built two speculative campaign concepts for the market: a late-night quick-commerce play for Buscopan targeting <a href=\"https://paula-pitch-a.vercel.app\">\"Pharmacy closed. Relief isn't.\"</a> moments, and a MENA Francophone diaspora launch for Doliprane around <a href=\"https://paula-pitch-b.vercel.app\">\"The word still means paracetamol.\"</a></p>\n\n<p>You're doing the exact role I'm targeting in AMET — would you have 15 minutes to share your take on these angles and the regional opportunity? Your perspective on translating brand strategy across different Opella markets would be invaluable.</p>\n\n<p>Best,<br>Paula</p>",
+      "linkedin_connection": "Hi Olivia! Reaching out as a peer Brand Manager exploring Opella AMET opportunities. Built a speculative Buscopan quick-commerce concept for the region: https://paula-pitch-a.vercel.app — would value your take on cross-market brand strategy.",
+      "linkedin_inmail": "Hi Olivia,\n\nYour experience scaling Opella brands across competitive markets aligns with what I'm seeing in AMET opportunities. I built two speculative campaign concepts for that region — one targeting late-night quick-commerce moments for Buscopan, another focused on MENA Francophone diaspora for Doliprane.\n\nAs someone doing the exact role I'm targeting (just different geo), would you have 15 minutes to share your perspective on these approaches and the regional dynamics?\n\nBest,\nPaula"
+    }
+  },
+  {
+    "contact": {
+      "name": "Sid Ali Bentarcha",
+      "title": "Opella (role TBD via LinkedIn login)",
+      "linkedin_url": "https://www.linkedin.com/in/sid-ali-bentarcha-628b1824/",
+      "role_type": "Peer",
+      "tier": "C",
+      "notes": "Confirmed Opella employee per public LinkedIn snippet, exact title not surfaced in Google. Likely brand or commercial role given last name appearing alongside AMET team mentions. Worth a connection request to learn role.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "sid.bentarcha@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "sbentarcha@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "sid@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "sidbentarcha@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "sid_bentarcha@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "sid-bentarcha@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "bentarcha.sid@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "s.bentarcha@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "sidb@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "bentarchas@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "sid.bentarcha@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two Opella AMET campaign concepts",
+      "email_body": "<p>Hi Sid,</p>\n\n<p>Opella's OTC portfolio has strong potential in AMET's fragmented retail landscape, especially with the rise of quick-commerce channels that bypass traditional pharmacy hours. I built two speculative campaign concepts for the region: a late-night quick-commerce play for <a href=\"https://paula-pitch-a.vercel.app\">Buscopan targeting \"pharmacy closed\" moments</a>, and a MENA Francophone diaspora launch for <a href=\"https://paula-pitch-b.vercel.app\">Doliprane leveraging its iconic French heritage</a>.</p>\n\n<p>Both tackle different consumer segments but share the thread of meeting people where traditional pharmacy access falls short. I'd value 15 minutes of your perspective on these angles — happy to share the strategic rationale behind each approach.</p>\n\n<p>Best,<br>Paula</p>",
+      "linkedin_connection": "Hi Sid, I built two speculative campaign concepts for Opella AMET and would value connecting to share the strategic thinking. One focuses on late-night quick-commerce opportunities: https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Sid,\n\nI noticed Opella's growing focus on AMET markets and built two speculative campaign concepts for the region. One tackles late-night quick-commerce for Buscopan (https://paula-pitch-a.vercel.app), the other explores Doliprane's potential with MENA's Francophone diaspora.\n\nBoth address gaps where traditional pharmacy access doesn't meet consumer needs. Would you have 15 minutes to share your perspective on these approaches?\n\nBest,\nPaula"
+    }
+  },
+  {
+    "contact": {
+      "name": "Shahab Fraz Mirza",
+      "title": "Trade & Revenue Management Head, AMET — Opella",
+      "linkedin_url": "https://ae.linkedin.com/in/shahab-fraz-mirza",
+      "role_type": "Peer",
+      "tier": "D",
+      "notes": "Based in UAE — Opella Dubai office. Strong commercial counterpart to brand roles. Useful for an in-person second touch once warm with Murali.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "shahab.mirza@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "smirza@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "shahab@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "shahabmirza@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "shahab_mirza@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "shahab-mirza@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mirza.shahab@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "s.mirza@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "shahabm@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mirzas@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "shahab.mirza@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two AMET revenue angles: q-comm + diaspora",
+      "email_body": "<p>Hi Shahab,</p>\n\n<p>Opella's AMET footprint sits at an interesting crossroads — UAE's late-night delivery boom and the region's substantial Francophone diaspora both represent untapped commercial channels for established OTC brands.</p>\n\n<p>I built two speculative campaign concepts that could drive incremental revenue: a <a href=\"https://paula-pitch-a.vercel.app\">Buscopan late-night quick-commerce play</a> targeting the \"pharmacy closed, relief isn't\" moment, and a <a href=\"https://paula-pitch-b.vercel.app\">Doliprane MENA Francophone launch</a> leveraging nostalgic brand equity among French expats and North African communities.</p>\n\n<p>Both approaches are designed around channel-specific consumer behavior rather than traditional pharmacy-first distribution.</p>\n\n<p>Would you be open to a 15-minute call to get your take on the commercial viability of these angles for AMET?</p>\n\n<p>Best,<br>Paula</p>",
+      "linkedin_connection": "Trade & Revenue Head at Opella AMET — would value your perspective on two speculative campaign angles I built around UAE q-commerce and MENA diaspora opportunities. https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Shahab,\n\nOpella's AMET positioning sits at an interesting commercial crossroads with UAE's late-night delivery boom and the region's Francophone diaspora. I built two speculative concepts around these opportunities — one for Buscopan's quick-commerce potential and another for Doliprane's nostalgic equity among French expats.\n\nBoth focus on channel-specific consumer behavior rather than traditional pharmacy distribution. Would you be open to a brief call to discuss the revenue potential?\n\nBest, Paula"
+    }
+  },
+  {
+    "contact": {
+      "name": "Ahsan Rizvi",
+      "title": "Digital Lead, AMET — Opella",
+      "linkedin_url": "https://www.linkedin.com/in/ahsanrizvi/",
+      "role_type": "Peer",
+      "tier": "D",
+      "notes": "Digital lead for AMET — natural ally given Paula's UAE quick-commerce experience (Noon, Talabat, Careem). Email confirmed @opella.com via RocketReach.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "ahsan.rizvi@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "arizvi@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahsan@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahsanrizvi@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahsan_rizvi@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahsan-rizvi@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rizvi.ahsan@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "a.rizvi@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahsanr@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rizvia@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "ahsan.rizvi@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Digital OTC concepts: quick-commerce + diaspora",
+      "email_body": "<p>Hi Ahsan,</p>\n\n<p>Opella's AMET digital strategy sits at an interesting inflection point — traditional OTC marketing meets the region's advanced quick-commerce infrastructure and diverse demographic mosaic.</p>\n\n<p>I've been building speculative campaign concepts that address both opportunities: a <a href=\"https://paula-pitch-a.vercel.app\">late-night quick-commerce play for Buscopan in UAE</a> leveraging the \"pharmacy closed\" moment, and a <a href=\"https://paula-pitch-b.vercel.app\">MENA Francophone diaspora launch for Doliprane</a> that connects cultural memory with brand heritage.</p>\n\n<p>Both lean into digital-first consumer journeys I've executed across UAE's quick-commerce ecosystem (Noon, Talabat, Careem) — curious to get your take on the digital execution angles.</p>\n\n<p>Worth a 15-minute call to walk through the user flows?</p>",
+      "linkedin_connection": "Digital strategy for AMET OTC brands — built two campaign concepts leveraging UAE's q-commerce infrastructure. Would value your perspective: https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Ahsan, Opella's AMET digital approach for OTC sits at a fascinating intersection — traditional pharma marketing meets the region's sophisticated quick-commerce ecosystem. I've prototyped two campaign concepts: one targeting late-night quick-commerce moments in UAE, another addressing MENA's Francophone diaspora. Both build on digital consumer journeys I've executed across Noon, Talabat, and Careem. Worth exploring the digital execution angles together?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Amal Fathy",
+      "title": "AMET Science Hub Head, Sanofi CHC / Opella",
+      "linkedin_url": "https://eg.linkedin.com/in/amal-fathy-5a621b140",
+      "role_type": "Peer",
+      "tier": "D",
+      "notes": "Egypt-based. Scientific affairs — NOT brand, but holds context on which Opella brands have an active medical pipeline in AMET. Useful background before pitching specific brand opportunities. ZoomInfo showed her email as @sanofi.com — likely still on the legacy domain post-spin-off.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "amal.fathy@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "afathy@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amal@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amalfathy@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amal_fathy@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amal-fathy@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "fathy.amal@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "a.fathy@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amalf@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "fathya@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ],
+        "sanofi.com": [
+          {
+            "email": "amal.fathy@sanofi.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "afathy@sanofi.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amal@sanofi.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amalfathy@sanofi.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amal_fathy@sanofi.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amal-fathy@sanofi.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "fathy.amal@sanofi.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "a.fathy@sanofi.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "amalf@sanofi.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "fathya@sanofi.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "amal.fathy@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two Opella AMET campaign concepts",
+      "email_body": "<p>Hi Amal,</p>\n\n<p>Opella's scientific pipeline in AMET likely informs which brands can support bold commercial positioning — something I've been thinking about while building speculative campaign concepts for the region.</p>\n\n<p>I prototyped two angles: a late-night quick-commerce play for Buscopan targeting UAE's 24/7 delivery habits (<a href=\"https://paula-pitch-a.vercel.app\">https://paula-pitch-a.vercel.app</a>) and a MENA Francophone diaspora launch for Doliprane (<a href=\"https://paula-pitch-b.vercel.app\">https://paula-pitch-b.vercel.app</a>).</p>\n\n<p>Given your visibility into Opella's medical affairs across AMET, I'd value 15 minutes of your perspective on how these commercial angles align with the brands' scientific positioning in the region.</p>\n\n<p>Best regards,<br>Paula</p>",
+      "linkedin_connection": "Hi Amal — connecting to share two Opella AMET campaign concepts I built speculatively. Your scientific affairs perspective would help validate commercial positioning. https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Amal,\n\nOpella's scientific pipeline in AMET likely informs which brands can support bold commercial positioning. I built two speculative campaign concepts for the region and would value your scientific affairs perspective on how they align with the brands' medical positioning.\n\nOne focuses on late-night quick-commerce for Buscopan (https://paula-pitch-a.vercel.app), the other on MENA Francophone diaspora for Doliprane. Would you have 15 minutes to share your thoughts on these commercial angles?\n\nBest,\nPaula"
+    }
+  },
+  {
+    "contact": {
+      "name": "Rashmi Gupta",
+      "title": "Former Head of Brand & Innovation AMET, Opella — now London",
+      "linkedin_url": "https://www.linkedin.com/in/rashmi-gupta-674a283/",
+      "role_type": "HR/Recruiter",
+      "tier": "E",
+      "notes": "Built AMET Brand & Innovation from scratch; handed off to Murali in Apr 2026. Strong referral node — a warm intro from her to Murali would carry weight.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "rashmi.gupta@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rgupta@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rashmi@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rashmigupta@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rashmi_gupta@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rashmi-gupta@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "gupta.rashmi@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "r.gupta@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "rashmig@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "guptar@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "rashmi.gupta@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two Opella AMET campaign concepts",
+      "email_body": "<p>Hi Rashmi,</p>\n\n<p>Your AMET Brand & Innovation foundation work created the framework that's now scaling across 15+ markets under Murali's leadership. I wanted to share two campaign concepts I built specifically for AMET's portfolio: a <a href=\"https://paula-pitch-a.vercel.app\">late-night quick-commerce play for Buscopan</a> targeting UAE's 24/7 delivery ecosystem, and a <a href=\"https://paula-pitch-b.vercel.app\">MENA Francophone diaspora launch for Doliprane</a> leveraging cultural equity in pain relief.</p>\n\n<p>Both leverage my 4 years in UAE quick-commerce execution and FMCG fundamentals from Mondelez. Would you be open to a 15-minute call to get your perspective on these angles, or perhaps a warm introduction to Murali's team?</p>\n\n<p>Best regards,<br>Paula</p>",
+      "linkedin_connection": "Built two AMET campaign concepts (Buscopan q-comm + Doliprane MENA Francophone). 4 years UAE quick-commerce + FMCG experience. Would value your perspective: https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Rashmi, your AMET Brand & Innovation foundation work created the framework now scaling across Murali's 15+ markets. I built two campaign concepts for AMET's portfolio: a late-night quick-commerce play for Buscopan and a MENA Francophone launch for Doliprane. Both leverage my UAE quick-commerce execution experience. Would you be open to a brief call or perhaps a warm intro to Murali's team?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Ahmed El Kamhawy",
+      "title": "AMET Leadership Team — Opella (role TBD)",
+      "linkedin_url": "https://www.linkedin.com/in/ahmed-el-kamhawy-48b9a763/",
+      "role_type": "Peer",
+      "tier": "E",
+      "notes": "Confirmed AMET Leadership Team member per Opella internal comms (Apr 2026). Background in consumer products + pharma. Egypt-based likely. Useful horizontal contact across the AMET zone.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "ahmed.kamhawy@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "akamhawy@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahmed@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahmedkamhawy@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahmed_kamhawy@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahmed-kamhawy@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "kamhawy.ahmed@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "a.kamhawy@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahmedk@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "kamhawya@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "ahmed.kamhawy@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two AMET campaign concepts for Opella",
+      "email_body": "<p>Ahmed, Opella's AMET expansion timing aligns perfectly with the region's quick-commerce boom and growing diaspora markets — two opportunities I've been tracking closely.</p><p>I built two speculative campaign concepts: a late-night quick-commerce angle for <a href=\"https://paula-pitch-a.vercel.app\">Buscopan targeting pharmacy-closed moments</a>, and a MENA Francophone diaspora launch for <a href=\"https://paula-pitch-b.vercel.app\">Doliprane leveraging its iconic French heritage</a>.</p><p>Both tap into consumer behavior shifts I observed during 4 years executing across UAE's quick-commerce ecosystem (Noon, Talabat, Careem, Deliveroo).</p><p>Would you have 15 minutes to share your perspective on these angles for the AMET market?</p>",
+      "linkedin_connection": "Ahmed, your AMET leadership role caught my attention — I've built two Opella campaign concepts targeting regional opportunities. Quick-commerce angle for Buscopan here: https://paula-pitch-a.vercel.app. Would value your perspective.",
+      "linkedin_inmail": "Ahmed, your position on Opella's AMET leadership team comes at an interesting time — the region's quick-commerce growth and diaspora markets present unique opportunities for consumer healthcare brands. I built two speculative campaign concepts: one targeting late-night pharmacy-closed moments for Buscopan, and another leveraging Doliprane's French heritage for MENA's Francophone diaspora. Both are live at the URLs in my previous message. Would you have 15 minutes to share your take on these regional angles?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Jamal Ali",
+      "title": "Opella (role TBD via LinkedIn login)",
+      "linkedin_url": "https://www.linkedin.com/in/jamal-ali-4b44b145/",
+      "role_type": "Peer",
+      "tier": "E",
+      "notes": "Confirmed Opella employee per public LinkedIn snippet. Worth a low-cost connection request to learn role.",
+      "candidates_by_domain": {
+        "opella.com": [
+          {
+            "email": "jamal.ali@opella.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "jali@opella.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "jamal@opella.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "jamalali@opella.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "jamal_ali@opella.com",
+            "pattern": "{first}_{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "jamal-ali@opella.com",
+            "pattern": "{first}-{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ali.jamal@opella.com",
+            "pattern": "{last}.{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "j.ali@opella.com",
+            "pattern": "{f}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "jamala@opella.com",
+            "pattern": "{first}{l}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "alij@opella.com",
+            "pattern": "{last}{f}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "jamal.ali@opella.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Two Opella AMET campaign concepts",
+      "email_body": "<p>Hi Jamal,</p>\n\n<p>Opella's AMET portfolio sits at an interesting crossroads — global brands needing hyper-local activation across markets with vastly different consumer behaviors and infrastructure.</p>\n\n<p>I've been working on speculative campaign concepts for the region and built two strategic angles: a <a href=\"https://paula-pitch-a.vercel.app\">late-night quick-commerce play for Buscopan</a> targeting UAE's after-hours relief needs, and a <a href=\"https://paula-pitch-b.vercel.app\">MENA Francophone launch strategy for Doliprane</a> that speaks directly to the diaspora's deep brand connection.</p>\n\n<p>Both campaigns are live and clickable — I'd value 15 minutes of your time to get your perspective on the strategic direction, particularly given your role at Opella.</p>\n\n<p>Best,<br>Paula</p>",
+      "linkedin_connection": "Hi Jamal — I've built speculative campaign concepts for Opella AMET and would value connecting to share perspectives on regional brand strategy. Here's one angle I prototyped: https://paula-pitch-a.vercel.app",
+      "linkedin_inmail": "Hi Jamal,\n\nOpella's AMET portfolio presents fascinating regional challenges — global brands requiring hyper-local activation across diverse markets. I've developed two speculative campaign concepts for the region and built them as live prototypes to demonstrate the strategic thinking.\n\nOne focuses on UAE's late-night quick-commerce opportunity for Buscopan, the other on MENA's Francophone diaspora for Doliprane. Both are deployed and ready to view.\n\nWould you have 15 minutes to share your perspective on these approaches? I'd value your insights given your role at Opella."
+    }
+  }
+]

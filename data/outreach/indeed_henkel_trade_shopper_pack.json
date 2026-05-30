@@ -1,0 +1,452 @@
+[
+  {
+    "contact": {
+      "name": "Mohamed Said",
+      "title": "Head of Sales – Go-To-Market Strategy & Distributors Management, Global Emerging Markets, Henkel Consumer Brands (High Growth Region)",
+      "linkedin_url": "https://www.linkedin.com/in/mohamed-said-78706855/",
+      "role_type": "Hiring Manager",
+      "tier": "A",
+      "notes": "Senior sales leader for Henkel Consumer Brands High Growth Region covering MEA/GCC, based in Dubai (~11 yrs in the GCC). Trade & Shopper Marketing sits inside the sales/customer-development org, so he is the likely reporting line or a key influencer over this hire.",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "mohamed.said@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "msaid@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mohamedsaid@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mohamed@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "mohamed.said@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "GCC Trade concept: Frizz Forecast for Schwarzkopf",
+      "email_body": "<p>Mohamed, Henkel's GCC growth trajectory in personal care requires trade concepts that connect weather data to shopper behavior — something particularly relevant given the region's extreme humidity variations.</p>\n\n<p>I'm Paula De Francisco, applying for the Trade & Shopper Marketing Manager role in Dubai, and I've developed a live concept called <a href=\"https://paula-pitch-c.vercel.app\">Frizz Forecast</a> that turns daily humidity readings into a dynamic Frizz Index to trigger Schwarzkopf trade activations across GCC retailers.</p>\n\n<p>The approach builds on my 4 years executing FMCG campaigns in UAE quick-commerce (Noon, Talabat) where I drove +30% GMV growth across 42 accounts at Alibaba/Miravia.</p>\n\n<p>I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it.</p>\n\n<p>Would you have 15 minutes to review the concept and share your perspective on this type of data-driven trade activation for the GCC market?</p>",
+      "linkedin_connection": "Mohamed, connecting to discuss GCC trade concepts for Henkel Consumer Brands. I've built a live Schwarzkopf activation that turns humidity data into shopper triggers: https://paula-pitch-c.vercel.app",
+      "linkedin_inmail": "Mohamed, Henkel's GCC growth in personal care needs trade concepts that connect environmental data to shopper behavior. I'm applying for the Trade & Shopper Marketing Manager role and developed a live concept that turns daily humidity into a Frizz Index for Schwarzkopf trade activations. My background includes 4 years UAE quick-commerce execution (Noon, Talabat) driving +30% GMV growth. Would you have 15 minutes to review the approach and share your perspective on data-driven trade activation for the GCC market?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Bassel El Shaboury",
+      "title": "VP & Head of Marketing, High Growth Region, Henkel Consumer Brands (former GM Gulf)",
+      "linkedin_url": "https://www.linkedin.com/in/bassel-el-shaboury-78740b4/",
+      "role_type": "Country/Cluster Head",
+      "tier": "B",
+      "notes": "Most senior Henkel Consumer Brands leader based in Dubai for the High Growth Region; former GM Gulf, 18+ years across Egypt/GCC/MEA. The de-facto regional figurehead and a strong senior visibility node.",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "bassel.shaboury@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "bshaboury@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "basselshaboury@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "bassel@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "bassel.shaboury@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Humidity-triggered shopper activation for Schwarzkopf GCC",
+      "email_body": "<p>Bassel, the GCC's humidity swings create a natural purchase trigger for hair care that most brands leave on the table — especially during the 40%+ spikes we see May through September.</p>\n\n<p>I've built a live concept that turns daily weather data into a <a href=\"https://paula-pitch-c.vercel.app\">Frizz Forecast shopper activation for Schwarzkopf</a>, creating automatic trade triggers when humidity hits optimal thresholds across Dubai, Riyadh, and Kuwait City.</p>\n\n<p>The approach connects real-time weather APIs to targeted digital activations, turning environmental data into immediate purchase moments rather than waiting for consumers to self-diagnose frizz problems. I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it.</p>\n\n<p>Would you have 15 minutes to discuss how weather-responsive activations might fit into Henkel's regional shopper strategy?</p>",
+      "linkedin_connection": "VP Marketing at Henkel Consumer Brands - would value connecting as I explore humidity-triggered shopper activations for hair care in GCC markets. Built a live concept: https://paula-pitch-c.vercel.app",
+      "linkedin_inmail": "Bassel, the GCC's humidity patterns create natural hair care purchase triggers that most brands miss. I've developed a live concept that turns daily weather data into Schwarzkopf shopper activations — creating automatic trade triggers when humidity hits optimal thresholds. The approach connects real-time APIs to targeted digital moments rather than waiting for consumers to self-diagnose. Would you have 15 minutes to discuss how weather-responsive activations might enhance Henkel's regional strategy?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Mohamed ElTonsy",
+      "title": "Head of Marketing – GCC Consumer Brands, Henkel",
+      "linkedin_url": "https://www.linkedin.com/in/eltonsym/",
+      "role_type": "Country/Cluster Head",
+      "tier": "B",
+      "notes": "Leads GCC Consumer Brands marketing from Dubai (Imperial MBA), public face of recent Henkel haircare launches in the Middle East. Close to the brand/commercial leadership the trade role serves.",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "mohamed.eltonsy@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "meltonsy@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mohamedeltonsy@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mohamed@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "mohamed.eltonsy@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "GCC humidity data for Schwarzkopf trade activation",
+      "email_body": "<p>Mohamed, Henkel's recent haircare push in the GCC coincides with peak humidity season — a challenge that could become a commercial trigger. I've built a live concept that turns daily humidity readings into a <a href=\"https://paula-pitch-c.vercel.app\">Frizz Forecast trade activation for Schwarzkopf GCC</a>, creating shopper urgency when the weather demands anti-frizz solutions. The approach connects real-time environmental data with purchase intent, driving category velocity during natural demand spikes. I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it. Would you have 15 minutes to discuss how humidity-triggered activations could work across your GCC portfolio?</p>",
+      "linkedin_connection": "Head of GCC Consumer Brands with direct insight into trade opportunities across the region. I've developed weather-triggered shopper activations for Schwarzkopf GCC: https://paula-pitch-c.vercel.app",
+      "linkedin_inmail": "Mohamed, your recent GCC haircare launches align perfectly with peak humidity season — a challenge that could drive trade velocity. I've developed a live Schwarzkopf concept that turns daily humidity into purchase triggers, creating shopper urgency when weather demands anti-frizz solutions. The activation connects environmental data with category demand across GCC markets. Would you have 15 minutes to explore how this could scale across Henkel's portfolio?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Youssef Youssef",
+      "title": "Manager, UAE Sales & GCC Key Accounts, Henkel Consumer Brands",
+      "linkedin_url": "https://www.linkedin.com/in/youssefyoussef/",
+      "role_type": "Peer Trade/Shopper Manager",
+      "tier": "C",
+      "notes": "Direct commercial peer — owns UAE sales and GCC key accounts (the retailers a Trade & Shopper Marketing Manager partners with daily). The single most operationally adjacent peer to this opening.",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "youssef.youssef@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "yyoussef@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "youssefyoussef@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "youssef@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "youssef.youssef@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "GCC Trade concept: Frizz Forecast shopper activation",
+      "email_body": "<p>GCC humidity patterns create predictable hair care urgency cycles that most brands miss — especially during the 40%+ humidity spikes that drive emergency frizz solutions purchases across your key accounts.</p><p>I've built a live concept that turns daily humidity data into a <a href=\"https://paula-pitch-c.vercel.app\">Frizz Index trade trigger for Schwarzkopf GCC shopper activation</a>, designed specifically for the retail partners you manage daily.</p><p>The mechanic connects weather APIs to targeted promotions at exactly the moment shoppers need anti-frizz solutions most — turning environmental stress into commercial opportunity.</p><p>I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it.</p><p>Would you have 15 minutes this week to share your take on the retail execution angle? Your perspective on GCC key account dynamics would be invaluable.</p>",
+      "linkedin_connection": "Connecting as a fellow trade/shopper marketer in Dubai — I've built a humidity-triggered Schwarzkopf activation concept for GCC retail that your key account experience could help refine: https://paula-pitch-c.vercel.app",
+      "linkedin_inmail": "GCC humidity creates predictable hair care purchase urgency that most brands miss, especially during the 40%+ spikes that drive emergency frizz purchases across key accounts. I've built a live Schwarzkopf concept that turns daily humidity into targeted trade triggers for exactly those moments. Your perspective on GCC retail execution dynamics would be invaluable — would you have 15 minutes to share your take on the activation mechanics?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Ahmed Nasser",
+      "title": "Trade Marketing Manager, Henkel (UAE)",
+      "linkedin_url": "https://www.linkedin.com/in/ahmed-nasser-9a968574/",
+      "role_type": "Peer Trade/Shopper Manager",
+      "tier": "C",
+      "notes": "Listed as Trade Marketing Manager at Henkel in the UAE — a direct functional peer to the open role, with long Henkel tenure.",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "ahmed.nasser@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "anasser@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahmednasser@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "ahmed@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "ahmed.nasser@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "GCC Trade activation: Frizz Forecast concept for Ahmed",
+      "email_body": "<p>Hi Ahmed,</p>\n\n<p>Henkel's Schwarzkopf GCC trade performance has room for weather-based activation — humidity drives frizz concerns but isn't captured in current shopper triggers. I've built <a href=\"https://paula-pitch-c.vercel.app\">a live concept called Frizz Forecast</a> that converts daily humidity data into a real-time Frizz Index, creating automatic trade activation moments for anti-frizz ranges across GCC markets. The approach ties environmental data to purchase intent, giving trade partners concrete reasons to feature Schwarzkopf products when consumers need them most. I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it. Would you have 15 minutes to share your take on weather-driven activation for Schwarzkopf in the region?</p>\n\n<p>Best regards,<br>Paula</p>",
+      "linkedin_connection": "Ahmed, connecting as a fellow trade marketing professional in UAE. I've developed a weather-driven activation concept for Schwarzkopf GCC that converts humidity into trade triggers. https://paula-pitch-c.vercel.app",
+      "linkedin_inmail": "Hi Ahmed, I'm Paula, a brand manager in Dubai working on GCC trade activation concepts. Henkel's Schwarzkopf has untapped potential in weather-driven shopper marketing — I've built a live concept that converts daily humidity into a Frizz Index trade trigger. Would value your perspective as someone deep in Henkel trade marketing. Quick 15-minute call to share the concept?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Khaled Hafez",
+      "title": "Regional Market Manager, Levant & West Africa, Henkel Consumer Brands (Dubai)",
+      "linkedin_url": "https://www.linkedin.com/in/khaled-hafez-52b5a54a/",
+      "role_type": "Peer Trade/Shopper Manager",
+      "tier": "C",
+      "notes": "Dubai-based regional market/commercial manager within HCB High Growth Region — a near-peer running an adjacent cluster; good for a lateral referral and context on how trade roles operate in the structure.",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "khaled.hafez@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "khafez@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "khaledhafez@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "khaled@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "khaled.hafez@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "GCC trade activation concept for your Schwarzkopf portfolio",
+      "email_body": "<p>Khaled, I notice Henkel's GCC strategy leans heavily into localized activations that drive both trade velocity and shopper engagement — particularly smart given the region's unique retail dynamics.</p><p>I'm applying for the Trade & Shopper Marketing Manager role and have developed a live concept that connects daily humidity data to Schwarzkopf's anti-frizz positioning: <a href=\"https://paula-pitch-c.vercel.app\">Frizz Forecast turns weather into a real-time trade trigger</a>, creating automatic promotional windows when conditions spike.</p><p>The approach targets your quick-commerce partnerships and traditional retail simultaneously, building on my 4 years executing across UAE's digital channels (Noon, Talabat, Careem).</p><p>I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it.</p><p>Would you have 15 minutes to share your perspective on how trade activations like this fit within Henkel's regional commercial strategy?</p>",
+      "linkedin_connection": "Hi Khaled — connecting as a fellow Dubai-based marketer applying for the Trade & Shopper role at Henkel. Built a live GCC concept linking weather data to Schwarzkopf trade triggers: https://paula-pitch-c.vercel.app Would value your take.",
+      "linkedin_inmail": "Hi Khaled, I'm applying for the Trade & Shopper Marketing Manager role at Henkel and have developed a GCC-specific activation concept for Schwarzkopf that ties daily humidity to anti-frizz promotional triggers. The region's unique retail mix of traditional and quick-commerce channels creates interesting opportunities for weather-responsive trade marketing. With my background executing across UAE's digital platforms, I'd appreciate 15 minutes to get your perspective on how concepts like this align with Henkel's regional commercial priorities."
+    }
+  },
+  {
+    "contact": {
+      "name": "Marwa Mohamed",
+      "title": "Head of HR – GCC & Jordan / Senior Regional HR Business Partner, HR IMEA, Henkel",
+      "linkedin_url": "https://www.linkedin.com/in/marwa-mohamed-599a871b/",
+      "role_type": "HR / Talent Acquisition",
+      "tier": "D",
+      "notes": "The top HR leader for Henkel GCC, based in Dubai, long Henkel tenure. The most senior, most reliable HR contact for this region/role; can route to the recruiter owning the requisition.",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "marwa.mohamed@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "mmohamed@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "marwamohamed@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "marwa@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "marwa.mohamed@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Trade & Shopper Marketing Manager application + GCC concept",
+      "email_body": "<p>Hi Marwa,</p>\n\n<p>Henkel's GCC beauty portfolio sits in a unique position where regional climate data could drive real-time trade activation — humidity forecasts directly correlate with hair care purchase intent across the Emirates. I'm applying for the Trade & Shopper Marketing Manager role and have built a live concept that demonstrates this opportunity: <a href=\"https://paula-pitch-c.vercel.app\">Frizz Forecast turns daily humidity into a Schwarzkopf trade trigger</a> across GCC retailers. With 4 years executing FMCG campaigns through Noon, Talabat, and Careem's quick-commerce networks, I've seen how weather-responsive activation can drive immediate conversion in this market.</p>\n\n<p>I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it. Would you have 15 minutes to discuss how this approach might fit Henkel's GCC trade strategy, or could you connect me with the hiring manager for this role?</p>\n\n<p>Best regards,<br>Paula</p>",
+      "linkedin_connection": "Applying for Trade & Shopper Marketing Manager at Henkel GCC. Built a live Schwarzkopf concept using humidity data to drive real-time trade activation: https://paula-pitch-c.vercel.app",
+      "linkedin_inmail": "Hi Marwa, I'm applying for the Trade & Shopper Marketing Manager role at Henkel GCC and have developed a live concept that demonstrates regional climate-driven trade activation. The Frizz Forecast concept turns daily humidity into Schwarzkopf purchase triggers across GCC retailers. With 4 years executing FMCG campaigns through UAE quick-commerce platforms, I understand how weather-responsive activation drives conversion in this market. Could we discuss how this approach fits Henkel's trade strategy, or would you connect me with the hiring manager?"
+    }
+  },
+  {
+    "contact": {
+      "name": "Tore Birol",
+      "title": "Corporate VP, Global Customer Excellence, Henkel Consumer Brands",
+      "linkedin_url": "https://www.linkedin.com/in/t%C3%B6rebirol/",
+      "role_type": "Referral node",
+      "tier": "E",
+      "notes": "Global owner of sales/commercial/customer excellence at HCB (Dusseldorf); career roots in Category Management & Trade Marketing — the global functional home of this exact role. High-leverage senior node (HQ-based).",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "tore.birol@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "tbirol@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "torebirol@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "tore@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "tore.birol@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "GCC Trade Marketing concept: Frizz Forecast for Schwarzkopf",
+      "email_body": "<p>Hi Tore,</p>\n\n<p>Henkel's recent expansion into quick-commerce partnerships across the GCC presents a compelling opportunity to rethink how beauty brands activate shoppers in humidity-driven markets. I've developed a speculative concept for Schwarzkopf that transforms daily humidity data into a real-time Frizz Index — triggering targeted trade promotions when conditions peak, which you can see live at <a href=\"https://paula-pitch-c.vercel.app\">paula-pitch-c.vercel.app</a>. I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it. Given your global oversight of customer excellence and deep Category Management background, I'd value your perspective on whether this type of data-driven activation aligns with Henkel's commercial strategy. Would you be open to a brief conversation about who might be the right person to discuss the Trade & Shopper Marketing Manager role in Dubai?</p>",
+      "linkedin_connection": "Hi Tore — connecting to share a GCC trade marketing concept I developed for Schwarzkopf that uses humidity data to trigger frizz-focused promotions. Your Category Management expertise would be valuable feedback. https://paula-pitch-c.vercel.app",
+      "linkedin_inmail": "Hi Tore,\n\nI've developed a speculative trade marketing concept for Schwarzkopf GCC that transforms daily humidity into a Frizz Index, triggering targeted shopper activations when conditions peak. Given your global customer excellence oversight and Category Management roots, I'd appreciate your take on this data-driven approach. Would you be able to point me toward the right person for the Dubai Trade & Shopper Marketing role?\n\nBest regards,\nPaula"
+    }
+  },
+  {
+    "contact": {
+      "name": "Dalia Nasr",
+      "title": "Head of Fabric Cleaners & Fabric Care, High Growth Region, Henkel",
+      "linkedin_url": "https://www.linkedin.com/in/dalia-nasr-70b157b2/",
+      "role_type": "Referral node",
+      "tier": "E",
+      "notes": "Dubai-based category head within the same HCB High Growth Region org as the trade role's brand counterparts. Different category (Laundry vs Hair) but a well-connected internal node for a warm intro.",
+      "candidates_by_domain": {
+        "henkel.com": [
+          {
+            "email": "dalia.nasr@henkel.com",
+            "pattern": "{first}.{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "dnasr@henkel.com",
+            "pattern": "{f}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "dalianasr@henkel.com",
+            "pattern": "{first}{last}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          },
+          {
+            "email": "dalia@henkel.com",
+            "pattern": "{first}",
+            "status": "unverified",
+            "score": null,
+            "source": "pattern"
+          }
+        ]
+      },
+      "primary_email": "dalia.nasr@henkel.com",
+      "primary_email_status": "unverified"
+    },
+    "outreach": {
+      "email_subject": "Trade intro request: GCC shopper activation for Hair Care",
+      "email_body": "<p>Hi Dalia,</p>\n\n<p>Henkel's High Growth Region structure puts you in an ideal position to understand how category-agnostic trade activation principles translate across Hair Care and Fabric Care within the same GCC markets. I'm applying for the Trade & Shopper Marketing Manager role in Hair Care and have developed a live concept that demonstrates GCC-specific consumer triggers — <a href=\"https://paula-pitch-c.vercel.app\">the Frizz Forecast turns daily humidity data into a Schwarzkopf trade activation mechanism</a>. I've attached the full proposal — a short pitch deck plus the trade & shopper plan behind it.</p>\n\n<p>Given your regional oversight and internal connections, would you be open to a brief conversation about the Hair Care trade opportunity, or could you point me toward the right hiring manager?</p>\n\n<p>Best,<br>Paula</p>",
+      "linkedin_connection": "Hi Dalia — I'm applying for the GCC Trade & Shopper role in Hair Care and would value your perspective on regional activation strategies. Here's a live concept I built: https://paula-pitch-c.vercel.app",
+      "linkedin_inmail": "Hi Dalia,\n\nI'm applying for the Trade & Shopper Marketing Manager role in Hair Care and noticed your oversight of the High Growth Region gives you strong visibility into cross-category trade dynamics. I've developed a GCC-specific activation concept that demonstrates local consumer triggers — the Frizz Forecast at https://paula-pitch-c.vercel.app turns humidity data into Schwarzkopf trade opportunities. Given your internal network, would you be open to a brief chat about the Hair Care trade landscape, or could you connect me with the right hiring manager?\n\nBest,\nPaula"
+    }
+  }
+]
