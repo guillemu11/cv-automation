@@ -1,0 +1,24 @@
+{
+  "name": "Lipton",
+  "parent": "PepsiCo",
+  "region_focus": "AMESA",
+  "product_line": "Lipton Ice Tea",
+  "palette": {
+    "primary": "#FFD100",
+    "secondary": "#E30613",
+    "accent": "#1DB46B",
+    "bg": "#FFFFFF",
+    "text": "#111111"
+  },
+  "typography": {
+    "display": "Archivo Black",
+    "body": "Inter",
+    "display_url": "Archivo+Black:wght@400",
+    "body_url": "Inter:wght@400;500;700"
+  },
+  "logo_hint": "Yellow shield with red tea-leaf, horizontal wordmark variant used on Ice Tea",
+  "tone": ["optimistic", "refreshing", "approachable", "playful"],
+  "source_url": "https://www.lipton.com",
+  "notes": "Ice Tea sub-brand uses stronger red + yellow combo than the hot-tea line. AMESA priority market per PepsiCo JD.",
+  "wcag_check": "text #111 on bg #FFF = 18.1:1 (AA+) OK"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Schwarzkopf",
+  "tagline_real": "Because it's your hair.",
+  "palette": {
+    "primary": "#000000",
+    "secondary": "#FFFFFF",
+    "accent": "#C41E3A",
+    "bg": "#FFFFFF",
+    "text": "#0A0A0A"
+  },
+  "typography": {
+    "display": "Archivo",
+    "body": "Inter",
+    "fallback": "system-ui, sans-serif"
+  },
+  "logo_hint": "Black Schwarzkopf wordmark, clean bold sans-serif, black-on-white minimalism",
+  "tone": ["premium", "professional", "aspirational", "innovative", "confident"],
+  "source_url": "https://www.schwarzkopf.com",
+  "brand_notes": "Real site renders in Arial; upgraded display to Archivo + body to Inter (Google Fonts) for an editorial, premium pitch feel while keeping the black/white + red (#C41E3A) brand system. Black on white passes WCAG AA."
+}

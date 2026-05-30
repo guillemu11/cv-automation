@@ -37,17 +37,17 @@ data/playwright_profile/
 Thumbs.db
 desktop.ini
 
-# Generated artifacts (per-job CVs and cover letters)
-output/
+# Generated artifacts: output/ IS versioned (private repo) so Paula's clone gets
+# every deliverable, landing and outreach pack without a side transfer. Only the
+# Office lock files and editor backups inside it are ignored.
 *.docx.bak
+~$*
 
 # Brainstorming visual-companion scratch
 .superpowers/
 
-# Personal CV (keep local, do not publish to a public repo)
-# Comment the next line out if you want to version the source CV PDF
-Paula_De_Francisco_CV_Dubai.pdf
-Plan_Sistema_Busqueda_Empleo_Dubai.md
+# NOTE: Paula's source CV and the master plan are versioned too (private repo).
+# Keep .env OUT of git (secrets) — it is the only thing transferred separately.
 
 # Third-party reference decks dropped in for inspiration (not ours to publish)
 PROPUESTA ABSOLUT HELENA DE ALBA(pdfgear.com).pdf

@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "opella_parent",
+    "url": "https://www.opella.com/",
+    "error": "HTTP 401: {\"success\":false,\"error\":\"Unauthorized: Invalid token\"}"
+  },
+  {
+    "slug": "buscopan",
+    "url": "https://www.buscopan.com/",
+    "error": "HTTP 401: {\"success\":false,\"error\":\"Unauthorized: Invalid token\"}"
+  },
+  {
+    "slug": "doliprane",
+    "url": "https://www.doliprane.fr/",
+    "error": "HTTP 401: {\"success\":false,\"error\":\"Unauthorized: Invalid token\"}"
+  }
+]

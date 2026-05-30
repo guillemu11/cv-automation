@@ -1,0 +1,156 @@
+{
+  "company": "Gloria Jeans",
+  "website": "https://www.gloria-jeans.ru",
+  "extracted_date": "2026-04-16",
+  "industry": "Fast-fashion retail (Russia, 1988-present)",
+
+  "palette": {
+    "primary": {
+      "hex": "#000000",
+      "rgb": "rgb(0, 0, 0)",
+      "usage": "Logo background, header bar, primary buttons, main text, active tab fills"
+    },
+    "secondary": {
+      "hex": "#FFFFFF",
+      "rgb": "rgb(255, 255, 255)",
+      "usage": "Page background, logo letterforms (GJ monogram), button text on dark, card backgrounds"
+    },
+    "accent_purple": {
+      "hex": "#5E2D7C",
+      "rgb": "rgb(94, 45, 124)",
+      "usage": "'Novinka' (New arrival) product tags"
+    },
+    "accent_red": {
+      "hex": "#F03E3E",
+      "rgb": "rgb(240, 62, 62)",
+      "usage": "Discount/sale percentage badges, price reduction indicators, border accents on sale items"
+    },
+    "accent_green": {
+      "hex": "#37B24D",
+      "rgb": "rgb(55, 178, 77)",
+      "usage": "'New' label in product recommendation widget"
+    },
+    "background_light": {
+      "hex": "#F9F9F9",
+      "rgb": "rgb(249, 249, 249)",
+      "usage": "Newsletter section background, subtle section separators"
+    },
+    "background_mid": {
+      "hex": "#F0F0F0",
+      "rgb": "rgb(240, 240, 240)",
+      "usage": "Secondary section backgrounds, input field backgrounds"
+    },
+    "background_subtle": {
+      "hex": "#F4F4F4",
+      "rgb": "rgb(244, 244, 244)",
+      "usage": "Card hover states, tertiary backgrounds"
+    },
+    "border": {
+      "hex": "#E6E6E6",
+      "rgb": "rgb(230, 230, 230)",
+      "usage": "Card borders, dividers, input borders"
+    },
+    "text_secondary": {
+      "hex": "#535353",
+      "rgb": "rgb(83, 83, 83)",
+      "usage": "Secondary body text, product descriptions, muted labels"
+    },
+    "text_muted": {
+      "hex": "#A6A6A6",
+      "rgb": "rgb(166, 166, 166)",
+      "usage": "Placeholder text, disabled states, tertiary copy"
+    },
+    "text_price_old": {
+      "hex": "#999999",
+      "rgb": "rgb(153, 153, 153)",
+      "usage": "Strikethrough original prices"
+    },
+    "text_vendor": {
+      "hex": "#444444",
+      "rgb": "rgb(68, 68, 68)",
+      "usage": "Vendor names, current prices, secondary UI elements"
+    }
+  },
+
+  "fonts": {
+    "primary": {
+      "family": "Pragmatica-Book",
+      "fallback": "sans-serif",
+      "full_declaration": "Pragmatica-Book, sans-serif",
+      "type": "Geometric sans-serif (ParaType foundry, Russian-designed)",
+      "note": "Custom web font loaded via @font-face, NOT Google Fonts"
+    },
+    "barcode": {
+      "family": "Libre Barcode EAN13 Text",
+      "usage": "Product barcodes only (functional, not branding)"
+    },
+    "weights_used": {
+      "body": "400 (Book/Regular) - used across all text",
+      "note": "Remarkably uniform weight usage. No bold headings found - the brand relies on size contrast rather than weight contrast"
+    },
+    "sizes": {
+      "nav_links": "17px",
+      "body": "16px",
+      "headings_h2": "26px",
+      "product_name": "14px",
+      "product_price": "15px",
+      "sale_label": "14px (desktop), 12px (mobile)",
+      "cta_button": "26px (hero), 17px (product cards)"
+    },
+    "letter_spacing": "-0.17px on nav links (very slight tightening)"
+  },
+
+  "logo": {
+    "description": "Square black container with white 'GJ' monogram in a clean geometric sans-serif. The letters are custom-drawn, slightly stylized. Rendered as inline SVG with viewBox '0 0 100 100'. Black fill path forms the square, white fill-rule 'evenodd' paths form the G and J letterforms.",
+    "format": "Inline SVG (vector, scalable)",
+    "colors": {
+      "background": "#000000 (solid black square)",
+      "letterforms": "#FFFFFF (white GJ monogram)"
+    },
+    "variants": [
+      "Standard: black square with white GJ (used on white backgrounds)",
+      "Transparent/inverted: white GJ on transparent (used over hero imagery/dark backgrounds)"
+    ],
+    "history": "Pre-2011: italic blue 'Gloria Jeans' wordmark with oversized G and J, horizontal bar underneath. 2011-2013: white on dark blue background. 2013-2022: red square emblem with white GJ + blue 'Gloria Jeans' wordmark. 2022-present: minimalist black/gray square with white GJ only, no wordmark."
+  },
+
+  "tone": {
+    "voice": "casual-confident",
+    "register": "Mid-market, leaning youthful and aspirational",
+    "language_style": "Short, descriptive product copy. Adjective-rich, tactile descriptions (textures, fits, materials). No exclamation-heavy hype. Straightforward and practical.",
+    "brand_tagline": "Clothing for real life (Одежда для реальной жизни)",
+    "brand_values": "Love yourself. Be who you want. Be free. Do what you like.",
+    "copy_examples": [
+      "Актуальные модели для деловых и кежуал-образов, которые подчеркнут настроение (Relevant models for business and casual looks that highlight your mood)",
+      "Непринуждённые силуэты и базовые модели, которые впишутся в его ритм (Relaxed silhouettes and basic models that fit his rhythm)",
+      "Узнавайте раньше всех о трендах, акциях и скидках (Be the first to learn about trends, promotions, and discounts)"
+    ],
+    "target_demographics": [
+      "Women (primary)",
+      "Men",
+      "Teenagers (Подростки) - sub-brand 'Ready! Steady! Go!'",
+      "Children (Дети) - boys and girls segments"
+    ]
+  },
+
+  "visual_style": {
+    "aesthetic": "Modern minimalist with high-contrast monochrome foundation. Clean, editorial feel. Black-and-white palette dominates with color used only for functional UI signals (sale badges, new-arrival tags).",
+    "photography": "Lifestyle-editorial. Models in natural/outdoor settings (roads at night, beaches, urban environments). Warm, slightly desaturated tones. Mix of studio product shots (neutral gray/white backgrounds) and atmospheric campaign imagery. Youth-oriented energy without being overtly streetwear.",
+    "layout": "Full-bleed hero banners with image carousels. 4-column product grids. Generous whitespace between sections. Rounded pill buttons (border-radius: 12px) for CTAs. Outlined/ghost-style buttons ('Смотреть' / View) over imagery.",
+    "ui_patterns": {
+      "buttons_primary": "Black fill, white text, rounded corners",
+      "buttons_secondary": "White/transparent border, white text (on dark) or black text (on light), rounded corners (12px radius)",
+      "product_cards": "Clean white background, minimal borders, category pill tags with border (outlined style)",
+      "navigation": "Horizontal top nav, all-caps for SALE section only, Pragmatica-Book 17px",
+      "sticky_toolbar": "Floating white pill in bottom-right with search, account, and cart icons"
+    },
+    "framework": "Angular (custom web components: gj-logo, gj-link, svg-icon). Swiper.js for carousels. Mindbox/PopMechanic for personalization widgets."
+  },
+
+  "social_presence": {
+    "platforms": ["VKontakte", "YouTube (Rutube icon)", "Telegram", "MAX (VK messaging)"],
+    "app_stores": ["Google Play", "Apple App Store"]
+  },
+
+  "awards": "Narodnaya Marka (People's Brand) #1 in Russia 2024 in 'Clothing retail chain' category"
+}

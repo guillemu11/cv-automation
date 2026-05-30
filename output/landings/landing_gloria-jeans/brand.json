@@ -1,0 +1,26 @@
+{
+  "company": "Gloria Jeans",
+  "url": "https://www.gloria-jeans.ru/",
+  "palette": {
+    "primary": "#000000",
+    "secondary": "#FFFFFF",
+    "accent_purple": "#5E2D7C",
+    "accent_red": "#F03E3E",
+    "accent_green": "#37B24D",
+    "bg_light": "#F9F9F9",
+    "bg_mid": "#F0F0F0",
+    "border": "#E6E6E6",
+    "text_primary": "#000000",
+    "text_secondary": "#535353",
+    "text_muted": "#A6A6A6"
+  },
+  "fonts": {
+    "heading": "Pragmatica-Book (ParaType) — substituted with Space Grotesk",
+    "body": "Inter",
+    "weights": [400, 500, 600, 700]
+  },
+  "logo": "Minimalist black square with white GJ monogram (2022 rebrand)",
+  "tone": "casual-confident, mid-market, youthful-aspirational",
+  "tagline": "Clothing for real life.",
+  "visual_style": "Modern minimalist, high-contrast monochrome. Color used surgically for functional UI signals only."
+}

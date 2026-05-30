@@ -1,0 +1,29 @@
+{
+  "name": "Buscopan",
+  "parent": "Opella",
+  "visual_system": "Opella corporate (Bold Green + Opella Sans-style)",
+  "region_focus": "AMET",
+  "product_line": "Buscopan 10mg (Hyoscine Butylbromide) — abdominal pain / IBS relief",
+  "palette": {
+    "primary": "#00A651",
+    "secondary": "#0E0F12",
+    "accent": "#F4DC59",
+    "warm": "#F58A1F",
+    "bg": "#FFFFFF",
+    "text": "#0E0F12",
+    "dark": "#0F1A12"
+  },
+  "typography": {
+    "display": "Manrope",
+    "body": "Inter",
+    "serif": "Source Serif 4",
+    "display_url": "Manrope:wght@500;700;800",
+    "body_url": "Inter:wght@400;500;700",
+    "serif_url": "Source+Serif+4:wght@400;500;600"
+  },
+  "logo_hint": "Opella wordmark in Bold Green sans-serif, paired with a small 'Buscopan' sub-mark in Source Serif. Parent endorsement is the visual anchor.",
+  "tone": ["calm", "competent", "direct", "ownable-occasion"],
+  "source_url": "https://www.opella.com/",
+  "notes": "Visual system extracted from opella.com (May 2026): Bold Green #00A651 as the dominant brand color, custom Opella Sans + Opella Serif typography. We substitute Manrope (display) + Inter (body) + Source Serif 4 (manifesto) — closest free equivalents on Google Fonts. The product brand color (yellow blister) is kept as a small accent only, not the dominant palette.",
+  "wcag_check": "text #0E0F12 on bg #FFFFFF = 19.5:1 (AA+) OK · #00A651 on white = 3.4:1 — use only for large text / decorative blocks, not body copy"
+}

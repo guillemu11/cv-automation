@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFD100">
+  <title>Claim your free Lipton Half-Sugar can — free at 7-Eleven UAE</title>
+  <meta name="description" content="Half the sugar. Twice as cold. Claim your free can of the new Lipton Ice Tea Half-Sugar, redeemable at any 7-Eleven in the UAE. Takes 30 seconds.">
+  <meta property="og:title" content="Claim your free Lipton Half-Sugar can">
+  <meta property="og:description" content="Half the sugar. Twice as cold. Free at 7-Eleven UAE.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="brand-mark">Lipton Ice Tea</div>
+    <a class="nav-cta" href="#claim">Claim →</a>
+  </nav>
+
+  <!-- ============================================================
+       SCROLL STAGE — sticky pour animation + 4 consumer chapters
+       ============================================================ -->
+  <section class="scrollstage"
+           data-scrollstage
+           data-frame-count="150"
+           data-frame-dir="assets/frames"
+           data-frame-ext="jpg">
+    <div class="stage-sticky">
+      <img class="hero-frame" src="assets/frames/frame_0001.jpg" alt="Lipton Ice Tea pouring into a glass of ice">
+      <div class="stage-vignette"></div>
+      <div class="hero-loading" data-frame-progress>Loading 0%</div>
+
+      <!-- Chapter 1: The hook -->
+      <div class="chapter chapter--hook" data-chapter data-chapter-start="0.00" data-chapter-end="0.22">
+        <div class="chapter-kicker">New · Lipton Ice Tea Half-Sugar</div>
+        <h1 class="chapter-headline">Half the sugar.<br><span class="accent">Twice as cold.</span></h1>
+        <p class="chapter-sub">Try it on us. One free can, redeemable at any 7-Eleven in the UAE.</p>
+        <a class="chapter-scrollhint" href="#claim">scroll or tap here to claim ↓</a>
+      </div>
+
+      <!-- Chapter 2: The offer -->
+      <div class="chapter chapter--offer" data-chapter data-chapter-start="0.26" data-chapter-end="0.48">
+        <div class="chapter-label">Your offer</div>
+        <h2 class="chapter-headline"><span class="accent">1 free can</span><br>of the new Half-Sugar.</h2>
+        <p class="chapter-sub">Pick up a chilled 320 ml can at any of 180+ participating 7-Eleven stores across the UAE. No purchase required.</p>
+      </div>
+
+      <!-- Chapter 3: Social proof / urgency -->
+      <div class="chapter chapter--urgency" data-chapter data-chapter-start="0.52" data-chapter-end="0.78">
+        <div class="chapter-label">Moving fast</div>
+        <div class="huge-stat" data-counter data-counter-to="2341">0</div>
+        <p class="huge-body">cans already claimed in the last 24 hours. The first 10,000 get priority at the counter.</p>
+      </div>
+
+      <!-- Chapter 4: CTA transition -->
+      <div class="chapter chapter--cta" data-chapter data-chapter-start="0.82" data-chapter-end="1.00">
+        <div class="chapter-label">30 seconds. Done.</div>
+        <h2 class="chapter-headline">Claim yours<br><span class="accent">right now.</span></h2>
+        <a href="#claim" class="primary-cta-lg">Claim my free can →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       How it works — 3 steps
+       ============================================================ -->
+  <section class="howitworks" data-reveal>
+    <h2 class="section-heading">How it works</h2>
+    <p class="section-sub">From tap to sip in under 24 hours.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Tell us where</h3>
+        <p class="step-body">Pick your nearest 7-Eleven from the list. We'll reserve your can at that store.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Get your code</h3>
+        <p class="step-body">A QR code lands in your SMS within 60 seconds. Valid for 14 days.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Enjoy it cold</h3>
+        <p class="step-body">Walk in, show the QR at the counter, walk out with your free Half-Sugar can. No purchase required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Lead capture form — the whole point
+       ============================================================ -->
+  <section class="claim" id="claim" data-reveal>
+    <div class="claim-inner">
+      <div class="claim-copy">
+        <div class="claim-kicker">Step 1 of 1</div>
+        <h2 class="claim-heading">Claim your free can.</h2>
+        <p class="claim-sub">We'll text your redemption QR in under 60 seconds. Good at 180+ stores across the UAE.</p>
+      </div>
+      <form class="claim-form" action="mailto:paulich98@hotmail.com" method="post" enctype="text/plain" data-claim-form>
+        <label class="field">
+          <span class="field-label">First name</span>
+          <input type="text" name="first_name" required autocomplete="given-name" placeholder="Sarah">
+        </label>
+
+        <label class="field">
+          <span class="field-label">Mobile</span>
+          <input type="tel" name="mobile" required autocomplete="tel" placeholder="+971 50 123 4567" pattern="^\+?[0-9\s\-]{8,}$">
+        </label>
+
+        <label class="field">
+          <span class="field-label">Email</span>
+          <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+        </label>
+
+        <label class="field">
+          <span class="field-label">Your city</span>
+          <select name="city" required>
+            <option value="">Choose your city</option>
+            <option value="Dubai">Dubai</option>
+            <option value="Abu Dhabi">Abu Dhabi</option>
+            <option value="Sharjah">Sharjah</option>
+            <option value="Ajman">Ajman</option>
+            <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+            <option value="Fujairah">Fujairah</option>
+            <option value="Umm Al Quwain">Umm Al Quwain</option>
+            <option value="Al Ain">Al Ain</option>
+          </select>
+        </label>
+
+        <fieldset class="field field--age">
+          <legend class="field-label">Your age</legend>
+          <div class="radio-row">
+            <label><input type="radio" name="age" value="18-24" required> 18–24</label>
+            <label><input type="radio" name="age" value="25-34"> 25–34</label>
+            <label><input type="radio" name="age" value="35+"> 35+</label>
+          </div>
+        </fieldset>
+
+        <label class="checkbox">
+          <input type="checkbox" name="consent" required>
+          <span>I'm 18+ and agree to the <a href="#legal">terms & privacy policy</a>.</span>
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" name="marketing" checked>
+          <span>Yes, send me occasional Lipton news &amp; offers. You can unsubscribe any time.</span>
+        </label>
+
+        <button type="submit" class="submit-btn">Claim my free can →</button>
+        <p class="form-reassurance">No purchase. No credit card. UAE only. One per person.</p>
+      </form>
+
+      <div class="claim-success" data-claim-success hidden>
+        <div class="success-icon">✓</div>
+        <h3 class="success-title">You're in.</h3>
+        <p class="success-body">We just sent your QR code to the mobile you gave us. It lands in under 60 seconds. Save it to your phone and show it at the 7-Eleven counter. Enjoy it cold.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="faq" data-reveal>
+    <h2 class="section-heading">Questions</h2>
+    <details class="faq-item">
+      <summary>Is this really free?</summary>
+      <p>Yes. One free 320 ml can of Lipton Ice Tea Half-Sugar at any participating 7-Eleven in the UAE. No purchase required, no hidden fees, no credit card.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How soon do I get my code?</summary>
+      <p>Under 60 seconds via SMS on the mobile number you give us. The QR is valid for 14 days from the moment it arrives.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if there's no 7-Eleven near me?</summary>
+      <p>We cover 180+ stores across all seven emirates. If your city isn't on the list, we'll add other retailers in the next rollout — we'll email you when your area goes live.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do you use my data?</summary>
+      <p>We use your mobile to send your QR code and your email to confirm your claim. We only share data with our retail partners for redemption verification. See our privacy policy for the full version.</p>
+    </details>
+  </section>
+
+  <!-- ============================================================
+       Legal footer
+       ============================================================ -->
+  <footer class="legal" id="legal">
+    <div class="legal-inner">
+      <div class="legal-brand">
+        <strong>Lipton Ice Tea</strong>
+        <p>© 2026 PepsiCo International · AMESA region</p>
+      </div>
+      <div class="legal-links">
+        <a href="#">Terms &amp; conditions</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Cookie settings</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <p class="legal-disclaimer">Fictional campaign concept created by <strong>Paula De Francisco</strong> as a job-application deliverable. Not affiliated with or endorsed by Lipton, PepsiCo, Unilever, or 7-Eleven. No free cans will be issued.</p>
+  </footer>
+
+  <!-- Sticky mobile CTA bar -->
+  <a class="sticky-cta-bar" href="#claim" data-sticky-cta>Claim my free can · 30s →</a>
+
+  <script src="scroll.js?v=3"></script>
+</body>
+</html>

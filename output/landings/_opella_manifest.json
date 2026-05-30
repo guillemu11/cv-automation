@@ -1,0 +1,22 @@
+{
+  "buscopan": {
+    "keyframe_a_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260522_094930_c14a8fa8-243e-411c-9ec0-3238c7eebe4f.png",
+    "keyframe_b_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260522_095204_5e624750-44ae-416e-9da7-d3dcd2f88500.png",
+    "hero_video_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260522_095609_3df44b48-005a-48fb-8282-abfc265e6598.mp4",
+    "executions": {
+      "exec_5_telehealth_chat": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260522_100241_52531f14-318d-4232-91f2-a4ac0e9c075d.png",
+      "exec_6_metro_dooh": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260522_100241_12d91d34-05b3-4b0d-afa2-ca15ba9c7275.png"
+    }
+  },
+  "doliprane": {
+    "keyframe_a_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260521_095129_7b391083-5ff8-463f-8e65-b879a809b401.png",
+    "keyframe_b_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260521_095401_b3e3a371-2a6a-424a-a9fe-445846522571.png",
+    "hero_video_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260521_095724_35ee40b5-c602-44f6-aa38-5b2610e2fbbe.mp4",
+    "executions": {
+      "exec_1_diaspora_kitchen": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260521_100214_eb3d0c74-8bfd-4632-bb3a-bb61f1fcc7bb.png",
+      "exec_2_search_map": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260521_100214_f9d24e3e-3730-44d9-86c0-dfca0112fe1e.png",
+      "exec_3_pharmacy_uae_shelf": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260521_100214_52c64bb0-7fc9-4a86-a83f-33d152a153d4.png",
+      "exec_4_amazon_pdp": "https://d8j0ntlcm91z4.cloudfront.net/user_3BBJBtdjfe5shkoUWQcPyRRE5G5/hf_20260521_100214_c556a9bc-ad64-4b67-baf1-7bed380577c8.png"
+    }
+  }
+}

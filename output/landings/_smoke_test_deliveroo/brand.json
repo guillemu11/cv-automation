@@ -1,0 +1,23 @@
+{
+  "palette": {
+    "primary": "#00ccbc",
+    "secondary": "#009e99",
+    "accent": "#E8EBEB",
+    "bg": "#FFFFFF",
+    "text": "#0E0F12"
+  },
+  "typography": {
+    "display": "Manrope",
+    "body": "Inter",
+    "serif": "Source Serif 4"
+  },
+  "logo_hint": "Deliveroo logo/brand mark",
+  "tone": [
+    "convenient",
+    "fast",
+    "reliable"
+  ],
+  "source": "llm_webread:https://deliveroo.ae/",
+  "name": "Deliveroo",
+  "parent": "Deliveroo"
+}

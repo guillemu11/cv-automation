@@ -1,0 +1,621 @@
+/* ============================================================
+   Lipton Ice Tea — Half-Sugar Consumer Ad-Landing
+   ============================================================ */
+
+:root {
+  --brand-primary: #FFD100;
+  --brand-secondary: #E30613;
+  --brand-accent: #1DB46B;
+  --brand-bg: #FFFFFF;
+  --brand-text: #111111;
+  --brand-dark: #0b0a08;
+
+  --font-display: "Archivo Black", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 32px;
+  --space-5: 64px;
+  --space-6: 128px;
+
+  --shadow-card: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
+  --radius: 12px;
+
+  --max-width: 1280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--brand-text);
+  background: var(--brand-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  padding-bottom: 64px; /* leave room for sticky CTA bar on mobile */
+}
+img, video, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- top nav ---------- */
+.top-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  z-index: 50;
+  color: #fff;
+}
+.brand-mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0,0,0,.5);
+}
+.nav-cta {
+  font-size: .72rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  background: var(--brand-primary);
+  color: var(--brand-text);
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(255,209,0,.35);
+  transition: transform .25s ease;
+}
+.nav-cta:hover { transform: translateY(-2px); }
+
+/* ============================================================
+   SCROLL STAGE — same pattern as pitch mode
+   ============================================================ */
+.scrollstage {
+  position: relative;
+  width: 100%;
+  height: 600vh;
+  background: var(--brand-dark);
+}
+.stage-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+}
+.hero-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  will-change: contents;
+}
+.stage-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,.35) 75%, rgba(0,0,0,.78) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 60%, rgba(0,0,0,.7) 100%);
+}
+
+.hero-loading {
+  position: absolute;
+  top: calc(var(--space-4) + var(--space-3));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  font-size: .65rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 6px 14px;
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  transition: opacity .5s ease;
+}
+.hero-loading.is-done { opacity: 0; pointer-events: none; }
+
+/* ---------- chapters ---------- */
+.chapter {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-5) var(--space-4);
+  color: #fff;
+  opacity: 0;
+  transform: translate3d(0, 60px, 0);
+  will-change: opacity, transform;
+}
+.chapter-kicker,
+.chapter-label {
+  display: inline-block;
+  font-size: .68rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  margin-bottom: var(--space-3);
+  backdrop-filter: blur(6px);
+  width: fit-content;
+}
+.chapter-headline {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.75rem, 9vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  max-width: 15ch;
+}
+.chapter-headline .accent {
+  color: var(--brand-primary);
+  display: inline-block;
+}
+.chapter-sub {
+  margin-top: var(--space-3);
+  font-size: clamp(1rem, 1.4vw, 1.35rem);
+  max-width: 640px;
+  opacity: 0.92;
+  font-weight: 500;
+}
+.chapter-scrollhint {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  font-size: .65rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  opacity: .7;
+  color: #fff;
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob {
+  0%,100% { transform: translateY(0); opacity: .5; }
+  50%     { transform: translateY(6px); opacity: 1; }
+}
+.chapter--urgency { justify-content: center; align-items: flex-start; }
+.chapter--urgency .huge-stat {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(6rem, 16vw, 16rem);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: var(--brand-primary);
+  text-shadow: 0 20px 80px rgba(0,0,0,.55);
+}
+.chapter--urgency .huge-body {
+  margin-top: var(--space-3);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  max-width: 600px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+.chapter--offer { justify-content: center; align-items: flex-start; }
+.chapter--cta { align-items: flex-start; }
+.primary-cta-lg {
+  display: inline-block;
+  margin-top: var(--space-4);
+  padding: 18px 32px;
+  background: var(--brand-primary);
+  color: var(--brand-text);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  border-radius: 999px;
+  box-shadow: 0 12px 40px rgba(255,209,0,.35);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.primary-cta-lg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 50px rgba(255,209,0,.5);
+}
+
+/* ============================================================
+   How it works
+   ============================================================ */
+section.howitworks {
+  padding: var(--space-6) var(--space-4);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+  text-wrap: balance;
+}
+.section-sub {
+  font-size: 1rem;
+  opacity: .7;
+  margin-bottom: var(--space-5);
+  max-width: 640px;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+.step-card {
+  padding: var(--space-4);
+  border-top: 3px solid var(--brand-primary);
+}
+.step-number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--brand-primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.step-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin-top: var(--space-3);
+}
+.step-body {
+  margin-top: var(--space-2);
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: .8;
+}
+
+/* ============================================================
+   Claim form
+   ============================================================ */
+section.claim {
+  background: var(--brand-text);
+  color: #fff;
+  padding: var(--space-6) var(--space-4);
+}
+.claim-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+.claim-copy .claim-kicker {
+  display: inline-block;
+  font-size: .68rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 999px;
+  margin-bottom: var(--space-3);
+  color: var(--brand-primary);
+}
+.claim-heading {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.claim-sub {
+  margin-top: var(--space-3);
+  font-size: 1.15rem;
+  opacity: .85;
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+.claim-form {
+  background: #fff;
+  color: var(--brand-text);
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: 0 30px 80px rgba(0,0,0,.3);
+}
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-label {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: .75;
+}
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="email"],
+.field select {
+  font: inherit;
+  padding: 14px 16px;
+  border: 1.5px solid #e3e3e3;
+  border-radius: 8px;
+  background: #fafafa;
+  color: var(--brand-text);
+  transition: border-color .2s ease, background .2s ease;
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255,209,0,.2);
+}
+.field--age { border: none; padding: 0; }
+.radio-row {
+  display: flex;
+  gap: var(--space-2);
+}
+.radio-row label {
+  flex: 1;
+  padding: 12px;
+  border: 1.5px solid #e3e3e3;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 600;
+  transition: border-color .2s, background .2s;
+}
+.radio-row label:hover { border-color: var(--brand-primary); }
+.radio-row input { display: none; }
+.radio-row input:checked + * { }
+.radio-row label:has(input:checked) {
+  border-color: var(--brand-primary);
+  background: var(--brand-primary);
+  color: var(--brand-text);
+}
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .85rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.checkbox input { margin-top: 3px; accent-color: var(--brand-primary); }
+.checkbox a { text-decoration: underline; }
+
+.submit-btn {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  padding: 18px 24px;
+  border: none;
+  background: var(--brand-primary);
+  color: var(--brand-text);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+  margin-top: var(--space-2);
+  box-shadow: 0 8px 24px rgba(255,209,0,.35);
+}
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(255,209,0,.5);
+}
+.form-reassurance {
+  text-align: center;
+  font-size: .72rem;
+  opacity: .6;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.claim-success {
+  background: #fff;
+  color: var(--brand-text);
+  padding: var(--space-5) var(--space-4);
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,.3);
+}
+.success-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto var(--space-3);
+  background: var(--brand-primary);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--brand-text);
+}
+.success-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+}
+.success-body {
+  font-size: 1rem;
+  opacity: .75;
+  line-height: 1.5;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+section.faq {
+  padding: var(--space-6) var(--space-4);
+  max-width: 860px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  padding: var(--space-3) 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  transition: transform .2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+  margin-top: var(--space-2);
+  opacity: .75;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Legal footer
+   ============================================================ */
+footer.legal {
+  background: #f5f5f5;
+  padding: var(--space-4);
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+.legal-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.legal-brand strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+.legal-brand p {
+  font-size: .75rem;
+  opacity: .6;
+  margin-top: 4px;
+}
+.legal-links {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.legal-links a {
+  font-size: .8rem;
+  opacity: .7;
+  text-decoration: underline;
+}
+.legal-disclaimer {
+  max-width: var(--max-width);
+  margin: var(--space-4) auto 0;
+  font-size: .7rem;
+  opacity: .5;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Sticky mobile CTA bar
+   ============================================================ */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 40;
+  padding: 16px 20px;
+  background: var(--brand-primary);
+  color: var(--brand-text);
+  font-family: var(--font-display);
+  font-size: .95rem;
+  letter-spacing: -0.01em;
+  text-align: center;
+  border-radius: 999px;
+  box-shadow: 0 14px 40px rgba(255,209,0,.5), 0 4px 12px rgba(0,0,0,.15);
+  display: none;
+  transition: transform .3s ease, opacity .3s ease;
+}
+@media (max-width: 860px) {
+  .sticky-cta-bar { display: block; }
+}
+.sticky-cta-bar.is-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+/* ============================================================
+   Reveal on scroll (post-stage sections)
+   ============================================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .9s ease-out, transform .9s cubic-bezier(.2,.8,.2,1);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 860px) {
+  .scrollstage { height: 550vh; }
+  /* Reserve space for the sticky mobile CTA bar (64px bar + 16px margin + 16px gap) */
+  .chapter {
+    padding: var(--space-4) var(--space-3);
+    padding-bottom: calc(var(--space-5) + 48px);
+  }
+  /* On mobile, vertically center chapters 1 & 4 too (matches chapters 2 & 3
+     default) so content never sits behind the sticky CTA bar. Desktop keeps
+     the cinematic bottom-anchored hero feel. */
+  .chapter--hook,
+  .chapter--cta {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .chapter-scrollhint {
+    bottom: calc(var(--space-4) + 72px);
+  }
+  .claim-inner { grid-template-columns: 1fr; gap: var(--space-4); }
+  section.howitworks, section.faq { padding: var(--space-5) var(--space-3); }
+  section.claim { padding: var(--space-5) var(--space-3); }
+  .radio-row { flex-direction: column; }
+  .radio-row label { text-align: left; padding: 14px 16px; }
+  .legal-inner { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .scrollstage { height: 500vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scrollstage { height: auto; }
+  .stage-sticky { position: relative; height: 100vh; }
+  .chapter { position: relative; inset: auto; opacity: 1 !important; transform: none !important; }
+  .chapter-scrollhint { animation: none; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
