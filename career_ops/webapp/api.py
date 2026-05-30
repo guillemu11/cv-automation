@@ -254,7 +254,8 @@ def _index_generated_files(jobs: list[dict]) -> dict[str, dict]:
     output = settings.output_dir
     result: dict[str, dict] = {
         j["id"]: {"cv": None, "cl": None, "form": None, "form_json": None,
-                  "deliverable": None, "landing": None}
+                  "deliverable": None, "deliverables": [], "outreach": None,
+                  "links": [], "landing": None}
         for j in jobs
     }
     # Pre-compute filename keys so the inner loop is pure string matching.
@@ -267,9 +268,12 @@ def _index_generated_files(jobs: list[dict]) -> dict[str, dict]:
     def _scan(pattern: str) -> list[Path]:
         # rglob picks up both root-level files and per-job subfolders. We
         # filter out the archive/notes/landings trees so historical content
-        # doesn't masquerade as live job output.
+        # doesn't masquerade as live job output, and skip Office lock files
+        # (``~$Foo.docx``) which would otherwise match *.docx patterns.
         hits = []
         for f in output.rglob(pattern):
+            if f.name.startswith("~$"):
+                continue
             try:
                 rel = f.relative_to(output)
             except ValueError:
@@ -285,7 +289,10 @@ def _index_generated_files(jobs: list[dict]) -> dict[str, dict]:
         "form": "FORM_Paula_*.pdf",
         "form_docx": "FORM_Paula_*.docx",
         "form_json": "FORM_Paula_*.json",
-        "deliverable": "Deliverable_Paula_*.pdf",
+        "deliverable_pdf": "Deliverable_Paula_*.pdf",
+        "deliverable_docx": "Deliverable_Paula_*.docx",
+        "outreach": "*_Outreach_Pack.docx",
+        "links": "LINKS_Paula_*.json",
     }
     cached = {key: _scan(pat) for key, pat in patterns.items()}
 
@@ -309,6 +316,29 @@ def _index_generated_files(jobs: list[dict]) -> dict[str, dict]:
                     break
         return out
 
+    def _match_multi_by_company(files: list[Path]) -> dict[str, list[str]]:
+        # Concept-named artifacts (e.g. Deliverable_Paula_Henkel_Frizz-Forecast,
+        # Henkel_Outreach_Pack) carry the company but NOT the role title, so the
+        # strict company+title matcher above misses them. Match on company alone;
+        # when several jobs share a company, prefer the one whose title also
+        # appears in the stem. Returns ALL matches per job (a job can have many
+        # deliverables), relative-to-output and sorted for stable ordering.
+        out: dict[str, list[str]] = {}
+        for f in sorted(files, key=lambda p: p.name):
+            stem = f.stem
+            try:
+                rel = f.relative_to(output)
+            except ValueError:
+                rel = Path(f.name)
+            candidates = [(jid, comp, ttl) for jid, (comp, ttl) in job_keys
+                          if comp and comp in stem]
+            if not candidates:
+                continue
+            # Prefer a candidate whose title also matches; else first by company.
+            best = next((c for c in candidates if c[2] and c[2] in stem), candidates[0])
+            out.setdefault(best[0], []).append(str(rel).replace("\\", "/"))
+        return out
+
     for job_id, name in _match(cached["cv"]).items():
         result[job_id]["cv"] = name
     for job_id, name in _match(cached["cl"]).items():
@@ -321,8 +351,35 @@ def _index_generated_files(jobs: list[dict]) -> dict[str, dict]:
             result[job_id]["form"] = name
     for job_id, name in _match(cached["form_json"]).items():
         result[job_id]["form_json"] = name
-    for job_id, name in _match(cached["deliverable"]).items():
-        result[job_id]["deliverable"] = name
+
+    # Deliverables: collect ALL (pdf + docx) per job by company. If a *_FULL.pdf
+    # exists, surface only it (its Deck/Plan parts are already merged inside —
+    # the Henkel case); otherwise keep every deliverable (Opella has 4 distinct
+    # docx analyses and no FULL). ``deliverable`` (singular) stays for back-compat.
+    deliverable_hits = _match_multi_by_company(
+        cached["deliverable_pdf"] + cached["deliverable_docx"]
+    )
+    for job_id, names in deliverable_hits.items():
+        full = [n for n in names if n.lower().endswith("_full.pdf")]
+        chosen = full if full else names
+        result[job_id]["deliverables"] = chosen
+        result[job_id]["deliverable"] = chosen[0] if chosen else None
+
+    # Outreach pack docx (named "<Company>_Outreach_Pack.docx") — company match.
+    for job_id, names in _match_multi_by_company(cached["outreach"]).items():
+        result[job_id]["outreach"] = names[0]
+
+    # External links sidecars (deployed Vercel landings etc.) — company match.
+    for job_id, names in _match_multi_by_company(cached["links"]).items():
+        merged: list[dict] = []
+        for rel in names:
+            try:
+                data = json.loads((output / rel).read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                continue
+            if isinstance(data, list):
+                merged.extend(e for e in data if isinstance(e, dict) and e.get("url"))
+        result[job_id]["links"] = merged
 
     # Landings live at output/<Company_Role>/landing/index.html — expose as URL.
     # Folder names use job_output_dir's sanitisation (spaces preserved), while
@@ -396,10 +453,14 @@ def _generated_files(job_id: str, jobs: list[dict] | None = None) -> dict:
     jobs = jobs if jobs is not None else _load_jobs()
     job = _find_job(job_id, jobs)
     if not job:
-        return {"cv": None, "cl": None, "form": None, "form_json": None, "deliverable": None}
+        return {"cv": None, "cl": None, "form": None, "form_json": None,
+                "deliverable": None, "deliverables": [], "outreach": None,
+                "links": [], "landing": None}
     return _index_generated_files([job]).get(
         job["id"],
-        {"cv": None, "cl": None, "form": None, "form_json": None, "deliverable": None},
+        {"cv": None, "cl": None, "form": None, "form_json": None,
+         "deliverable": None, "deliverables": [], "outreach": None,
+         "links": [], "landing": None},
     )
 
 
@@ -453,7 +514,9 @@ async def list_jobs(
     pending_index = _index_pending_llm(jobs)
     for j in jobs:
         j["_files"] = files_index.get(j["id"], {
-            "cv": None, "cl": None, "form": None, "form_json": None, "deliverable": None,
+            "cv": None, "cl": None, "form": None, "form_json": None,
+            "deliverable": None, "deliverables": [], "outreach": None,
+            "links": [], "landing": None,
         })
         j["_pending_llm"] = pending_index.get(j["id"], [])
 
@@ -614,6 +677,20 @@ async def download_deliverable(job_id: str):
         raise HTTPException(404, "Deliverable not generated yet")
     path = settings.output_dir / files["deliverable"]
     return FileResponse(str(path), media_type="application/pdf", filename=Path(files["deliverable"]).name)
+
+
+@app.get("/api/jobs/{job_id}/outreach-pack")
+async def download_outreach_pack(job_id: str):
+    """Download the personalized outreach pack (.docx)."""
+    files = _generated_files(job_id)
+    if not files.get("outreach"):
+        raise HTTPException(404, "Outreach pack not generated yet")
+    path = settings.output_dir / files["outreach"]
+    return FileResponse(
+        str(path),
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        filename=Path(files["outreach"]).name,
+    )
 
 
 @app.get("/api/jobs/{job_id}/landing")

@@ -1205,14 +1205,43 @@ function renderDocsSection(jobId, files) {
       </div>
     </div>`;
 
-  if (files.deliverable) html += `
+  // Deliverables: a list (Henkel shows only the FULL; Opella shows all 4 docx).
+  // Served via the /output static mount so both .pdf and .docx download directly.
+  const deliverables = (files.deliverables && files.deliverables.length)
+    ? files.deliverables
+    : (files.deliverable ? [files.deliverable] : []);
+  deliverables.forEach((rel) => {
+    const fname = rel.split('/').pop();
+    html += `
     <div class="doc-card">
       <div class="doc-card-info">
-        <div class="name">${icon('gift')} Value-add Deliverable</div>
-        <div class="date" title="${esc(files.deliverable)}">${esc(files.deliverable)}</div>
+        <div class="name">${icon('gift')} Deliverable</div>
+        <div class="date" title="${esc(rel)}">${esc(fname)}</div>
       </div>
-      <a class="btn btn-sm btn-purple" href="/api/jobs/${jobId}/deliverable" target="_blank" rel="noopener" aria-label="Download value-add deliverable">${icon('download')}</a>
+      <a class="btn btn-sm btn-purple" href="${encodeURI('/output/' + rel)}" target="_blank" rel="noopener" aria-label="Download deliverable">${icon('download')}</a>
     </div>`;
+  });
+
+  if (files.outreach) html += `
+    <div class="doc-card">
+      <div class="doc-card-info">
+        <div class="name">${icon('mail')} Outreach pack</div>
+        <div class="date" title="${esc(files.outreach)}">${esc(files.outreach.split('/').pop())}</div>
+      </div>
+      <a class="btn btn-sm btn-purple" href="/api/jobs/${jobId}/outreach-pack" target="_blank" rel="noopener" aria-label="Download outreach pack">${icon('download')}</a>
+    </div>`;
+
+  (files.links || []).forEach((lnk) => {
+    if (!lnk || !lnk.url) return;
+    html += `
+    <div class="doc-card">
+      <div class="doc-card-info">
+        <div class="name">${icon('external') || ''} ${esc(lnk.label || 'Link')}</div>
+        <div class="date" title="${esc(lnk.url)}">${esc(lnk.url.replace(/^https?:\/\//, ''))}</div>
+      </div>
+      <a class="btn btn-sm btn-purple" href="${esc(lnk.url)}" target="_blank" rel="noopener" aria-label="Open ${esc(lnk.label || 'link')}">Open ↗</a>
+    </div>`;
+  });
 
   if (files.landing) html += `
     <div class="doc-card">

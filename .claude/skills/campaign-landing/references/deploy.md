@@ -86,3 +86,26 @@ Append a one-line entry to `output/landing_<slug>/DEPLOY_LOG.md`:
 ```
 
 This is the only persistent record of which URL went where. Do not write a bigger log.
+
+### Register the link in the dashboard (do this every deploy)
+
+The dashboard auto-discovers generated **files** by walking `output/`, but a Vercel
+URL is not a file — so register it explicitly. This is what makes the link show up
+on the job card automatically. Write it into the **job folder**
+(`output/<Company> - <Role>/`), not the landing folder (which lives under the
+excluded `output/landings/` tree):
+
+```python
+from career_ops.generators.links import register_link
+register_link(
+    job_dir,                       # output/<Company> - <Role>/  (Path)
+    company, title,                # exact job company + title
+    "Frizz Forecast — Schwarzkopf GCC",   # human label shown on the card
+    "https://paula-pitch-c.vercel.app",   # the deployed URL
+)
+```
+
+`register_link` is idempotent (dedupes by URL), so re-running on a redeploy is safe.
+The dashboard reads the resulting `LINKS_Paula_<Company>_<Role>.json` sidecar via its
+company matcher. Production landings reuse the generic `paula-pitch-{a,b,c}` slots —
+see the `project_vercel_pitch_slots` memory for which slot is free.
