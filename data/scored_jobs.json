@@ -1134,5 +1134,62 @@
     "freshness": "fresh",
     "discovered_at": "2026-05-29T00:00:00+00:00",
     "status": "CV Ready"
+  },
+  {
+    "id": "colgate_ecom_mgr_ae",
+    "title": "Ecommerce Manager",
+    "company": "Colgate-Palmolive",
+    "location": "Dubai, United Arab Emirates",
+    "url": "https://jobs.colgate.com/key/marketing-manager-dubai.html",
+    "source": "manual:paula-application",
+    "description": "Colgate-Palmolive is a global consumer products leader (oral care, personal care, home care, skin care, pet nutrition) operating in over 200 countries. The Ecommerce Manager, based in Dubai, drives digital commerce growth across the MENA / Gulf region — owning the e-commerce P&L and channel strategy across pure-play and omnichannel retailers and quick-commerce platforms.\n\nResponsibilities:\n- Build and execute the e-commerce and digital-commerce strategy for the region, partnering with Customer Development and Brand/Marketing.\n- Own online assortment, content, pricing and promotional mechanics across key e-retailers and quick-commerce platforms (Noon, Talabat, Careem, etc.).\n- Plan and optimise retail media / digital shelf, tracking ROAS, conversion and traffic to hit sell-out and profitability targets.\n- Lead joint business planning with key digital accounts; manage A&P budget.\n- Drive the digital shelf, search and content agenda to grow market share.\n\nRequirements: 4+ years in FMCG e-commerce / digital commerce / key account management; strong analytical and P&L skills; UAE/GCC market experience; hands-on with e-retail and quick-commerce platforms.",
+    "salary_raw": null,
+    "salary_aed_min": null,
+    "salary_aed_max": null,
+    "posted_date": "2026-06-12",
+    "raw": {
+      "manually_injected": true,
+      "application_sent": true
+    },
+    "ai_score": 90,
+    "ai_tier": "Hot",
+    "skills_match": [
+      "UAE quick-commerce hands-on (Noon, Talabat, Careem, Deliveroo)",
+      "E-commerce key account management (Alibaba/Miravia, 42 accounts)",
+      "+30% GMV QoQ growth track record",
+      "Retail media / ROAS / digital-shelf optimisation",
+      "FMCG brand, trade & shopper marketing across 50+ markets",
+      "E-store management, content & UX, promo mechanics"
+    ],
+    "missing_skills": [
+      "Direct oral-/personal-care category experience",
+      "Fluent Arabic (Spanish/English C1 only)"
+    ],
+    "sector_fit": "exact",
+    "seniority_fit": "exact",
+    "red_flags": [],
+    "ats_keywords": [
+      "Ecommerce Manager",
+      "e-commerce",
+      "digital commerce",
+      "FMCG",
+      "GCC",
+      "MENA",
+      "quick-commerce",
+      "Noon",
+      "Talabat",
+      "Careem",
+      "retail media",
+      "ROAS",
+      "GMV",
+      "key account management",
+      "P&L",
+      "digital shelf"
+    ],
+    "reasoning": "Near-perfect fit. FMCG e-commerce in the UAE is exactly Paula's lane: hands-on Noon/Talabat/Careem integration, Alibaba/Miravia key-account pedigree (+30% GMV QoQ), and retail-media/ROAS fluency, all from a Dubai base (residence visa, zero relocation). CV already submitted; this pass is to connect with the MENA e-commerce + UAE commercial team.",
+    "scored_by": "manual:paula-decision",
+    "freshness": "fresh",
+    "discovered_at": "2026-06-12T03:49:27.376074+00:00",
+    "status": "Applied"
   }
 ]
