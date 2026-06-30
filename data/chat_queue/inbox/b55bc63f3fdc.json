@@ -1,0 +1,74 @@
+{
+  "id": "b55bc63f3fdc",
+  "kind": "structured",
+  "tier": "sonnet",
+  "system": "You are a senior recruiter specializing in FMCG, Beauty, and E-Commerce\nroles in the GCC region (Dubai, UAE). You evaluate job postings against a candidate's\nprofile and provide a structured fit score.\n\nBe rigorous but fair:\n- A perfect match (same sector, same role title, same seniority, key skills align) = 85-100\n- Good match (adjacent sector, similar role, most skills align) = 65-84\n- Partial match (some overlap but missing key requirements) = 40-64\n- Poor match (different sector, different seniority, few skills match) = 0-39\n\nPay special attention to:\n1. UAE quick-commerce experience (Noon, Talabat, Careem, Deliveroo) is RARE and extremely valuable\n2. FMCG + Beauty combined experience is a strong differentiator\n3. The candidate already has UAE visa — zero relocation cost\n4. NPD end-to-end experience across 50+ countries is unusual at this seniority\n5. +30% GMV QoQ at Alibaba is a strong metric\n",
+  "user": "Analyze this job posting against the candidate profile below.\n\n## Job Posting\n- Title: Trade & Shopper Marketing Manager – GCC\n- Company: Henkel\n- Location: Dubai, DU, AE\n- Source: indeed\n- Salary: Not specified\n\n### Job Description\n#### **About this Position**\n\nThe Trade \\& Shopper Marketing Manager is responsible for developing and executing channel and shopper marketing strategies across GCC markets to drive category growth, increase market share, strengthen retailer partnerships, and improve in\\-store execution excellence.  \n\n  \n\n#### **What you´ll do**\n\n* Develop and execute GCC trade and shopper marketing strategies aligned with brand and commercial objectives.\n* Translate category and shopper insights into actionable channel and customer plans.\n* Drive Perfect Store execution standards across key channels and customers.\n* Lead annual trade activation\\-calendar planning in alignment with marketing and sales priorities.\n* Work closely with Key Account Managers and Sales teams to develop customer business plans and channel strategies\n* Analyze shopper behavior, category trends, competitor activities, and market dynamics to identify growth opportunities\n* Design and implement impactful shopper activation programs, promotions, and in\\-store campaigns to drive sales and brand visibility.\n* Manage retailer activation plans for key accounts and strategic customers and ensure strong execution excellence across all customer touchpoints.\n* Partner with Sales, Marketing, Supply Chain, and Finance teams to deliver business targets and maximize ROI.\n* Support new product launches through go\\-to\\-market planning, launch execution, and post\\-evaluation analysis.\n* Manage trade marketing budgets effectively with strong focus on ROI and efficiency.\n* Prepare regular business reviews, insights, and recommendations for senior\n\n\n#### **What makes you a good fit**\n\n* Bachelor’s degree in Marketing, Business Administration, or related field.\n* 4–6 years of experience in Trade Marketing, Shopper Marketing, Category Management, or Sales within FMCG.\n* Strong understanding of GCC retail landscape, including Modern Trade and Traditional Trade channels.\n* Experience working with key retailers across GCC markets.\n* Strong analytical and commercial acumen with ability to derive actionable insights from data.\n* Proven experience in managing promotions, activations, and merchandising initiatives.\n* Excellent stakeholder management and communication skills.\n* High ownership mindset with strong execution capabilities.\n* Fluency in English required.\n\n\nAt Henkel, we come from a broad range of backgrounds, perspectives, and life experiences. We believe the uniqueness of all our employees is the power in us. Become part of the team and bring your uniqueness to us! We look for a diverse team of individuals who possess different backgrounds, experiences, personalities and mindsets.\n\n## Candidate Profile\nCandidate: Paula De Francisco Pérez\nLocation: Dubai, UAE (UAE Residence Visa)\nHeadline: Brand Manager · E-Commerce · Key Account Management · Trade Marketing\n\nTarget titles: Brand Manager, Senior Brand Manager, Marketing Manager, Senior Marketing Manager, E-Commerce Manager, Digital Marketing Manager, Key Account Manager, Senior Key Account Manager, Trade Marketing Manager, Category Manager, Commercial Manager, Shopper Marketing Manager, Brand & Marketing Manager, Marketing & E-Commerce Manager\nTarget sectors: FMCG, Beauty & Fragrances, Personal Care, Food & Beverage, Quick-commerce, E-commerce, Retail / Modern Trade, Luxury / Fashion, Consumer Goods\nSeniority: Mid, Senior\n\nExperience:\n  - Brand & Marketing Manager @ DoFreeze LLC (Oct 2025 – Present)\n    * Lead NPD end-to-end for 6 product launches (brief, packaging, pricing, go-to-market) across GCC, MENA, Asia, Europe, USA and Africa\n    * Built and scaled the influencer marketing programme from zero, managing 25–50 influencers per campaign to drive brand awareness and sell-out\n    * Integrated brands into key UAE quick-commerce platforms (Noon, Careem, Talabat, Deliveroo), managing onboarding, product listings, promotional mechanics and retail execution across modern trade channels\n    * Manage and optimise the e-commerce store — improving content, UX, conversion rate and promotional mechanics; own A&P budget allocation and commercial planning\n  - Key Account Manager – Beauty, Fragrances & Fashion @ Miravia / AliExpress (Alibaba Group) (Nov 2023 – Oct 2025)\n    * Managed 42 key accounts across beauty, fragrances and fashion, achieving +30% GMV growth QoQ through pricing strategy, assortment optimisation and targeted promotions\n    * Owned the Flash Sales channel for Beauty, Fashion & Home, reporting directly to the CEO and executing strategic commercial plans aligned with P&L targets\n    * Led category expansion as PIC Fragrances, onboarding 30+ new stores in two months via strategic promotions and trend-driven products, including Arabian Fragrances\n    * Created and led the Beauty Club and Hot on Social projects, boosting brand visibility, customer loyalty and positioning Miravia as a beauty and lifestyle destination\n  - Account Manager – XL Accounts @ Glovo (Sep 2022 – Nov 2023)\n    * Part of the team that built out Glovo's Retail vertical — onboarding fashion and lifestyle brands to the platform and expanding the marketplace beyond food delivery into apparel, beauty and non-food categories\n    * Managed strategic key accounts (KFC, Taco Bell, La Tagliatella, Sushi Shop) and supported integration of new fashion partners, driving GMV growth through data-led planning and bespoke marketing activations\n    * Led cross-functional teams across marketing, logistics and customer support to deliver seamless campaigns and increase order volume\n    * Negotiated and closed high-impact commercial deals maximising profitability for both Glovo and partners\n  - Trainee – Category Planning @ Mondelez International (Aug 2021 – Aug 2022)\n    * Conducted sell-in/sell-out analysis, evaluated promotional effectiveness and built performance reports for the chocolate category\n    * Identified growth opportunities and contributed to successful NPD launches including Milka Spread and Mini Suchard\n  - Sales Associate – Las Rozas Village Factory Store @ Massimo Dutti (Inditex) (Jun 2018 – Jun 2019)\n    * First-hand exposure to Inditex retail operations, visual merchandising standards and store cadence at one of the brand's main factory outlets\n    * Customer-facing sales, styling advice and shop-floor management — learned the operating rhythm and product flow that defines Inditex's retail playbook\n    * Foundation in fashion retail, brand presentation and premium customer experience that informs current brand and key account work\n\nCore skills:\n  brand_marketing: brand strategy, NPD end-to-end, influencer marketing, shopper marketing, trade marketing, A&P budget management, omnichannel campaigns, go-to-market\n  ecommerce_digital: e-store management, quick-commerce, Noon, Talabat, Careem, Deliveroo, UX optimisation, Google Ads, Instagram, TikTok, Facebook, Pinterest, EDM, process automation\n  commercial: key account management, distributor management, modern trade, general trade, negotiation, pricing strategy, assortment planning, category management, planogram, forecasting\n  data_analytics: P&L management, KPI tracking, sell-in/sell-out, ROI, ROAS, retail execution, Nielsen, Looker, Kantar, Salesforce, SAP, Planorama\n  tools: Microsoft Office (Expert), Google Ads, Salesforce, SAP, Looker, Kantar, Nielsen, Planorama, Foxy, Canva\n\nKey differentiators:\n  - Hands-on UAE quick-commerce experience (Noon, Talabat, Careem, Deliveroo) — extremely rare in the market\n  - Global NPD exposure across 50+ countries\n  - +30% GMV QoQ track record with 42 key accounts\n  - Beauty, Fragrances & Fashion specialization — three of Dubai's most active sectors\n  - Inditex-trained at the start of her career (Massimo Dutti) — operational fluency in premium fashion retail\n  - Already based in Dubai with residence visa — zero relocation cost or timeline for employer\n  - Bilingual Spanish/English (C1) — valuable for EU/LATAM brands expanding in GCC\n  - Trained at Alibaba (Miravia) — deep e-commerce mechanics knowledge\n\nLanguages: Spanish (Native), English (Professional C1)\n\nUse the submit_analysis tool to provide your structured analysis.",
+  "tool_schema": {
+    "name": "submit_analysis",
+    "description": "Submit the structured job analysis result",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "score": {
+          "type": "integer",
+          "description": "Fit score 0-100",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "skills_match": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Skills from the candidate's profile that match this job"
+        },
+        "missing_skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Skills required by the job that the candidate lacks"
+        },
+        "sector_fit": {
+          "type": "string",
+          "description": "How well the candidate's sector experience matches (exact/adjacent/weak/none)"
+        },
+        "seniority_fit": {
+          "type": "string",
+          "description": "How well the seniority level matches (exact/stretch-up/overqualified/underqualified)"
+        },
+        "red_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Any concerns about this job (vague description, unrealistic requirements, etc.)"
+        },
+        "ats_keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Keywords from the job description that should be in the candidate's CV"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "1-3 sentence explanation of the score"
+        }
+      },
+      "required": [
+        "score",
+        "skills_match",
+        "missing_skills",
+        "sector_fit",
+        "seniority_fit",
+        "ats_keywords",
+        "reasoning"
+      ]
+    }
+  },
+  "tool_name": "submit_analysis",
+  "caller": "career_ops.analyzer",
+  "created_at": "2026-05-30T09:32:15.022280+00:00"
+}
