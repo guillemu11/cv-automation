@@ -19,7 +19,7 @@ from ..analyzer import JobAnalysis
 from ..config import settings
 from ..discovery.normalize import Job
 from . import angles
-from ._paths import job_output_dir
+from ._paths import job_subdir
 
 logger = logging.getLogger(__name__)
 
@@ -121,7 +121,7 @@ Write a cover letter for this job application.
 {p['professional_summary']}
 
 Key metrics to use:
-- +30% GMV growth QoQ managing 42 key accounts at Alibaba (Miravia/AliExpress)
+- +30% GMV growth QoQ managing 42 key accounts at Alibaba Group (Miravia)
 - 6 NPD launches end-to-end across 50+ countries at DoFreeze
 - Scaled influencer programme from zero to 25-50 creators per campaign
 - UAE quick-commerce platforms: Noon, Talabat, Careem, Deliveroo
@@ -194,7 +194,7 @@ def _fill_template(paragraphs: dict, job: Job, contact_name: str | None) -> Path
 
     company_safe = _sanitize(job.company)
     role_safe = _sanitize(job.title)
-    out_path = job_output_dir(job) / f"CL_Paula_{company_safe}_{role_safe}.docx"
+    out_path = job_subdir(job, "cv_cl") / f"CL_Paula_{company_safe}_{role_safe}.docx"
     doc.save(str(out_path))
     return out_path
 

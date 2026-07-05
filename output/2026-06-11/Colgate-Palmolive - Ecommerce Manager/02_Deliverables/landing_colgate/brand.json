@@ -1,0 +1,23 @@
+{
+  "name": "Colgate-Palmolive",
+  "tagline_real": "Smile. The world smiles with you.",
+  "palette": {
+    "primary": "#FB0007",
+    "secondary": "#C4161C",
+    "accent": "#00B5E2",
+    "bg": "#FFFFFF",
+    "surface": "#FFF5F5",
+    "text": "#0E1726",
+    "muted": "#5A6473"
+  },
+  "typography": {
+    "display": "Poppins",
+    "body": "Inter",
+    "fallback": "system-ui, sans-serif"
+  },
+  "logo_hint": "Colgate red wordmark on white; rounded geometric sans; bright, clean, trusted",
+  "tone": ["trusted", "optimistic", "caring", "bright", "clean", "data-confident"],
+  "role_context": "Ecommerce Manager — Dubai. Digital commerce strategy, digital shelf excellence, content that converts, full-funnel, retail media, quick-commerce, P&L, 360 marketing.",
+  "market": "UAE e-commerce: Noon, Amazon.ae, Carrefour, quick-commerce (Noon Minutes, Talabat, Careem)",
+  "source_url": "https://www.colgatepalmolive.com"
+}

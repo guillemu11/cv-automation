@@ -477,7 +477,19 @@ def main(job_id: str, landings_raw: tuple, attachments_raw: tuple, mode: str,
     company = job["company"]
     if out_path is None:
         slug = re.sub(r"[^A-Za-z0-9]+", "_", company)
-        out_path = str(settings.output_dir / f"{slug}_Outreach_Pack.docx")
+        # Standing rule: outreach packs live in the position's 03_Outreach/.
+        from career_ops.discovery.normalize import Job
+        from career_ops.generators._paths import job_subdir
+        job_obj = Job(
+            id=job.get("id", ""),
+            title=job.get("title", ""),
+            company=company,
+            location=job.get("location", ""),
+            url=job.get("url", ""),
+            source=job.get("source", "indeed"),
+            description="",
+        )
+        out_path = str(job_subdir(job_obj, "outreach") / f"{slug}_Outreach_Pack.docx")
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
 

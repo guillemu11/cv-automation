@@ -1,5 +1,5 @@
 """Content generators — CV, cover letter, outreach, deliverables, and form responses."""
-from ._paths import job_output_dir
+from ._paths import job_output_dir, job_subdir
 from .cover_letter import generate_cover_letter
 from .cv_generator import generate_cv
 from .deliverables import generate_all_deliverables, generate_deliverable
@@ -18,4 +18,5 @@ __all__ = [
     "generate_landing",
     "landing_to_pdf",
     "job_output_dir",
+    "job_subdir",
 ]

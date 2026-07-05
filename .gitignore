@@ -58,3 +58,8 @@ wiki/raw/
 wiki/.obsidian/workspace*
 wiki/.obsidian/cache
 wiki/.obsidian/graph.json
+
+# Chrome app profile used by the dashboard browser worker (session cookies — never commit)
+data/chrome_app_profile/
+# One-off installer script downloaded for Higgsfield CLI setup
+higgsfield_install.sh

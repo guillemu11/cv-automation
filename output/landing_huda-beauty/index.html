@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0d">
+  <title>Sub-Hero — Huda Beauty</title>
+  <meta name="description" content="Every launch deserves its own spotlight. A 360 launch concept for Huda Beauty's hero and sub-hero products.">
+  <meta property="og:title" content="Sub-Hero — Huda Beauty">
+  <meta property="og:description" content="Every launch deserves its own spotlight. A 360 launch concept for Huda Beauty.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --noir:#0b0b0d;
+      --noir2:#16131a;
+      --pink:#ee0d88;
+      --text:#f6f1f4;
+      --muted:rgba(246,241,244,.6);
+      --line:rgba(246,241,244,.14);
+      --panel:#f4eef1;
+      --display:'Playfair Display',Georgia,serif;
+      --body:'Inter',system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--noir);color:var(--text);font-family:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+    img{display:block;max-width:100%}
+
+    .top-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:24px 40px;background:linear-gradient(to bottom,rgba(11,11,13,.7),rgba(11,11,13,0))}
+    .brand-mark{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.04em}
+    .brand-mark span{color:var(--pink)}
+    .campaign-chip{font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--pink)}
+
+    .prodframe{background:var(--panel);border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .prodframe img{object-fit:cover;width:100%;height:100%;transition:transform 1.2s ease}
+    .prodframe:hover img{transform:scale(1.04)}
+
+    /* hero full-bleed editorial */
+    .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .hero::after{content:"";position:absolute;inset:0;z-index:1;
+      background:linear-gradient(90deg,rgba(11,11,13,.95) 0%,rgba(11,11,13,.78) 30%,rgba(11,11,13,.35) 60%,rgba(11,11,13,.05) 100%)}
+    .hero-inner{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 40px 92px;width:100%}
+    .hero-kicker{font-size:.72rem;letter-spacing:.38em;text-transform:uppercase;color:var(--pink);margin-bottom:28px;opacity:0;animation:fadeUp 1s .2s forwards}
+    .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.8rem,8vw,6.6rem);line-height:1;letter-spacing:-.01em;max-width:15ch}
+    .hero h1 span{display:block;opacity:0;animation:fadeUp 1.1s forwards}
+    .hero h1 span:nth-child(1){animation-delay:.3s}
+    .hero h1 span:nth-child(2){animation-delay:.55s;font-style:italic;color:var(--pink)}
+    .hero-sub{margin-top:30px;max-width:46ch;font-size:1.04rem;color:var(--text);opacity:0;animation:fadeUp 1.1s .85s forwards}
+    .hero-hint{position:absolute;bottom:34px;right:40px;z-index:2;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);opacity:0;animation:fadeUp 1.1s 1.2s forwards}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    section.block{padding:120px 0;border-top:1px solid var(--line)}
+    .eyebrow{font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--pink);margin-bottom:26px}
+    .section-heading{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,3.2vw,2.9rem);margin-bottom:48px;letter-spacing:-.01em}
+
+    .insight-stat{font-family:var(--display);font-weight:600;font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:1.08;letter-spacing:-.01em;max-width:20ch}
+    .insight-stat em{font-style:italic;color:var(--pink)}
+    .insight-body{max-width:54ch;margin-top:28px;font-size:1.14rem}
+
+    .collection{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .ptile .prodframe{aspect-ratio:3/4}
+    .ptile .name{margin-top:14px;font-family:var(--display);font-weight:500;font-size:.95rem}
+    .ptile .type{font-size:.74rem;color:var(--muted);letter-spacing:.02em}
+
+    .manifesto{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+    .manifesto-body p{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.4vw,1.95rem);line-height:1.4;margin-bottom:24px}
+    .manifesto-body p.small{font-family:var(--body);font-weight:400;font-size:1.02rem;line-height:1.75;color:var(--muted)}
+    .manifesto-img{overflow:hidden;border-radius:8px}
+    .manifesto-img img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1.6s ease}
+    .manifesto-img:hover img{transform:scale(1.05)}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .card{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--noir2);transition:transform .4s ease}
+    .card:hover{transform:translateY(-5px)}
+    .card .thumb{height:210px;overflow:hidden}
+    .card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+    .card:hover .thumb img{transform:scale(1.05)}
+    .card .cbody{padding:26px 30px 30px}
+    .card-no{font-family:var(--display);font-weight:500;font-style:italic;font-size:1.05rem;color:var(--pink)}
+    .card h3{font-family:var(--display);font-weight:600;font-size:1.45rem;margin:6px 0 12px;letter-spacing:-.01em}
+    .card p{color:var(--muted);font-size:.98rem}
+
+    /* KPI band */
+    .kpis-section{position:relative;padding:124px 0;overflow:hidden;border-top:1px solid var(--line)}
+    .kpis-section::before{content:"";position:absolute;inset:0;background:url(assets/swatch.png) center/cover no-repeat;opacity:.22;z-index:0}
+    .kpis-section::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.78),rgba(11,11,13,.94));z-index:0}
+    .kpis-section .wrap{position:relative;z-index:1}
+    .kpis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(246,241,244,.22)}
+    .kpi{padding:40px 26px 40px 0;border-bottom:1px solid rgba(246,241,244,.22)}
+    .kpi-num{font-family:var(--display);font-weight:600;font-size:2.6rem;line-height:1;color:var(--pink)}
+    .kpi-label{margin-top:14px;font-size:.9rem;color:var(--muted)}
+
+    .credits{padding:96px 0 76px;border-top:1px solid var(--line);text-align:center}
+    .credits-line{font-family:var(--display);font-weight:500;font-size:1.3rem}
+    .credits-line strong{color:var(--pink)}
+    .credits-disclaimer{margin-top:16px;font-size:.78rem;color:var(--muted)}
+    .credits a{color:var(--pink)}
+
+    [data-reveal]{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s ease}
+    [data-reveal].in{opacity:1;transform:none}
+
+    @media (max-width:860px){
+      .manifesto{grid-template-columns:1fr;gap:36px}
+      .manifesto-img{order:-1;max-width:420px}
+    }
+    @media (max-width:680px){
+      .wrap,.hero-inner{padding-left:24px;padding-right:24px}
+      .top-nav{padding:18px 24px}
+      .collection{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:1fr}
+      .kpis-grid{grid-template-columns:1fr 1fr}
+      section.block{padding:84px 0}
+      .hero-hint{right:24px}
+    }
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}[data-reveal]{opacity:1;transform:none;transition:none}.prodframe img,.card .thumb img,.manifesto-img img{transition:none}}
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="brand-mark">HUDA<span>.</span>BEAUTY</div>
+    <div class="campaign-chip">Sub-Hero</div>
+  </nav>
+
+  <header class="hero">
+    <img class="hero-img" src="assets/hero.png" alt="Bold hot-pink beauty editorial eye">
+    <div class="hero-inner">
+      <div class="hero-kicker">A 360 launch concept · Global brand marketing</div>
+      <h1><span>Every launch</span><span>deserves a spotlight.</span></h1>
+      <p class="hero-sub"><strong>Sub-Hero</strong> stops treating sub-hero products like shrunk-down heroes — and gives every drop a motion built to convert, not just to reach.</p>
+    </div>
+    <div class="hero-hint">Scroll</div>
+  </header>
+
+  <main>
+    <section class="block wrap" data-reveal>
+      <div class="eyebrow">The insight</div>
+      <div class="insight-stat">Sub-heroes don't <em>flop.</em> They get the hero's hand-me-downs.</div>
+      <p class="insight-body">Most sub-hero launches inherit a scaled-down version of the hero playbook — and underperform for it. Give them their own fit-for-purpose motion — creator-led, e-commerce-first, conversion-tracked — and the supporting cast starts selling like a lead.</p>
+    </section>
+
+    <section class="block wrap" data-reveal>
+      <div class="eyebrow">The range · best-sellers</div>
+      <div class="collection">
+        <div class="ptile"><div class="prodframe"><img src="assets/grunge.webp" alt="Huda Beauty Pretty Grunge palette" loading="lazy"></div><div class="name">Pretty Grunge</div><div class="type">Eyeshadow Palette</div></div>
+        <div class="ptile"><div class="prodframe"><img src="assets/icynude.webp" alt="Huda Beauty Icy Nude palette" loading="lazy"></div><div class="name">Icy Nude</div><div class="type">Eyeshadow Palette</div></div>
+        <div class="ptile"><div class="prodframe"><img src="assets/blush.webp" alt="Huda Beauty Blush Filter" loading="lazy"></div><div class="name">Blush Filter</div><div class="type">Liquid Blush</div></div>
+        <div class="ptile"><div class="prodframe"><img src="assets/lip.webp" alt="Huda Beauty Lip Contour Stain" loading="lazy"></div><div class="name">Lip Contour</div><div class="type">Lip Stain</div></div>
+        <div class="ptile"><div class="prodframe"><img src="assets/mascara.webp" alt="Huda Beauty 1 Coat WOW mascara" loading="lazy"></div><div class="name">1 Coat WOW!</div><div class="type">Mascara</div></div>
+      </div>
+    </section>
+
+    <section class="block wrap" data-reveal>
+      <div class="manifesto">
+        <div>
+          <div class="eyebrow">The manifesto</div>
+          <div class="manifesto-body">
+            <p>Beauty is bought on discovery, not on reach.</p>
+            <p>A community-first brand doesn't need every launch to be loud — it needs every launch to be true to the product and trackable to sell-out.</p>
+            <p class="small">Sub-Hero is one brief, one truth, one consistent story across messaging, paid, in-store and e-commerce — with creators briefed to the SKU and measured to conversion, not impressions.</p>
+          </div>
+        </div>
+        <div class="manifesto-img"><img src="assets/swatch.png" alt="Hot-pink and nude makeup swatches editorial"></div>
+      </div>
+    </section>
+
+    <section class="block wrap" data-reveal>
+      <h2 class="section-heading">The playbook</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="thumb"><img src="assets/palette.png" alt="Luxury eyeshadow palette macro" loading="lazy"></div>
+          <div class="cbody">
+            <div class="card-no">01</div>
+            <h3>Tiered launch motions</h3>
+            <p>A distinct sub-hero playbook — tighter creator set, owned &amp; e-commerce content led, lighter paid — so sub-heroes launch fit-for-purpose instead of inheriting a hero's budget logic.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="thumb"><img src="assets/hero.png" alt="Bold beauty editorial eye" loading="lazy"></div>
+          <div class="cbody">
+            <div class="card-no">02</div>
+            <h3>Creator-to-conversion</h3>
+            <p>Creators briefed against the launch SKU with trackable links and post-campaign sell-out analysis — turning influencer spend from awareness into measurable revenue.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="thumb"><img src="assets/swatch.png" alt="Makeup swatches" loading="lazy"></div>
+          <div class="cbody">
+            <div class="card-no">03</div>
+            <h3>One brief, one truth</h3>
+            <p>Every touchpoint — messaging, paid, in-store, e-commerce, PR — ships from a single brief and asset tracker, with a cross-functional check before go-live. No drift across markets.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="thumb"><img src="assets/lipstick.png" alt="Glossy hot-pink lipstick macro" loading="lazy"></div>
+          <div class="cbody">
+            <div class="card-no">04</div>
+            <h3>E-commerce-first</h3>
+            <p>Sub-heroes launch where they convert: PDP content, bundles and quick-commerce visibility built in from day one, not bolted on after the hero moment passes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kpis-section" data-reveal>
+      <div class="wrap">
+        <h2 class="section-heading">How we'd measure it</h2>
+        <div class="kpis-grid">
+          <div class="kpi"><div class="kpi-num">Sell-out</div><div class="kpi-label">Per-SKU conversion, not campaign reach</div></div>
+          <div class="kpi"><div class="kpi-num">25–50</div><div class="kpi-label">Creators per campaign — programme I built from zero</div></div>
+          <div class="kpi"><div class="kpi-num">+30%</div><div class="kpi-label">GMV QoQ — benchmark from my beauty accounts</div></div>
+          <div class="kpi"><div class="kpi-num">On-time</div><div class="kpi-label">Launches shipped consistent &amp; in-scope across teams</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="credits wrap">
+    <p class="credits-line">Proposed by <strong>Paula De Francisco</strong> — application for <em>Assistant Manager, Global Brand Marketing</em> at Huda Beauty.</p>
+    <p class="credits-disclaimer">Fictional campaign concept created as a work sample · product imagery © Huda Beauty, used for illustration only · not affiliated with or endorsed by Huda Beauty.<br>
+      <a href="mailto:paulich98@hotmail.com">paulich98@hotmail.com</a> · <a href="https://linkedin.com/in/paula-de-francisco-perez">LinkedIn</a></p>
+  </footer>
+
+  <script>
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16});
+    document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>

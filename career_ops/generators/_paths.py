@@ -31,3 +31,35 @@ def job_output_dir(job: Job) -> Path:
     out = settings.output_dir / safe
     out.mkdir(parents=True, exist_ok=True)
     return out
+
+
+# Standing rule (set 2026-05-31): every position folder is organised
+# día → posición → category. Generators must write into the matching
+# subfolder so positions are born organised and nobody reorders by hand.
+# The dashboard indexer scans recursively, so these subfolders are
+# transparent to file matching.
+_CATEGORY_SUBDIRS = {
+    "cv_cl": "01_CV_y_Carta",          # CV_* + CL_*
+    "deliverables": "02_Deliverables",  # Deliverable_* + landings + decks
+    "outreach": "03_Outreach",          # *_Outreach_Pack.docx, Outreach.md, contacts_*
+    "application": "04_Aplicacion",     # FORM_*, LINKS_*, README, manifests
+}
+
+
+def job_subdir(job: Job, category: str) -> Path:
+    """Return the standard category subfolder inside the job's output dir.
+
+    ``category`` is one of ``cv_cl``, ``deliverables``, ``outreach``,
+    ``application`` — mapped to the ``01_``…``04_`` numbered folders. Creates
+    it if missing.
+    """
+    try:
+        name = _CATEGORY_SUBDIRS[category]
+    except KeyError:
+        raise ValueError(
+            f"unknown output category {category!r}; "
+            f"expected one of {sorted(_CATEGORY_SUBDIRS)}"
+        ) from None
+    out = job_output_dir(job) / name
+    out.mkdir(parents=True, exist_ok=True)
+    return out

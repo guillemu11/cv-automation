@@ -21,7 +21,7 @@ from ..config import settings
 from ..discovery.normalize import Job
 from . import angles
 from . import landing_template
-from ._paths import job_output_dir
+from ._paths import job_subdir
 
 logger = logging.getLogger(__name__)
 
@@ -460,7 +460,7 @@ def generate_landing(job: Job, analysis: JobAnalysis) -> Path | None:
         )
 
     content = _build_content(job, claude_data)
-    landing_dir = job_output_dir(job) / "landing"
+    landing_dir = job_subdir(job, "deliverables") / "landing"
     landing_dir.mkdir(parents=True, exist_ok=True)
 
     files = landing_template.render(content, _DEFAULT_BRAND, landing_dir=landing_dir)

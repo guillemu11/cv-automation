@@ -22,7 +22,7 @@ from .. import llm
 from ..analyzer import JobAnalysis
 from ..config import settings
 from ..discovery.normalize import Job
-from ._paths import job_output_dir
+from ._paths import job_subdir
 
 logger = logging.getLogger(__name__)
 
@@ -323,7 +323,7 @@ Current role: {p['experience'][0]['role']} at {p['experience'][0]['company']} ({
 Previous: {p['experience'][1]['role']} at {p['experience'][1]['company']} ({p['experience'][1]['dates']})
 
 Key metrics:
-- +30% GMV growth QoQ managing 42 key accounts at Alibaba (Miravia/AliExpress)
+- +30% GMV growth QoQ managing 42 key accounts at Alibaba Group (Miravia)
 - 6 NPD launches end-to-end across 50+ countries at DoFreeze
 - Scaled influencer programme from zero to 25-50 creators per campaign
 - UAE quick-commerce platforms: Noon, Talabat, Careem, Deliveroo
@@ -405,7 +405,7 @@ def _save_json(responses: FormResponses, job: Job) -> Path:
     """Save form responses as JSON for machine consumption / Phase B."""
     company = _sanitize(job.company)
     role = _sanitize(job.title)
-    path = job_output_dir(job) / f"FORM_Paula_{company}_{role}.json"
+    path = job_subdir(job, "application") / f"FORM_Paula_{company}_{role}.json"
 
     data = {
         "job_id": job.id,
@@ -494,7 +494,7 @@ def _fill_template(responses: FormResponses, job: Job) -> Path:
 
     company = _sanitize(job.company)
     role = _sanitize(job.title)
-    out_path = job_output_dir(job) / f"FORM_Paula_{company}_{role}.docx"
+    out_path = job_subdir(job, "application") / f"FORM_Paula_{company}_{role}.docx"
     doc.save(str(out_path))
     return out_path
 

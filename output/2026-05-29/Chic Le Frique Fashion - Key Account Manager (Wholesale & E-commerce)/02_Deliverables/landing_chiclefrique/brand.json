@@ -1,0 +1,22 @@
+{
+  "name": "Chic Le Frique",
+  "tagline_real": "Crafted for the bold, designed to be timeless.",
+  "palette": {
+    "primary": "#161210",
+    "secondary": "#F7F2EC",
+    "accent": "#B25B3E",
+    "accent_2": "#E8B84B",
+    "blush": "#E3B3A6",
+    "bg": "#F7F2EC",
+    "text": "#161210"
+  },
+  "typography": {
+    "display": "Fraunces",
+    "body": "Inter",
+    "fallback": "Georgia, serif"
+  },
+  "logo_hint": "Lowercase 'chiclefrique' wordmark, clean modern sans-serif, high-contrast black-on-white minimalism",
+  "tone": ["feminine", "bold", "timeless", "editorial", "confident", "resort-luxe"],
+  "source_url": "https://chiclefrique.com",
+  "brand_notes": "Dubai women's fashion e-tailer (founded 2019), own line + curated international labels (Runaway, Bardot, ASTR, Lioness). Real site is a clean Montserrat-style sans on white with warm accents (buttercup, fire red, burnt copper, blush). For an editorial, premium pitch feel I pair a Fraunces serif display (bold + timeless, matches the tagline) with Inter body, on a warm ivory (#F7F2EC) ground with a burnt-copper (#B25B3E) accent and buttercup (#E8B84B) / blush (#E3B3A6) secondaries. Resort-luxe, feminine, confident. Espresso-near-black text on ivory passes WCAG AA."
+}

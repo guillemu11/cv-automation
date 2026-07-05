@@ -22,7 +22,7 @@ from ..analyzer import JobAnalysis
 from ..config import settings
 from ..discovery.normalize import Job
 from . import angles
-from ._paths import job_output_dir
+from ._paths import job_subdir
 
 logger = logging.getLogger(__name__)
 
@@ -303,7 +303,7 @@ def _fill_template(content: dict, job: Job) -> Path:
     # -- Save --
     company_safe = _sanitize_filename(job.company)
     role_safe = _sanitize_filename(job.title)
-    out_path = job_output_dir(job) / f"CV_Paula_{company_safe}_{role_safe}.docx"
+    out_path = job_subdir(job, "cv_cl") / f"CV_Paula_{company_safe}_{role_safe}.docx"
     doc.save(str(out_path))
     return out_path
 

@@ -21,7 +21,7 @@ from ..analyzer import JobAnalysis
 from ..config import settings
 from ..discovery.normalize import Job
 from . import angles
-from ._paths import job_output_dir
+from ._paths import job_subdir
 
 logger = logging.getLogger(__name__)
 
@@ -435,7 +435,7 @@ def _render_pdf(content: dict, deliverable_type: str, job: Job) -> Path:
     company_safe = _sanitize(job.company)
     role_safe = _sanitize(job.title)
     type_safe = deliverable_type.replace("_", "-")
-    docx_path = job_output_dir(job) / f"Deliverable_Paula_{company_safe}_{role_safe}_{type_safe}.docx"
+    docx_path = job_subdir(job, "deliverables") / f"Deliverable_Paula_{company_safe}_{role_safe}_{type_safe}.docx"
     doc.save(str(docx_path))
 
     pdf_path = docx_path.with_suffix(".pdf")

@@ -1,5 +1,69 @@
 [
   {
+    "id": "colgate-ecom-174114",
+    "title": "Ecommerce Manager",
+    "company": "Colgate-Palmolive",
+    "location": "Dubai, United Arab Emirates",
+    "url": "https://jobs.colgate.com/job/Dubai-Ecommerce-Manager-DU/174114-en_US/",
+    "source": "company_site",
+    "description": "Ecommerce Manager — Colgate-Palmolive, Dubai, UAE (Hybrid). Job #174114.\n\nKey Responsibilities:\n- Develop digital commerce strategies with a longer term vision including growth\n  ambition, customer prioritization and key business capabilities.\n- Build and deepen strategic alignment with customers and cross functional teams\n  to elevate growth with deep focus on value creation.\n- Ensure continuous improvement in eCapabilities for DAM, Content, Packaging,\n  Net Sales, P&L, Analytics reporting.\n- Use data and analytics to drive better and bolder decision-making.\n- Launch exciting, personalized, differentiated innovation ensuring best in class\n  execution.\n- Develop rich content that converts providing higher click & conversion rates.\n- Define all metrics that matter for digital shelf excellence, review critical\n  metrics through a scorecard and recommend corrective actions.\n- Leverage digital to drive demand and purchase with a full funnel approach\n  focusing on consumer journeys.\n- Drive category growth across all sub channels and develop promotion strategy.\n- 360 Marketing Communications aligned with consumer marketing across digital\n  platforms.\n- Estimate and track yearly sales, traffic distribution, marketing spending and\n  channel performance for eCommerce retailers.\n- Coordinate digital marketing activities with agencies and digital technology\n  platforms.\n- Work with consumer marketing, retail marketing, key accounts, supply chain and\n  customers to drive commercial strategy.\n\nRequired Qualification:\n- Bachelor's Degree, preferably Economics/Management.\n- Minimum 4 years in eCommerce marketing or account management, preferably\n  multinational FMCG with leading brands.\n- Proficient in English; Microsoft Office / Google Suite.\n",
+    "salary_raw": null,
+    "salary_aed_min": null,
+    "salary_aed_max": null,
+    "posted_date": "2026-06-11",
+    "raw": {
+      "query": "E-Commerce Manager",
+      "via": "Colgate Careers",
+      "job_number": "174114"
+    },
+    "ai_score": 93,
+    "ai_tier": "Hot",
+    "skills_match": [
+      "Digital commerce strategy",
+      "eCommerce retailers",
+      "Digital shelf",
+      "Content that converts / CRO",
+      "Full-funnel digital media",
+      "Key account management",
+      "Category growth & promotion strategy",
+      "Analytics, P&L & scorecards",
+      "360 marketing",
+      "FMCG / multinational"
+    ],
+    "missing_skills": [
+      "DAM tooling (explicit)"
+    ],
+    "sector_fit": "exact",
+    "seniority_fit": "exact",
+    "red_flags": [],
+    "ats_keywords": [
+      "Ecommerce Manager",
+      "digital commerce strategy",
+      "eCommerce retailers",
+      "digital shelf",
+      "content that converts",
+      "conversion rate",
+      "full funnel",
+      "analytics",
+      "scorecard",
+      "P&L",
+      "Net Sales",
+      "category growth",
+      "promotion strategy",
+      "360 marketing",
+      "key accounts",
+      "FMCG",
+      "consumer journeys",
+      "data-driven",
+      "agency management"
+    ],
+    "reasoning": "Near-perfect fit: Paula runs FMCG e-commerce end-to-end (Shopify + UAE quick-commerce digital shelf), manages key accounts (42 at Miravia, +30% GMV QoQ), and is fluent in P&L, ROI/ROAS analytics and full-funnel media — exactly the Colgate eCommerce Manager remit. 4+ yrs FMCG e-commerce/account management, English C1, MS Office expert, already in Dubai on a residence visa.",
+    "scored_by": "manual:claude",
+    "freshness": "fresh",
+    "discovered_at": "2026-06-11T00:00:00+00:00",
+    "status": "CV Ready"
+  },
+  {
     "id": "bee54db7eaa62333",
     "title": "Product/Brand Manager",
     "company": "Topgear Consultants",
@@ -1039,7 +1103,7 @@
     "scored_by": "claude:buscar-trabajos",
     "freshness": "fresh",
     "discovered_at": "2026-05-29T00:00:00+00:00",
-    "status": "CV Ready"
+    "status": "Applied"
   },
   {
     "id": "indeed_expert_rituals_ecommerce",

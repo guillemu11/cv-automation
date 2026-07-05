@@ -401,7 +401,10 @@ def _index_generated_files(jobs: list[dict]) -> dict[str, dict]:
             continue
         if rel.parts and rel.parts[0] in _EXCLUDED_TOP_DIRS:
             continue
-        folder_norm = _norm(rel.parts[0])
+        # Match company+title against the whole folder path (not just the top
+        # level) so it works whether the landing sits at
+        # ``<Position>/02_Deliverables/landing/`` or nested under a date folder.
+        folder_norm = _norm("/".join(rel.parts[:-1]))
         for job_id, (company, title) in job_keys:
             if company and title and _norm(company) in folder_norm and _norm(title) in folder_norm:
                 result[job_id]["landing"] = "/output/" + str(rel).replace("\\", "/")
@@ -605,7 +608,7 @@ async def generate_documents(job_id: str, background_tasks: BackgroundTasks):
 
 def _landing_url_for(job_data: dict) -> str | None:
     """Return the in-dashboard URL to a job's landing, or None if not built yet."""
-    from ..generators._paths import job_output_dir
+    from ..generators._paths import job_subdir
     from ..discovery.normalize import Job
 
     job = Job(
@@ -617,7 +620,7 @@ def _landing_url_for(job_data: dict) -> str | None:
         source=job_data.get("source", "indeed"),
         description="",
     )
-    index = job_output_dir(job) / "landing" / "index.html"
+    index = job_subdir(job, "deliverables") / "landing" / "index.html"
     if not index.exists():
         return None
     rel = index.relative_to(settings.output_dir)
