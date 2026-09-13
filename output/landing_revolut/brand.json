@@ -1,0 +1,20 @@
+{
+  "name": "Revolut",
+  "tagline_real": "One app, all things money",
+  "palette": {
+    "primary": "#4F55F1",
+    "secondary": "#00A87E",
+    "accent": "#191C1F",
+    "bg": "#0B0C10",
+    "text": "#FFFFFF"
+  },
+  "typography": {
+    "display": "Space Grotesk",
+    "body": "Inter",
+    "fallback": "system-ui, sans-serif"
+  },
+  "logo_hint": "Monochrome 'Revolut' wordmark + circular R monogram, white on near-black; premium fintech",
+  "tone": ["premium", "confident", "clear", "modern"],
+  "source_url": "https://www.revolut.com",
+  "notes": "revolut.com 403s automated fetch; tokens confirmed via brand references (Mobbin, CoType Foundry, Revolut design system). Real brand typeface is Aeonik Pro (geometric grotesque) — substituted with Space Grotesk (closest free Google Font) for display, Inter for body. Primary uses Revolut 'primary-bright' cobalt #4F55F1 for legibility on the dark premium bg; canonical cobalt is #494FDF. Teal #00A87E and near-black #191C1F are official Revolut tokens."
+}

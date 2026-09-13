@@ -1,3 +1,4 @@
+2026-07-08  prod  https://landingcolgate.vercel.app · fix: mobile top-bar overlap (fixed→absolute + text-shadow) · deploy landingcolgate-dygvc7wrj · authed guillemu11
 2026-06-26  prod  https://landingcolgate.vercel.app
 # Deploy log — landing_colgate
 
