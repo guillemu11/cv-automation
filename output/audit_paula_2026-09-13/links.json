@@ -1,0 +1,75 @@
+[
+  {
+    "url": "https://dofreeze.ae",
+    "status": 200,
+    "final": "https://dofreeze.ae/",
+    "bytes": 8342
+  },
+  {
+    "url": "https://dofreeze.ae/affiliates",
+    "status": 200,
+    "final": "https://dofreeze.ae/affiliates",
+    "bytes": 9658
+  },
+  {
+    "url": "https://guillemu11.github.io/revolut-no-borders/",
+    "status": 200,
+    "final": "https://guillemu11.github.io/revolut-no-borders/",
+    "bytes": 11890
+  },
+  {
+    "url": "https://landingbyredo.vercel.app",
+    "status": 200,
+    "final": "https://landingbyredo.vercel.app/",
+    "bytes": 15530
+  },
+  {
+    "url": "https://landingcolgate.vercel.app",
+    "status": 200,
+    "final": "https://landingcolgate.vercel.app/",
+    "bytes": 7337
+  },
+  {
+    "url": "https://landinghuda-beauty.vercel.app",
+    "status": 200,
+    "final": "https://landinghuda-beauty.vercel.app/",
+    "bytes": 14915
+  },
+  {
+    "url": "https://landingliptonv2.vercel.app",
+    "status": 200,
+    "final": "https://landingliptonv2.vercel.app/",
+    "bytes": 10081
+  },
+  {
+    "url": "https://landingschwarzkopf.vercel.app",
+    "status": 200,
+    "final": "https://landingschwarzkopf.vercel.app/",
+    "bytes": 7533
+  },
+  {
+    "url": "https://linkedin.com/in/paula-de-francisco-perez",
+    "status": 200,
+    "final": "https://linkedin.com/in/paula-de-francisco-perez",
+    "bytes": 21186
+  },
+  {
+    "url": "https://paula-de-francisco.vercel.app/assets/Paula_De_Francisco_CV_Dubai.pdf",
+    "status": 200,
+    "final": "https://paula-de-francisco.vercel.app/assets/Paula_De_Francisco_CV_Dubai.pdf",
+    "bytes": 255226,
+    "sha256": "ae50cc61432348f647f351c3b43bc3ce1c6944fd56a737c1c1e7125abf3e834a"
+  },
+  {
+    "url": "https://paula-de-francisco.vercel.app/robots.txt",
+    "status": 404,
+    "final": "https://paula-de-francisco.vercel.app/robots.txt",
+    "bytes": 79
+  },
+  {
+    "url": "https://paula-de-francisco.vercel.app/sitemap.xml",
+    "status": 404,
+    "final": "https://paula-de-francisco.vercel.app/sitemap.xml",
+    "bytes": 79
+  }
+]

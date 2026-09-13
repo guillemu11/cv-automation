@@ -1,0 +1,138 @@
+[
+  {
+    "height": 8510,
+    "width": 1440,
+    "sections": [
+      {
+        "tag": "hero is-in",
+        "y": 0,
+        "height": 910
+      },
+      {
+        "tag": "pullquote",
+        "y": 922,
+        "height": 351
+      },
+      {
+        "tag": "about",
+        "y": 1273,
+        "height": 568
+      },
+      {
+        "tag": "proof",
+        "y": 1842,
+        "height": 401
+      },
+      {
+        "tag": "work",
+        "y": 2243,
+        "height": 2351
+      },
+      {
+        "tag": "experience",
+        "y": 4593,
+        "height": 1824
+      },
+      {
+        "tag": "capabilities",
+        "y": 6417,
+        "height": 842
+      },
+      {
+        "tag": "education",
+        "y": 7259,
+        "height": 441
+      },
+      {
+        "tag": "",
+        "y": 7701,
+        "height": 809
+      }
+    ],
+    "cta": [
+      {
+        "text": "Download CV",
+        "y": 796
+      },
+      {
+        "text": "paulich98@hotmail.com",
+        "y": 807
+      },
+      {
+        "text": "LinkedIn",
+        "y": 807
+      }
+    ],
+    "invisible": [],
+    "errors": [],
+    "viewport": "desktop"
+  },
+  {
+    "height": 12137,
+    "width": 390,
+    "sections": [
+      {
+        "tag": "hero is-in",
+        "y": 0,
+        "height": 1047
+      },
+      {
+        "tag": "pullquote",
+        "y": 1059,
+        "height": 317
+      },
+      {
+        "tag": "about",
+        "y": 1376,
+        "height": 672
+      },
+      {
+        "tag": "proof",
+        "y": 2047,
+        "height": 762
+      },
+      {
+        "tag": "work",
+        "y": 2809,
+        "height": 3946
+      },
+      {
+        "tag": "experience",
+        "y": 6755,
+        "height": 2502
+      },
+      {
+        "tag": "capabilities",
+        "y": 9257,
+        "height": 1518
+      },
+      {
+        "tag": "education",
+        "y": 10775,
+        "height": 608
+      },
+      {
+        "tag": "",
+        "y": 11383,
+        "height": 754
+      }
+    ],
+    "cta": [
+      {
+        "text": "Download CV",
+        "y": 890
+      },
+      {
+        "text": "paulich98@hotmail.com",
+        "y": 901
+      },
+      {
+        "text": "LinkedIn",
+        "y": 955
+      }
+    ],
+    "invisible": [],
+    "errors": [],
+    "viewport": "mobile"
+  }
+]
