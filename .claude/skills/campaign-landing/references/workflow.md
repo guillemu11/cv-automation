@@ -70,10 +70,10 @@ Adjust the section list based on the angle. Not every campaign needs all 6.
 
 Two paths:
 
-**Path A — User will generate real assets later.** Produce a `assets/PROMPTS.md` in the output folder listing:
-
-- For each image needed: a Nano Banana 2 prompt following `animation-patterns.md` rules (16×9, 2K, 4 iterations, clean background, reference-image chain for consistency).
-- For any video needed: a Kling / Seedance prompt with keyframe strategy.
+**Path A — Generate real brand stills in-project (preferred when a key is set).** Build a specs list `[{"name","prompt",["aspect_ratio"]}, ...]` and call
+`career_ops.generators.images.generate_batch(specs, "output/landing_<slug>/assets", aspect_ratio="4:5", ext="jpg")`.
+This uses the Google Gemini image API (`gemini-3-pro-image`) and writes real photos straight into `assets/`. Also drop the same prompts into `assets/PROMPTS.md` for the record. Prompt rules: editorial, brand palette only, warm consistent lighting, no text/logos/people/watermark; pass an earlier image via `reference_images` only when you want a tightly matched set (can bleed subjects). Requires a **billing-enabled** `GOOGLE_IMAGE_API_KEY`; if it raises `ImageQuotaError`, fall back to Path B and tell the user to enable billing.
+- For any video needed: a Kling / Seedance prompt with keyframe strategy (video stays out-of-project for now).
 
 **Path B — Generate NOW using palette-based placeholders.** Write simple colored SVG placeholders into `assets/` that use the brand palette and brand typography for text. Never use stock photos. Never use emoji. Output is usable immediately; real assets can replace placeholders later by file-name convention.
 

@@ -1,0 +1,17 @@
+{
+  "name": "Paula De Francisco — personal portfolio",
+  "source_url": "personal brand (editorial warm-paper system)",
+  "palette": {
+    "ink": "oklch(0.18 0.01 60)",
+    "paper": "oklch(0.97 0.008 80)",
+    "paper_deep": "oklch(0.94 0.012 70)",
+    "accent": "oklch(0.55 0.14 35)",
+    "muted": "oklch(0.55 0.005 60)"
+  },
+  "typography": {
+    "display": "Italiana",
+    "body": "Geist"
+  },
+  "tone": ["editorial", "confident", "restrained", "operational", "metrics-first"],
+  "notes": "Design language derived from .impeccable.md 'Landings' spec: AnOther-Magazine discipline, asymmetry, 80/15/5 paper/ink/accent, accent (burnt sienna) used only in pull-quote, hover underlines and stat numbers. No gradients. One inverted ink block (contact)."
+}

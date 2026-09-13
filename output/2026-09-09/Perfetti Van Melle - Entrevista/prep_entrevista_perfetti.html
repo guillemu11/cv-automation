@@ -1,0 +1,678 @@
+<title>Entrevista Perfetti Van Melle</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F6F7FB; --surface:#FFFFFF; --surface-2:#EEF1F8;
+  --ink:#141B2E; --ink-2:#3C4660; --ink-3:#6B7590;
+  --line:#D9DEEA; --line-2:#C3CADB;
+  --blue:#1F4E9C; --blue-ink:#163A75; --blue-soft:#E4ECFA;
+  --candy:#D7263D; --candy-soft:#FBE6E9;
+  --mint:#1E8C7A; --mint-soft:#DDF3EE;
+  --amber:#B8770F; --amber-soft:#FBEED3;
+  --quote-bg:#F1F4FA;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1320; --surface:#171C2C; --surface-2:#1E2436;
+    --ink:#EDF0F7; --ink-2:#C2C9DA; --ink-3:#8A93AA;
+    --line:#2A3247; --line-2:#3A4460;
+    --blue:#7AA5F0; --blue-ink:#A9C4F7; --blue-soft:#1C2A48;
+    --candy:#F26B7C; --candy-soft:#3A1C24;
+    --mint:#5CCBB6; --mint-soft:#15302B;
+    --amber:#E8B45A; --amber-soft:#3A2C12;
+    --quote-bg:#1B2135;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1320; --surface:#171C2C; --surface-2:#1E2436;
+  --ink:#EDF0F7; --ink-2:#C2C9DA; --ink-3:#8A93AA;
+  --line:#2A3247; --line-2:#3A4460;
+  --blue:#7AA5F0; --blue-ink:#A9C4F7; --blue-soft:#1C2A48;
+  --candy:#F26B7C; --candy-soft:#3A1C24;
+  --mint:#5CCBB6; --mint-soft:#15302B;
+  --amber:#E8B45A; --amber-soft:#3A2C12;
+  --quote-bg:#1B2135;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--line-2)}
+a:hover{border-bottom-color:var(--blue)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque","IBM Plex Sans",Helvetica,Arial,sans-serif;text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(30px,4.2vw,44px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:26px;font-weight:700;letter-spacing:-.015em}
+h3{font-size:18px;font-weight:700}
+h4{font-size:15.5px;font-weight:700;color:var(--ink-2)}
+p{margin:0}
+.mono{font-family:"IBM Plex Mono",Menlo,Consolas,monospace}
+.eyebrow{font-family:"IBM Plex Mono",Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.wrap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;max-width:1120px;margin:0 auto;padding:40px 28px 96px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:24px;padding:24px 18px 72px}}
+nav.toc{position:sticky;top:24px;align-self:start;font-size:13.5px}
+nav.toc .eyebrow{margin-bottom:10px}
+nav.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+nav.toc a{display:block;padding:6px 10px;border:0;border-left:2px solid var(--line);color:var(--ink-2);border-radius:0}
+nav.toc a:hover{color:var(--ink);border-left-color:var(--blue)}
+@media (max-width:900px){nav.toc{position:static}nav.toc ol{flex-direction:row;flex-wrap:wrap;gap:6px}nav.toc a{border:1px solid var(--line);border-radius:999px;padding:4px 10px}}
+main{min-width:0}
+header.hero{display:flex;flex-direction:column;gap:14px;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:8px}
+header.hero .lede{font-size:17.5px;color:var(--ink-2);max-width:66ch}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
+@media (max-width:760px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.facts div{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.facts .k{font-family:"IBM Plex Mono",Menlo,Consolas,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.facts .v{font-weight:600;font-size:15px}
+section{padding:36px 0 8px}
+section > .eyebrow{margin-bottom:6px}
+section > h2{margin-bottom:16px}
+.prose{max-width:70ch;display:flex;flex-direction:column;gap:12px}
+.prose p{color:var(--ink-2)}
+.prose strong{color:var(--ink)}
+ul.plain{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;color:var(--ink-2)}
+ul.plain strong{color:var(--ink)}
+.tag{display:inline-block;font-family:"IBM Plex Mono",Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;vertical-align:middle}
+.tag.ok{background:var(--mint-soft);color:var(--mint)}
+.tag.warn{background:var(--amber-soft);color:var(--amber)}
+.tag.risk{background:var(--candy-soft);color:var(--candy)}
+.tag.info{background:var(--blue-soft);color:var(--blue-ink)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.panel h3{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.panel .meta{font-size:13px;color:var(--ink-3)}
+.cvline{font-size:14.5px;color:var(--ink-2);padding-left:12px;border-left:2px solid var(--line-2)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-family:"IBM Plex Mono",Menlo,Consolas,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:500;background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.claim{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;border:1px solid var(--line);background:var(--surface)}
+.claim > div{padding:14px 16px}
+.claim > div:first-child{border-right:1px solid var(--line);background:var(--surface-2)}
+.claim .q{font-style:italic;color:var(--ink-2);font-size:14.5px}
+.claim .a{font-size:14.5px;color:var(--ink-2)}
+.claim .a strong{color:var(--ink)}
+.claims{display:flex;flex-direction:column;gap:10px}
+@media (max-width:640px){.claim{grid-template-columns:minmax(0,1fr)}.claim > div:first-child{border-right:0;border-bottom:1px solid var(--line)}}
+.hm{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.hm .panel ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:5px}
+.vocab{display:flex;flex-wrap:wrap;gap:6px}
+.vocab span{font-family:"IBM Plex Mono",Menlo,Consolas,monospace;font-size:12.5px;padding:4px 9px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2)}
+.story{border:1px solid var(--line);background:var(--surface);display:grid;grid-template-columns:150px minmax(0,1fr);gap:0}
+.story .num{padding:16px;border-right:1px solid var(--line);background:var(--surface-2);display:flex;flex-direction:column;gap:2px}
+.story .num b{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1.05}
+.story .num small{font-size:12px;color:var(--ink-3)}
+.story .body{padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--ink-2)}
+.story .body h4{color:var(--ink)}
+.story .body .use{font-size:13px;color:var(--ink-3)}
+.story .body .use b{color:var(--ink-2);font-weight:600}
+.stories{display:flex;flex-direction:column;gap:10px}
+@media (max-width:640px){.story{grid-template-columns:minmax(0,1fr)}.story .num{border-right:0;border-bottom:1px solid var(--line);flex-direction:row;align-items:baseline;gap:10px}}
+.qa{display:flex;flex-direction:column;gap:14px}
+.q{border:1px solid var(--line);background:var(--surface)}
+.q .head{padding:12px 16px;display:flex;gap:12px;align-items:baseline;border-bottom:1px solid var(--line)}
+.q .head .who{font-family:"IBM Plex Mono",Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;padding-top:3px}
+.q .head h3{font-size:16.5px}
+.q .why{padding:10px 16px;font-size:13.5px;color:var(--ink-3);border-bottom:1px solid var(--line)}
+.q .why b{color:var(--ink-2);font-weight:600}
+.q .ans{padding:14px 16px 16px;background:var(--quote-bg);font-size:15px;line-height:1.6;color:var(--ink)}
+.q .ans .lbl{font-family:"IBM Plex Mono",Menlo,Consolas,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;display:block}
+.q .ans mark{background:var(--amber-soft);color:var(--ink);padding:0 3px;border-radius:2px}
+.q .ans p + p{margin-top:8px}
+.ask{counter-reset:ask;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.ask li{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;padding:10px 14px;border:1px solid var(--line);background:var(--surface)}
+.ask li b{font-weight:600}
+.ask li span{font-size:13.5px;color:var(--ink-3)}
+.risk{display:grid;grid-template-columns:150px minmax(0,1fr);border:1px solid var(--line);background:var(--surface)}
+.risk .lvl{padding:14px 16px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.risk .lvl .tag{align-self:flex-start}
+.risk .lvl .t{font-weight:700;font-size:15px}
+.risk .body{padding:14px 16px;font-size:14.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.risk .body b{color:var(--ink)}
+.risks{display:flex;flex-direction:column;gap:10px}
+@media (max-width:640px){.risk{grid-template-columns:minmax(0,1fr)}.risk .lvl{border-right:0;border-bottom:1px solid var(--line)}}
+.check{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.check li{display:flex;gap:12px;align-items:flex-start;padding:10px 14px;border:1px solid var(--line);background:var(--surface);font-size:14.5px}
+.check input{margin-top:4px;accent-color:var(--blue);flex:none}
+.check label{cursor:pointer;color:var(--ink-2)}
+.check label b{color:var(--ink);font-weight:600}
+.check li.done label{color:var(--ink-3);text-decoration:line-through}
+.note{border-left:3px solid var(--blue);background:var(--blue-soft);padding:12px 16px;font-size:14.5px;color:var(--ink-2)}
+.note b{color:var(--ink)}
+.src{font-size:13px;color:var(--ink-3);display:flex;flex-direction:column;gap:4px;margin-top:12px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
+@media (prefers-reduced-motion:no-preference){a,.check li{transition:color .15s,border-color .15s}}
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Secciones">
+  <div class="eyebrow">Contenido</div>
+  <ol>
+    <li><a href="#resumen">Resumen</a></li>
+    <li><a href="#cv">Qué enviamos</a></li>
+    <li><a href="#defender">Lo que debes defender</a></li>
+    <li><a href="#entrevistador">Quién te entrevista</a></li>
+    <li><a href="#empresa">Perfetti y el mercado</a></li>
+    <li><a href="#municion">Tu munición</a></li>
+    <li><a href="#preguntas">Preguntas probables</a></li>
+    <li><a href="#tus-preguntas">Tus preguntas</a></li>
+    <li><a href="#riesgos">Riesgos</a></li>
+    <li><a href="#datos">Datos pendientes</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">Perfetti Van Melle Export Middle East &amp; Africa · Dubai · entrevista con el hiring manager · lunes 14 sep 2026, 14:00</div>
+  <h1>Entrevista Perfetti Van Melle</h1>
+  <p class="lede">Perfetti te ha contactado por la vacante <strong>Senior E-Commerce Executive</strong> en Dubai, a la que aplicaste el 23 de agosto. Esta guía repasa exactamente lo que dicen ese CV y esa carta, descifra el perfil del hiring manager y te deja las respuestas en inglés listas para ensayar, ya con tus datos reales.</p>
+  <div class="facts">
+    <div><span class="k">Vacante</span><span class="v">Senior E-Commerce Executive</span></div>
+    <div><span class="k">Base</span><span class="v">Dubai</span></div>
+    <div><span class="k">Entrevista</span><span class="v">Directa con el hiring manager (Ecommerce Manager MEA)</span></div>
+    <div><span class="k">Cuándo</span><span class="v">Lunes 14 sep, 14:00 · en inglés</span></div>
+  </div>
+</header>
+
+<section id="resumen">
+  <div class="eyebrow">01</div>
+  <h2>Lo esencial en un minuto</h2>
+  <div class="prose">
+    <p><strong>La vacante es Senior E-Commerce Executive</strong> en Perfetti Van Melle Export Middle East &amp; Africa, en Dubai. Su mandato: hacerse cargo del rendimiento del e-commerce en los mercados prioritarios asignados, crecer las ventas con las cuentas e-retail actuales y abrir nuevas, presupuesto anual, revisiones trimestrales de surtido, forecast mensual con country managers y distribuidores, planes de cliente con KPIs conjuntos, disponibilidad y service level por encima del 85%, customer digital journey y estrategia por plataforma. Pide al menos dos años en quick-commerce o e-commerce FMCG, a ser posible en UAE u Oriente Medio.</p>
+    <p><strong>La tesis de tu candidatura</strong>, tal y como la escribimos: ya haces en Dubai, con las plataformas exactas (talabat, Noon, Careem, Deliveroo), el trabajo que describe el puesto. Base de marketplace en Miravia (42 cuentas, +30% GMV trimestral, P&amp;L de Flash Sales) y de confitería en Mondelez. <strong>Ojo:</strong> el CV y la carta dicen que "owns" el e-commerce y el forecast de DoFreeze. En realidad trabajas e-commerce con la persona de e-commerce manager, y el forecast mensual es un proceso conjunto con finanzas. Cómo decirlo, en las secciones 3 y 9.</p>
+    <p><strong>Lo que él valora</strong>, leído de su perfil: números de crecimiento, P&amp;L por cuenta, Joint Business Planning, digital shelf, retail media y trabajo con distribuidores. Viene del lado distribuidor (Transmed, distribuidora de P&amp;G y Clorox). Habla su idioma y trae cifras.</p>
+    <p><strong>Tus cuatro respuestas fuertes</strong>, todas con datos reales: <em>stock en dark stores</em> (dos causas y la revisión semanal con el dashboard hecho en equipo con Claude), <em>surtido y MSL</em>, <em>SMASH × talabat</em> con grupo de control (ventas diarias +165%) y <em>Befit × Noon</em> (+4.176 unidades incrementales).</p>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="eyebrow">02</div>
+  <h2>Qué enviamos exactamente</h2>
+  <div class="two">
+    <div class="panel">
+      <h3>Senior E-Commerce Executive <span class="tag ok">La vacante</span></h3>
+      <p class="meta">CV 3 páginas + carta · enviado 23 ago 2026 · carpeta output/2026-08-23</p>
+      <p class="cvline"><b>Titular:</b> "Senior E-Commerce Executive · FMCG &amp; Quick-Commerce · E-Retail Key Account Management · Noon / Talabat / Careem / Deliveroo · Assortment, Forecasting &amp; Sales Growth · Distributor Management · Dubai, UAE"</p>
+      <p class="cvline"><b>Tu rol actual en el CV:</b> "Brand &amp; Marketing Manager (E-Commerce &amp; Commercial)", DoFreeze, oct 2025 a hoy. El título es el real.</p>
+      <p class="cvline"><b>Resumen:</b> "E-commerce and commercial professional with 4+ years across FMCG, quick-commerce, beauty and fashion. <b>Currently owns e-commerce for DoFreeze in Dubai</b>, integrating FMCG brands into UAE quick-commerce and running the Shopify store end-to-end." Luego Miravia (42 cuentas, +30% GMV QoQ, P&amp;L de Flash Sales) y CUNEF con especialización en e-commerce.</p>
+      <p class="cvline"><b>Lo que sí es tuyo tal cual:</b> "running the Shopify store end-to-end" y "I own the Shopify store end-to-end" son ciertos.</p>
+      <p class="cvline"><b>La carta</b> abre con: "Perfetti Van Melle's Senior E-Commerce Executive role reads like a description of what I do every day. <b>From Dubai, I own e-commerce for an FMCG portfolio across priority markets</b>". Menciona "I run monthly rolling forecasts and assortment reviews jointly with distributors and country teams" y "I own the Shopify store end-to-end". Cierra con la confitería de Mondelez.</p>
+    </div>
+    <div class="panel">
+      <h3>E-Commerce Executive · Growth Markets <span class="tag info">También aplicado</span></h3>
+      <p class="meta">CV 3 páginas + carta · enviado 23 ago 2026 · misma carpeta</p>
+      <p class="cvline"><b>No es la tuya.</b> Su texto decía "Position based in Lebanon" y cubría mercados de crecimiento.</p>
+      <p class="cvline"><b>Si te la menciona:</b> aplicaste a las dos porque querías estar en este equipo, y la Senior es la que mejor encaja. Respuesta guionizada en la sección 7.</p>
+      <p class="cvline"><b>Detalle a saber:</b> esa carta decía "four-plus years at manager level" y el CV usaba el título "Brand &amp; E-Commerce Manager". Si él tiene las dos candidaturas delante y lo cita, tu título real es Brand &amp; Marketing Manager y eres Manager desde octubre de 2025.</p>
+    </div>
+  </div>
+  <h3 style="margin:22px 0 10px">Bullets de DoFreeze en el CV Senior (lo que él ha leído)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>#</th><th>Lo que dice el CV</th><th>Base real</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>Own e-commerce performance across priority markets: integrating FMCG brands into leading UAE quick-commerce platforms and digital marketplaces (Noon, Talabat, Careem, Deliveroo): product listings, assortment, promotional mechanics and retail execution to grow online sales</td><td><span class="tag risk">Matizar</span> Las integraciones, listings y mecánicas en plataforma son tuyas. Pero hay una persona de e-commerce manager: no eres "la dueña" del e-commerce</td></tr>
+      <tr><td class="num">2</td><td>Run monthly rolling forecasts and assortment reviews jointly with distributors and country teams to align inventory and sell-out, protecting SKU availability and service levels across customers</td><td><span class="tag risk">Matizar</span> El forecast mensual es conjunto: finanzas fija targets, e-commerce manager cierra la cifra y tú aportas. Surtido con MSL y revisión semanal de stock: sólido</td></tr>
+      <tr><td class="num">3</td><td>Own and optimise the brand's Shopify e-store end-to-end (catalogue, UX, collections, discounts, checkout), lifting conversion (CRO) and average order value by improving the customer digital journey with data-led merchandising</td><td><span class="tag ok">Sólido</span> La web Shopify la llevas tú de principio a fin. Aquí di "I" sin matices y lleva una cifra de conversión o AOV si la tienes</td></tr>
+      <tr><td class="num">4</td><td>Build customer business and trade/shopper plans by channel with joint KPIs, supporting key account strategy and category management across GCC, MENA, Asia, Europe, USA and Africa</td><td><span class="tag ok">Sólido</span> SMASH × talabat y Befit × Noon son tus planes conjuntos reales</td></tr>
+      <tr><td class="num">5</td><td>Identify new e-commerce growth areas from market trends and consumer insights, and plan paid media on Meta and Google Ads, analysing ROI/ROAS and conversion</td><td><span class="tag ok">Sólido</span> Programa de afiliación y comunidades como ejemplo</td></tr>
+      <tr><td class="num">6</td><td>Built an AI-powered automation system (Claude / generative AI) for campaign planning, content, market research and KPI reporting, cutting manual workload ~40%</td><td><span class="tag ok">Sólido</span> Conéctalo con el dashboard de stock, hecho en equipo con Claude; cuéntalo en 20 segundos</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">El CV no incluye tu equipo de dos personas (diseñadora y social media executive). Puedes mencionarlo si preguntan por gestión de personas, pero el rol no lo pide.</p>
+</section>
+
+<section id="defender">
+  <div class="eyebrow">03</div>
+  <h2>Lo que debes poder defender con detalle</h2>
+  <div class="prose"><p>El CV y la carta usan el vocabulario del JD, y en dos puntos dicen más de lo que es: que eres la dueña del e-commerce y del forecast. Él ha construido esta función desde cero y viene de un distribuidor, así que va a preguntar quién hace qué. Decirlo con precisión te da credibilidad; inflarlo es lo que más puede hundir la entrevista.</p></div>
+
+  <div class="panel" style="margin-top:16px;border-left:3px solid var(--blue)">
+    <h3>Tu papel en el e-commerce de DoFreeze, dicho con precisión</h3>
+    <p style="font-size:14.5px;color:var(--ink-2)">Eres Brand &amp; Marketing Manager y trabajas el e-commerce codo con codo con la persona de e-commerce manager. Si pregunta con quién trabajas o qué es tuyo, esta es la frase:</p>
+    <p style="font-size:14.5px;font-style:italic;color:var(--ink);padding:10px 14px;background:var(--quote-bg);border-left:3px solid var(--blue)">I'm Brand and Marketing Manager and I work on e-commerce hand in hand with our e-commerce manager. Our Shopify web store is mine end to end, and so are the platform onboarding, listings and the joint campaigns on Noon, Careem and talabat. I also run the weekly stock-risk review by dark store. I did the assortment review on our web store, and on the platforms I ran it together with our e-commerce sales team. The monthly sell-in forecast is a joint process with finance.</p>
+    <p style="font-size:13.5px;color:var(--ink-3)">Todo lo de esta frase está confirmado por ti: la web y la revisión semanal son tuyas; el surtido, tuyo en la web y conjunto con e-commerce sales en plataformas.</p>
+  </div>
+
+  <div class="panel" style="margin-top:12px;border-left:3px solid var(--blue)">
+    <h3>Qué es la "cadencia de forecast" y cuál es la tuya</h3>
+    <p style="font-size:14.5px;color:var(--ink-2)"><b>Cadencia</b> es <b>cada cuánto se revisa y se vuelve a hacer la previsión</b>. Quien pregunta por ella quiere saber tres cosas: cada cuánto, quién es el dueño del número y qué aportas tú. Tenéis tres ritmos; dilos de más largo a más corto.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Ritmo</th><th>Qué es</th><th>Dueño</th><th>Tu papel</th></tr></thead>
+      <tbody>
+        <tr><td>Mensual</td><td>Forecast de sell-in: cuánto vais a vender a cada plataforma, ligado a los targets</td><td>Conjunto: finanzas fija targets, e-commerce manager cierra la cifra</td><td>Aportas información. Lo más probable: calendario de campañas, promos y lanzamientos, y lo que ves en plataforma. Confírmalo</td></tr>
+        <tr><td>Semanal</td><td>Revisión de riesgo de stock en la main dark store de cada plataforma, con el dashboard hecho en equipo con Claude. Recién implementada</td><td>Tú</td><td>Ver qué productos no cubre la main dark store y si la PO de la plataforma cubre ese riesgo</td></tr>
+        <tr><td>Cada PO</td><td>Noon, Careem y talabat os mandan su previsión y su orden de compra, y compran según eso</td><td>La plataforma</td><td>Contrastar lo pedido con lo que está en riesgo. Días exactos: confírmalo mañana</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:14.5px;font-style:italic;color:var(--ink);padding:10px 14px;background:var(--quote-bg);border-left:3px solid var(--blue)">The monthly sell-in forecast is a joint process. Finance sets the targets, our e-commerce manager signs off the final number, and I bring <mark>the campaign, promo and launch calendar and what I see on the platforms</mark>. The weekly stock-risk review by dark store is the part I run myself.</p>
+  </div>
+
+  <div class="claims" style="margin-top:14px">
+    <div class="claim">
+      <div><span class="tag risk">Dueña del e-commerce</span><p class="q" style="margin-top:6px">"Currently owns e-commerce for DoFreeze" · "From Dubai, I own e-commerce for an FMCG portfolio across priority markets"</p></div>
+      <div class="a"><strong>Lo que te preguntará:</strong> cómo es el equipo, a quién reportas, qué decides tú.<br><strong>Cómo enmarcarlo:</strong> no saques tú el tema del CV. Si él lo cita o pregunta por el equipo, di la frase del primer recuadro. Lo que es tuyo de verdad (la web Shopify, integraciones, listings y campañas conjuntas con plataformas) es justo lo que pide el puesto.</div>
+    </div>
+    <div class="claim">
+      <div><span class="tag risk">Forecast</span><p class="q" style="margin-top:6px">"Run monthly rolling forecasts and assortment reviews jointly with distributors and country teams"</p></div>
+      <div class="a"><strong>Lo que te preguntará:</strong> cadencia, dueño del número, tu input, qué pasa cuando falla.<br><strong>Cómo enmarcarlo:</strong> la frase del segundo recuadro y, a continuación, tu historia de stock en dark stores (sección 7). Esa historia demuestra que entiendes dónde se rompe el forecast, que es lo que le importa.</div>
+    </div>
+    <div class="claim">
+      <div><span class="tag warn">Priority markets</span><p class="q" style="margin-top:6px">"Own e-commerce performance across priority markets" · "across GCC, MENA, Asia, Europe, USA and Africa"</p></div>
+      <div class="a"><strong>Riesgo:</strong> que suene a que operas e-commerce en 50 países. <strong>Marco honesto:</strong> UAE es donde ejecutas en plataformas; el resto de mercados de las marcas los tocas vía distribuidores, contenidos y planes por canal. "Hands-on in the UAE, partner alignment for the rest".</div>
+    </div>
+    <div class="claim">
+      <div><span class="tag ok">Surtido y disponibilidad</span><p class="q" style="margin-top:6px">"Assortment reviews … protecting SKU availability and service levels"</p></div>
+      <div class="a"><strong>Tu prueba:</strong> la revisión completa, tuya en la web y con e-commerce sales en todas las plataformas (qué vende, qué no, qué se canibaliza) con una <b>MSL</b> por canal, y la revisión semanal de riesgo de stock por dark store. Aquí no hay que matizar nada: cuéntalo con detalle.</div>
+    </div>
+    <div class="claim">
+      <div><span class="tag info">Mondelez</span><p class="q" style="margin-top:6px">"Sell-in/sell-out and promotional-effectiveness analysis for the chocolate/confectionery category"</p></div>
+      <div class="a">Eras trainee de category planning. Lo valioso es que conoces el ciclo de una categoría de impulso; no digas que lideraste nada ahí.</div>
+    </div>
+  </div>
+</section>
+
+<section id="entrevistador">
+  <div class="eyebrow">04</div>
+  <h2>Quién te entrevista: el perfil descifrado</h2>
+  <div class="prose"><p>Ecommerce Manager MEA en Perfetti Van Melle desde abril 2023 (antes Ecommerce Lead MEA desde septiembre 2021). Antes, casi cuatro años en <strong>Transmed</strong>, la distribuidora de P&amp;G y Clorox en Levante y Golfo. Es decir: <strong>ha construido la función de e-commerce de PVM Export desde cero y viene del lado del distribuidor</strong>. Eso define lo que le impresiona y lo que le irrita.</p></div>
+  <div class="hm" style="margin-top:16px">
+    <div class="panel">
+      <h3>Lo que presume</h3>
+      <ul>
+        <li>"Scaled the business 15x" y "doubled the business in 2021 and 2022". Piensa en múltiplos, no en porcentajes pequeños.</li>
+        <li>13 mercados en tres clusters: <b>Flagship</b> (UAE, Kuwait, KSA, Qatar, Sudáfrica), <b>Growth</b> (Egipto, Omán, Baréin), <b>Developing</b> (Líbano, Jordania, Irak, Pakistán).</li>
+        <li>Plataformas que nombra: Sixty60 (Checkers, Sudáfrica), Ninja y HungerStation (KSA), Noon, talabat, Amazon, Keeta.</li>
+        <li>JBP con Noon, talabat, HungerStation y Ninja. Rentabilidad de canal vía "investment optimization" y "account-level P&amp;L".</li>
+        <li>Programas de "content excellence" y "digital shelf governance": disponibilidad, calidad de contenido, discoverability.</li>
+        <li>Retail media y sponsored ads en marketplaces, medidos en visibilidad, conversión y ROI.</li>
+        <li>Lanzó NPDs online; miembro destacado de la Community of Excellence global de e-commerce de PVM.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Qué significa para ti</h3>
+      <ul>
+        <li><b>Quiere alguien que ejecute cuentas y mercados</b>, no un estratega. Tu ventaja es que ya operas en talabat y Noon a diario.</li>
+        <li><b>Va a probar tu comodidad con distribuidores.</b> Cuenta cómo alineas forecast, precio y promo con un partner que no controlas.</li>
+        <li><b>Espera cifras con baseline y control.</b> Tu grupo de control en SMASH (Befit, misma plataforma, misma ventana, +4,7%) le va a encantar: es como él mide.</li>
+        <li><b>Premia disciplina de contenido.</b> Ten una opinión sobre cómo debe ser una PDP de Mentos o Chupa Chups en Noon: título con atributos, hero pack shot, bundles, búsqueda.</li>
+        <li><b>Retail media es su territorio.</b> Sé honesta con qué has hecho en Noon Ads o sponsored listings y qué has hecho en Meta/Google; no mezcles.</li>
+        <li><b>Growth Markets y Developing son su cantera.</b> Tu experiencia de 50+ mercados vía distribuidores encaja aquí si la cuentas con humildad y método.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:22px 0 10px">Su vocabulario: úsalo tal cual</h3>
+  <div class="vocab">
+    <span>JBP / Joint Business Planning</span><span>digital shelf</span><span>content excellence</span><span>availability</span><span>discoverability</span><span>retail media</span><span>sponsored advertising</span><span>account-level P&amp;L</span><span>investment optimization</span><span>quick commerce</span><span>marketplaces</span><span>omnichannel partners</span><span>revenue growth management</span><span>digital distribution</span><span>NPD / innovation</span><span>service level</span><span>category growth</span><span>market share</span>
+  </div>
+  <h3 style="margin:22px 0 10px">Cómo llevar la conversación con él</h3>
+  <div class="hm">
+    <div class="panel">
+      <h3>Minutos 0 a 5</h3>
+      <ul>
+        <li>Si nadie lo dice, confirma con naturalidad: "just to confirm, this is for the Senior E-Commerce Executive role?". Te quita la duda en diez segundos.</li>
+        <li>Apertura de 60 segundos (sección 7) y cierra en su terreno: "you've scaled this fifteen-x and built JBPs with Noon and talabat; that's exactly the work I want to do".</li>
+        <li>No hables de salario con él salvo que pregunte; eso es para RRHH.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>El cuerpo</h3>
+      <ul>
+        <li>Cada respuesta con la forma que usa él en su perfil: qué hiciste, con qué partner, cuánto creció y contra qué baseline.</li>
+        <li>Dos historias con cifra como máximo por respuesta. Stock en dark stores y SMASH × talabat son las que más se parecen a su trabajo.</li>
+        <li>Di "I" en lo que es tuyo y "we" en lo que es de equipo. Él detecta el relleno.</li>
+        <li>Cuando pregunte por distribuidores, recuerda que él fue distribuidor en Transmed: sé concreta sobre cómo alineas stock, precio y promo con alguien a quien no mandas.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Cierre</h3>
+      <ul>
+        <li>Tres preguntas de la sección 8; la primera, qué mercados y plataformas lleva el rol.</li>
+        <li>Ofrece un siguiente paso concreto: "if useful, I can put together a one-page plan for one market on one platform before the next conversation". Lo preparamos juntos.</li>
+        <li>Pregunta el proceso y los tiempos, y agradece con una frase sobre algo concreto que haya contado él.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:22px 0 10px">Los mercados prioritarios que probablemente lleve el puesto</h3>
+  <div class="prose"><p>Según los clusters de su perfil, los prioritarios son los <em>Flagship</em>. Las plataformas son las relevantes hoy en cada país; confírmalas con él, no las des por hechas.</p></div>
+  <div class="tablewrap" style="margin-top:10px"><table>
+    <thead><tr><th>Mercado</th><th>Plataformas que debes conocer</th><th>Tu ventaja</th></tr></thead>
+    <tbody>
+      <tr><td>UAE</td><td>Noon (y Noon Minutes), talabat, Careem, Amazon, Deliveroo, Keeta</td><td>Trabajas en ellas a diario</td></tr>
+      <tr><td>KSA</td><td>Ninja, HungerStation, Noon, Amazon, Keeta</td><td>Mismo modelo de dark store y PO que conoces en UAE</td></tr>
+      <tr><td>Kuwait y Qatar</td><td>talabat, Keeta; en Qatar también Snoonu</td><td>talabat es tu plataforma más fuerte (SMASH)</td></tr>
+      <tr><td>Sudáfrica</td><td>Checkers Sixty60, Takealot</td><td>Él la nombra en su perfil: pregúntale cómo difiere del Golfo</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="empresa">
+  <div class="eyebrow">05</div>
+  <h2>Perfetti Van Melle y el mercado</h2>
+  <div class="two">
+    <div class="panel">
+      <h3>La empresa</h3>
+      <ul class="plain">
+        <li><b>Grupo privado familiar</b> (familias Perfetti y Van Melle), sede en Lainate (Italia) y Países Bajos, uno de los mayores fabricantes de confitería del mundo.</li>
+        <li><b>Marcas:</b> Mentos, Chupa Chups, Fruittella, Alpenliebe, Smint, Big Babol, Frisk, Golia, Vivident, Happydent, Airheads. En octubre 2023 compró a Mondelez el negocio de chicle de mercados desarrollados: Trident, Dentyne, Stimorol, Hollywood, Bubblicious (EE. UU., Canadá y Europa).</li>
+        <li><b>La entidad que te contrata:</b> Perfetti Van Melle Export Middle East &amp; Africa DMCC, en JBC1, Jumeirah Lakes Towers, Dubai. Modelo export: vende a través de distribuidores por país.</li>
+        <li><b>Para 2026</b> el grupo lanza nuevos "hero units" globales de Chupa Chups y Mentos, y Fruittella después; foco en snacking y sharing y en el portafolio de refresco.</li>
+        <li><b>Tu vínculo:</b> Mondelez, categoría chocolate, sell-in/sell-out y NPD (Milka Spread, Mini Suchard). Confitería no te es ajena.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>El mercado que él gestiona</h3>
+      <ul class="plain">
+        <li><b>Quick retail en el Golfo</b> pasó de menos del 5% a ~25% del GMV de q-commerce entre 2019 y 2024 (Redseer, jun 2025). Se prevé que el mercado pase de ~4.000 a ~15.000 millones de dólares en cinco años.</li>
+        <li><b>Liderazgo fluido:</b> Ninja lidera en KSA; talabat y Noon comparten el liderazgo en UAE; Keeta (Meituan) entra en la región. Justo las plataformas que él lista.</li>
+        <li><b>Confitería online no es impulso de caja.</b> Se gana con basket-building, bundles, formatos de temporada y packs exclusivos para plataforma. PVM India lo confirma: e-commerce y q-commerce son ~2% de ventas pero crecen 40 a 50% al año, y su CMO habla de "portafolios únicos para estas plataformas porque el consumidor compra distinto" (Storyboard18, jun 2026).</li>
+        <li><b>Ángulo para ti:</b> Ramadán, back to school, Fitness Month y Año Nuevo ya son tus picos de campaña en talabat y Noon. Traduce esa lógica estacional a Mentos y Chupa Chups.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="src">
+    <span>Fuentes: <a href="https://redseer.com/articles/quick-retail-surges-ninja-leads-in-ksa-talabat-and-noon-share-the-lead-in-uae/">Redseer, Quick Retail surges (jun 2025)</a> · <a href="https://www.arabianbusiness.com/industries/retail/gcc-quick-retail-market-to-see-15bn-rise-as-noon-careem-talabat-and-super-apps-change-tack-to-gain-consumer-wallet-shares">Arabian Business, GCC quick retail to $15bn</a> · <a href="https://www.storyboard18.com/brand-marketing/perfetti-van-melle-boosts-marketing-spends-quick-commerce-emerges-as-key-focus-area-ws-l-101908.htm">Storyboard18, PVM y quick commerce (jun 2026)</a> · <a href="https://ir.mondelezinternational.com/news-releases/news-release-details/mondelez-international-completes-sale-developed-market-gum">Mondelez, venta del negocio de chicle a PVM (oct 2023)</a> · <a href="https://www.gtrmag.com/blog/perfetti-van-melle-to-showcase-chupa-chups-mentos-and-fruit-tella-npds-at-cannes">GTR Magazine, NPDs 2026</a> · <a href="https://www.dnb.com/business-directory/company-profiles.perfetti_van_melle_export_middle_east__africa_dmcc.a55eb48b7eb9f47f8656a99a498fc53c.html">D&amp;B, PVM Export MEA DMCC</a></span>
+  </div>
+</section>
+
+<section id="municion">
+  <div class="eyebrow">06</div>
+  <h2>Tu munición: historias con cifra</h2>
+  <div class="prose"><p>Cada historia va mapeada al punto del JD que demuestra. Di siempre la cifra con su baseline. Nunca "103 creators en una campaña": fueron 103 activaciones en tres campañas.</p></div>
+  <div class="stories" style="margin-top:14px">
+    <div class="story">
+      <div class="num"><b>+165%</b><small>ventas diarias · SMASH × talabat</small></div>
+      <div class="body">
+        <h4>Joint plan con plataforma, medido con grupo de control</h4>
+        <p>Lanzamiento de SMASH (marca nueva de Eurocake) en talabat, 20 may a 13 jul: cada compra en la app daba una participación para ganar tarjetas cashback de talabat, amplificado con creators. Venta diaria de ~355 a ~940 AED, unidades +170%, y tras la campaña seguía al doble. <b>Control:</b> Befit, misma plataforma y ventana, sin creators: +4,7%. Unos 32.000 AED incrementales sobre ~8.700 de coste.</p>
+        <p class="use"><b>Demuestra:</b> JBP · joint KPIs · incrementalidad · partnership con plataforma · sell-out</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="num"><b>+4.176</b><small>unidades incrementales · Befit × Noon</small></div>
+      <div class="body">
+        <h4>Campaña estacional en marketplace con uplift sobre baseline</h4>
+        <p>"New Year, New Me" en Noon (enero): +31% sobre baseline, +93% el día 1, mejor día 1.635 unidades. SKU top: Sugar-Free Marble Cakes, 6.098 unidades. No lideres con "+161% vs octubre": enero es pico natural de una marca fitness, y él lo sabría.</p>
+        <p class="use"><b>Demuestra:</b> crecimiento en marketplace · estacionalidad · digital shelf (SKU héroe) · lectura honesta de datos</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="num"><b>42</b><small>cuentas · +30% GMV QoQ · Miravia</small></div>
+      <div class="body">
+        <h4>Gestión de cartera e-retail y P&amp;L de canal en un marketplace top-5</h4>
+        <p>Miravia (Alibaba): 42 cuentas de beauty, fragancias y moda; +30% GMV trimestral vía pricing, surtido y promociones; P&amp;L del canal Flash Sales reportando al CEO. Como PIC Fragrances abriste 30+ tiendas en dos meses, incluidos distribuidores oficiales de casas árabes de oud (Arabian Oud, Lattafa, Swiss Arabian, Ajmal). Ese detalle conecta con el Golfo.</p>
+        <p class="use"><b>Demuestra:</b> account management · assortment · pricing · P&amp;L · onboarding de partners</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="num"><b>~40%</b><small>menos carga manual · automatización IA</small></div>
+      <div class="body">
+        <h4>Sistema con IA para planificación, contenido, research y reporting</h4>
+        <p>Construido en DoFreeze con Claude: planificación de campañas, contenido, investigación de mercado y reporting de KPIs. Además, programa de afiliación con landing creada con agentes de IA y avatar que explica el brief en varios idiomas. Cuéntalo en 20 segundos como palanca de escala para 13 mercados, no como hobby.</p>
+        <p class="use"><b>Demuestra:</b> escala con equipo pequeño · content excellence a coste bajo · diferenciación</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="num"><b>10-40×</b><small>rendimiento micro vs media · auditoría</small></div>
+      <div class="body">
+        <h4>Auditaste el informe de una agencia y cambiaste cómo se mide</h4>
+        <p>El reach venía calculado desde seguidores, no medido; un mismo creador aparecía en dos oleadas con 5× de diferencia; las "unique accounts" sumaban estimaciones. Descubriste que los micro (&lt;20K) rendían 10 a 40 veces la media de campaña (1,22%). Historia perfecta para "tell me about a time your data was wrong".</p>
+        <p class="use"><b>Demuestra:</b> rigor analítico · investment optimization · no te tragas un dashboard bonito</p>
+      </div>
+    </div>
+    <div class="story">
+      <div class="num"><b>Mondelez</b><small>categoría chocolate · 2021-22</small></div>
+      <div class="body">
+        <h4>Confitería desde dentro: sell-in/sell-out, promo effectiveness, NPD</h4>
+        <p>Category planning para chocolate: análisis sell-in/sell-out, efectividad promocional, informes de rendimiento, apoyo a lanzamientos (Milka Spread, Mini Suchard). Es tu puente natural a Perfetti: entiendes cómo se planifica una categoría de impulso.</p>
+        <p class="use"><b>Demuestra:</b> confectionery · forecasting · promo analysis · NPD</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="preguntas">
+  <div class="eyebrow">07</div>
+  <h2>Preguntas probables y respuesta guía</h2>
+  <div class="prose"><p>Respuestas en inglés para ensayar en voz alta. Lo marcado en <mark style="background:var(--amber-soft);padding:0 3px">amarillo</mark> tienes que confirmarlo o rellenarlo tú. Ajusta, no memorices.</p></div>
+  <div class="qa" style="margin-top:14px">
+
+    <div class="q">
+      <div class="head"><span class="who">Apertura</span><h3>Tell me about yourself and your e-commerce experience.</h3></div>
+      <div class="why"><b>Qué busca:</b> que en 60 segundos vea plataformas, cuentas, cifras y por qué este rol. Termina en Perfetti, no en ti.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>I'm an e-commerce and commercial person with four-plus years across marketplaces, quick commerce and FMCG. I started in confectionery at Mondelez, doing category planning for chocolate: sell-in, sell-out and promo effectiveness. At Glovo I managed XL accounts and helped build the retail vertical. At Miravia, Alibaba's marketplace in Spain, I ran a portfolio of 42 e-retail accounts and grew GMV thirty percent quarter on quarter, and I owned the Flash Sales channel P&amp;L reporting to the CEO.</p>
+        <p>Since last October I'm in Dubai at DoFreeze as Brand and Marketing Manager, working very closely with our e-commerce manager on talabat, Noon, Careem and Deliveroo. I onboarded our brands onto those platforms and I run the joint campaigns with them that drive sell-out. I did the assortment review that gave us a must-stock list per channel, on our web store myself and on the platforms with our e-commerce sales team, and I run our weekly stock-risk review by dark store, which we've just rolled out. What attracts me to this role is that it's the same work, platforms, assortment and availability, for a confectionery leader across priority markets, with a team that has already scaled fifteen-x.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">JBP</span><h3>How do you build a joint business plan with a platform like talabat or Noon?</h3></div>
+      <div class="why"><b>Qué busca:</b> su tema favorito. Estructura + ejemplo con cifra + control.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>I start from the platform's own goals, category growth, basket size, new users, and then put three things on paper: a growth target we both sign, a joint investment plan covering visibility, promo mechanics, sampling and media, and a service commitment on availability and content. Then a monthly review against those KPIs.</p>
+        <p>A concrete one: for the SMASH launch on talabat we built a mechanic where every purchase in the app was an entry to win talabat cashback cards, amplified with creators. Daily sales went from about 355 to 940 dirhams, plus one hundred sixty-five percent, and stayed at double after the campaign. The important part: our control brand on the same platform in the same window, with no activation, grew under five percent. That's how I like to run JBPs, a shared mechanic, a measured uplift and a control group to prove incrementality.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Stock</span><h3>How do you manage forecast and availability, and what do you do when a SKU goes out of stock?</h3></div>
+      <div class="why"><b>Qué busca:</b> la pregunta clave del JD (service level &gt;85%). Tu respuesta trae tres cosas que casi nadie trae: la mecánica real de PO de las plataformas, dos causas distintas de rotura en dark store y una revisión semanal recién implementada. La revisión semanal es tuya: di "I". Deja claro que el forecast mensual es conjunto. Los días de PO los estás buscando.</div>
+      <div class="ans"><span class="lbl">Respuesta guía · con tus datos reales</span>
+        <p>On Noon, Careem and talabat the model is that the platform sends us its own demand forecast and a purchase order, <mark>twice a week, Mondays and Thursdays</mark>, and buys based on that. The stock goes into their main dark store and from there out to the rest of their dark stores.</p>
+        <p>So when a SKU is out in a dark store, there are two very different causes. Either the main dark store has stock but isn't replenishing the other dark stores, and that's an operational conversation with the platform. Or the main dark store itself doesn't have enough, because the order they placed didn't cover demand, and that's a forecasting conversation.</p>
+        <p>To get ahead of the second one, I've just started running a weekly review, using a dashboard we built as a team with Claude. For every product the main dark store won't cover, I check what the platform actually ordered and whether that quantity covers the stock that's at risk now or will be soon. If it doesn't, we go back to the buyer with the numbers before the SKU hits zero. Above that sits the monthly sell-in forecast, which is a joint process: finance sets the targets, our e-commerce manager signs off the number, and I bring <mark>the campaign and promo calendar</mark>.</p>
+        <p>The other kind of stockout is upstream. On our own web store we had one caused by production: a raw-material shortage delayed a production run. That one is demand management: we took media off those SKUs and pushed the ones we had.</p>
+        <p>The rule I follow is simple: no media behind a SKU that isn't available. And I'd be curious how you measure the eighty-five percent service level here, at main-warehouse level or at dark-store level, because the levers are completely different.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Surtido</span><h3>Have you run an assortment review? How did you decide what to keep and what to cut?</h3></div>
+      <div class="why"><b>Qué busca:</b> es tarea literal del JD ("quarterly assortment reviews to optimise product offerings"). <b>Respuesta real y muy sólida.</b> La MSL es vocabulario de FMCG puro: la reconocerá. Remata conectándolo con cómo abrirías un mercado de crecimiento.</div>
+      <div class="ans"><span class="lbl">Respuesta guía · con tus datos reales</span>
+        <p>Yes. I did it on our own web store, which I run, and on every e-commerce platform we sell on I ran it together with our e-commerce sales team. We looked at three things: what sells, what doesn't sell at all, and what is cannibalising something else in the range. That last one matters a lot in confectionery, because it's easy to list five variants that just split the same demand instead of growing it.</p>
+        <p>The output was an MSL, a must-stock list, by channel: the core SKUs that have to be live and in stock on every platform, and then a tail we manage platform by platform depending on the shopper. The SKUs that weren't selling came off, so the listings that stay get the traffic, the content work and the stock.</p>
+        <p>That's also how I'd approach a new platform or a market where we're under-indexed. I wouldn't push the full range. I'd start with a short MSL of hero SKUs that can win search and build the basket, get availability and content right on those, and earn the range extension with data.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Digital shelf</span><h3>What does a best-in-class product page look like on Noon or talabat, and how do you keep it that way?</h3></div>
+      <div class="why"><b>Qué busca:</b> él creó programas de content excellence y digital shelf governance. Quiere criterio y disciplina.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>For confectionery: a title that carries the attributes people search for, brand, variant, format and pack count; a hero image that reads at thumbnail size on a phone; secondary images with the pack open and the size cue; multipacks and bundles as separate listings so we win the basket; and ratings, because on a marketplace a product with no reviews is invisible. Discoverability is half of it: I check share of search for our key terms every <mark>week</mark> and fix titles and keywords before spending media.</p>
+        <p>The discipline part is a simple audit: one sheet per platform, availability, content score and search rank per SKU, reviewed monthly with the partner. On Noon our hero SKU, the sugar-free marble cakes, did over six thousand units in a single seasonal campaign because the page and the search terms were ready before the media went live.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Retail media</span><h3>How do you manage retail media and sponsored ads, and how do you measure ROI?</h3></div>
+      <div class="why"><b>Qué busca:</b> lo gestiona él mismo. Sé exacta sobre qué has hecho en plataforma y qué en Meta/Google. No mezcles.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>Two layers. Off-platform, I run Meta and Google with ROAS and conversion as the decision metrics, testing creatives and audiences and cutting what doesn't pay back. On-platform, <mark>[tu experiencia real con sponsored listings en Noon o talabat: qué formatos, qué presupuesto, qué resultado]</mark>. What I'd bring is the same rule in both: always-on only on SKUs with availability and a good page, budget weighted to the seasonal peaks, and every campaign with a baseline so we can talk about incremental sales, not just clicks.</p>
+        <p>I'm also strict with reporting. I audited an agency report last year where reach was estimated from followers, not measured, and the same creator was counted twice with a five-x difference. We changed the measurement, and found that micro-creators were performing ten to forty times the campaign average. Retail media reporting has the same traps, and I'd rather have a smaller number that's true.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Encaje</span><h3>You're a Brand &amp; Marketing Manager today. Why a Senior Executive role?</h3></div>
+      <div class="why"><b>Qué busca:</b> que no te vayas a los seis meses y que entiendes el alcance. Responde con ámbito, no con título.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>Because the scope is bigger where it matters to me. Today e-commerce is one part of a broader brand and marketing role in a small company, and it's the part where I've had the most impact. This role is fully focused on e-commerce performance for a global confectionery leader across priority markets, with real platform partnerships, distributors and a budget. I'm choosing depth in e-commerce at scale over a broader marketing title, and your team has a track record, fifteen-x, that I want to be part of and learn from.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Motivación</span><h3>Why Perfetti Van Melle, and why confectionery online?</h3></div>
+      <div class="why"><b>Qué busca:</b> que entiendes que confitería en e-commerce es difícil (impulso, ticket bajo) y tienes ideas.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>I started in confectionery at Mondelez and I've always liked the category: it's impulse, high frequency and brand-led. Online it's harder because there's no checkout lane, so you win the basket differently: multipacks and bundles, seasonal formats for Ramadan, Eid and back to school, sharing packs for quick commerce, and platform-exclusive products, which PVM is already testing in other markets. Quick retail in the Gulf has gone from under five percent to about a quarter of q-commerce GMV in five years, and Noon, Careem and talabat are exactly where I work today. Perfetti has the brands, Mentos, Chupa Chups, Fruittella, and a team that has built this channel from scratch. I want to help take it to the next stage.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Mercados</span><h3>How would you drive performance across several priority markets, some of which you can't be in every week?</h3></div>
+      <div class="why"><b>Qué busca:</b> método con distribuidores y plataformas a distancia. Humildad y un sistema. <b>Ajusta con los mercados que tocas de verdad.</b></div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>With a playbook, a partner and a number. The playbook is the platform standard, must-stock list, listings, content and promo calendar, that I can share with a distributor and check remotely. The partner is one named person on the other side who owns the account with me, with a regular call and a shared dashboard. The number is a short set of KPIs per market, availability, share of search and sell-out, so I know where to spend my attention.</p>
+        <p>It's the same logic as the weekly stock-risk review I run: you can't be in every dark store, but you can see every SKU at risk every week and act before it goes to zero. Hands-on I work in the UAE; for the brands' other markets we work through distributors, and the ones that move are the ones with a clear owner on the other side. I'd also want to visit the key markets early, because the partner relationship is built in person.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Fracaso</span><h3>Tell me about something that didn't work and what you changed.</h3></div>
+      <div class="why"><b>Qué busca:</b> autocrítica con datos. La auditoría a la agencia es tu mejor respuesta.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>Our first big creator campaign looked great in the agency report and I presented it that way. When I rebuilt the numbers myself, reach had been estimated from follower counts, one creator appeared in two waves with a five-x difference, and unique accounts were a sum of estimates, so double counted. I went back to my management with the corrected numbers. Since then every campaign has a control group and a measured baseline, we negotiated thirty percent off the agency fees and got seventy-five contracted creators to deliver a hundred and three, and we found that micro-creators outperformed the campaign average by ten to forty times. The lesson I carry is to never present a number I can't rebuild myself.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Primeros 90 días</span><h3>What would you do in your first ninety days?</h3></div>
+      <div class="why"><b>Qué busca:</b> que priorices como él: cuentas, disponibilidad, contenido, inversión.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>First thirty days: learn the numbers and the people. Sales by market and platform, the JBPs in place, availability and content scores per SKU, and the distributor contacts in my markets. Days thirty to sixty: fix the basics that don't need budget, listings, search terms, out-of-stock SKUs, and agree the KPI tree with you. Days sixty to ninety: one joint plan with one platform in one priority market, with a control, so by the end of the quarter we have a measured win and a template to repeat. I'd rather have one proven mechanic than five ideas.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Idiomas</span><h3>Do you speak Arabic?</h3></div>
+      <div class="why"><b>Qué busca:</b> el JD pide inglés; idiomas regionales son "una ventaja". Responde corto y sigue.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>No, I don't. I work in English with all the platforms and partners today, and Spanish is my native language. For Arabic content I work with native speakers on my team and at the agencies, and I make sure the brief and the review are tight.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Condiciones</span><h3>Salary expectations, notice period and visa?</h3></div>
+      <div class="why"><b>Qué busca:</b> el reclutador no te habló de salario, así que <b>mañana no lo saques tú</b>: con el hiring manager se habla de encaje, el dinero va con RRHH. Solo si él pregunta, pide primero la banda. Ten igualmente tu número en la cabeza: tu suelo es 20.000 AED/mes y el título "Executive" puede quedar por debajo. Tu visado es de empleador: hará falta transferencia. Nunca "no sponsorship needed".</div>
+      <div class="ans"><span class="lbl">Respuesta guía · solo si pregunta</span>
+        <p>I'm happy to go into detail with HR. It would help me to understand the band for the role first. My expectation is in line with an e-commerce role in FMCG in Dubai with my experience, and <mark>[tu rango, sin bajar de 20.000 AED/mes]</mark>. My notice period is <mark>[X]</mark>. I hold a UAE residence visa through my current employer, so it would be a standard visa transfer; I'm already in Dubai and there's no relocation.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="head"><span class="who">Dos candidaturas</span><h3>We saw you also applied to the Growth Markets role. Which one do you want?</h3></div>
+      <div class="why"><b>Qué busca:</b> claridad, no ansiedad. Te han llamado por la Senior: comprométete con esta.</div>
+      <div class="ans"><span class="lbl">Respuesta guía</span>
+        <p>I applied to both because I wanted to be in this team. The Senior E-Commerce Executive role is the better fit: it's about driving e-commerce performance in priority markets with the platforms I work with every day, and it's based in Dubai, where I'm committed to staying.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="tus-preguntas">
+  <div class="eyebrow">08</div>
+  <h2>Preguntas para hacerle tú</h2>
+  <div class="prose"><p>Elige tres o cuatro. Las buenas preguntas aquí son las que muestran que ya piensas como alguien del equipo.</p></div>
+  <ul class="ask" style="margin-top:14px">
+    <li><b>Which priority markets would this role own, and which platforms matter most in each?</b><span>Aclara si es UAE, KSA, Kuwait, Qatar, Sudáfrica o un subconjunto.</span></li>
+    <li><b>Who holds the seller account with each platform: PVM or the distributor?</b><span>Define el día a día: si el distribuidor opera la cuenta, tu trabajo es influir; si es PVM, es ejecutar.</span></li>
+    <li><b>How do you measure the 85% service level: at main warehouse or at dark-store level?</b><span>Conecta con tu historia de las dos causas de rotura.</span></li>
+    <li><b>How is the monthly forecast split between the e-commerce team, finance and the distributors?</b><span>Buena salida si te aprieta con el forecast: pasas de defenderte a hablar de igual a igual.</span></li>
+    <li><b>How are the JBPs with Noon and talabat structured, and who owns the retail media budget?</b><span>Te dice cuánto poder de inversión tendrás.</span></li>
+    <li><b>Where has quick commerce moved the needle most for confectionery, and where are you still under-indexed?</b><span>Pregunta de socio, no de candidata.</span></li>
+    <li><b>How does the regional team plug into PVM's global e-commerce Community of Excellence?</b><span>Es su orgullo; deja que lo cuente.</span></li>
+    <li><b>What would a great first year look like for the person in this role?</b><span>Cierra con expectativas concretas y el siguiente paso del proceso.</span></li>
+  </ul>
+</section>
+
+<section id="riesgos">
+  <div class="eyebrow">09</div>
+  <h2>Riesgos y cómo manejarlos</h2>
+  <div class="risks">
+    <div class="risk">
+      <div class="lvl"><span class="tag risk">Alto</span><span class="t">"Own e-commerce" y el forecast</span></div>
+      <div class="body"><p>El resumen del CV y la carta dicen que llevas ("own") el e-commerce de DoFreeze y el forecast mensual. En realidad hay una persona de e-commerce manager, y el forecast es conjunto: finanzas fija los targets, e-commerce manager cierra la cifra y tú aportas. <b>No saques tú el tema.</b> Si pregunta por el equipo o por el dueño del número, usa las dos frases de la sección 3. Precisar te da credibilidad; inflar con alguien que construyó esta función es lo que más puede hundir la entrevista.</p></div>
+    </div>
+    <div class="risk">
+      <div class="lvl"><span class="tag risk">Alto</span><span class="t">Banda salarial</span></div>
+      <div class="body"><p>El título es "Executive" y el JD pedía dos años mínimo. Tu suelo es <b>20.000 AED/mes</b>. El reclutador no habló de salario: mañana no lo saques. Pregunta la banda después, a RRHH, antes de invertir más rondas.</p></div>
+    </div>
+    <div class="risk">
+      <div class="lvl"><span class="tag warn">Medio</span><span class="t">Retail media en plataforma</span></div>
+      <div class="body"><p>Meta y Google no son retail media. Si no habéis pagado posiciones o sponsored ads en Noon, talabat o Careem, dilo en una frase y enseña cómo mides lo que sí gestionas.</p></div>
+    </div>
+    <div class="risk">
+      <div class="lvl"><span class="tag warn">Medio</span><span class="t">Priority markets</span></div>
+      <div class="body"><p>El CV habla de "priority markets" y de 50+ países. Tu ejecución directa es UAE. Dilo así: "hands-on in the UAE, partner alignment for the rest". Sin rodeos, suena sólido.</p></div>
+    </div>
+    <div class="risk">
+      <div class="lvl"><span class="tag warn">Medio</span><span class="t">Visado y preaviso</span></div>
+      <div class="body"><p>Tu residencia la patrocina y paga DoFreeze. Un nuevo empleador tendrá que transferir el visado. Di "standard visa transfer, already in Dubai, no relocation". Nunca "no sponsorship needed". Ten claro tu preaviso.</p></div>
+    </div>
+    <div class="risk">
+      <div class="lvl"><span class="tag info">Bajo</span><span class="t">La otra candidatura</span></div>
+      <div class="body"><p>Si tiene las dos delante, la de Growth Markets usaba el título "Brand &amp; E-Commerce Manager" y decía "four-plus years at manager level". Si lo cita: título real Brand &amp; Marketing Manager, Manager desde octubre de 2025.</p></div>
+    </div>
+    <div class="risk">
+      <div class="lvl"><span class="tag info">Bajo</span><span class="t">Idiomas regionales</span></div>
+      <div class="body"><p>El JD pide inglés. Sin árabe: respuesta corta y a otra cosa. Ya trabajas en inglés con todas las plataformas.</p></div>
+    </div>
+    <div class="risk">
+      <div class="lvl"><span class="tag info">Bajo</span><span class="t">Tamaño de empresa</span></div>
+      <div class="body"><p>DoFreeze es pequeño frente a PVM. Conviértelo en ventaja: has tocado todo el embudo (listings, promo, media, surtido, disponibilidad), y en Miravia y Glovo ya trabajaste dentro de plataformas grandes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="datos">
+  <div class="eyebrow">10</div>
+  <h2>Datos pendientes</h2>
+  <div class="prose"><p>Lo tachado ya está incorporado a las respuestas. Lo más urgente, <b>mañana antes de las 14:00: confirmar los días de PO de Noon, Careem y talabat</b>.</p></div>
+  <ul class="check" id="datos-list" style="margin-top:14px">
+    <li class="done"><input type="checkbox" id="d2" checked><label for="d2"><b>Roturas en dark stores:</b> dos causas (la main dark store no repone a las demás, o la PO no cubre la demanda). Revisión semanal con el dashboard hecho en equipo con Claude. Web propia: falta de materia prima.</label></li>
+    <li class="done"><input type="checkbox" id="d1" checked><label for="d1"><b>Cadencia:</b> PO de las plataformas, revisión semanal de riesgo y forecast mensual conjunto (finanzas, e-commerce manager y tú).</label></li>
+    <li class="done"><input type="checkbox" id="d8" checked><label for="d8"><b>Surtido:</b> web y todas las plataformas; qué vende, qué no, qué se canibaliza; MSL por canal.</label></li>
+    <li class="done"><input type="checkbox" id="d10" checked><label for="d10"><b>Vacante y fecha:</b> Senior E-Commerce Executive, Dubai. Lunes 14 a las 14:00, con el hiring manager. Sin conversación de salario.</label></li>
+    <li><input type="checkbox" id="d14"><label for="d14"><b>Días de PO de Noon, Careem y talabat:</b> lo estás buscando. Cuando lo tengas, dímelo y corrijo la frase amarilla de la respuesta de stock.</label></li>
+    <li class="done"><input type="checkbox" id="d15" checked><label for="d15"><b>Revisión semanal de stock:</b> la haces tú.</label></li>
+    <li class="done"><input type="checkbox" id="d19" checked><label for="d19"><b>Revisión de surtido:</b> tuya en la web; en plataformas, entre e-commerce sales y tú.</label></li>
+    <li class="done"><input type="checkbox" id="d20" checked><label for="d20"><b>El dashboard:</b> hecho en equipo con Claude. Di "we built". La revisión semanal con él la haces tú.</label></li>
+    <li><input type="checkbox" id="d16"><label for="d16"><b>Qué aportas al forecast mensual:</b> campañas, promos, lanzamientos u otra cosa.</label></li>
+    <li class="done"><input type="checkbox" id="d17" checked><label for="d17"><b>La web Shopify:</b> la llevas tú de principio a fin.</label></li>
+    <li><input type="checkbox" id="d18"><label for="d18"><b>Una cifra de la web:</b> conversión, AOV o ventas antes y después de algún cambio tuyo. Si no la tienes, di qué cambiaste y por qué.</label></li>
+    <li><input type="checkbox" id="d11"><label for="d11"><b>Un caso que el dashboard ya haya detectado.</b> Si aún no hay, di que está recién implementado; no inventes resultados.</label></li>
+    <li><input type="checkbox" id="d13"><label for="d13"><b>La MSL:</b> cuántos SKUs quedaron dentro y cuántos salieron, más o menos, y un ejemplo de canibalización.</label></li>
+    <li><input type="checkbox" id="d5"><label for="d5"><b>Retail media en plataforma:</b> ¿habéis pagado posiciones o sponsored ads en Noon, talabat o Careem?</label></li>
+    <li><input type="checkbox" id="d9"><label for="d9"><b>Tu rango salarial y tu preaviso</b>, solo para tenerlos en la cabeza.</label></li>
+  </ul>
+</section>
+
+<section id="checklist">
+  <div class="eyebrow">11</div>
+  <h2>Checklist para mañana</h2>
+  <ul class="check" id="check-list">
+    <li><input type="checkbox" id="c9"><label for="c9"><b>Por la mañana:</b> confirmar los días de PO de Noon, Careem y talabat.</label></li>
+    <li><input type="checkbox" id="c1"><label for="c1">Releer el CV Senior y la carta. Localiza las frases "owns e-commerce" y "I own e-commerce" para que no te pillen por sorpresa.</label></li>
+    <li><input type="checkbox" id="c2"><label for="c2">Ensayar en voz alta, en este orden: la apertura (60 s), <b>stock en dark stores</b>, <b>surtido y MSL</b>, y JBP con SMASH y su grupo de control.</label></li>
+    <li><input type="checkbox" id="c10"><label for="c10">Ensayar las dos frases de la sección 3: tu papel en el e-commerce y el forecast conjunto con finanzas.</label></li>
+    <li><input type="checkbox" id="c3"><label for="c3">Abrir Noon y talabat en UAE y mirar las páginas de Mentos, Chupa Chups y Fruittella: título, imágenes, bundles, reviews y si están disponibles. Lleva dos observaciones concretas.</label></li>
+    <li><input type="checkbox" id="c4"><label for="c4">Elegir tres preguntas de la sección 8.</label></li>
+    <li><input type="checkbox" id="c5"><label for="c5">Tener a mano las cifras: 42 cuentas, +30% GMV QoQ, +165% SMASH, +4.176 uds Noon, ~40% automatización, 103 activaciones en 3 campañas.</label></li>
+    <li><input type="checkbox" id="c6"><label for="c6">Decidir la frase de salario y preaviso por si pregunta. Nada de "no sponsorship needed".</label></li>
+    <li><input type="checkbox" id="c7"><label for="c7">Si es videollamada: fondo neutro, el CV impreso al lado, agua, y el nombre del entrevistador bien pronunciado.</label></li>
+  </ul>
+  <div class="note" style="margin-top:18px"><b>Después de la entrevista:</b> anota qué preguntó, qué cifras le interesaron y qué quedó cojo. Con eso preparamos la segunda ronda y, si toca, un plan de una página para un mercado y una plataforma.</div>
+</section>
+
+<footer>Preparado para la entrevista del lunes 14 de septiembre de 2026 a partir del paquete Senior E-Commerce Executive enviado el 23 de agosto (output/2026-08-23), el perfil de LinkedIn del hiring manager, los datos reales aportados por Paula y fuentes públicas citadas en la sección 5. Las casillas se guardan solo en este navegador.</footer>
+</main>
+</div>
+
+<script>
+(function(){
+  var boxes=document.querySelectorAll('.check input[type=checkbox]');
+  function key(id){return 'pvm-prep-'+id;}
+  boxes.forEach(function(b){
+    try{ if(localStorage.getItem(key(b.id))==='1'){ b.checked=true; } }catch(e){}
+    if(b.checked){ b.closest('li').classList.add('done'); }
+    b.addEventListener('change',function(){
+      b.closest('li').classList.toggle('done',b.checked);
+      try{ localStorage.setItem(key(b.id), b.checked?'1':'0'); }catch(e){}
+    });
+  });
+})();
+</script>

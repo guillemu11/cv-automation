@@ -20,7 +20,7 @@ Both modes share phases 1-2 (brand extraction + campaign ideation) and phase 6 (
 
 ## Hard rules
 
-- **Never stock photos.** Use brand colors + typography as the visual system. Generate real imagery only via Nano Banana 2 / Seedance (user-driven, outside this skill).
+- **Never stock photos.** Use brand colors + typography as the visual system. Generate real brand imagery in-project via `career_ops.generators.images` (Google Gemini image API — `gemini-3-pro-image`, aka "Nano Banana"). Higgsfield is deprecated. NOTE: image models need a **billing-enabled** Google project (free tier = 0 image quota); text scoring still works free.
 - **Never generic shadcn/gradient slop.** The taste layer is Anthropic's `/frontend-design` skill plus the anti-slop rules in `references/animation-patterns.md`.
 - **Respect `PIPELINE_DRY_RUN`.** If set, phase 6 prints the deploy command but does NOT run it.
 - **Always private repo** when pushing to GitHub (real company names on landings = sensitive).
@@ -42,7 +42,7 @@ Read `references/workflow.md` for full detail. High-level:
 1. **Brand extraction** — Firecrawl or WebFetch on `company_url`. Outputs `output/landing_<slug>/brand.json` (palette, fonts, logo refs, tone). See `references/brand-extraction.md`.
 2. **Campaign ideation** — propose 3 fictional campaign angles tied to the JD. User picks one.
 3. **Structure planning** — decide sections (hero, insight, manifesto, executions, KPIs, credits).
-4. **Asset generation** — prompts-ready for Nano Banana 2 / Kling if user will generate media; otherwise palette-based placeholders (never stock). See `references/animation-patterns.md`.
+4. **Asset generation** — generate real stills in-project via `career_ops.generators.images.generate_batch` (Google Gemini image API); otherwise palette-based placeholders (never stock). See `references/animation-patterns.md`.
 5. **Code generation** — fill `templates/base.html` + `templates/styles.css` + `templates/scroll.js` with brand tokens and campaign copy. Write to `output/landing_<slug>/`.
 6. **Deploy (optional)** — `vercel deploy` from the output folder. See `references/deploy.md`. Honors `PIPELINE_DRY_RUN`.
 

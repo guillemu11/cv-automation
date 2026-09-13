@@ -3,7 +3,8 @@ personal:
   location: Dubai, UAE
   phone: "+971 50 386 3656"
   email: paulich98@hotmail.com
-  linkedin: https://linkedin.com/in/paula-de-francisco-perez
+  linkedin: https://www.linkedin.com/in/paula-de-francisco-perez-92a13119a/
+  portfolio: https://paula-de-francisco.vercel.app
   nationality: Spanish
   visa: UAE Residence Visa
 
@@ -12,8 +13,8 @@ headline: "Brand Manager · E-Commerce · Key Account Management · Trade Market
 professional_summary: >
   Results-driven Brand, E-Commerce and Commercial professional with 4+ years of experience
   across FMCG, Beauty, Fashion and E-Commerce. Currently leading Brand & Marketing for
-  DoFreeze (Befit, Eurocake, Flair) in Dubai, managing multi-market strategy across 50+
-  countries in GCC, MENA, Asia, Europe, USA and Africa. Proven track record: +30% GMV
+  DoFreeze (Befit, Eurocake, Flair) in Dubai, leading a team of two (design + social) and
+  multi-market strategy across 50+ countries in GCC, MENA, Asia, Europe, USA and Africa. Proven track record: +30% GMV
   growth QoQ, 42 key accounts managed, 6 NPD launches end-to-end, and influencer programmes
   scaled from zero to 25–50 creators per campaign. Hands-on experience integrating brands
   into UAE quick-commerce platforms (Noon, Talabat, Careem, Deliveroo) and managing modern
@@ -64,9 +65,10 @@ experience:
     role: Brand & Marketing Manager
     dates: "Oct 2025 – Present"
     location: Dubai, UAE
-    context: "Global FMCG distributor | Brands: Befit, Eurocake, Flair | 50+ countries"
+    context: "Homegrown UAE F&B / FMCG group (Dubai) | Brands: Befit, Eurocake, Flair | sold across 50+ countries"
     highlights:
       - "Built an AI-powered marketing automation system (Claude / generative AI) automating campaign planning, content, market research, KPI reporting and client-ready pitch decks/landing pages — cutting manual workload ~40% and accelerating go-to-market across 50+ markets"
+      - "Lead and mentor a team of two — a graphic designer and a social media executive — briefing and reviewing all creative and social output, setting day-to-day priorities and owning their development"
       - "Lead NPD end-to-end for 6 product launches (brief, packaging, pricing, go-to-market) across GCC, MENA, Asia, Europe, USA and Africa"
       - "Built and scaled the influencer marketing programme from zero — sourcing, briefing, negotiating and managing 25–50 creators per campaign, plus product sampling and seeding across modern trade and quick-commerce — driving brand awareness, UGC and measurable sell-out"
       - "Own and optimise the brand's Shopify e-commerce store end-to-end (catalogue, UX, collections, discounts, checkout), lifting conversion rate (CRO) and average order value through data-led merchandising"
@@ -119,6 +121,7 @@ experience:
 skills:
   brand_marketing:
     - brand strategy
+    - team leadership & mentoring
     - NPD end-to-end
     - influencer marketing
     - sampling & seeding
@@ -126,6 +129,7 @@ skills:
     - trade marketing
     - A&P budget management
     - omnichannel campaigns
+    - art direction & design (Adobe, Canva)
     - go-to-market
     - generative AI campaigns
   ecommerce_digital:
@@ -199,6 +203,7 @@ skills:
     - Nielsen
     - Planorama
     - Foxy
+    - Adobe Creative Suite (Photoshop, Illustrator)
 
 education:
   - degree: Bachelor's in Business Administration
@@ -221,7 +226,7 @@ preferences:
   remote_ok: false
   hybrid_ok: true
   open_to_relocation: false
-  work_authorization: "UAE Residence Visa — based in Dubai (no relocation, immediately available)"
+  work_authorization: "UAE Residence Visa"
 
 differentiators:
   - "AI-first marketer — builds generative-AI automation (Claude/GPT) for content, campaign planning and analytics, a rare and in-demand skill"
@@ -236,6 +241,9 @@ differentiators:
 
 ats_keywords_high_value:
   - NPD
+  - team leadership
+  - people management
+  - mentoring
   - brand strategy
   - influencer marketing
   - sampling

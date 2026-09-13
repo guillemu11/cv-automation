@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:1280px 720px;margin:0}
+html,body{background:#0B0C10}
+body{font-family:'Inter',system-ui,sans-serif;color:#fff}
+.slide{position:relative;width:1280px;height:720px;overflow:hidden;background:#0B0C10;page-break-after:always}
+.slide:last-child{page-break-after:auto}
+.pad{position:absolute;inset:0;padding:74px 88px}
+.cobalt{color:#4F55F1}
+.teal{color:#00A87E}
+.wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.5px;font-size:20px;color:#fff}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:#4F55F1}
+.kicker{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.64)}
+.h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:50px;line-height:.98;letter-spacing:-1.5px;color:#fff}
+.lead{font-size:18px;line-height:1.5;color:rgba(255,255,255,.64);max-width:780px}
+.lead b{color:#fff;font-weight:600}
+.pagenum{position:absolute;bottom:40px;right:60px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;color:#4F55F1}
+ul.bullets{list-style:none;margin-top:10px}
+ul.bullets li{position:relative;padding-left:26px;margin:14px 0;font-size:16px;line-height:1.45;color:rgba(255,255,255,.64);max-width:640px}
+ul.bullets li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;background:#4F55F1;border-radius:50%}
+ul.bullets li b{color:#fff;font-weight:600}
+/* aura backgrounds */
+.aura{position:absolute;border-radius:50%;filter:blur(120px);z-index:0;pointer-events:none}
+.aura.c{width:640px;height:640px;background:#4F55F1;opacity:.30}
+.aura.t{width:520px;height:520px;background:#00A87E;opacity:.20}
+/* table */
+table.ps{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;position:relative;z-index:2}
+table.ps th{background:#4F55F1;color:#fff;text-align:left;padding:12px 15px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;letter-spacing:.6px;text-transform:uppercase}
+table.ps td{border-bottom:1px solid rgba(255,255,255,.12);padding:12px 15px;vertical-align:top;color:rgba(255,255,255,.64);line-height:1.4;background:#14161B}
+table.ps tr td:first-child{font-weight:600;color:#fff;width:210px}
+table.ps b{color:#4F55F1;font-weight:600}
+/* cover */
+.cover-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:150px;line-height:.82;letter-spacing:-6px;color:#fff}
+.cover-tag{font-size:22px;color:#fff;margin-top:28px;max-width:620px;line-height:1.35;font-weight:500}
+.cover-tag span{color:#4F55F1}
+.cover-lockup{position:absolute;bottom:48px;left:88px;font-size:12.5px;color:rgba(255,255,255,.64);letter-spacing:.3px;line-height:1.7}
+.cover-chip{position:absolute;top:74px;right:88px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;background:#4F55F1;padding:8px 16px;border-radius:999px}
+/* agenda */
+.agenda-row{display:flex;align-items:baseline;gap:24px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.agenda-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:#4F55F1;width:44px}
+.agenda-txt{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:25px;color:#fff;letter-spacing:-.4px}
+/* insight */
+.bignum{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:230px;line-height:.8;letter-spacing:-8px;color:#4F55F1;font-variant-numeric:tabular-nums}
+/* big idea key visual */
+.bigidea{display:flex;gap:56px;align-items:center;height:100%;padding:74px 88px;position:relative;z-index:2}
+.bigidea-left{flex:1;max-width:560px}
+.bigidea-left .t{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:96px;line-height:.84;letter-spacing:-4px;color:#fff;margin:14px 0 22px}
+.bigidea-left .lockup{margin-top:26px;color:#fff;font-size:19px;line-height:1.35;font-weight:600}
+.bigidea-left .lockup span{color:#4F55F1}
+.kv{position:relative;flex:0 0 430px;height:470px}
+.xfer{position:absolute;left:0;top:40px;width:400px;background:#14161B;border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:30px 32px;box-shadow:0 40px 90px rgba(0,0,0,.6);z-index:3}
+.xfer .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.xfer .rvl{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.3px;color:#fff}
+.xfer .live{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#00A87E;display:flex;align-items:center;gap:7px}
+.xfer .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#00A87E}
+.xfer .rowlbl{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.64);margin-bottom:5px}
+.xfer .amt{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1;color:#fff;letter-spacing:-1px}
+.xfer .amt small{font-size:20px;color:rgba(255,255,255,.64);font-weight:500;margin-left:6px}
+.xfer .divider{height:1px;background:rgba(255,255,255,.12);margin:20px 0}
+.xfer .get .amt{color:#00A87E}
+.xfer .foot{margin-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:rgba(255,255,255,.64)}
+.xfer .foot b{color:#fff;font-weight:600}
+.kv-badge{position:absolute;right:6px;bottom:26px;background:#4F55F1;color:#fff;border-radius:14px;padding:16px 20px;z-index:4;box-shadow:0 24px 60px rgba(79,85,241,.5)}
+.kv-badge .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.2px}
+.kv-badge .s{font-size:11.5px;opacity:.85;margin-top:2px}
+/* how-it-works funnel */
+.flow{display:flex;align-items:stretch;gap:14px;margin-top:28px;position:relative;z-index:2}
+.flow .node{flex:1;background:#14161B;border:1px solid rgba(255,255,255,.12);border-top:4px solid #4F55F1;border-radius:12px;padding:18px 18px}
+.flow .node .stg{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#4F55F1}
+.flow .node h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:8px 0 6px;color:#fff}
+.flow .node p{font-size:13px;line-height:1.4;color:rgba(255,255,255,.64)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px;position:relative;z-index:2}
+.two .col{background:#14161B;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:22px 24px}
+.two .col .tagcol{font-size:11.5px;color:#4F55F1;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;font-family:'Space Grotesk',sans-serif}
+.two .col h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:6px 0 4px}
+/* channel cards */
+.cards5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px;position:relative;z-index:2}
+.cc{border-radius:14px;overflow:hidden;background:#14161B;border:1px solid rgba(255,255,255,.12);min-height:300px;display:flex;flex-direction:column}
+.cc .cap{height:96px;display:flex;align-items:flex-end;padding:14px;background:linear-gradient(150deg,#1B1E25,#14161B)}
+.cc.is-cobalt .cap{background:linear-gradient(150deg,#4F55F1,#3A40C4)}
+.cc.is-teal .cap{background:linear-gradient(150deg,#00A87E,#00795a)}
+.cc .stg{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:#fff;opacity:.9}
+.cc .body{padding:14px 15px}
+.cc h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;margin-bottom:7px;color:#fff}
+.cc p{font-size:11.5px;line-height:1.4;color:rgba(255,255,255,.64)}
+/* why paula */
+.why-photo{position:absolute;right:0;top:0;width:470px;height:720px;object-fit:cover;filter:grayscale(.15) contrast(1.02)}
+.why-fade{position:absolute;right:390px;top:0;width:200px;height:720px;background:linear-gradient(90deg,#0B0C10,transparent);z-index:2}
+.why-quote{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:25px;line-height:1.28;color:#fff;max-width:560px;margin-top:16px}
+.why-quote span{color:#4F55F1}
+ul.why-bul li{max-width:490px}
+.skillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;max-width:520px}
+.skillrow span{font-size:12px;font-weight:500;color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 14px}
+/* contact */
+.contact-big{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:180px;line-height:.85;letter-spacing:-7px;color:#fff}
+.contact-line{font-size:18px;color:#fff;margin-top:8px;letter-spacing:.4px}
+.contact-line b{color:#4F55F1}
+</style></head><body><section class="slide">
+  <div class="aura c" style="top:-220px;left:-160px"></div>
+  <div class="aura t" style="bottom:-220px;right:-140px"></div>
+  <div class="cover-chip">Brand &amp; Growth concept</div>
+  <div class="pad">
+    <div class="wordmark">Revolut</div>
+    <div class="eyebrow" style="margin-top:120px">Brand &amp; Growth · UAE · a full-funnel campaign concept</div>
+    <div class="cover-title" style="margin-top:20px">NO<br>BORDERS</div>
+    <div class="cover-tag">Make Revolut the way the UAE moves money — <span>send it home before the exchange desk even opens.</span></div>
+  </div>
+  <div class="cover-lockup">
+    Prepared by Paula De Francisco Pérez &nbsp;·&nbsp; 20 August 2026<br>
+    For: Marketing Manager (Brand) — Dubai / UAE, Revolut
+  </div>
+</section>
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">Agenda</div>
+    <div class="h2" style="margin:6px 0 26px">The concept, end&nbsp;to&nbsp;end.</div>
+    <div class="agenda-row"><div class="agenda-num">01</div><div class="agenda-txt">The insight — money born to cross borders</div></div><div class="agenda-row"><div class="agenda-num">02</div><div class="agenda-txt">The big idea — No Borders</div></div><div class="agenda-row"><div class="agenda-num">03</div><div class="agenda-txt">How it works — full funnel, one story</div></div><div class="agenda-row"><div class="agenda-num">04</div><div class="agenda-txt">Audience &amp; corridor strategy</div></div><div class="agenda-row"><div class="agenda-num">05</div><div class="agenda-txt">90-day launch &amp; KPIs</div></div><div class="agenda-row"><div class="agenda-num">06</div><div class="agenda-txt">Why Paula</div></div>
+  </div>
+  <div class="pagenum">01</div>
+</section>
+<section class="slide">
+  <div class="aura c" style="top:-260px;right:-200px"></div>
+  <div class="pad">
+    <div class="kicker">01 · The insight — UAE</div>
+    <div style="display:flex;gap:56px;align-items:center;height:520px">
+      <div style="flex:0 0 auto">
+        <div class="bignum">88%</div>
+        <div class="kicker" style="margin-top:14px;max-width:300px">of UAE residents are expats — one of the world's largest remittance hubs</div>
+      </div>
+      <div style="flex:1">
+        <div class="h2" style="margin-bottom:18px">Here, money is<br>born to cross<br>a border.</div>
+        <ul class="bullets">
+          <li>For millions of people, "money" isn't local — it's a <b>monthly journey</b> to Kerala, Manila, Cairo, Lahore or London.</li>
+          <li>Yet the world's average remittance still costs around <b>6%</b> and can take days — much of it still sent in cash, in a queue.</li>
+          <li>Revolut already <b>solves</b> this. The brand opportunity isn't a feature — it's to own the cultural truth that <b>your money was never meant to stop at the border.</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pagenum">02</div>
+</section>
+<section class="slide">
+  <div class="aura c" style="bottom:-260px;left:-180px"></div>
+  <div class="bigidea">
+    <div class="bigidea-left">
+      <div class="eyebrow">02 · The big idea</div>
+      <div class="t">NO<br>BORDERS</div>
+      <div class="lead" style="max-width:520px;color:#cfd2da">
+        One ownable idea for the UAE: with Revolut, the border was <b style="color:#fff">never there</b>.
+        The same platform truth — instant, real-rate, multi-currency — dramatised as the way this
+        country actually lives and sends money.
+      </div>
+      <div class="lockup">"Send it home <span>before the exchange<br>desk even opens.</span>"</div>
+    </div>
+    <div class="kv">
+      <div class="xfer">
+        <div class="top">
+          <div class="rvl">Revolut · Transfer</div>
+          <div class="live">Live rate</div>
+        </div>
+        <div class="send">
+          <div class="rowlbl">You send</div>
+          <div class="amt">1,000<small>AED</small></div>
+        </div>
+        <div class="divider"></div>
+        <div class="get">
+          <div class="rowlbl">They receive · Kochi</div>
+          <div class="amt">₹23,120<small>INR</small></div>
+        </div>
+        <div class="foot"><span>Arrives <b>in seconds</b></span><span><b>0</b> hidden fees</span></div>
+      </div>
+      <div class="kv-badge">
+        <div class="n">Dubai → home</div>
+        <div class="s">no border · no queue · no spread</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">03 · How it works</div>
+    <div class="h2" style="margin:6px 0 2px">One story, the whole funnel.</div>
+    <div class="flow">
+      <div class="node"><div class="stg">Awareness</div><h4>Own the corridor</h4><p>Community-true OOH &amp; creators make Revolut the name attached to "sending home".</p></div>
+      <div class="node"><div class="stg">Consideration</div><h4>Expose the rate</h4><p>Data-driven stories show the real cost of the old way vs. Revolut.</p></div>
+      <div class="node"><div class="stg">Conversion</div><h4>First transfer</h4><p>Localised onboarding + a payday-week offer engineered for one activation metric.</p></div>
+      <div class="node"><div class="stg">Retention</div><h4>Everyday money</h4><p>From one transfer to multi-currency spend, savings and travel — a daily habit.</p></div>
+    </div>
+    <div class="two">
+      <div class="col">
+        <div class="tagcol">Brand layer · earns attention</div>
+        <h4>A cultural truth, not an ad</h4>
+        <ul class="bullets">
+          <li>One line — <b>"send it home before the exchange desk opens"</b> — carried across OOH, social and creators, adapted per corridor.</li>
+          <li>Tone of voice &amp; style guide owned locally; global assets adapted to real UAE nuance.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="tagcol">Growth layer · drives results</div>
+        <h4>Engineered for the metric</h4>
+        <ul class="bullets">
+          <li>Paid social &amp; app-install campaigns A/B-tested on creative &amp; offer; scaled on ROAS.</li>
+          <li>Winners operationalised into a <b>regional playbook</b> so the idea scales without re-inventing it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pagenum">03</div>
+</section>
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">03 · Across the funnel</div>
+    <div class="h2" style="margin:6px 0 0">The same idea, every stage.</div>
+    <div class="cards5"><div class="cc is-cobalt"><div class="cap"><div class="stg">Awareness</div></div><div class="body"><div class="kicker" style="font-size:10px;margin-bottom:6px;color:#4F55F1">OOH · corridor-cut</div><h4>Sheikh Zayed Rd &amp; Metro</h4><p>Billboards &amp; wraps with a different destination city per line, timed to payday week.</p></div></div><div class="cc "><div class="cap"><div class="stg">Awareness</div></div><div class="body"><div class="kicker" style="font-size:10px;margin-bottom:6px;color:#4F55F1">Corridor creators</div><h4>The people who send it home</h4><p>Micro-creators per community (Malayali, Filipino, Egyptian, Pakistani) — real UGC, not gloss.</p></div></div><div class="cc is-teal"><div class="cap"><div class="stg">Consideration</div></div><div class="body"><div class="kicker" style="font-size:10px;margin-bottom:6px;color:#4F55F1">Content · the rate exposed</div><h4>"See what the desk didn't tell you"</h4><p>Data-driven cost comparisons — the conversion engine of the campaign.</p></div></div><div class="cc "><div class="cap"><div class="stg">Conversion</div></div><div class="body"><div class="kicker" style="font-size:10px;margin-bottom:6px;color:#4F55F1">In-app · first-transfer GTM</div><h4>Zero-fee first send</h4><p>Localised onboarding + payday-week offer built to drive the first transfer.</p></div></div><div class="cc "><div class="cap"><div class="stg">Retention</div></div><div class="body"><div class="kicker" style="font-size:10px;margin-bottom:6px;color:#4F55F1">CRM + referral loop</div><h4>One sender, a community</h4><p>Lifecycle nudges to multi-currency &amp; savings, plus a compounding referral loop.</p></div></div></div>
+  </div>
+  <div class="pagenum">04</div>
+</section>
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">04 · Audience &amp; corridor strategy</div>
+    <div class="h2" style="margin:6px 0 2px">Prioritised by corridor, not by channel.</div>
+    <div class="lead" style="font-size:15px;margin-top:8px;color:rgba(255,255,255,.64)">Same idea, tuned per community — audience truth &#8594; lead message &#8594; channel &amp; creator mix.</div>
+    <table class="ps"><thead><tr><th>Corridor</th><th>Audience truth</th><th>Lead message</th><th>Channel &amp; creator</th></tr></thead><tbody><tr><td>India</td><td>Largest corridor; value-conscious, mobile-first, family remitters</td><td>Real rate, arrives in seconds — <b>"before the desk opens"</b></td><td>Malayali/Tamil creators · Meta &amp; YouTube · Metro</td></tr><tr><td>Philippines</td><td>High trust in community word-of-mouth; frequent smaller sends</td><td>No hidden spread; every dirham counts back home</td><td>Filipino creators · Facebook groups · referral</td></tr><tr><td>Egypt / Levant</td><td>FX-savvy, rate-sensitive; growing young professional base</td><td>Beat the parallel-rate anxiety with a transparent live rate</td><td>TikTok &amp; short-form · rate-exposed content</td></tr><tr><td>UK / EU</td><td>Premium expats; travel &amp; multi-currency daily use</td><td>One card, every currency — spend like a local, everywhere</td><td>Premium OOH · lifestyle creators · Metal/Ultra</td></tr></tbody></table>
+  </div>
+  <div class="pagenum">05</div>
+</section>
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">05 · 90-day launch &amp; measurement</div>
+    <div class="h2" style="margin:6px 0 2px">Launch it. Then prove it.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start">
+      <div>
+        <div class="eyebrow" style="margin-top:20px;margin-bottom:-6px">90-day plan</div>
+        <table class="ps"><thead><tr><th>Window</th><th>Activation</th><th>Channels</th><th>Stage</th></tr></thead><tbody><tr><td>Wk 1–2</td><td>Launch — "No Borders"</td><td>OOH + social + PR</td><td>Awareness</td></tr><tr><td>Wk 3–6</td><td>Corridor creators + rate-exposed content</td><td>Meta / TikTok / YouTube</td><td>Consideration</td></tr><tr><td>Payday wks</td><td>Zero-fee first-transfer push</td><td>In-app + paid social</td><td>Conversion</td></tr><tr><td>Month 3</td><td>Lifecycle + referral loop; scale winners</td><td>CRM + referral</td><td>Retention</td></tr></tbody></table>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-top:20px;margin-bottom:-6px">Full-funnel KPIs</div>
+        <table class="ps"><thead><tr><th>KPI</th><th>What it proves</th><th>Cadence</th></tr></thead><tbody><tr><td><b>Install &#8594; first-transfer activation</b></td><td>The hero metric — the idea works or it doesn't</td><td>Weekly</td></tr><tr><td>Blended CAC in target corridors</td><td>Efficient, corridor-led acquisition</td><td>Weekly</td></tr><tr><td>Multi-currency MAU / retention</td><td>One transfer &#8594; everyday habit</td><td>Monthly</td></tr><tr><td>Referral K-factor</td><td>The corridor loop compounding</td><td>Monthly</td></tr><tr><td>Creative ROAS &amp; test win-rate</td><td>Experimentation discipline</td><td>Per flight</td></tr></tbody></table>
+      </div>
+    </div>
+  </div>
+  <div class="pagenum">06</div>
+</section>
+<section class="slide">
+  <img class="why-photo" src="assets/paula.jpg" loading="eager" alt="">
+  <div class="why-fade"></div>
+  <div class="pad" style="padding-right:500px">
+    <div class="kicker">06 · Why Paula</div>
+    <div class="why-quote">"No Borders is exactly how I work — take a real local truth, build one idea across the whole funnel, and <span>engineer it to move the metric.</span>"</div>
+    <ul class="bullets why-bul" style="margin-top:22px">
+      <li>Leads <b>brand &amp; growth in the UAE today</b> — GTM launches, full-funnel campaigns and paid media, in-market.</li>
+      <li>Came up inside <b>hyper-growth global tech</b> — Alibaba's Miravia (42 accounts, <b>+30% GMV QoQ</b>) &amp; Glovo.</li>
+      <li>Built an <b>AI marketing-automation system</b> (Claude) that scaled repeatable playbooks across <b>50+ markets</b>.</li>
+    </ul>
+    <div class="skillrow">
+      <span>Brand strategy &amp; positioning</span><span>Go-to-market</span>
+      <span>Full-funnel growth</span><span>Experimentation &amp; ROAS</span><span>UAE market</span>
+    </div>
+  </div>
+  <div class="pagenum">07</div>
+</section>
+<section class="slide">
+  <div class="aura c" style="bottom:-260px;right:-160px"></div>
+  <div class="pad">
+    <div class="wordmark">Revolut · No Borders</div>
+    <div class="contact-big" style="margin-top:150px">LET'S<br>TALK.</div>
+    <div class="contact-line" style="margin-top:30px"><b>Paula De Francisco Pérez</b> — for Marketing Manager (Brand), UAE</div>
+    <div class="contact-line" style="margin-top:14px">paulich98@hotmail.com</div>
+    <div class="contact-line">+971 50 386 3656</div>
+    <div class="contact-line">linkedin.com/in/paula-de-francisco-perez</div>
+  </div>
+</section></body></html>

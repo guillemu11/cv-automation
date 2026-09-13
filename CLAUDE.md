@@ -70,6 +70,7 @@ Operational rules for Claude:
 | Daily cron | Full pipeline (discovery → filter → analyze → contacts) | Scheduler (cron / Task Scheduler / GH Actions) |
 | Dashboard button | CV/CL generation, contact search, outreach generation | FastAPI endpoints in [career_ops/webapp/api.py](career_ops/webapp/api.py) |
 | Server startup | Status reconcile from disk | `_startup_sync` in api.py |
+| Nightly 23:00 (launchd) | Auto-commit + push to GitHub if anything changed | [scripts/auto_push.sh](scripts/auto_push.sh), `~/Library/LaunchAgents/com.cvautomation.autopush.plist`; log in `logs/auto_push.log` |
 
 The scripts under `scripts/` (`calibrate_scorer.py`, `setup_notion_db.py`, etc.) are **one-off / maintenance** utilities run by the developer (you), not Paula. Never surface them as user actions.
 

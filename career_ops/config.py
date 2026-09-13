@@ -53,6 +53,8 @@ class Settings:
     # --- API keys ---
     anthropic_api_key: str | None
     gemini_api_key: str | None
+    google_image_api_key: str | None  # Gemini image API ("Nano Banana"); needs billing
+    image_model: str  # default gemini-3-pro-image
     llm_provider: str  # "anthropic" | "gemini" | "chatqueue"
     chatqueue_timeout_seconds: int
     chatqueue_poll_seconds: float
@@ -100,6 +102,12 @@ class Settings:
 
         self.anthropic_api_key = _env("ANTHROPIC_API_KEY")
         self.gemini_api_key = _env("GEMINI_API_KEY")
+        # Image generation (Google Gemini image API, aka "Nano Banana"). Replaces
+        # the old Higgsfield flow. Falls back to the text Gemini key if a dedicated
+        # image key isn't set. NOTE: image models require a billing-enabled project
+        # (free-tier quota is 0), unlike text scoring which works on the free tier.
+        self.google_image_api_key = _env("GOOGLE_IMAGE_API_KEY") or self.gemini_api_key
+        self.image_model = _env("IMAGE_MODEL", "gemini-3-pro-image") or "gemini-3-pro-image"
         self.llm_provider = (_env("LLM_PROVIDER", "anthropic") or "anthropic").lower()
         self.chatqueue_timeout_seconds = int(_env("CHATQUEUE_TIMEOUT_SECONDS", "1800") or 1800)
         self.chatqueue_poll_seconds = float(_env("CHATQUEUE_POLL_SECONDS", "2.0") or 2.0)

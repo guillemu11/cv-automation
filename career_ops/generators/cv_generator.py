@@ -41,10 +41,12 @@ Rules:
 1. NEVER invent experience, metrics, or skills the candidate doesn't have.
 2. Reorder and emphasize bullets that match the job requirements.
 3. Mirror exact keywords from the job description (ATS optimization).
-4. Keep the professional summary to 3-4 lines.
+4. The CV MUST fit on ONE page. Keep the professional summary to ~2 lines (≈40 words).
 5. Adapt the headline to match the target role title when appropriate.
-6. For each company, select and reorder the 4-6 most relevant bullets.
-7. Reorder skills within each category by relevance to the job.
+6. For each company, select the 2-3 most relevant bullets (1-2 for older/junior
+   roles), each ~1-2 lines. Fewer, sharper bullets — never 4+.
+7. Reorder skills within each category by relevance; keep each category concise
+   (≈6 items, one line) so the skills block stays compact.
 8. Output via the submit_cv_content tool.
 """
 
@@ -60,7 +62,7 @@ _CV_TOOL = {
             },
             "professional_summary": {
                 "type": "string",
-                "description": "3-4 line summary adapted for this job. Keep real metrics.",
+                "description": "~2 line summary (≈40 words) adapted for this job. Keep real metrics. CV must fit one page.",
             },
             "experience": {
                 "type": "array",
@@ -76,7 +78,7 @@ _CV_TOOL = {
                         "bullets": {
                             "type": "array",
                             "items": {"type": "string"},
-                            "description": "4-6 most relevant bullets, reordered by relevance to the job",
+                            "description": "2-3 most relevant bullets (1-2 for older/junior roles), each ~1-2 lines, reordered by relevance. Keep the CV to one page.",
                         },
                     },
                     "required": ["company", "role", "dates", "bullets"],
@@ -234,7 +236,12 @@ def _fill_template(content: dict, job: Job) -> Path:
     _replace_in_paragraphs(doc, "{{FULL_NAME}}", p["name"])
     _replace_in_paragraphs(doc, "{{PHONE}}", p["phone"])
     _replace_in_paragraphs(doc, "{{EMAIL}}", p["email"])
-    _replace_in_paragraphs(doc, "{{LINKEDIN}}", p.get("linkedin", "linkedin.com/in/paula-de-francisco-perez"))
+    linkedin = p.get("linkedin", "linkedin.com/in/paula-de-francisco-perez")
+    portfolio = p.get("portfolio")
+    if portfolio:
+        portfolio_display = portfolio.replace("https://", "").replace("http://", "")
+        linkedin = f"{linkedin} | Portfolio: {portfolio_display}"
+    _replace_in_paragraphs(doc, "{{LINKEDIN}}", linkedin)
     _replace_in_paragraphs(doc, "{{LOCATION}}", p["location"])
     _replace_in_paragraphs(doc, "{{NATIONALITY}}", p.get("nationality", "Spanish"))
     _replace_in_paragraphs(doc, "{{VISA}}", p.get("visa", "UAE Residence Visa"))
@@ -298,7 +305,7 @@ def _fill_template(content: dict, job: Job) -> Path:
         _replace_in_paragraphs(doc, "{{LANG_1_LEVEL}}", langs[0]["level"])
     if len(langs) >= 2:
         _replace_in_paragraphs(doc, "{{LANG_2_NAME}}", langs[1]["lang"])
-        _replace_in_paragraphs(doc, "{{LANG_2_LEVEL}}", f"Professional — {langs[1]['level']}")
+        _replace_in_paragraphs(doc, "{{LANG_2_LEVEL}}", langs[1]["level"])
 
     # -- Save --
     company_safe = _sanitize_filename(job.company)

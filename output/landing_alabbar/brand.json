@@ -1,0 +1,20 @@
+{
+  "name": "Alabbar Enterprises & ANOTHER",
+  "tagline_real": "Distinction · Moments · Growth",
+  "palette": {
+    "primary": "#C8971C",
+    "secondary": "#7A4E2D",
+    "accent": "#141414",
+    "bg": "#FBF9F5",
+    "text": "#1A1714"
+  },
+  "typography": {
+    "display": "Fraunces",
+    "body": "Inter",
+    "fallback": "system-ui, sans-serif"
+  },
+  "logo_hint": "Minimalist 'alabbar' lowercase wordmark, black on transparent; premium/curated feel",
+  "tone": ["sophisticated", "curated", "warm", "guest-obsessed"],
+  "source_url": "https://www.alabbarenterprises.com",
+  "brand_notes": "Real site is monochrome (black/white) + amber accent #F5A623 in Arial. Deepened the amber to #C8971C for WCAG contrast on off-white, added a warm espresso secondary (#7A4E2D) and a cream bg (#FBF9F5) to bring the F&B/hospitality warmth the portfolio (Karak House, Ganache, Krema) implies. Display swapped to Fraunces (warm high-contrast serif) for an editorial 'moments' voice; Inter for body."
+}

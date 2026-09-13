@@ -1,0 +1,22 @@
+{
+  "name": "Disney",
+  "tagline_real": "The power of unparalleled storytelling",
+  "palette": {
+    "primary": "#2A6DF4",
+    "secondary": "#FFC24B",
+    "accent": "#FF6B35",
+    "bg": "#070B1E",
+    "text": "#EEF2FF",
+    "primary_true": "#113CCF",
+    "gold_true": "#FFB81C"
+  },
+  "typography": {
+    "display": "Cinzel",
+    "body": "Manrope",
+    "fallback": "system-ui, sans-serif"
+  },
+  "logo_hint": "Disney cobalt-blue script wordmark; Mickey silhouette; magic sparkle + castle motifs",
+  "tone": ["magical", "cinematic", "family-first", "premium", "inspirational"],
+  "source_url": "https://thewaltdisneycompany.com",
+  "brand_notes": "Adapted Disney's signature cobalt blue (#113CCF) + gold (#FFB81C) onto a midnight-navy night-sky theme for a scroll-driven magic hero. Brighter primary #2A6DF4 chosen so blue glows on the dark bg and passes AA against #070B1E."
+}
