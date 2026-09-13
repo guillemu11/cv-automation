@@ -172,12 +172,23 @@ skills:
     - Salesforce
     - SAP
     - Planorama
+  ai_automation:
+    - "Claude / Claude Code (Anthropic) — advanced AI agents to automate marketing, data analysis & content generation"
+    - "AI video generation — Higgsfield (cinematic video, camera moves, social/ads creatives) & Hailuo AI (MiniMax) text/image-to-video"
+    - "generative AI applied to marketing — copywriting, creatives, campaigns & content calendars"
+    - "AI–business tool integration via MCP — Shopify, Meta Ads, Google Drive, Gmail, Notion, Canva"
+    - "AEO / GEO (Answer Engine Optimization) — schema markup, Wikidata, llms.txt"
+    - "Python automation — Excel reporting, presentations & data processing"
   tools:
-    - Generative AI (Claude, ChatGPT)
+    - Generative AI (Claude / Claude Code, ChatGPT)
+    - Higgsfield (AI video)
+    - Hailuo AI (MiniMax)
+    - Canva (AI)
     - Shopify
     - Meta Ads Manager
     - Meta Business Suite
     - Google Ads
+    - Notion
     - Microsoft Office (Expert)
     - Salesforce
     - SAP
@@ -188,7 +199,6 @@ skills:
     - Nielsen
     - Planorama
     - Foxy
-    - Canva
 
 education:
   - degree: Bachelor's in Business Administration
@@ -211,7 +221,7 @@ preferences:
   remote_ok: false
   hybrid_ok: true
   open_to_relocation: false
-  work_authorization: "UAE Residence Visa (no sponsorship needed)"
+  work_authorization: "UAE Residence Visa — based in Dubai (no relocation, immediately available)"
 
 differentiators:
   - "AI-first marketer — builds generative-AI automation (Claude/GPT) for content, campaign planning and analytics, a rare and in-demand skill"

@@ -1,0 +1,27 @@
+{
+  "brand": "talabat",
+  "parent": "Delivery Hero",
+  "url": "https://www.talabat.com",
+  "palette": {
+    "primary": "#FF5A00",
+    "primary_dark": "#E24E00",
+    "petrol": "#16404D",
+    "petrol_deep": "#0E2E38",
+    "ink": "#12100E",
+    "paper": "#FFF7F0",
+    "grey": "#5A6473"
+  },
+  "fonts": {
+    "display": "Poppins",
+    "body": "Inter",
+    "reference": "FF Mark Pro (brand), substituted with web-safe geometric sans"
+  },
+  "tone": "warm, energetic, action-oriented — 'Yalla, let's go'. Speed, variety, everyday convenience.",
+  "product": "Food + grocery quick-commerce; talabat mart = 20-minute delivery.",
+  "campaign": {
+    "name": "Talabat O'Clock",
+    "line": "Every craving has a time. We own all of them.",
+    "role": "Manager, Marketing Campaign",
+    "type": "pitch"
+  }
+}
