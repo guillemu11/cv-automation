@@ -1,9 +1,10 @@
 #!/bin/bash
-# Nightly auto-commit + push (invoked by launchd at 23:00, see
-# ~/Library/LaunchAgents/com.cvautomation.autopush.plist). No-op on days with
-# no changes and nothing unpushed. Secrets stay out via .gitignore.
+# Nightly auto-commit + push at 23:00. macOS: launchd
+# (~/Library/LaunchAgents/com.cvautomation.autopush.plist). Windows: Task
+# Scheduler task "CV_Automation AutoPush" (scripts/install_auto_push_windows.ps1).
+# No-op on days with no changes and nothing unpushed. Secrets stay out via .gitignore.
 set -u
-export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin"
+export PATH="/usr/local/bin:/opt/homebrew/bin:/mingw64/bin:/usr/bin:/bin:$PATH"
 export GIT_TERMINAL_PROMPT=0
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
@@ -11,7 +12,13 @@ cd "$REPO" || exit 1
 mkdir -p logs
 LOG="logs/auto_push.log"
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >> "$LOG"; }
-notify() { osascript -e "display notification \"$1\" with title \"cv-automation auto-push\"" >/dev/null 2>&1; }
+notify() {
+  if command -v osascript >/dev/null 2>&1; then
+    osascript -e "display notification \"$1\" with title \"cv-automation auto-push\"" >/dev/null 2>&1
+  elif command -v msg.exe >/dev/null 2>&1; then
+    msg.exe "$USERNAME" /TIME:3600 "cv-automation auto-push: $1" >/dev/null 2>&1
+  fi
+}
 
 # Don't touch the repo mid-merge/rebase.
 if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ] || [ -f .git/MERGE_HEAD ]; then
