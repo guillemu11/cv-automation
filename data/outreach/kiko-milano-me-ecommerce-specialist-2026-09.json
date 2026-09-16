@@ -1,0 +1,28 @@
+{
+  "c_rochelle_kiko": {
+    "versions": [
+      {
+        "v": 1,
+        "variant": "linkedin_connection",
+        "body": "Hi Rochelle — I saw your post about the E-Commerce Specialist role at KIKO Milano ME. Small coincidence: I managed KIKO Milano's makeup & skincare account at Miravia (Alibaba) before moving to Dubai, where I now lead brand & e-commerce. Would love to connect about it.",
+        "generated_at": "2026-09-16T09:04:59.444456+00:00"
+      },
+      {
+        "v": 2,
+        "variant": "linkedin_inmail",
+        "body": "See output/2026-09-13/KIKO Milano - E-Commerce Specialist/02_Outreach/Outreach_Rochelle_Fernandes.md section 2 (full long message, KIKO/Miravia hook + upfront Arabic disclosure).",
+        "generated_at": "2026-09-16T09:04:59.444456+00:00"
+      },
+      {
+        "v": 3,
+        "variant": "email",
+        "body": "See same file section 3. Subject: 'E-Commerce Specialist, KIKO Milano ME — I managed KIKO's account at Miravia'. Email address NOT yet known.",
+        "generated_at": "2026-09-16T09:04:59.444456+00:00"
+      }
+    ],
+    "current_version": 1,
+    "status": "generated",
+    "sent_at": null,
+    "replied_at": null
+  }
+}

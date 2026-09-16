@@ -1,0 +1,22 @@
+{
+  "c_juan_robledo": {
+    "versions": [
+      {
+        "v": 1,
+        "variant": "linkedin_connection",
+        "body": "Hola Juan, encantada. Española en Dubái, como tú: vengo de Miravia (Alibaba) en Madrid y ahora llevo Brand & E-Commerce en DoFreeze aquí. Sigo a iHerb en MEA de cerca y me encantaría conectar contigo y, si se da, hablar de cómo podría aportar al equipo.",
+        "generated_at": "2026-09-16T09:22:45.314251+00:00"
+      },
+      {
+        "v": 2,
+        "variant": "linkedin_message",
+        "body": "See output/2026-08-21/iHerb - Growth Marketing Specialist, MEA/02_Outreach/Outreach_Juan_Robledo.md section 2 — full Spanish message, Miravia/Amazon-Spain shared-ecosystem hook, asks for a coffee not the req.",
+        "generated_at": "2026-09-16T09:22:45.314251+00:00"
+      }
+    ],
+    "current_version": 1,
+    "status": "generated",
+    "sent_at": null,
+    "replied_at": null
+  }
+}
