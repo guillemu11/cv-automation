@@ -134,7 +134,7 @@ CONTENT = {
         "integrated campaigns, creative briefs, cultural moments, partner activations, influencer"
     ),
     "skills_ecommerce": (  # label -> "Channels"
-        "in-app (talabat, Noon, Careem, Deliveroo), social, CRM & EDM, Meta & Google Ads"
+        "in-app (talabat, Noon, Careem), social, CRM & EDM, Meta & Google Ads"
     ),
     "skills_commercial": (  # label -> "Project & People"
         "project management, 4 agencies, team of two, senior stakeholders, budgets"
