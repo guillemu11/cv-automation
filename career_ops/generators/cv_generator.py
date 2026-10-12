@@ -13,9 +13,12 @@ from __future__ import annotations
 
 import logging
 import re
+from copy import deepcopy
 from pathlib import Path
 
 from docx import Document
+from docx.shared import Pt
+from docx.text.paragraph import Paragraph
 
 from .. import llm
 from ..analyzer import JobAnalysis
@@ -226,6 +229,47 @@ def _replace_in_paragraphs(doc: Document, placeholder: str, value: str) -> None:
                             run.text = ""
 
 
+def _display_url(url: str) -> str:
+    """'https://www.linkedin.com/in/x/' -> 'linkedin.com/in/x' (shorter, never wraps)."""
+    return re.sub(r"^(https?://)?(www\.)?", "", url).rstrip("/")
+
+
+_BULLET_INDENT = Pt(9)
+
+
+def _fill_bullets(doc: Document, placeholder: str, bullets: list[str]) -> None:
+    """Write each bullet as its own paragraph with a hanging indent.
+
+    Bullets used to be one paragraph joined by line breaks, so wrapped lines ran
+    back to the margin under the "•" and the block read as a wall of text.
+    The placeholder paragraph's spacing frames the block (before on the first
+    bullet, after on the last); bullets inside it sit flush.
+    """
+    for para in doc.paragraphs:
+        if placeholder not in para.text:
+            continue
+        if not bullets:
+            _replace_in_paragraphs(doc, placeholder, "")
+            return
+        space_before = para.paragraph_format.space_before
+        space_after = para.paragraph_format.space_after
+        paras = [para]
+        for _ in bullets[1:]:
+            new_p = deepcopy(para._p)
+            paras[-1]._p.addnext(new_p)
+            paras.append(Paragraph(new_p, para._parent))
+        for n, (bp, text) in enumerate(zip(paras, bullets)):
+            bp.runs[0].text = f"•\t{text}"
+            for run in bp.runs[1:]:
+                run.text = ""
+            fmt = bp.paragraph_format
+            fmt.left_indent = _BULLET_INDENT
+            fmt.first_line_indent = -_BULLET_INDENT
+            fmt.space_before = space_before if n == 0 else Pt(0)
+            fmt.space_after = space_after if n == len(paras) - 1 else Pt(0)
+        return
+
+
 def _fill_template(content: dict, job: Job) -> Path:
     """Fill the DOCX template with adapted content and save."""
     doc = Document(str(_TEMPLATE_PATH))
@@ -236,12 +280,16 @@ def _fill_template(content: dict, job: Job) -> Path:
     _replace_in_paragraphs(doc, "{{FULL_NAME}}", p["name"])
     _replace_in_paragraphs(doc, "{{PHONE}}", p["phone"])
     _replace_in_paragraphs(doc, "{{EMAIL}}", p["email"])
-    linkedin = p.get("linkedin", "linkedin.com/in/paula-de-francisco-perez")
+    linkedin = _display_url(p.get("linkedin", "linkedin.com/in/paula-de-francisco-perez"))
     portfolio = p.get("portfolio")
-    if portfolio:
-        portfolio_display = portfolio.replace("https://", "").replace("http://", "")
-        linkedin = f"{linkedin} | Portfolio: {portfolio_display}"
-    _replace_in_paragraphs(doc, "{{LINKEDIN}}", linkedin)
+    portfolio_display = f"Portfolio: {_display_url(portfolio)}" if portfolio else ""
+    # One field per line: run together on one line, the links wrapped mid-field
+    # and left stray "|" at the start and end of lines.
+    contact_lines = [linkedin, portfolio_display,
+                     f"Nationality: {p.get('nationality', 'Spanish')} | {p.get('visa', 'UAE Residence Visa')}"]
+    _replace_in_paragraphs(doc, "{{LINKEDIN}} | Nationality: {{NATIONALITY}} | {{VISA}}",
+                           "\n".join(line for line in contact_lines if line))
+    _replace_in_paragraphs(doc, "{{LINKEDIN}}", " | ".join(line for line in (linkedin, portfolio_display) if line))
     _replace_in_paragraphs(doc, "{{LOCATION}}", p["location"])
     _replace_in_paragraphs(doc, "{{NATIONALITY}}", p.get("nationality", "Spanish"))
     _replace_in_paragraphs(doc, "{{VISA}}", p.get("visa", "UAE Residence Visa"))
@@ -271,8 +319,7 @@ def _fill_template(content: dict, job: Job) -> Path:
         context_line = " · ".join(parts)
         _replace_in_paragraphs(doc, f"{{{{EXP_{i}_CONTEXT}}}}", context_line)
 
-        bullets_text = "\n".join(f"• {b}" for b in exp.get("bullets", []))
-        _replace_in_paragraphs(doc, f"{{{{EXP_{i}_BULLETS}}}}", bullets_text)
+        _fill_bullets(doc, f"{{{{EXP_{i}_BULLETS}}}}", exp.get("bullets", []))
 
     # Clear unused experience slots
     for i in range(len(content.get("experience", [])) + 1, 5):

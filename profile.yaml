@@ -108,6 +108,14 @@ experience:
       - "Conducted sell-in/sell-out analysis, evaluated promotional effectiveness and built performance reports for the chocolate category"
       - "Identified growth opportunities and contributed to successful NPD launches including Milka Spread and Mini Suchard"
 
+  - company: Línea Directa Aseguradora
+    role: Accounting Intern
+    dates: "Jan 2019 – Dec 2019"
+    location: Madrid, Spain
+    context: "Spanish direct insurer | financial services"
+    highlights:
+      - "Internship in the accounting department, working with SAP and Looker"
+
   - company: Massimo Dutti (Inditex)
     role: Sales Associate – Las Rozas Village Factory Store
     dates: "Jun 2018 – Jun 2019"
@@ -222,7 +230,7 @@ languages:
 
 preferences:
   min_salary_aed_month: 20000
-  remote_ok: false
+  remote_ok: true  # Paula, 2026-10-12: "remoto o híbrido estoy buscando"
   hybrid_ok: true
   open_to_relocation: false
   work_authorization: "UAE Employment Visa (employer-sponsored)"
