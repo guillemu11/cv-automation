@@ -2,7 +2,8 @@
 
 Oferta: https://boards.greenhouse.io/careem/jobs/8873949002 (publicada 9-oct-2026)
 
-**Orden:** hoy notas a 2-3 Account Managers + Fatima. Aplicar en Greenhouse como tarde en 72 h, haya respuesta o no.
+**Orden:** hoy notas a 2-3 Account Managers + Fatima. NO aplicar todavía: si alguien la recomienda, la
+recomendación debe entrar antes que la candidatura. Aplicar en Greenhouse como tarde en 72 h si nadie lo ha hecho.
 Un solo seguimiento si no contestan en 4-5 días. Nunca decir "no sponsorship needed" ni "available immediately".
 
 ---
@@ -23,22 +24,27 @@ Solo si hay confianza: es una relación de trabajo de DoFreeze. Adaptar el tono 
 
 Cambiar el nombre en cada uno. Comprobar antes que siguen en Careem.
 
-**Nota de conexión (238 caracteres):**
+Pedir la recomendación directamente (decidido 2026-10-13): la oferta es del 9-oct y no hay tiempo para una
+charla previa. El mensaje de después se lo pone fácil: enlace, encaje en tres líneas y el CV adjunto.
 
-> Hi Sarah, I'm about to apply for Account Manager I in Careem's Food UAE team. I managed XL restaurant
-> accounts at Glovo (KFC, Taco Bell) and today work with Careem from the brand side. Would you be open to a
-> 10-minute chat about the team?
+**Nota de conexión (252 caracteres):**
 
-**Cuando acepte:**
+> Hi Sarah, I'm applying for Account Manager I in Careem's Food UAE team. I managed XL restaurant accounts at
+> Glovo (KFC, Taco Bell) and today work with Careem from the brand side. Would you consider referring me?
+> Happy to send my CV and a short summary.
 
-> Thanks for connecting, Sarah. A bit of context: at Glovo I managed XL restaurant accounts (KFC, Taco Bell,
-> La Tagliatella, Sushi Shop), then 42 brand accounts at Alibaba's Miravia, growing GMV 30% quarter on
-> quarter. Today I'm Brand & Marketing Manager at DoFreeze in Dubai, so I see Careem from the partner side
-> every week: listings, promotions and stock in dark stores.
+**Cuando acepte (adjuntar `Paula De Francisco - CV.pdf`):**
+
+> Thanks for connecting, Sarah! Here is everything in one place:
 >
-> I'd love to hear what the team values in an Account Manager and how partner reviews work day to day. If
-> after a chat you think I'd fit, I'd be grateful for a referral, but the conversation alone would already
-> help a lot.
+> - Role: Account Manager I, Food & Dineout UAE: https://boards.greenhouse.io/careem/jobs/8873949002
+> - Why I fit: XL restaurant accounts at Glovo (KFC, Taco Bell, La Tagliatella, Sushi Shop); 42 accounts at
+>   Alibaba's Miravia, +30% GMV quarter on quarter; today I work with Careem, talabat and Noon from the
+>   partner side at DoFreeze in Dubai.
+> - My CV is attached.
+>
+> If you'd prefer a quick call first so you know who you're referring, I'm happy to do that. And no problem
+> at all if it's not something you can do. Thank you!
 >
 > Paula
 

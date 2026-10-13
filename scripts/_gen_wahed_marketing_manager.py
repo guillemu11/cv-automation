@@ -17,9 +17,15 @@ Paula's honest angle:
 Honesty guardrails:
 - Glovo told in Paula's own words (2026-10-12): co-managed big restaurant-chain accounts in the XL
   team (KFC, Taco Bell, La Tagliatella, Vicio): promotions, promo budgets, cancellations and
-  refunds. No "Retail vertical" and no "negotiated deals" until she confirms them.
-- No email/push/lifecycle, CAC, events or PR claims beyond what is above: those are the gaps.
-- NIVEA always goes with "three months", so for a non-beauty role only KIKO Milano is named.
+  refunds. Not the Retail vertical, no deal negotiation (confirmed false 2026-10-13). 5 XL accounts; weekly
+  review of KFC refunds with the fraud team (no recovered amount — never invent one).
+- DoFreeze figures from Paula's own notes (2026-10-13): paid (3.7x first-week ROAS), web (+86% orders),
+  email (16K base segmented), events (Saudi Food Show 2026), Befit Crew affiliates. Still no push,
+  CAC, webinars or PR claims: those are the gaps.
+- SMASH x talabat stays at +165% vs +4.7% control (as in earlier CVs); her notes also give x4.6 during
+  the campaign on a different baseline — don't mix the two.
+- NIVEA always goes with "three months", so for a non-beauty role it is left out; the L'Oréal brands
+  and KIKO are named instead (brands confirmed by Paula 2026-10-13).
 - No Arabic; never "own the forecast"; DoFreeze is NOT on Deliveroo.
 - 103 creators are activations over 3 campaigns, never "one campaign".
 
@@ -77,9 +83,9 @@ CV_CONTENT = {
     "headline": "Marketing Manager · Performance, Social & Partnerships",
     "professional_summary": (
         "Hands-on marketing manager with 5 years across consumer brands and digital marketplaces. "
-        "Brand & Marketing Manager at DoFreeze in Dubai, running paid social and search, content, "
-        "influencer, affiliate and platform partnerships with a team of two, and judging campaigns "
-        "on incremental sales, not reach. Previously grew 42 brands +30% GMV QoQ at Alibaba's Miravia."
+        "Brand & Marketing Manager at DoFreeze in Dubai, running paid, social, email, influencer, "
+        "affiliate and event marketing with a team of two, and judging campaigns on incremental sales, "
+        "not reach. Previously grew 42 brands +30% GMV QoQ at Alibaba's Miravia."
     ),
     "experience": [
         {
@@ -87,24 +93,26 @@ CV_CONTENT = {
             "role": "Brand & Marketing Manager",
             "dates": "Oct 2025 – Present",
             "location": "Dubai, UAE",
-            "context": "UAE F&B / FMCG group | Befit, Eurocake (incl. SMASH), Flair | sold in 50+ countries",
+            "context": "UAE F&B / FMCG group | 7 brands incl. Befit, Eurocake, SMASH | sold in 50+ countries",
             "bullets": [
-                "Lead marketing across 50+ markets with a team of two (designer, social media exec): a year-round seasonal calendar (Ramadan, New Year, back to school), 6 product launches, and paid social and search on Meta and Google Ads",
-                "Built the influencer programme from zero: 103 creator activations over 3 campaigns at AED 81 per content piece (market rate AED 1,000–3,500); negotiated −30% with the agency and audited its reach reporting",
-                "Measure campaigns on incremental sales: SMASH x talabat lifted daily sales +165% vs +4.7% for a control brand (~AED 32K incremental on ~AED 8.7K spend); Befit x Noon added 4,176 incremental units (+31% vs baseline)",
-                "Launched an affiliate programme (commission on sales, AI-built landing page, multilingual AI avatar brief), a purchase-to-enter cashback giveaway with talabat, and community activations with running, padel and yoga clubs",
-                "Run the Shopify store; built a Claude system automating campaign planning, content and reporting (~40% less manual work)",
+                "Lead marketing for 7 brands across 50+ markets with a team of two (designer, social media exec): seasonal campaign calendar, 6 product launches, 4 social accounts with weekly creative-hook tests",
+                "Paid social and search on Meta and Google Ads: built a dynamic-catalogue retargeting campaign at 3.7x ROAS and AED 34.5 per purchase in week one; shift budget between channels on break-even ROAS",
+                "Built the influencer programme from zero: 103 creator activations over 3 waves on ~AED 25K (AED 81 per content piece); compared 4 agencies, negotiated −30% and audited the agency's reach reporting",
+                "Measure on incremental sales: the SMASH x talabat purchase-to-enter giveaway lifted daily sales +165% vs +4.7% for a control brand; Befit x Noon added 4,176 incremental units (+31% vs baseline)",
+                "Web orders +86% and revenue +57% (Q1 vs Jun–Aug 2026) after adding Judge.me reviews, basket-based bundles and a 30-day replenishment flow; segmented a 16K email base for deliverability",
+                "Designed the Befit Crew affiliate programme (BixGrow, personal codes, tiered commissions); ran sampling and events incl. Saudi Food Show 2026 and a Sun & Sand Sports x Fabletics yoga session that led to a listing proposal",
             ],
         },
         {
-            "company": "Miravia (Alibaba Group)",
+            "company": "Miravia & AliExpress (Alibaba Group)",
             "role": "Key Account Manager – Beauty, Fragrances & Fashion",
             "dates": "Nov 2023 – Oct 2025",
             "location": "Madrid, Spain",
-            "context": "Alibaba's e-commerce marketplace in Spain",
+            "context": "Beauty & Health department",
             "bullets": [
-                "Grew 42 beauty, fragrance and fashion brands (incl. KIKO Milano) +30% GMV QoQ through pricing, assortment and promotions; owned the Flash Sales channel, reporting to the CEO against P&L targets",
-                "Created the Beauty Club loyalty and Hot on Social programmes; as fragrance lead, onboarded 30+ stores in two months",
+                "Grew 42 beauty and fragrance brands (incl. L'Oréal Paris, Maybelline, NYX, Redken, KIKO Milano) +30% GMV QoQ through pricing, assortment, promotions and on-site visibility; worked with marketing, product and ops",
+                "Spotted the Arabian-perfume trend and grew it into one of Beauty & Health's fastest-growing sub-categories, onboarding 30+ stores in two months (incl. Lattafa and Arabian Oud distributors)",
+                "Owned the Flash Sales channel (up to ~30% of B&H sales), reporting to the CEO; created the Beauty Club loyalty programme",
             ],
         },
         {
@@ -114,7 +122,7 @@ CV_CONTENT = {
             "location": "Madrid, Spain",
             "context": "Food & quick-commerce delivery app | 10K+ employees",
             "bullets": [
-                "Co-managed large restaurant-chain accounts in the XL team (KFC, Taco Bell, La Tagliatella, Vicio): promotions and promo budgets, account performance, and cancellation and refund issues",
+                "Co-managed 5 XL restaurant accounts (KFC, Taco Bell, Vicio): promotions, in-app visibility, weekly refund-fraud reviews",
             ],
         },
         {
@@ -130,16 +138,16 @@ CV_CONTENT = {
         },
     ],
     "skills_brand": (
-        "campaign planning, content & copywriting, social media, influencer & affiliate, partnerships"
+        "campaign planning, content & copy, social media, influencer & affiliate, events & sampling"
     ),
     "skills_ecommerce": (
-        "Meta Ads, Google Ads (search), Instagram, TikTok, Shopify, CRO, EDM, Noon, talabat, Careem"
+        "Meta Ads, Google Ads, Shopify, CRO, email & segmentation, Instagram, TikTok, Noon, talabat"
     ),
     "skills_commercial": (
-        "budget management, agency & vendor negotiation, key account management, pricing, go-to-market"
+        "budget management, agency & vendor negotiation, platform partnerships, key account management"
     ),
     "skills_data": (
-        "ROI, ROAS, incremental uplift vs control, KPI reporting, P&L targets, Looker, Power BI, SAP"
+        "ROI, ROAS, break-even ROAS, incremental uplift vs control, KPI reporting, Looker, Power BI, SAP"
     ),
     "skills_tools": (
         "Claude (AI automation), ChatGPT, Canva, Photoshop, Illustrator, Notion, Excel (Expert)"
@@ -268,7 +276,10 @@ def main() -> None:
         shutil.rmtree(stray, ignore_errors=True)
 
     cv_pdf = _to_pdf_soffice(clean_docx)
-    print("OK", cv_pdf, "PAGES", _pages(cv_pdf))
+    # The dashboard only indexes CV_Paula_<Company>_<Title>.pdf; the clean name is the one to send.
+    dashboard_pdf = dest / f"CV_Paula_{cv._sanitize_filename(COMPANY)}_{cv._sanitize_filename(TITLE)}.pdf"
+    shutil.copy(str(cv_pdf), str(dashboard_pdf))
+    print("OK", cv_pdf, "PAGES", _pages(cv_pdf), "| dashboard copy:", dashboard_pdf.name)
 
 
 if __name__ == "__main__":
